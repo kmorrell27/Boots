@@ -1,0 +1,1 @@
+speed_ = Approach(speed_, 0, friction_);
