@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "28a46fa5-cb35-4f68-b4b1-9b87eadd4f53",
+            "Value": {
+                "id": "043b3271-481c-432f-9ba7-bb060400b7b5",
+                "resourcePath": "tilesets\\t_dirtpath\\t_dirtpath.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "2ad3c0db-6313-48f4-855a-3b291f06ea4d",
             "Value": {
                 "id": "b4e36db5-2d7e-4b86-9cf2-e09e36cb4f92",
@@ -151,6 +159,14 @@
             }
         },
         {
+            "Key": "666fe5ce-b19c-4ed0-a5ab-02e35689daf9",
+            "Value": {
+                "id": "5bc71d7f-116d-4b66-a70a-c1bb9c0d1efb",
+                "resourcePath": "tilesets\\t_dirtwall\\t_dirtwall.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "6a6100da-6f8a-4042-a929-4384dc0af936",
             "Value": {
                 "id": "609e3d4c-3fb8-42e8-b19c-83c09b954abe",
@@ -175,11 +191,35 @@
             }
         },
         {
+            "Key": "7d70465c-a89c-49b7-9523-1bfafcfe28ed",
+            "Value": {
+                "id": "a82d805c-aff3-4e17-b6e1-b2aabcdea3b1",
+                "resourcePath": "sprites\\s_dirtpath_tileset\\s_dirtpath_tileset.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "81dfdbdd-26b5-4845-9479-fdfd5c568524",
             "Value": {
                 "id": "37db948e-9594-453b-8bec-0740e84125b5",
                 "resourcePath": "scripts\\ApplyFrictionToMovementEntity\\ApplyFrictionToMovementEntity.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "85afabc9-e836-4787-901f-b533cea1dfbb",
+            "Value": {
+                "id": "01e51ede-b97d-4203-9b58-46fdc8ccc006",
+                "resourcePath": "views\\85afabc9-e836-4787-901f-b533cea1dfbb.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "91f1f514-d822-4511-8dbe-402dbb3720f7",
+            "Value": {
+                "id": "f014d68e-dcbd-465b-988a-6599b299aa80",
+                "resourcePath": "sprites\\s_grass_background\\s_grass_background.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -263,6 +303,14 @@
             }
         },
         {
+            "Key": "d0341513-4f70-4d6d-8de4-ce52b327ad23",
+            "Value": {
+                "id": "615c2471-fcbb-467d-a494-812474033ce0",
+                "resourcePath": "views\\d0341513-4f70-4d6d-8de4-ce52b327ad23.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "ec3a3fe3-6a94-4a61-abf4-23239b3f536b",
             "Value": {
                 "id": "d5e1231c-3486-4f28-9589-1173eda67e61",
@@ -300,6 +348,14 @@
                 "id": "9eb61637-7cf4-4db7-ae81-93c57ff94d5c",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "fa90a0bf-f700-42e8-a17f-51fe91692873",
+            "Value": {
+                "id": "e0c51c52-75be-445f-9075-d2e46e2c291f",
+                "resourcePath": "sprites\\s_dirtwall_tileset\\s_dirtwall_tileset.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
