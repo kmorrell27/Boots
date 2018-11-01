@@ -16,8 +16,8 @@ if (_x_input == 0 && _y_input == 0) {
 	image_speed = _animation_speed;
 	// This still feels hacky
 	image_xscale = _x_input > 0 ? 1 : -1;
-	facing = GetDirectionFacing(_input_direction);
-	roll_direction_ = facing * 90;
+	facing_ = GetDirectionFacing(_input_direction);
+	roll_direction_ = facing_ * 90;
 	AddMovementMaxSpeed(_input_direction, acceleration_, max_speed_);
 }
 

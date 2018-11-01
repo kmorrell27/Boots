@@ -6,7 +6,8 @@
     "children": [
         "7d70465c-a89c-49b7-9523-1bfafcfe28ed",
         "fa90a0bf-f700-42e8-a17f-51fe91692873",
-        "91f1f514-d822-4511-8dbe-402dbb3720f7"
+        "91f1f514-d822-4511-8dbe-402dbb3720f7",
+        "b08fcd33-bc96-404c-8cde-29d6b67304ef"
     ],
     "filterType": "GMSprite",
     "folderName": "World",
