@@ -5,7 +5,7 @@ image_speed = 0.8;
 
 // This should be programmatic
 if (AnimationHitFrame(1)) {
-	var _hitbox = CreateHitbox(s_sword_hitbox, x, y, facing_ * 90, 3, [], 1, 8);
+	var _hitbox = CreateHitbox(s_sword_hitbox, x, y, facing_ * 90, 3, [o_enemy], 1, 8);
 	switch (facing_) {
 		case Direction.UP:
 			_hitbox.y -= 4;
