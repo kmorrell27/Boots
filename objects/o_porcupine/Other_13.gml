@@ -8,5 +8,5 @@ if (AnimationHitFrame(3)) {
 if (AnimationHitFrame(image_number - 1)) {
 	state_ = PorcupineState.IDLE;
 	sprite_index = s_porcupine_run;
-	alarm[1] = 2 * game_get_speed(gamespeed_fps);
+	alarm[1] = 2 * global.one_second;
 }

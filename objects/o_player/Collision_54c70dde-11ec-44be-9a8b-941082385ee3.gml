@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-InitializeHurtboxEntity();
-depth = -y - 10;
+if (HurtboxEntityCanBeHitBy(other)) {
+	instance_destroy();
+}

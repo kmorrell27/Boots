@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "127bd3ff-5bb0-4d49-b78b-5c138a317fd5",
+            "Value": {
+                "id": "52a933b8-5f2b-498b-b9df-2aa4d29c4178",
+                "resourcePath": "rooms\\r_init\\r_init.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "1da582ad-0989-4f65-aa4a-c7abc2917dcd",
             "Value": {
                 "id": "c0e9611c-dc9f-4b24-a7ae-d7b52470bf6d",
@@ -116,6 +124,14 @@
                 "id": "043b3271-481c-432f-9ba7-bb060400b7b5",
                 "resourcePath": "tilesets\\t_dirtpath\\t_dirtpath.yy",
                 "resourceType": "GMTileSet"
+            }
+        },
+        {
+            "Key": "2a6fda9f-cc04-42ce-b68f-45196d39a919",
+            "Value": {
+                "id": "79e65f62-7243-468b-97c9-9912d442b46f",
+                "resourcePath": "objects\\o_game\\o_game.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -287,10 +303,26 @@
             }
         },
         {
+            "Key": "6a27501e-e35c-4ac1-b4d6-6654cb05b8cb",
+            "Value": {
+                "id": "88d5a41f-c495-47ca-9206-754594ecb76e",
+                "resourcePath": "sprites\\s_grass_effect\\s_grass_effect.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6a6100da-6f8a-4042-a929-4384dc0af936",
             "Value": {
                 "id": "609e3d4c-3fb8-42e8-b19c-83c09b954abe",
                 "resourcePath": "views\\6a6100da-6f8a-4042-a929-4384dc0af936.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6f5fe1b3-1ef6-4eb1-8823-371b3f2099b0",
+            "Value": {
+                "id": "57dbe969-f51b-4263-9770-cddd0442a278",
+                "resourcePath": "views\\6f5fe1b3-1ef6-4eb1-8823-371b3f2099b0.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -351,11 +383,27 @@
             }
         },
         {
+            "Key": "8c24498e-9cd5-43a2-8be7-8901fd9721d8",
+            "Value": {
+                "id": "be28b154-be00-42b1-a3d7-5293ef3a5e26",
+                "resourcePath": "objects\\o_input\\o_input.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "91f1f514-d822-4511-8dbe-402dbb3720f7",
             "Value": {
                 "id": "f014d68e-dcbd-465b-988a-6599b299aa80",
                 "resourcePath": "sprites\\s_grass_background\\s_grass_background.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "92b20933-e138-47f8-92c9-615d86087a89",
+            "Value": {
+                "id": "8332b3ac-57c6-457e-8c48-c6d68834ba1f",
+                "resourcePath": "scripts\\CreateAnimationEffect\\CreateAnimationEffect.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -519,6 +567,14 @@
             }
         },
         {
+            "Key": "ecd27771-be97-4245-a99b-e1ee8a631d32",
+            "Value": {
+                "id": "9bba4a4c-02a2-4c5b-9109-aab1ffd7e29a",
+                "resourcePath": "objects\\o_animation_effect\\o_animation_effect.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "ef170653-1ab8-4794-ac02-8f53f5478eab",
             "Value": {
                 "id": "0206e13f-89ee-448b-a958-32d226912d07",
@@ -564,6 +620,14 @@
                 "id": "9eb61637-7cf4-4db7-ae81-93c57ff94d5c",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f63387f7-84c0-469b-9de2-6b8b32c0ea6c",
+            "Value": {
+                "id": "bfae5767-191a-44e0-9e0d-219395df8683",
+                "resourcePath": "views\\f63387f7-84c0-469b-9de2-6b8b32c0ea6c.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -620,7 +684,8 @@
         "c8e43338-2658-43a8-a6e7-f196d6529198",
         "cc654814-12e5-477f-9488-57cc84fa762d",
         "629f9ea8-181e-42bb-8abf-f50288c9459e",
-        "5fc9c3d5-3dd6-48ba-88d8-e02a5cc32694"
+        "5fc9c3d5-3dd6-48ba-88d8-e02a5cc32694",
+        "92b20933-e138-47f8-92c9-615d86087a89"
     ],
     "tutorial": ""
 }
