@@ -7,7 +7,6 @@ max_speed_ = 1.5;
 roll_speed_ = 2;
 facing_ = Direction.RIGHT;
 roll_direction_ = Direction.RIGHT;
-global.player_health = 4;
 
 enum Direction {
 	RIGHT,
@@ -19,7 +18,11 @@ enum Direction {
 enum PlayerState {
 	MOVE,
 	SWORD,
-	EVADE
+	EVADE,
+	BOMB,
+	BOW,
+	FOUND_ITEM,
+	HIT
 }
 
 state_ = PlayerState.MOVE;
@@ -37,3 +40,7 @@ sprite_[PlayerState.EVADE, Direction.RIGHT] = s_player_roll_right;
 sprite_[PlayerState.EVADE, Direction.LEFT] = s_player_roll_right;
 sprite_[PlayerState.EVADE, Direction.UP] = s_player_roll_up;
 sprite_[PlayerState.EVADE, Direction.DOWN] = s_player_roll_down;
+sprite_[PlayerState.HIT, Direction.RIGHT] = s_player_run_right;
+sprite_[PlayerState.HIT, Direction.UP] = s_player_run_up;
+sprite_[PlayerState.HIT, Direction.LEFT] = s_player_run_right;
+sprite_[PlayerState.HIT, Direction.DOWN] = s_player_run_down;
