@@ -9,4 +9,5 @@ if (HurtboxEntityCanBeHitBy(other)) {
 	state_ = PlayerState.HIT;
 	// Let's run this right away
 	event_user(state_);
+	audio_play_sound(a_hurt, 6, false);
 }
