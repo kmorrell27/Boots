@@ -8,3 +8,6 @@ global.player_health = global.player_max_health;
 global.player_max_stamina = 2;
 global.player_stamina = global.player_max_stamina;
 global.player_gems = 0;
+global.player_start_position = noone;
+
+//audio_play_sound(a_music, 10, true);
