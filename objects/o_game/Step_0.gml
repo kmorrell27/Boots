@@ -1,4 +1,4 @@
-if keyboard_check_pressed(vk_escape) {
+if (o_input.pause_pressed_) {
 	paused_ = !paused_;
 	if (paused_) {
 		paused_sprite_ = sprite_create_from_surface(
@@ -12,6 +12,8 @@ if keyboard_check_pressed(vk_escape) {
 			0,
 			0);
 		instance_deactivate_all(true);	
+		// Gotta be able to listen for unpause
+		instance_activate_object(o_input);
 		audio_play_sound(a_pause, 5, false);
 	} else {
 		if (sprite_exists(paused_sprite_)) {
