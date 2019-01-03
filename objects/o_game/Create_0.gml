@@ -21,3 +21,6 @@ display_set_gui_size(camera_get_view_width(view_camera[0]),
 paused_ = false;
 paused_sprite_ = noone;
 paused_sprite_scale_ = display_get_gui_width() / view_wport[0];
+
+InventoryCreate(6);
+InventoryAddItem(o_ring_item);
