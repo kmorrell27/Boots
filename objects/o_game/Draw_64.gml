@@ -24,3 +24,5 @@ var _y = _gui_height - 12;
 
 draw_sprite(s_gem, 0, _x - 16, _y + 7);
 draw_text(_x - 8, _y - 1, _gem_string);
+
+InventoryDraw(4, 36);
