@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "029b8172-5746-4e11-847d-305ac50b7880",
+            "Value": {
+                "id": "58c6b477-9256-4dff-a978-e1190c4eb14b",
+                "resourcePath": "objects\\o_bomb\\o_bomb.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "05b25fe7-6ffc-4387-ad62-de542be8e97e",
             "Value": {
                 "id": "02bb0258-fcdd-40fa-a0cc-58ea14f766e7",
@@ -212,6 +220,14 @@
                 "id": "c4642a9e-7b6c-4e65-a6dc-552f7a128321",
                 "resourcePath": "views\\305993b4-8765-42ab-af62-2a706d26a101.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "31397441-f639-4fc9-8b5b-068476136f9a",
+            "Value": {
+                "id": "a8642e3f-4e2c-4267-8220-6e51cb2c2954",
+                "resourcePath": "sprites\\s_bomb\\s_bomb.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -671,6 +687,14 @@
             }
         },
         {
+            "Key": "96ba0d2a-40da-402d-99a6-e458fb5b89e5",
+            "Value": {
+                "id": "bfe0ef3f-de49-4c6e-906b-ae5b85e7a983",
+                "resourcePath": "sounds\\a_explosion\\a_explosion.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "9812599c-12c4-49ac-b988-e21889391d50",
             "Value": {
                 "id": "8591979a-b5fc-4ecf-8308-ff457ca87a36",
@@ -791,6 +815,14 @@
             }
         },
         {
+            "Key": "b7cd56d4-2c73-4310-ab38-ab71084f4e26",
+            "Value": {
+                "id": "82e2b741-f893-4447-a2b0-2bd2f1644e52",
+                "resourcePath": "sounds\\a_set_bomb\\a_set_bomb.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "bc15ccfd-db5b-437c-9181-15a74d442b2e",
             "Value": {
                 "id": "5b1e62e1-a3bd-49cb-8d5e-78ae32016f17",
@@ -804,6 +836,14 @@
                 "id": "f2db000e-49e4-41c3-88b3-470d4f78c1f2",
                 "resourcePath": "objects\\o_bomb_item\\o_bomb_item.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "bf4114ca-b00f-4756-a038-0143f4cd62d3",
+            "Value": {
+                "id": "eb733eed-ce7c-4000-ba1e-139e0468ef4d",
+                "resourcePath": "sprites\\s_explosion_effect\\s_explosion_effect.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -975,6 +1015,14 @@
             }
         },
         {
+            "Key": "e19754d2-d7e5-45a6-9cc4-d320fc9245ae",
+            "Value": {
+                "id": "dae84be9-4528-4b15-841f-5776ef4fddbd",
+                "resourcePath": "scripts\\f\\f.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e59d2fbe-0a3e-4049-b71f-9d1c34edc237",
             "Value": {
                 "id": "0681991d-7bd6-4265-9cca-d5a236f08475",
@@ -1044,6 +1092,14 @@
                 "id": "6926594c-d5d4-4c5d-9aa9-07ea249c7c1e",
                 "resourcePath": "sprites\\s_player_attack_up\\s_player_attack_up.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f2be9c2d-97ce-4bcd-9106-de6a7886c3cb",
+            "Value": {
+                "id": "40135dfc-6e78-4f3a-90b5-f45ef1424b88",
+                "resourcePath": "scripts\\InventoryUseItem\\InventoryUseItem.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1157,7 +1213,9 @@
         "47846e9a-5218-4064-a77c-01b1c498f48f",
         "ce18420c-4d5a-41b1-a96d-fa92519b6e31",
         "e870a898-2620-472b-a56d-070337a1e05b",
-        "7400469e-5fa3-46e2-8afc-e557ffefd884"
+        "7400469e-5fa3-46e2-8afc-e557ffefd884",
+        "f2be9c2d-97ce-4bcd-9106-de6a7886c3cb",
+        "e19754d2-d7e5-45a6-9cc4-d320fc9245ae"
     ],
     "tutorial": ""
 }

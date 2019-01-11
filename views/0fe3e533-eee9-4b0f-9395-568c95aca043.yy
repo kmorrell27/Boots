@@ -6,7 +6,8 @@
     "children": [
         "ce18420c-4d5a-41b1-a96d-fa92519b6e31",
         "e870a898-2620-472b-a56d-070337a1e05b",
-        "7400469e-5fa3-46e2-8afc-e557ffefd884"
+        "7400469e-5fa3-46e2-8afc-e557ffefd884",
+        "f2be9c2d-97ce-4bcd-9106-de6a7886c3cb"
     ],
     "filterType": "GMScript",
     "folderName": "Inventory Scripts",

@@ -21,12 +21,7 @@ if (_x_input == 0 && _y_input == 0) {
 	AddMovementMaxSpeed(_input_direction, acceleration_, max_speed_);
 }
 
-if (_attack_input) {
-	image_index = 0;
-	state_ = PlayerState.SWORD;
-} else if (_roll_input) {
-	image_index = 0;
-	state_ = PlayerState.EVADE;
-}
+InventoryUseItem(o_input.action_one_pressed_, global.item[0]);
+InventoryUseItem(o_input.action_two_pressed_, global.item[1]);
 
 MoveMovementEntity(false);
