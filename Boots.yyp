@@ -575,6 +575,14 @@
             }
         },
         {
+            "Key": "7e8e585a-97c4-4a0b-b2d9-9a030ea7ec0c",
+            "Value": {
+                "id": "da31ab59-2d11-4510-8a0d-daa19875f55c",
+                "resourcePath": "sprites\\s_stamina_ui\\s_stamina_ui.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8079bc56-8fb5-431d-840a-690dea387117",
             "Value": {
                 "id": "5e276d76-06f4-4bc3-972f-b0b0a2b9fef9",
