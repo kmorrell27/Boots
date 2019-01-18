@@ -2,7 +2,7 @@
     "id": "452d7b24-e91f-4e92-9733-f57a46f3ff12",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_bat_sprite",
+    "name": "s_bat",
     "For3D": false,
     "HTile": false,
     "VTile": false,
