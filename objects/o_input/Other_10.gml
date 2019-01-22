@@ -12,3 +12,5 @@ pause_pressed_ = keyboard_check_pressed(vk_enter);
 
 right_pressed_ = keyboard_check_pressed(vk_right);
 left_pressed_ = keyboard_check_pressed(vk_left);
+up_pressed_ = keyboard_check_pressed(vk_up);
+down_pressed_ = keyboard_check_pressed(vk_down);
