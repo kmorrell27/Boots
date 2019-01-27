@@ -12,7 +12,7 @@ if (o_input.action_one_pressed_) {
 	switch (index_) {
 		case TitleOptions.CONTINUE_GAME:
 			audio_play_sound(a_menu_select, 3, false);
-			IniLoad("save_data.ini");
+			//TODO-Load
 			break;
 		case TitleOptions.NEW_GAME:
 			audio_play_sound(a_menu_select, 3, false);

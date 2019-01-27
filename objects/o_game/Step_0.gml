@@ -1,7 +1,9 @@
 //Paused logic
 
+var _inventory = ds_map_find_value(o_game.save_data_, o_game.INVENTORY);
 if (paused_) {
-	var _array_size = array_length_1d(global.inventory);
+	var _items = ds_map_find_value(o_game.save_data_, o_game.ITEMS);
+	var _array_size = array_length_1d(_inventory);
 	if (o_input.right_pressed_) {
 		item_index_ = min(item_index_ + 1, _array_size - 1);
 		audio_play_sound(a_menu_move, 1, false);
@@ -11,11 +13,13 @@ if (paused_) {
 		audio_play_sound(a_menu_move, 1, false);
 	}
 	if (o_input.action_one_pressed_) {
-		global.item[0] = global.inventory[item_index_];
+		_items[0] = _inventory[item_index_];
+		ds_map_replace(o_game.save_data_, o_game.ITEMS, _items);
 		audio_play_sound(a_menu_select, 1, false);
 	}
 	if (o_input.action_two_pressed_) {
-		global.item[1] = global.inventory[item_index_];
+		_items[1] = _inventory[item_index_];
+		ds_map_replace(o_game.save_data_, o_game.ITEMS, _items);
 		audio_play_sound(a_menu_select, 1, false);
 	}
 }
@@ -37,8 +41,8 @@ if (o_input.pause_pressed_) {
 		// Gotta be able to listen for unpause
 		instance_activate_object(o_input);
 		// Oof and the inventory. This feels hacky
-		for (var i = 0; i < array_length_1d(global.inventory); i++) {
-			instance_activate_object(global.inventory[i]);
+		for (var i = 0; i < array_length_1d(_inventory); i++) {
+			instance_activate_object(_inventory[i]);
 		}
 		audio_play_sound(a_pause, 5, false);
 	} else {

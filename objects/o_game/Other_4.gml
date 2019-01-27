@@ -1,14 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (instance_exists(global.player_start_position)) {
+var _pos = ds_map_find_value(o_game.save_data_, o_game.PLAYER_START_POSITION);
+if (instance_exists(_pos)) {
 		if (instance_exists(o_player)) {
 		o_player.persistent = false;
-		o_player.x = global.player_start_position.x;
-		o_player.y = global.player_start_position.y;
+		o_player.x = _pos.x;
+		o_player.y = _pos.y;
 		o_player.layer = layer_get_id("Instances");
 	} else {
-		var _start_x = global.player_start_position.x;
-		var _start_y = global.player_start_position.y;
+		var _start_x = _pos.x;
+		var _start_y = _pos.y;
 		instance_create_layer(_start_x, _start_y, "Instances", o_player);
 	}
 }

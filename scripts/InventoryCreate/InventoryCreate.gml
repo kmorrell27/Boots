@@ -1,6 +1,8 @@
 ///@arg size
 var _size = argument0;
-global.inventory = [];
+var _inventory = [];
 for (var i = 0; i < _size; i++) {
-	global.inventory[i] = noone;
+	_inventory[i] = noone;
 }
+
+ds_map_replace(o_game.save_data_, o_game.INVENTORY, _inventory);

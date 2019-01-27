@@ -1,1 +1,0 @@
-IniSave("save_data.ini");

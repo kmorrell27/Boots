@@ -1,13 +1,15 @@
 ///@arg item
 var _item = Singleton(argument0);
+var _inventory = ds_map_find_value(o_game.save_data_, o_game.INVENTORY);
 
-var _index = ArrayFindIndex(_item, global.inventory);
+var _index = ArrayFindIndex(_item, _inventory);
 if (_index == -1) {
 	// That ain't it, Chief
-	var _array_size = array_length_1d(global.inventory);
+	var _array_size = array_length_1d(_inventory);
 	for (var i = 0; i < _array_size; i++) {
-		if (global.inventory[i] == noone) {
-			global.inventory[i] = _item;
+		if (_inventory[i] == noone) {
+			_inventory[i] = _item;
+			ds_map_replace(o_game.save_data_, o_game.INVENTORY, _inventory);
 			return true;
 		}
 	}

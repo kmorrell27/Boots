@@ -8,7 +8,8 @@ if (!o_game.paused_) {
 var _x = argument0;
 var _y = argument1;
 
-var _array_size = array_length_1d(global.inventory);
+var _inventory = ds_map_find_value(o_game.save_data_, o_game.INVENTORY);
+var _array_size = array_length_1d(_inventory);
 
 
 //Todo-this can be cleaned up.
@@ -16,7 +17,7 @@ for (var i = 0; i < _array_size; i++) {
 	var _box_x = _x + (i * 32);
 	draw_sprite(s_inventory_box, 0, _box_x, _y);
 	
-	var _item = global.inventory[i];
+	var _item = _inventory[i];
 	if (instance_exists(_item)) {
 		draw_sprite(_item.sprite_, 0, _box_x + 16, _y + 16);
 	}
@@ -36,10 +37,11 @@ for (var i = 0; i < _array_size; i++) {
 draw_sprite(s_inventory_box, 0, 4, 4);
 draw_sprite(s_inventory_box, 0, 36, 4);
 
-if (instance_exists(global.item[0])) {
-	draw_sprite(global.item[0].sprite_, 0, 20, 20);
+var _items = ds_map_find_value(o_game.save_data_, o_game.ITEMS);
+if (instance_exists(_items[0])) {
+	draw_sprite(_items[0].sprite_, 0, 20, 20);
 }
 
-if (instance_exists(global.item[1])) {
-	draw_sprite(global.item[1].sprite_, 0, 52, 20);
+if (instance_exists(_items[1])) {
+	draw_sprite(_items[1].sprite_, 0, 52, 20);
 }

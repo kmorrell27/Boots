@@ -10,7 +10,7 @@ MoveMovementEntity(true);
 
 if (speed_ == 0) {
 	alarm[2] = global.one_second * random_range(2, 4);
-	var _direction = point_direction(x, y, o_player.x, o_player.y) + random_range(-30, 30);
+	var _direction = point_direction(x, y, o_player.x, o_player.y) + random_range(-10, 10);
 	var _stinger = instance_create_layer(x, y, "Instances", o_stinger);
 	audio_play_sound(a_stinger, 1, false);
 	_stinger.direction = _direction;
