@@ -1,0 +1,1 @@
+o_game.save_data_ = ds_map_secure_load(o_game.file_name_);

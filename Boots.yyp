@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "00ca169b-d11a-4522-8484-4b74fb58e9c7",
+            "Value": {
+                "id": "d2f5885e-f7be-4d10-a5ca-cc8efe5d10ba",
+                "resourcePath": "scripts\\Load\\Load.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "011e6f31-59ec-4a42-93aa-f9d80153ae1b",
             "Value": {
                 "id": "942f6e6c-d763-4063-b511-5c4f83274475",
@@ -391,6 +399,14 @@
             }
         },
         {
+            "Key": "5747e14a-8943-4c35-ab28-b8c9d3efb671",
+            "Value": {
+                "id": "2b90d52e-6e74-40d7-a6a6-ff1b869a87f8",
+                "resourcePath": "objects\\o_interactable\\o_interactable.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "587e4b52-2216-4504-9f5e-319ad26b24b4",
             "Value": {
                 "id": "27b067e7-8452-4f10-85af-e5300c17e86a",
@@ -451,6 +467,14 @@
             "Value": {
                 "id": "e728272c-eed0-4846-9ab3-57a0fd3c412e",
                 "resourcePath": "scripts\\PorcupineAttack\\PorcupineAttack.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "60f35494-0525-40a7-84df-3136f9bd4531",
+            "Value": {
+                "id": "33fa1b52-3637-4f12-9c9e-23422fd9be4e",
+                "resourcePath": "scripts\\Save\\Save.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1362,7 +1386,9 @@
         "e19754d2-d7e5-45a6-9cc4-d320fc9245ae",
         "45c45a9a-eafe-4a82-8401-0bba1b204298",
         "84c87939-3a32-4ee2-a3ac-bd208fdaecbf",
-        "68070d8c-4dfa-4171-8ae1-a8330f731a21"
+        "68070d8c-4dfa-4171-8ae1-a8330f731a21",
+        "60f35494-0525-40a7-84df-3136f9bd4531",
+        "00ca169b-d11a-4522-8484-4b74fb58e9c7"
     ],
     "tutorial": ""
 }

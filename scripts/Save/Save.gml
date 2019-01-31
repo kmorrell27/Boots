@@ -1,0 +1,1 @@
+ds_map_secure_save(o_game.save_data_, o_game.file_name_);
