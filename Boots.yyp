@@ -119,6 +119,14 @@
             }
         },
         {
+            "Key": "121e4aad-6430-48f2-bd37-ad2277feec70",
+            "Value": {
+                "id": "a1f90c31-7394-428f-a6ed-05d65857c86a",
+                "resourcePath": "scripts\\SetPlayerFoundItem\\SetPlayerFoundItem.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "127bd3ff-5bb0-4d49-b78b-5c138a317fd5",
             "Value": {
                 "id": "52a933b8-5f2b-498b-b9df-2aa4d29c4178",
@@ -220,6 +228,14 @@
                 "id": "0f724f17-4b9a-435c-a534-21de5189c95f",
                 "resourcePath": "scripts\\InitializeHurtboxEntity\\InitializeHurtboxEntity.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "2e108325-e2f0-4c3b-b7cd-4e18ecaa93cc",
+            "Value": {
+                "id": "5045a5fc-02f7-46b5-8d59-8c9fcb554e90",
+                "resourcePath": "sounds\\a_key_item\\a_key_item.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -540,6 +556,14 @@
                 "id": "609e3d4c-3fb8-42e8-b19c-83c09b954abe",
                 "resourcePath": "views\\6a6100da-6f8a-4042-a929-4384dc0af936.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6bff0ddf-f9db-4578-a72c-f90ef55239ad",
+            "Value": {
+                "id": "0b1de34d-108f-4711-b102-054d0c054478",
+                "resourcePath": "sprites\\s_sword_pickup\\s_sword_pickup.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -879,6 +903,14 @@
             }
         },
         {
+            "Key": "a94badcc-c06f-4d8d-a49f-9439d9390819",
+            "Value": {
+                "id": "a970d83d-eb43-4d9a-82f7-c1e771c2ecd1",
+                "resourcePath": "sprites\\s_player_found_item\\s_player_found_item.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a94e7099-9826-40e4-b2d7-148738b26087",
             "Value": {
                 "id": "8229f206-0656-4e82-9675-4a5d70d75881",
@@ -975,6 +1007,14 @@
             }
         },
         {
+            "Key": "bde7e017-22b5-44ec-86cb-dcb68130f207",
+            "Value": {
+                "id": "23343b47-1214-4c17-a859-a808298e12f3",
+                "resourcePath": "objects\\o_sword_stand\\o_sword_stand.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bf4114ca-b00f-4756-a038-0143f4cd62d3",
             "Value": {
                 "id": "eb733eed-ce7c-4000-ba1e-139e0468ef4d",
@@ -1044,6 +1084,14 @@
                 "id": "f2bc3971-22ea-455e-9f24-3c74cf4e5b1f",
                 "resourcePath": "scripts\\GetDirectionFacing\\GetDirectionFacing.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c8e6c7d6-ea2e-439f-883a-c160e993ea51",
+            "Value": {
+                "id": "80eac85f-d316-42b7-b92e-9bb0904806b4",
+                "resourcePath": "objects\\o_tree\\o_tree.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1187,6 +1235,14 @@
             "Value": {
                 "id": "0681991d-7bd6-4265-9cca-d5a236f08475",
                 "resourcePath": "sprites\\s_player_attack_right\\s_player_attack_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e73f597e-689c-48e3-ba7b-6447bd93ef12",
+            "Value": {
+                "id": "ef9bb870-3d7e-45d3-9638-292faa1aa89a",
+                "resourcePath": "sprites\\s_tree\\s_tree.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1388,7 +1444,8 @@
         "84c87939-3a32-4ee2-a3ac-bd208fdaecbf",
         "68070d8c-4dfa-4171-8ae1-a8330f731a21",
         "60f35494-0525-40a7-84df-3136f9bd4531",
-        "00ca169b-d11a-4522-8484-4b74fb58e9c7"
+        "00ca169b-d11a-4522-8484-4b74fb58e9c7",
+        "121e4aad-6430-48f2-bd37-ad2277feec70"
     ],
     "tutorial": ""
 }

@@ -5,8 +5,9 @@ image_speed = 0;
 acceleration_ = 0.5;
 max_speed_ = 1.5;
 roll_speed_ = 2;
-facing_ = Direction.RIGHT;
+direction_facing_ = Direction.RIGHT;
 roll_direction_ = Direction.RIGHT;
+found_item_sprite_ = noone;
 
 enum Direction {
 	RIGHT,
@@ -47,6 +48,11 @@ sprite_[PlayerState.HIT, Direction.RIGHT] = s_player_run_right;
 sprite_[PlayerState.HIT, Direction.UP] = s_player_run_up;
 sprite_[PlayerState.HIT, Direction.LEFT] = s_player_run_right;
 sprite_[PlayerState.HIT, Direction.DOWN] = s_player_run_down;
+
+sprite_[PlayerState.FOUND_ITEM, Direction.RIGHT] = s_player_found_item;
+sprite_[PlayerState.FOUND_ITEM, Direction.UP] = s_player_found_item;
+sprite_[PlayerState.FOUND_ITEM, Direction.LEFT] = s_player_found_item;
+sprite_[PlayerState.FOUND_ITEM, Direction.DOWN] = s_player_found_item;
 
 sprite_[PlayerState.BOMB, Direction.RIGHT] = s_player_run_right;
 sprite_[PlayerState.BOMB, Direction.UP] = s_player_run_up;

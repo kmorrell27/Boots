@@ -44,5 +44,3 @@ paused_sprite_scale_ = display_get_gui_width() / view_wport[0];
 item_index_ = 0;
 InventoryCreate(6);
 InventoryAddItem(o_ring_item);
-InventoryAddItem(o_sword_item);
-InventoryAddItem(o_bomb_item);

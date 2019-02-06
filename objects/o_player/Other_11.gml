@@ -5,9 +5,9 @@ image_speed = 0.8;
 
 // This should be programmatic
 if (AnimationHitFrame(1)) {
-	var _hitbox = CreateHitbox(s_sword_hitbox, x, y, facing_ * 90, 3, [o_enemy, o_grass, o_bush], 1, 8);
+	var _hitbox = CreateHitbox(s_sword_hitbox, x, y, direction_facing_ * 90, 3, [o_enemy, o_grass, o_bush], 1, 8);
 	audio_play_sound(a_swipe, 8, false);
-	switch (facing_) {
+	switch (direction_facing_) {
 		case Direction.UP:
 			_hitbox.y -= 4;
 			break;

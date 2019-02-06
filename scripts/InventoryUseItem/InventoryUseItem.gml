@@ -9,6 +9,7 @@ if (_input) {
 	if (_interactable && _interactable.activatable_) {
 		with (_interactable) {
 			event_user(InteractableState.ACTIVATE);
+			show_debug_message("Yay");
 		}
 		return;
 	}

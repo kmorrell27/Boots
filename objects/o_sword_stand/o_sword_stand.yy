@@ -1,33 +1,33 @@
 {
-    "id": "5747e14a-8943-4c35-ab28-b8c9d3efb671",
+    "id": "bde7e017-22b5-44ec-86cb-dcb68130f207",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_interactable",
+    "name": "o_sword_stand",
     "eventList": [
         {
-            "id": "48965139-e649-42ca-9837-91b6b6a69d34",
+            "id": "8e8a3023-64a0-447c-ad6d-2ede06ee0f5c",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "5747e14a-8943-4c35-ab28-b8c9d3efb671"
+            "m_owner": "bde7e017-22b5-44ec-86cb-dcb68130f207"
         },
         {
-            "id": "1843062f-6a20-45b4-9d32-5307d4ae3321",
+            "id": "b21d8262-bf96-4ea2-9f55-d279ab9e6d34",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 10,
             "eventtype": 7,
-            "m_owner": "5747e14a-8943-4c35-ab28-b8c9d3efb671"
+            "m_owner": "bde7e017-22b5-44ec-86cb-dcb68130f207"
         }
     ],
-    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "maskSpriteId": "26a72a7d-7a6d-4bb3-86c7-72e76921459c",
     "overriddenProperties": null,
-    "parentObjectId": "fd6676bd-d561-4344-886c-9309e2faa861",
+    "parentObjectId": "5747e14a-8943-4c35-ab28-b8c9d3efb671",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -43,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "26a72a7d-7a6d-4bb3-86c7-72e76921459c",
+    "spriteId": "6bff0ddf-f9db-4578-a72c-f90ef55239ad",
     "visible": true
 }
