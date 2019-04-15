@@ -12,4 +12,7 @@ if (HurtboxEntityCanBeHitBy(other)) {
 	// Let's run this right away
 	event_user(state_);
 	audio_play_sound(a_hurt, 6, false);
+	if (other.destroy_on_contact_) {
+		instance_destroy(other);
+	}
 }

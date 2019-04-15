@@ -8,6 +8,8 @@ roll_speed_ = 2;
 direction_facing_ = Direction.RIGHT;
 roll_direction_ = Direction.RIGHT;
 found_item_sprite_ = noone;
+action_ = noone;
+sub_action_ = noone;
 
 enum Direction {
 	RIGHT,
@@ -21,9 +23,20 @@ enum PlayerState {
 	SWORD,
 	EVADE,
 	BOMB,
-	BOW,
+	SHOOT,
 	FOUND_ITEM,
 	HIT
+}
+
+enum PlayerAction {
+	ONE,
+	TWO
+}
+
+// Oh I can't wait to get a better GML
+enum ShootAction {
+	BOW,
+	FIRE
 }
 
 state_ = PlayerState.MOVE;
@@ -48,6 +61,11 @@ sprite_[PlayerState.HIT, Direction.RIGHT] = s_player_run_right;
 sprite_[PlayerState.HIT, Direction.UP] = s_player_run_up;
 sprite_[PlayerState.HIT, Direction.LEFT] = s_player_run_right;
 sprite_[PlayerState.HIT, Direction.DOWN] = s_player_run_down;
+
+sprite_[PlayerState.SHOOT, Direction.RIGHT] = s_player_bow_right;
+sprite_[PlayerState.SHOOT, Direction.UP] = s_player_bow_up;
+sprite_[PlayerState.SHOOT, Direction.LEFT] = s_player_bow_right;
+sprite_[PlayerState.SHOOT, Direction.DOWN] = s_player_bow_down;
 
 sprite_[PlayerState.FOUND_ITEM, Direction.RIGHT] = s_player_found_item;
 sprite_[PlayerState.FOUND_ITEM, Direction.UP] = s_player_found_item;

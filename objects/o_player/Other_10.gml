@@ -4,8 +4,6 @@ image_speed = 0;
 var _animation_speed = 0.6;
 var _x_input = o_input.right_ - o_input.left_;
 var _y_input = o_input.down_ - o_input.up_;
-var _attack_input = o_input.action_one_pressed_;
-var _roll_input = o_input.action_two_pressed_;
 var _input_direction = point_direction(0, 0, _x_input, _y_input);
 
 if (_x_input == 0 && _y_input == 0) {
@@ -22,7 +20,7 @@ if (_x_input == 0 && _y_input == 0) {
 }
 
 var _items = ds_map_find_value(o_game.save_data_, o_game.ITEMS);
-InventoryUseItem(o_input.action_one_pressed_, _items[0]);
-InventoryUseItem(o_input.action_two_pressed_, _items[1]);
+InventoryUseItem(o_input.action_one_pressed_, _items[0], PlayerAction.ONE);
+InventoryUseItem(o_input.action_two_pressed_, _items[1], PlayerAction.TWO);
 
 MoveMovementEntity(false);
