@@ -1,8 +1,8 @@
 //Paused logic
 
-var _inventory = ds_map_find_value(o_game.save_data_, o_game.INVENTORY);
+var _inventory = o_game.save_data_[? o_game.INVENTORY];
 if (paused_) {
-	var _items = ds_map_find_value(o_game.save_data_, o_game.ITEMS);
+	var _items = o_game.save_data_[? o_game.ITEMS];
 	var _array_size = array_length_1d(_inventory);
 	if (o_input.right_pressed_) {
 		item_index_ = min(item_index_ + 1, _array_size - 1);
@@ -14,12 +14,12 @@ if (paused_) {
 	}
 	if (o_input.action_one_pressed_) {
 		_items[0] = _inventory[item_index_];
-		ds_map_replace(o_game.save_data_, o_game.ITEMS, _items);
+		o_game.save_data_[? o_game.ITEMS] = _items;
 		audio_play_sound(a_menu_select, 1, false);
 	}
 	if (o_input.action_two_pressed_) {
 		_items[1] = _inventory[item_index_];
-		ds_map_replace(o_game.save_data_, o_game.ITEMS, _items);
+		o_game.save_data_[? o_game.ITEMS] = _items;
 		audio_play_sound(a_menu_select, 1, false);
 	}
 }

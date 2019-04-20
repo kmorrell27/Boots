@@ -11,18 +11,13 @@ if (_input) {
 	if (_interactable && _interactable.activatable_) {
 		with (_interactable) {
 			event_user(InteractableState.ACTIVATE);
-			show_debug_message("Yay");
 		}
 		return;
 	}
-	var _stamina = ds_map_find_value(o_game.save_data_, o_game.PLAYER_STAMINA);
-	if (instance_exists(_item) && _stamina >= _item.cost_) {
+	if (instance_exists(_item)) {
 		action_ = _action;
 		state_ = _item.action_;
 		sub_action_ = _item.sub_action_;
-		_stamina -= _item.cost_;
-		ds_map_replace(o_game.save_data_, o_game.PLAYER_STAMINA, _stamina);
-		o_player.alarm[1] = global.one_second;
 		image_index = 0;
 	}
 }

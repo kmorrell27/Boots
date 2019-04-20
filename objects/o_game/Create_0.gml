@@ -1,8 +1,6 @@
 // Constants
 PLAYER_MAX_HEALTH = "player_max_health";
 PLAYER_HEALTH = "player_health";
-PLAYER_MAX_STAMINA = "player_max_stamina";
-PLAYER_STAMINA = "player_stamina";
 PLAYER_GEMS = "player_gems";
 PLAYER_START_POSITION = "player_start_position";
 DESTROYED = "destroyed";
@@ -25,13 +23,11 @@ save_data_ = ds_map_create();
 ds_map_add_map(save_data_, DESTROYED, ds_map_create());
 
 // Player variables
-ds_map_replace(save_data_, PLAYER_MAX_HEALTH, 3);
-ds_map_replace(save_data_, PLAYER_HEALTH, 3);
-ds_map_replace(save_data_, PLAYER_MAX_STAMINA, 3);
-ds_map_replace(save_data_, PLAYER_STAMINA, 3);
-ds_map_replace(save_data_, PLAYER_GEMS, 0);
-ds_map_replace(save_data_, PLAYER_START_POSITION, i_game_start);
-ds_map_replace(save_data_, ITEMS, [noone, noone, noone, noone]);
+save_data_[? PLAYER_MAX_HEALTH] = 3;
+save_data_[? PLAYER_HEALTH] = 3;
+save_data_[? PLAYER_GEMS] = 0;
+save_data_[? PLAYER_START_POSITION] = i_game_start;
+save_data_[? ITEMS] = [noone, noone];
 
 //audio_play_sound(a_music, 10, true);
 display_set_gui_size(camera_get_view_width(view_camera[0]),

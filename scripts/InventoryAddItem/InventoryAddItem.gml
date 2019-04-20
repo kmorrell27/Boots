@@ -1,6 +1,6 @@
 ///@arg item
 var _item = Singleton(argument0);
-var _inventory = ds_map_find_value(o_game.save_data_, o_game.INVENTORY);
+var _inventory = o_game.save_data_[? o_game.INVENTORY];
 
 var _index = ArrayFindIndex(_item, _inventory);
 if (_index == -1) {
@@ -9,7 +9,7 @@ if (_index == -1) {
 	for (var i = 0; i < _array_size; i++) {
 		if (_inventory[i] == noone) {
 			_inventory[i] = _item;
-			ds_map_replace(o_game.save_data_, o_game.INVENTORY, _inventory);
+			o_game.save_data_[? o_game.INVENTORY] = _inventory;
 			return true;
 		}
 	}

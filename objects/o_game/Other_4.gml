@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var _pos = ds_map_find_value(o_game.save_data_, o_game.PLAYER_START_POSITION);
+var _pos = o_game.save_data_[? o_game.PLAYER_START_POSITION];
 if (instance_exists(_pos)) {
 		if (instance_exists(o_player)) {
 		o_player.persistent = false;
