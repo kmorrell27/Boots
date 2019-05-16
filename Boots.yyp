@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "1a53d686-1db4-4845-a8df-47dcf41b4ad6",
+            "Value": {
+                "id": "c47da1e7-eb9c-40e0-8edf-eed6edbce67f",
+                "resourcePath": "sprites\\s_pot\\s_pot.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1b9a663b-fe94-48d0-9fb2-2f46527de22a",
             "Value": {
                 "id": "d0e4840a-2b9e-443f-83f9-cdde3fc961fd",
@@ -879,14 +887,6 @@
             }
         },
         {
-            "Key": "9812599c-12c4-49ac-b988-e21889391d50",
-            "Value": {
-                "id": "8591979a-b5fc-4ecf-8308-ff457ca87a36",
-                "resourcePath": "objects\\o_start_position\\o_start_position.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "997be0ab-d498-4522-bcd7-fa610c1b3b12",
             "Value": {
                 "id": "6ebaf166-db39-456b-86ef-3dfb443163b6",
@@ -1052,6 +1052,14 @@
                 "id": "75aa7bd2-7252-416d-af4e-21ab867d9996",
                 "resourcePath": "sprites\\s_title_card\\s_title_card.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b910dfef-c92f-45ec-9e13-1506641307e7",
+            "Value": {
+                "id": "65dba4ba-66f7-41e6-917f-44e140224963",
+                "resourcePath": "objects\\sys_transition\\sys_transition.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1503,6 +1511,14 @@
             }
         },
         {
+            "Key": "fb5761dd-5fab-48b6-82da-b18fd7543422",
+            "Value": {
+                "id": "0861273c-93ee-4a47-923e-99aebb7fb24f",
+                "resourcePath": "scripts\\RoomTransition\\RoomTransition.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fb8bb96b-425a-417c-bf25-f4a72abb653c",
             "Value": {
                 "id": "0854a951-7a5d-4999-869b-3f5ecde89cd9",
@@ -1565,7 +1581,8 @@
         "68070d8c-4dfa-4171-8ae1-a8330f731a21",
         "60f35494-0525-40a7-84df-3136f9bd4531",
         "00ca169b-d11a-4522-8484-4b74fb58e9c7",
-        "121e4aad-6430-48f2-bd37-ad2277feec70"
+        "121e4aad-6430-48f2-bd37-ad2277feec70",
+        "fb5761dd-5fab-48b6-82da-b18fd7543422"
     ],
     "tutorial": ""
 }

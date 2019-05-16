@@ -1,2 +1,3 @@
 room_ = r_sword;
-start_ = i_world_to_sword;
+kind_ = Transition.RIGHT;
+x_ = 0;

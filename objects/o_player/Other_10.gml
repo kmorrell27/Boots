@@ -1,6 +1,11 @@
 /// @description Move state
 
+// This is super hacky dude
 image_speed = 0;
+if (instance_exists(sys_transition)) {
+	return;
+}
+
 var _animation_speed = 0.6;
 var _x_input = o_input.right_ - o_input.left_;
 var _y_input = o_input.down_ - o_input.up_;

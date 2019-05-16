@@ -26,7 +26,7 @@ ds_map_add_map(save_data_, DESTROYED, ds_map_create());
 save_data_[? PLAYER_MAX_HEALTH] = 3;
 save_data_[? PLAYER_HEALTH] = 3;
 save_data_[? PLAYER_GEMS] = 0;
-save_data_[? PLAYER_START_POSITION] = i_game_start;
+save_data_[? PLAYER_START_POSITION] = noone;
 save_data_[? ITEMS] = [noone, noone];
 
 //audio_play_sound(a_music, 10, true);
@@ -42,3 +42,11 @@ InventoryCreate(6);
 InventoryAddItem(o_ring_item);
 InventoryAddItem(o_bow_item);
 InventoryAddItem(o_fire_rod_item);
+
+enum Transition {
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN,
+	NONE,
+}
