@@ -1,1 +1,0 @@
-invincible_ = false;
