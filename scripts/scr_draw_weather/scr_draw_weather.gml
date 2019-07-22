@@ -10,10 +10,10 @@ if (global.rain && !global.inside) {
   draw_set_alpha(image_alpha - 0.375);
   //Now draw a dim rectangle over the screen.
   draw_rectangle_color(
-    argument0,
-    argument1,
-    argument0 + 159,
-    argument1 + 143,
+    0,
+    0,
+    display_get_gui_width(),
+    display_get_gui_height(),
     CL_BLACK,
     CL_BLACK,
     CL_BLACK,
@@ -26,8 +26,19 @@ if (global.rain && !global.inside) {
   draw_sprite_ext(
     sprRain,
     -1,
-    argument0,
-    argument1,
+    0,
+    0,
+    image_xscale,
+    image_yscale,
+    image_angle,
+    image_blend,
+    image_alpha - 0.375
+  );
+    draw_sprite_ext(
+    sprRain,
+    -1,
+    160,
+    0,
     image_xscale,
     image_yscale,
     image_angle,
@@ -41,10 +52,10 @@ if (global.rain && !global.inside) {
     draw_set_alpha(thunderalpha);
     //Now draw a white rectangle over the screen.
     draw_rectangle_color(
-      argument0,
-      argument1,
-      argument0 + 159,
-      argument1 + 143,
+      0,
+      0,
+      display_get_gui_width(),
+      display_get_gui_height(),
       CL_WHITE,
       CL_WHITE,
       CL_WHITE,

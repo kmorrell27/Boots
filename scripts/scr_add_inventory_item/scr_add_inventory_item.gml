@@ -9,7 +9,7 @@ format:  scr_add_inventory_item(item);
 var found = false;
 
 //If Link has the item equipped, then he has it.
-if (global.Z == argument0 || global.X == argument0) {
+if (global.Y == argument0 || global.X == argument0) {
   found = true;
 }
 
@@ -23,8 +23,8 @@ for (var invenchk = 0; invenchk < 15 && !found; invenchk += 1) {
 //If Link doesn't already have the item...
 if (!found) {
   //If there's nothing on Z, put it there.
-  if (global.Z == noone) {
-    global.Z = argument0;
+  if (global.Y == noone) {
+    global.Y = argument0;
   } else if (global.X == noone) {
     //Otherwise, if there's nothing on X, put it there.
     global.X = argument0;

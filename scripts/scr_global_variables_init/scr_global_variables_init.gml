@@ -31,7 +31,7 @@ of the screen, negative value for the bottom.
 */
 global.hudanchor = 0;
 global.heartblend = CL_WHITE; //The color blend for the hearts.
-global.Z = noone; //What Item is selected on Z.
+global.Y = noone; //What Item is selected on Z.
 global.X = noone; //What Item is selected on X.
 global.heal = 0; //How much healing (or damaging) Link is undergoing.
 global.rupoff = 0; //How much money Link is gaining (or losing).
@@ -105,8 +105,6 @@ global.tightfont = font_add_sprite(sprFont, 33, true, 2);
 /*
 Looking up layers by string is for chumps.
 */
-/// @description Insert description here
-// You can write your code in this editor
 global.playerLayer = layer_get_id("Player");
 global.groundLayer = layer_get_id("GroundTile");
-global.undergroundLayer = layer_get_id("UndergroundTile");
+display_set_gui_size(256, 144);

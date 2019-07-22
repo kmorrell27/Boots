@@ -4,6 +4,10 @@ var width, height, x1, y1, x2, y2;
 width = display_get_gui_width();
 height = display_get_gui_height();
 //Push left
+
+if (room != next_room) {
+	room_goto(next_room);
+}
 switch (kind_) {
   case Transition.RIGHT:
     x1 = (1 - step_ / time_) * width;

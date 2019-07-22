@@ -7,4 +7,4 @@ format:  scr_check_equipped(item);
 *********************************************************************/
 
 //If Link does have the item on Z or X, then he has it equipped.
-return (global.Z == argument0 || global.X == argument0);
+return (global.Y == argument0 || global.X == argument0);

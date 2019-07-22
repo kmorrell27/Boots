@@ -1,6 +1,3 @@
-//Draw the HUD based on the viewport.
-scr_draw_hud(0,0);
-
 //If the area name has frames left of being drawn...
 if (global.showarea > 0) {
   //A little boolean arithmetic to get the text to scroll in.

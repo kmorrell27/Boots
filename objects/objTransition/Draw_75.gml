@@ -1,10 +1,5 @@
 /// @description  Update surfaces
-if (
-  kind_ == Transition.LEFT ||
-  kind_ == Transition.RIGHT ||
-  kind_ == Transition.UP ||
-  kind_ == Transition.DOWN
-) {
+if (kind_ != noone) {
   surface_set_target(surf_end);
   draw_clear(c_black);
   gpu_set_blendenable(false);

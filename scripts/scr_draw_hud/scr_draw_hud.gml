@@ -36,7 +36,7 @@ draw_sprite_ext(
 
 //Now draw what's equipped on Z.
 scr_draw_equip(
-  global.Z,
+  global.Y,
   argument0 + 8,
   argument1 + yoff,
   image_blend,

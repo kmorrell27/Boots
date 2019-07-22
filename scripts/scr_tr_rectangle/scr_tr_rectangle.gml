@@ -22,8 +22,12 @@ relative to the previous and current view positions respectively.
 */
 var lastlinkx = global.lastlinkx - global.lastviewx;
 var lastlinky = global.lastlinky - global.lastviewy;
-var linkx = objLink.x - camera_get_view_x(view_camera[0]);
-var linky = objLink.y - camera_get_view_y(view_camera[0]);
+var ratio = display_get_gui_width() / camera_get_view_width(view_camera[0]);
+var linkx = objLink.x - camera_get_view_x(view_camera[0]) * ratio;
+var linky = objLink.y - camera_get_view_y(view_camera[0]) * ratio;
+show_debug_message("---");
+show_debug_message(string(linkx));
+show_debug_message(string(linky));
 
 //Modify the alpha based on where the fraction is.
 if (argument4 <= 0.25) {
@@ -81,7 +85,7 @@ last room.  Afterwards, we want to use the image of the next room.
 */
 
 if (argument4 <= 0.5) {
-  draw_surface(argument0, 0, 0); //Draw the image of the last room.
+  draw_surface_stretched(argument0, 0, 0, display_get_gui_width(), display_get_gui_height());
   //Now draw Link's shadow and Link himself.
   if (instance_exists(objLink)) {
     draw_sprite_ext(
@@ -114,9 +118,9 @@ if (argument4 <= 0.5) {
     */
   scr_draw_hud(0, 0);
   //Then draw the effect surface.
-  draw_surface(effectsurface, 0, 0);
+  draw_surface_stretched(effectsurface, 0, 0, display_get_gui_width(), display_get_gui_height());
 } else {
-  draw_surface(argument1, 0, 0); //Draw the image of the next room.
+  draw_surface_stretched(argument1, 0, 0, display_get_gui_width(), display_get_gui_height());
   //Now draw Link's shadow and Link himself.
   if (instance_exists(objLink)) {
     draw_sprite_ext(
@@ -145,7 +149,7 @@ if (argument4 <= 0.5) {
 
   //Now draw any weather effects, based on 0,0.
   with (objWeather) {
-    scr_draw_weather(0, 0);
+    scr_draw_weather();
   }
 
   /*
@@ -154,7 +158,7 @@ if (argument4 <= 0.5) {
     */
   scr_draw_hud(0, 0);
   //Then draw the effect surface.
-  draw_surface(effectsurface, 0, 0);
+  draw_surface_stretched(effectsurface, 0, 0, display_get_gui_width(), display_get_gui_height());
 }
 
 //Now free up the memory from that temporary surface.

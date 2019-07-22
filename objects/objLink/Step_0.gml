@@ -808,7 +808,7 @@ if (keyboard_check_pressed(ord("Z"))) {
 
   //If there isn't an interaction in front of Link, use what's on Z.
   if (interactchk == -1 || jumping) {
-    scr_use_item(global.Z);
+    scr_use_item(Item.FEATHER);
   } else if (!rolling) {
     /*
         Otherwise, if Link is facing in the right direction,
@@ -820,19 +820,29 @@ if (keyboard_check_pressed(ord("Z"))) {
   }
 }
 
-//If the player presses X, use what's on X.
+if (keyboard_check_pressed(ord("A"))) {
+	scr_use_item(Item.SWORD);
+}
+
+if (keyboard_check_released(ord("A"))) {
+	scr_release_button(Item.SWORD);
+}
+
 if (keyboard_check_pressed(ord("X"))) {
-  scr_use_item(global.X);
+	scr_use_item(Item.BRACELET);
 }
 
-//If the player releases Z, do what needs to be done.
-if (keyboard_check_released(ord("Z"))) {
-  scr_release_button(global.Z);
+if (keyboard_check_pressed(ord("C"))) {
+	scr_use_item(Item.SHIELD);
 }
 
-//If the player releases X, do what needs to be done.
-if (keyboard_check_released(ord("X"))) {
-  scr_release_button(global.X);
+if (keyboard_check_released(ord("C"))) {
+	scr_release_button(Item.SHIELD);
+}
+
+//If the player presses X, use what's on X.
+if (keyboard_check_pressed(ord("S"))) {
+  // Todo X button item
 }
 
 /********************************************************************

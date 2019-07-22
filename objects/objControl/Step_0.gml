@@ -161,10 +161,10 @@ if (global.pause) {
         swapped between Z and the chosen inventory slot.
         */
     if (keyboard_check_pressed(ord("Z"))) {
-      var temp = global.Z;
+      var temp = global.Y;
 
       audio_play_sound(sndMenuChoice, 10, false);
-      global.Z = global.inventory[global.menupos];
+      global.Y = global.inventory[global.menupos];
       global.inventory[global.menupos] = temp;
     }
 
