@@ -1,5 +1,6 @@
-//Flag this as visible.
-visible = true;
+if (scr_pause_chk()) {
+	exit;
+}
 
 //If there is a delay on the sound, subtract a frame.
 if (snddly) {

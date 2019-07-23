@@ -15,6 +15,7 @@ enum Item {
 	BRACELET,
 	FEATHER,
 }
+
 scr_item_variables_init(); //Initialize the item variables.
 scr_global_variables_init(); //Initialize all of the global variables.
 

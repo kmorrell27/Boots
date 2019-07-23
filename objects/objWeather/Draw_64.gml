@@ -1,2 +1,4 @@
 //Draw the weather based on the viewport.
-scr_draw_weather();
+if (!scr_pause_chk()) {
+	scr_draw_weather();
+}

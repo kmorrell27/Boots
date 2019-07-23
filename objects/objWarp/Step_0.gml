@@ -9,7 +9,6 @@ if (place_meeting(x, y, objLink) && !objLink.jumping) {
   global.lastviewy = camera_get_view_y(view_camera[0]); //Store the view's Y coordinate.
   objLink.visible = false; //Unflag link as visible.
   objControl.visible = false; //Unflag the Control as visible.
-  objWeather.visible = false; //Unflag the Weather as visible.
   objLink.hspeed = 0; //Reset Link's horizontal speed.
   objLink.vspeed = 0; //Reset Link's vertical speed.
   objLink.hvel = 0; //Reset Link's conserved horizontal velocity.
