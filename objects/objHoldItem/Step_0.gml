@@ -14,7 +14,6 @@ if (
   objLink.rolling = false; //Unflag Link as rolling.
   objLink.defend = false; //Unflag Link as defending.
   objLink.slashing = false; //Unflag Link as slashing.
-  objLink.digging = false; //Unflag Link as digging.
   x = objLink.x + 5 - 5 * (hold == 2); //Position this based on the holdtype.
   y = objLink.y + objLink.z; //Position it right on Link's Y.
   depth = objLink.depth - 1; //Draw this above Link.

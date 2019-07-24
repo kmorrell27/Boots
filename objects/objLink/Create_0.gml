@@ -19,7 +19,6 @@ zspd = 0; //How fast is Link rising/falling, in pixels?
 pushing = false; //Is Link pushing?
 //How long, in frames, has Link been pushing?
 pushtmr = 0;
-digging = false; //Is Link digging?
 //Is Link holding up an item?  0 for 1 hand, 1 for 2 hands.
 holding = 0;
 slashing = false; //Is Link slashing?

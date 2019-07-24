@@ -8,7 +8,7 @@ format:  scr_use_item(item);
 /*
 If Link isn't in a state to use an item, then get out of here.
 */
-if (!moveable || digging || slashing || cliff || rolling) {
+if (!moveable || slashing || cliff || rolling) {
   exit;
 }
 

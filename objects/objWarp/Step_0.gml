@@ -16,7 +16,6 @@ if (place_meeting(x, y, objLink) && !objLink.jumping) {
   objLink.rolling = false; //Unflag Link as rolling.
   objLink.defend = false; //Unflag Link as defending.
   objLink.slashing = false; //Unflag Link as slashing.
-  objLink.digging = false; //Unflag Link as digging.
   //Update Link's sprite.
   with (objLink) {
     scr_link_sprite_change();

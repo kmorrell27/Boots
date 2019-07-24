@@ -17,7 +17,6 @@ if (!scr_check_equipped(Item.SHIELD)) {
 //If Link isn't doing anything specific...
 if (
   pushtmr < global.onesecond / 4 &&
-  !digging &&
   !holding &&
   !rolling &&
   !slashing &&
@@ -78,7 +77,6 @@ if (
   }
 } else if (
   pushtmr >= global.onesecond / 4 &&
-  !digging &&
   !rolling &&
   !holding &&
   !slashing &&
@@ -90,20 +88,6 @@ if (
     sprites.
     */
   sprite_index = asset_get_index("sprLink" + string(global.tunic) + "P" + dirString);
-  shieldspr = sprInvis;
-} else if (
-  digging &&
-  !holding &&
-  !rolling &&
-  !slashing &&
-  !charge &&
-  !jumping
-) {
-  /*
-    Otherwise, if Link is specifically digging, use his digging
-    sprites.
-    */
-  sprite_index = asset_get_index("sprLink" + string(global.tunic) + "D" + dirString);
   shieldspr = sprInvis;
 } else if (slashing && !holding && !charge) {
   /*

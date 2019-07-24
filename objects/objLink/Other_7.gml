@@ -1,12 +1,4 @@
-/*
-If Link was digging when his animation finished, he shouldn't
-be now.
-*/
-if (digging) {
-  digging = false;
-  image_index = 0; //Reset his animation frame.
-  scr_link_sprite_change(); //And have Link update his sprite.
-} else if (slashing) {
+if (slashing) {
   /*
     If Link was slashing...
     */

@@ -96,19 +96,6 @@ if (argument0 == Item.BRACELET) {
   );
 }
 
-//Shovel Check
-if (argument0 == Item.SHOVEL) {
-  spr = sprHUDShovel;
-  img = global.shovel - 1;
-  scr_draw_level_number(
-    global.shovel,
-    argument1 + 8,
-    argument2 + 8,
-    argument3,
-    argument4
-  );
-}
-
 /*
 Finally, draw the sprite needed with the required image at the
 given location with the required formatting.

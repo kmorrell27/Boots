@@ -86,18 +86,6 @@ if (argument0 == Item.BRACELET) {
   }
 }
 
-//Shovel Check
-if (argument0 == Item.SHOVEL) {
-  spr = sprHUDShovel;
-  img = global.shovel - 1;
-
-  if (global.shovel == 1) {
-    text = "Shovel";
-  } else if (global.shovel == 2) {
-    text = "Golden Shovel";
-  }
-}
-
 /*
 Finally, draw the description.  Then draw the sprite needed with the
 required image at the given location with the required formatting

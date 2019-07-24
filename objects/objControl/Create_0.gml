@@ -11,7 +11,6 @@ enum Item {
 	SHIELD,
 	BOMB,
 	BOW,
-	SHOVEL,
 	BRACELET,
 	FEATHER,
 }

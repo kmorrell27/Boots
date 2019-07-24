@@ -102,5 +102,4 @@ for Gold.
 global.arrowtype = 0;
 global.feather = 0; //Roc's Equipment Level.
 global.bracelet = 0; //Power Bracelet Level.
-global.shovel = 0; //Shovel Level.
 global.boomerang = 0; //Boomerang Level.

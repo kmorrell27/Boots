@@ -79,21 +79,3 @@ if (!drewshield) {
     image_alpha
   );
 }
-
-//If Link is digging, he needs to draw his shovel item sprite above him.
-if (digging) {
-  var shovelspr = sprInvis;
-  shovelspr = asset_get_index("sprShovel" + string(global.shovel) + dir);
-
-  draw_sprite_ext(
-    shovelspr,
-    -1,
-    round(x) + xoff,
-    round(y) + yoff + z,
-    image_xscale,
-    image_yscale,
-    image_angle,
-    image_blend,
-    image_alpha
-  );
-}
