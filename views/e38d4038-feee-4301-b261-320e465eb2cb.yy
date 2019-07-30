@@ -16,7 +16,8 @@
         "715e70e9-ba2b-4430-98e8-c219fe5b7fcd",
         "9b034b56-a1df-4951-9722-066589bc1c2c",
         "3b9705c4-79a6-4720-9394-d21419e61759",
-        "ada7854b-32d8-4503-a81a-41a4e409500f"
+        "ada7854b-32d8-4503-a81a-41a4e409500f",
+        "71670d1c-95b7-47ea-9b8a-42dfadb0e854"
     ],
     "filterType": "GMScript",
     "folderName": "Link Scripts",

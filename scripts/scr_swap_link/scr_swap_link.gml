@@ -1,0 +1,1 @@
+global.tunic = (global.tunic + 1) % 3;

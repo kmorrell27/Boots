@@ -834,6 +834,10 @@ if (keyboard_check_pressed(ord("C"))) {
 	scr_use_item(Item.SHIELD);
 }
 
+if (keyboard_check_pressed(ord("D"))) {
+	scr_swap_link();
+}
+
 if (keyboard_check_released(ord("C"))) {
 	scr_release_button(Item.SHIELD);
 }
