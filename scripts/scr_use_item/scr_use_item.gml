@@ -38,7 +38,7 @@ if (argument0 == Item.SWORD && !charge && !spin) {
   s = instance_create_layer(x, y, global.playerLayer, objSword); //Create the sword.
   //Now give it the proper sprite based on which sword Link has.
   s.sprite_index = asset_get_index(
-    "sprSword" + string(global.sword) + "S" + scr_get_direction(dir)
+    "sprSword" + string(global.tunic + 1) + "S" + scr_get_direction(dir)
   );
   //Now let's update Link's sprite.
   scr_link_sprite_change();
