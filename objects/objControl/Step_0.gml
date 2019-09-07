@@ -160,7 +160,7 @@ if (global.pause) {
         When the player presses Z, the equipment needs to be
         swapped between Z and the chosen inventory slot.
         */
-    if (keyboard_check_pressed(ord("Z"))) {
+    if (keyboard_check_pressed(global.hammerButton)) {
       var temp = global.Y;
 
       audio_play_sound(sndMenuChoice, 10, false);
@@ -172,7 +172,7 @@ if (global.pause) {
         When the player presses X, the equipment needs to be
         swapped between X and the chosen inventory slot.
         */
-    if (keyboard_check_pressed(ord("X"))) {
+    if (keyboard_check_pressed(global.bombButton)) {
       var temp = global.X;
 
       audio_play_sound(sndMenuChoice, 10, false);

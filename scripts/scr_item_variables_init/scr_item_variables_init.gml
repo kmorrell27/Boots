@@ -87,7 +87,6 @@ Equipment level variables.  0 means it's level 0, but it also
 wouldn't be in the inventory if he didn't have it at all.
 ********************************************************************/
 global.sword = 1; //Sword Level.
-global.shield = 1; //Shield Level.
 global.bombbag = 0; //Which Bomb Bag Link has.
 global.quiver = 0; //Which Quiver Link has.
 /*

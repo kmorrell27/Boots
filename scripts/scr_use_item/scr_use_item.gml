@@ -32,7 +32,6 @@ if (argument0 == Item.SWORD && !charge && !spin) {
     false
   );
   slashing = true; //Flag as Link as slashing.
-  defend = false; //Unflag Link as defending.
   pushing = false; //Unflag Link as pushing.
   image_index = 0; //Reset his animation.
   s = instance_create_layer(x, y, global.playerLayer, objSword); //Create the sword.
@@ -41,17 +40,6 @@ if (argument0 == Item.SWORD && !charge && !spin) {
     "sprSword" + string(global.tunic + 1) + "S" + scr_get_direction(dir)
   );
   //Now let's update Link's sprite.
-  scr_link_sprite_change();
-}
-
-/*
-Shield Check
-*/
-if (argument0 == Item.SHIELD && !defend && !jumping && !charge && !spin) {
-  audio_play_sound(sndShield, 10, false); //Play the shield use sound.
-  defend = true; //Flag Link as defending.
-  pushing = false; //Unflag Link as pushing.
-  //Update Link's current sprites.
   scr_link_sprite_change();
 }
 
@@ -68,7 +56,6 @@ if (argument0 == Item.FEATHER && !jumping) {
     vspeed = -4.5;
   }
   jumping = true; //Flag as Link as jumping.
-  defend = false; //Unflag Link as defending.
   pushing = false; //Unflag Link as pushing.
   climbing = false; //Unflag Link as climbing.
   image_index = 0; //Reset his animation.
@@ -77,6 +64,7 @@ if (argument0 == Item.FEATHER && !jumping) {
   scr_link_collide(); //Check for collision.
 }
 
+/*
 if (argument0 == Item.BRACELET) {
 	if (!carrying) {
 		heldObject = scr_link_ahead_chk(objLiftable, 4);
@@ -110,3 +98,4 @@ if (argument0 == Item.BRACELET) {
 		carrying = false;
 	}
 }
+*/

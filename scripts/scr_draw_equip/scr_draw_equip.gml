@@ -30,19 +30,6 @@ if (argument0 == Item.SWORD) {
   );
 }
 
-//Shield Check
-if (argument0 == Item.SHIELD) {
-  spr = sprHUDShield;
-  img = global.shield - 1;
-  scr_draw_level_number(
-    global.shield,
-    argument1 + 8,
-    argument2 + 8,
-    argument3,
-    argument4
-  );
-}
-
 //Bombs Check
 if (argument0 == Item.BOMB) {
   var blend = CL_WHITE;
@@ -76,19 +63,6 @@ if (argument0 == Item.FEATHER) {
   img = global.feather - 1;
   scr_draw_level_number(
     global.feather,
-    argument1 + 8,
-    argument2 + 8,
-    argument3,
-    argument4
-  );
-}
-
-//Bracelet Check
-if (argument0 == Item.BRACELET) {
-  spr = sprHUDBracelet;
-  img = global.bracelet - 1;
-  scr_draw_level_number(
-    global.bracelet,
     argument1 + 8,
     argument2 + 8,
     argument3,

@@ -146,7 +146,6 @@ if (
   isMoving = false; //Unflag him as moving.
   pushing = false; //And don't flag him as pushing either.
   pushtmr = 0; //And reset the pushing frame counter.
-  defend = false; //Unflag Link as defending.
   image_index = 0; //Reset his animation frame.
   rolling = true; //Flag Link as rolling.
   audio_play_sound(sndRoll, 10, false); //Play the rolling sound effect.
@@ -159,15 +158,9 @@ MOVEMENT SPEED AND FRICTION ALTERATION SECTION
 
 //If Link is STANDING on a slow-walking tile...
 if (scr_link_foot_check(objSlowWalk) && !jumping) {
-  //Temporary variable to store the calculated slow-walk speed.
-  var walkspd = 0.5 - 0.25 * defend;
-
-  maxspd = walkspd; //Assign the slow walking speed.
+  maxspd = 0.5; //Assign the slow walking speed.
 } else {
-  //Temporary variable for the calculated normal movement speed.
-  var walkspd = 1 - 0.5 * defend;
-
-  maxspd = walkspd; //Assign standard walking speed.
+  maxspd = 1; //Assign standard walking speed.
 }
 
 //If Link is rolling...
@@ -305,7 +298,7 @@ if (
     cannot moonwalk in this engine =P.  No directional change if
     Link is charging, using the spin attack or jumping.
     */
-  if (!charge && !spin && !jumping && !defend) {
+  if (!charge && !spin && !jumping) {
     if (
       down &&
       ((!left && !right) || (left && dir != Direction.LEFT) || (right && dir != Direction.RIGHT))
@@ -387,7 +380,7 @@ if (
       pushtmr = 0; //Reset the pushing timer.
     } else {
       scr_link_collide(); //Check for collision.
-      if (dir == Direction.DOWN && !defend && !jumping) {
+      if (dir == Direction.DOWN && !jumping) {
         /*
                 Flag Link as pushing if he isn't charging the sword,
                 otherwise, make him perform a sword tap.
@@ -456,7 +449,7 @@ if (
       pushtmr = 0; //Reset the pushing timer.
     } else {
       scr_link_collide(); //Check for collision.
-      if (dir == Direction.UP && !defend && !jumping) {
+      if (dir == Direction.UP && !jumping) {
         /*
                 Flag Link as pushing if he isn't charging the sword,
                 otherwise, make him perform a sword tap.
@@ -537,7 +530,7 @@ if (
       pushtmr = 0; //Reset the pushing timer.
     } else {
       scr_link_collide(); //Check for collision.
-      if (dir == Direction.LEFT && !defend && !jumping) {
+      if (dir == Direction.LEFT && !jumping) {
         /*
                 Flag Link as pushing if he isn't charging the sword,
                 otherwise, make him perform a sword tap.
@@ -618,7 +611,7 @@ if (
       pushtmr = 0; //Reset the pushing timer.
     } else {
       scr_link_collide(); //Check for collision.
-      if (dir == Direction.RIGHT && !defend && !jumping) {
+      if (dir == Direction.RIGHT && !jumping) {
         /*
                 Flag Link as pushing if he isn't charging the sword,
                 otherwise, make him perform a sword tap.
@@ -784,7 +777,6 @@ if (
   doublekeytapdly = 0; //Reset the interval for double key tapping.
   pushing = false; //And don't flag him as pushing either.
   pushtmr = 0; //And reset the pushing frame counter.
-  defend = false; //Unflag him as defending.
   hspeed = 0; //Reset his horizontal speed.
   vspeed = 0; //Reset his vertical speed.
 }
@@ -800,13 +792,13 @@ if he is able to at all.
 */
 
 //If the player presses Z...
-if (keyboard_check_pressed(ord("Z"))) {
+if (keyboard_check_pressed(global.bombButton)) {
   //Temporary variable for a possible interaction in front of Link.
   var interactchk = scr_link_ahead_chk(objInteractable, 4);
 
   //If there isn't an interaction in front of Link, use what's on Z.
   if (interactchk == -1 || jumping) {
-    scr_use_item(Item.FEATHER);
+    scr_use_item(Item.BOMB);
   } else if (!rolling) {
     /*
         Otherwise, if Link is facing in the right direction,
@@ -818,33 +810,33 @@ if (keyboard_check_pressed(ord("Z"))) {
   }
 }
 
-if (keyboard_check_pressed(ord("A"))) {
+if (keyboard_check_pressed(global.swordButton)) {
 	scr_use_item(Item.SWORD);
 }
 
-if (keyboard_check_released(ord("A"))) {
+if (keyboard_check_released(global.swordButton)) {
 	scr_release_button(Item.SWORD);
 }
 
-if (keyboard_check_pressed(ord("X"))) {
-	scr_use_item(Item.BRACELET);
+if (keyboard_check_pressed(global.hammerButton)) {
+	scr_use_item(Item.HAMMER);
 }
 
-if (keyboard_check_pressed(ord("C"))) {
-	scr_use_item(Item.SHIELD);
+if (keyboard_check_pressed(global.jumpButton)) {
+	scr_use_item(Item.FEATHER);
 }
 
-if (keyboard_check_pressed(ord("D"))) {
-	scr_swap_link();
-}
-
-if (keyboard_check_released(ord("C"))) {
-	scr_release_button(Item.SHIELD);
+if (keyboard_check_pressed(global.runButton)) {
+	// Run
 }
 
 //If the player presses X, use what's on X.
-if (keyboard_check_pressed(ord("S"))) {
-  // Todo X button item
+if (keyboard_check_pressed(global.bowButton)) {
+  scr_use_item(Item.BOW);
+}
+
+if (keyboard_check_released(global.bowButton)) {
+	scr_release_button(Item.BOW);
 }
 
 /********************************************************************

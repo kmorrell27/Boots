@@ -8,10 +8,9 @@ enum Direction {
 
 enum Item {
 	SWORD,
-	SHIELD,
 	BOMB,
 	BOW,
-	BRACELET,
+	HAMMER,
 	FEATHER,
 }
 

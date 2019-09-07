@@ -34,20 +34,6 @@ if (argument0 == Item.SWORD) {
   }
 }
 
-//Shield Check
-if (argument0 == Item.SHIELD) {
-  spr = sprHUDShield;
-  img = global.shield - 1;
-
-  if (global.shield == 1) {
-    text = "Fighter's Shield";
-  } else if (global.shield == 2) {
-    text = "Red Shield";
-  } else if (global.shield == 3) {
-    text = "Mirror Shield";
-  }
-}
-
 //Bombs Check
 if (argument0 == Item.BOMB) {
   spr = sprHUDBomb;
@@ -71,18 +57,6 @@ if (argument0 == Item.FEATHER) {
     text = "Roc's Feather";
   } else if (global.feather == 2) {
     text = "Roc's Cape";
-  }
-}
-
-//Bracelet Check
-if (argument0 == Item.BRACELET) {
-  spr = sprHUDBracelet;
-  img = global.bracelet - 1;
-
-  if (global.bracelet == 1) {
-    text = "Power Bracelet";
-  } else if (global.bracelet == 2) {
-    text = "Titan's Glove";
   }
 }
 

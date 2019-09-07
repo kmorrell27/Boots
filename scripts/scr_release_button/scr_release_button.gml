@@ -24,12 +24,3 @@ if (argument0 == Item.SWORD && charge && !tap) {
   //Update Link's current sprites.
   scr_link_sprite_change();
 }
-
-/*
-Shield Check
-*/
-if (argument0 == Item.SHIELD) {
-  defend = false; //Unflag Link as defending.
-  //Update Link's current sprites.
-  scr_link_sprite_change();
-}

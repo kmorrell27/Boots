@@ -14,7 +14,6 @@ if (place_meeting(x, y, objLink) && !objLink.jumping) {
   objLink.hvel = 0; //Reset Link's conserved horizontal velocity.
   objLink.vvel = 0; //Reset Link's conserved vertical velocity.
   objLink.rolling = false; //Unflag Link as rolling.
-  objLink.defend = false; //Unflag Link as defending.
   objLink.slashing = false; //Unflag Link as slashing.
   //Update Link's sprite.
   with (objLink) {

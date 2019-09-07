@@ -12,7 +12,6 @@ if (
   objLink.hvel = 0; //Reset Link's conserved horizontal velocity.
   objLink.vvel = 0; //Reset Link's conserved vertical velocity.
   objLink.rolling = false; //Unflag Link as rolling.
-  objLink.defend = false; //Unflag Link as defending.
   objLink.slashing = false; //Unflag Link as slashing.
   x = objLink.x + 5 - 5 * (hold == 2); //Position this based on the holdtype.
   y = objLink.y + objLink.z; //Position it right on Link's Y.
