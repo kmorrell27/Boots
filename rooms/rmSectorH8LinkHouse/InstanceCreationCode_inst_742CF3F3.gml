@@ -1,4 +1,4 @@
-    sendx = 192;
-    sendy = 80;
-    inside = false;
-	sendr = rmSectorH8;
+sendx = 192;
+sendy = 80;
+inside = false;
+sendr = rmSectorH8;

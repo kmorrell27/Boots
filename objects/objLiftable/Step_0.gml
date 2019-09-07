@@ -20,7 +20,7 @@ if (thrown && !global.sideview) {
     it approaches the ground.
     */
   zspd = max(abs(round((zmax - z) div 3)), 1);
-
+  
   /*
     If it hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.
@@ -44,26 +44,26 @@ if (thrown && !global.sideview) {
       zmax = 0;
       thrown = false;
       audio_play_sound(sndLand, 10, false);
-	  instance_destroy();
+      instance_destroy();
     }
   }
   if (throwx != 0) {
-	x += throwspd;
-	throwx -= throwspd;
+    x += throwspd;
+    throwx -= throwspd;
   }
   if (throwy != 0) {
-	y += throwspd;
-	throwy -= throwspd;
+    y += throwspd;
+    throwy -= throwspd;
   }
   
   if (place_meeting(x, y, objWall)) {
-	  if (throwx != 0) {
-	    xoff = throwx > 0 ? 0 : -12;
-	  }
-	  if (throwy != 0) {
-		 xoff = -4;
-		 yoff = throwy > 0 ? 16 : 0; 
-	  }
-	  instance_destroy();
+    if (throwx != 0) {
+      xoff = throwx > 0 ? 0 : -12;
+    }
+    if (throwy != 0) {
+      xoff = -4;
+      yoff = throwy > 0 ? 16 : 0;
+    }
+    instance_destroy();
   }
 }

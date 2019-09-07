@@ -1,17 +1,16 @@
 enum Direction {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
+  UP,
+  DOWN,
+  LEFT,
+  RIGHT
 }
 
-
 enum Item {
-	SWORD,
-	BOMB,
-	BOW,
-	HAMMER,
-	FEATHER,
+  SWORD,
+  BOMB,
+  BOW,
+  HAMMER,
+  FEATHER,
 }
 
 scr_item_variables_init(); //Initialize the item variables.

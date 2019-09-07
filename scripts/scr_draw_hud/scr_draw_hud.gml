@@ -6,7 +6,7 @@ format:  scr_draw_hud(xpos,ypos);
 
 //If a text box is covering the HUD, hide it.
 if (instance_exists(objTextBox) && objTextBox.pos == Direction.DOWN) {
-	exit;
+  exit;
 }
 
 /*
@@ -18,8 +18,6 @@ var yoff = 128;
 
 //Temporary variable for what color blend to use for a HUD elemnt.
 var blend = CL_WHITE;
-
-
 
 //Next, draw the Z button indicator.
 draw_sprite_ext(

@@ -11,10 +11,11 @@ var usedzero = false;
 //Let's create a total of 8 leaves from this bush.
 for (i = 0; i < 8; i += 1) {
   //
-
+  
   //First, make the leaf object, and store it.
   leaf = instance_create_layer(x + 4, y + 4, global.playerLayer, objLeaf);
-  leaf.sprite_index = leafspr; //Give it the needed sprite.
+  leaf.sprite_index = leafspr;
+  //Give it the needed sprite.
   //Give it a random subimage.
   leaf.image_index = irandom(7);
   //Give it a random needed horizontal speed.
@@ -33,7 +34,7 @@ for (i = 0; i < 8; i += 1) {
   if (irandom(1) == 0) {
     leaf.verspd *= -1;
   }
-
+  
   //Reset the check for zero.
   usedzero = false;
 }
@@ -42,7 +43,7 @@ for (i = 0; i < 8; i += 1) {
 if (irandom(7) == 1) {
   //Make a random item at the bush's location.
   var item = scr_random_item(x + 4, y);
-
+  
   //Give the item any momentum the bush had before it was destroyed.
   item.hspeed = hspeed;
   item.vspeed = vspeed;

@@ -31,10 +31,14 @@ if (argument0 == Item.SWORD && !charge && !spin) {
     10,
     false
   );
-  slashing = true; //Flag as Link as slashing.
-  pushing = false; //Unflag Link as pushing.
-  image_index = 0; //Reset his animation.
-  s = instance_create_layer(x, y, global.playerLayer, objSword); //Create the sword.
+  slashing = true;
+  //Flag as Link as slashing.
+  pushing = false;
+  //Unflag Link as pushing.
+  image_index = 0;
+  //Reset his animation.
+  s = instance_create_layer(x, y, global.playerLayer, objSword);
+  //Create the sword.
   //Now give it the proper sprite based on which sword Link has.
   s.sprite_index = asset_get_index(
     "sprSword" + string(global.tunic + 1) + "S" + scr_get_direction(dir)
@@ -47,21 +51,28 @@ if (argument0 == Item.SWORD && !charge && !spin) {
 Feather Check
 */
 if (argument0 == Item.FEATHER && !jumping) {
-  audio_play_sound(sndJump, 10, false); //Play the Jumping sound.
+  audio_play_sound(sndJump, 10, false);
+  //Play the Jumping sound.
   //If Link isn't in a sideview area...
   if (!global.sideview) {
-    zmax = -16; //Prepare Link to go a full tile off of the ground.
+    zmax = -16;
+    //Prepare Link to go a full tile off of the ground.
   } else {
     //Otherwise, make him go off the ground.
     vspeed = -4.5;
   }
-  jumping = true; //Flag as Link as jumping.
-  pushing = false; //Unflag Link as pushing.
-  climbing = false; //Unflag Link as climbing.
-  image_index = 0; //Reset his animation.
+  jumping = true;
+  //Flag as Link as jumping.
+  pushing = false;
+  //Unflag Link as pushing.
+  climbing = false;
+  //Unflag Link as climbing.
+  image_index = 0;
+  //Reset his animation.
   //Now let's update Link's sprite.
   scr_link_sprite_change();
-  scr_link_collide(); //Check for collision.
+  scr_link_collide();
+  //Check for collision.
 }
 
 /*

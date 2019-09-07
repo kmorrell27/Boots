@@ -1,1 +1,1 @@
-visible = true;  //Flag this as visible.
+visible = true; //Flag this as visible.

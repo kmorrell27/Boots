@@ -10,6 +10,7 @@ if (got && !used) {
   scr_add_inventory_item(Item.SWORD);
   //Now flag this item as having been used.
   used = true;
-  global.rain = false; //Turn off the rain.
+  global.rain = false;
+  //Turn off the rain.
   //scr_change_music(msCave); //Now play the cave music.
 }

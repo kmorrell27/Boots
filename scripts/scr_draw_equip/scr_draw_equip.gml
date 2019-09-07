@@ -33,7 +33,7 @@ if (argument0 == Item.SWORD) {
 //Bombs Check
 if (argument0 == Item.BOMB) {
   var blend = CL_WHITE;
-
+  
   /*
     If Link has no ammunition, draw the digits with a gray color.
     Otherwise, if he has full ammunition, draw them with a yellow
@@ -44,7 +44,7 @@ if (argument0 == Item.BOMB) {
   } else if (global.bombs == global.bombmax[global.bombbag]) {
     blend = CL_YELLOW;
   }
-
+  
   spr = sprHUDBomb;
   img = global.bombtype;
   scr_draw_counter(global.bombs, 2, argument1 + 8, argument2, blend, argument4);

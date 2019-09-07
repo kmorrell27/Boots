@@ -2,7 +2,7 @@ if (slashing) {
   /*
     If Link was slashing...
     */
-
+  
   //Temp. variable for bush checking.
   var bushchk = scr_link_ahead_chk(objBush, 8);
   /*
@@ -13,7 +13,7 @@ if (slashing) {
   if (bushchk != -1) {
     var hspeedgive = 0;
     var vspeedgive = 0;
-
+    
     if (dir == Direction.DOWN) {
       vspeedgive = 3;
     } else if (dir == Direction.UP) {
@@ -23,14 +23,14 @@ if (slashing) {
     } else {
       hspeedgive = 3;
     }
-
+    
     with (bushchk) {
       hspeed = hspeedgive;
       vspeed = vspeedgive;
       instance_destroy();
     }
   }
-
+  
   /*
     If Link is at full health, has at least the Master Sword,
     and there isn't a sword beam already on the screen...
@@ -49,9 +49,10 @@ if (slashing) {
     //Play the sword beam sound effect.
     audio_play_sound(sndSwordBeam, 10, false);
   }
-
-  slashing = false; //Unflag him as slashing.
-
+  
+  slashing = false;
+  //Unflag him as slashing.
+  
   /*
     If the player is still holding the sword button, flag Link
     as charging.
@@ -66,14 +67,20 @@ if (slashing) {
       }
     }
   }
-  image_index = 0; //Reset his animation frame.
-  scr_link_sprite_change(); //Finally, have Link update his sprite.
+  image_index = 0;
+  //Reset his animation frame.
+  scr_link_sprite_change();
+  //Finally, have Link update his sprite.
 } else if (jumping) {
   //If Link was jumping...
-  image_index = 7; //Stay on the final frame.
+  image_index = 7;
+  //Stay on the final frame.
 } else if (rolling) {
   //If Link was rolling...
-  rolling = false; //He's not now.
-  image_index = 0; //Reset his animation frame.
-  scr_link_sprite_change(); //Finally, have Link update his sprite.
+  rolling = false;
+  //He's not now.
+  image_index = 0;
+  //Reset his animation frame.
+  scr_link_sprite_change();
+  //Finally, have Link update his sprite.
 }

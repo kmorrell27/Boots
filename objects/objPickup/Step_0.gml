@@ -9,14 +9,15 @@ if (scr_pause_chk()) {
     lastvspeed = vspeed;
     vspeed = 0;
   }
-
+  
   //Conserve the animation speed.
   if (lastanispd == -1) {
     lastanispd = image_speed;
     image_speed = 0;
   }
-
-  exit; //Break out of this script.
+  
+  exit;
+  //Break out of this script.
 } else {
   /*
     Otherwise, if there's any conserved motion, reapply it to the
@@ -30,7 +31,7 @@ if (scr_pause_chk()) {
     vspeed = lastvspeed;
     lastvspeed = 0;
   }
-
+  
   //If there is conserved animation speed, restore it.
   if (lastanispd != -1) {
     image_speed = lastanispd;
@@ -62,7 +63,7 @@ if (!got) {
       }
     }
   }
-
+  
   // If this object still has some air climbing to do...
   if (zmax < 0) {
     /*
@@ -71,7 +72,7 @@ if (!got) {
         it approaches the ground.
         */
     zspd = max(abs(round((zmax - z) div 3)), 1);
-
+    
     /*
         If the object hasn't peaked in height yet, subtract the zspd
         from the z value.  Otherwise, add it.
@@ -89,7 +90,7 @@ if (!got) {
       } else {
         z = zmin;
         zpeak = false;
-
+        
         //If this isn't a flying pickup...
         if (!flying) {
           /*
@@ -105,7 +106,7 @@ if (!got) {
       }
     }
   }
-
+  
   /*
     If the object has stored horizontal momentum and can move further
     horizontally in that direction, re-apply that momentum.
@@ -114,7 +115,7 @@ if (!got) {
     hspeed = hforce;
     hforce = 0;
   }
-
+  
   /*
     If the object has stored verttical momentum and can move further
     vertically in that direction, re-apply that momentum.
@@ -123,41 +124,43 @@ if (!got) {
     vspeed = vforce;
     vforce = 0;
   }
-
+  
   /*
     If the object can't travel further horizontally...
     */
   if (!place_free(x + hspeed, y)) {
     //Store the excess speed.
     hforce = hspeed;
-
+    
     //Get in contact with the nearest wall, based on the sign.
     if (hspeed <= 0) {
       move_contact_solid(180, -1);
     } else {
       move_contact_solid(360, -1);
     }
-
-    hspeed = 0; //Erase the horizontal speed.
+    
+    hspeed = 0;
+    //Erase the horizontal speed.
   }
-
+  
   /*
     If the object can't travel further vertically...
     */
   if (!place_free(x, y + vspeed)) {
     //Store the excess speed.
     vforce = vspeed;
-
+    
     //Get in contact with the nearest wall, based on the sign.
     if (vspeed <= 0) {
       move_contact_solid(90, -1);
     } else {
       move_contact_solid(270, -1);
     }
-
-    vspeed = 0; //Erase the vertical speed.
+    
+    vspeed = 0;
+    //Erase the vertical speed.
   }
-
+  
   /*
     The item should appear under Link if he's further down the screen.
     Otherwise, it should appear above him.
@@ -167,7 +170,7 @@ if (!got) {
   } else {
     depth = objLink.depth + 1;
   }
-
+  
   /*
     If Link touches this, or he slashes at it, and there isn't a
     delay on picking it up, then it should be flagged has having
@@ -183,13 +186,19 @@ if (!got) {
 } else {
   //Otherwise, make the item appear above Link.
   depth = objLink.depth - 1;
-  x = objLink.x + 4; //Center this on Link X wise.
-  y = objLink.y + 4; //Center this on Link Y wise.
-  hspeed = 0; //No horizontal speed.
-  hforce = 0; //Likewise.
-  vspeed = 0; //No verrtical speed.
-  vforce = 0; //Likewise.
-
+  x = objLink.x + 4;
+  //Center this on Link X wise.
+  y = objLink.y + 4;
+  //Center this on Link Y wise.
+  hspeed = 0;
+  //No horizontal speed.
+  hforce = 0;
+  //Likewise.
+  vspeed = 0;
+  //No verrtical speed.
+  vforce = 0;
+  //Likewise.
+  
   /*
     If there is still a delay before this Rotates down to Link,
     subtract a frame. And rise up above Link's head.
@@ -207,7 +216,7 @@ if (!got) {
     image_angle += 30;
     image_xscale -= 0.05;
     image_yscale -= 0.05;
-
+    
     //If the item shrunk to oblivion, delete itself.
     if (image_xscale <= 0 && image_yscale <= 0) {
       instance_destroy();

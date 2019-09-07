@@ -6,13 +6,13 @@ format:  scr_link_ahead_chk(object, distance);
 */
 
 if (dir == Direction.DOWN && place_meeting(x, y + argument1, argument0)) {
-return instance_place(x, y + argument1, argument0);
+  return instance_place(x, y + argument1, argument0);
 } else if (dir == Direction.UP && place_meeting(x, y - argument1, argument0)) {
-return instance_place(x, y - argument1, argument0);
+  return instance_place(x, y - argument1, argument0);
 } else if (dir == Direction.LEFT && place_meeting(x - argument1, y, argument0)) {
-return instance_place(x - argument1, y, argument0);
+  return instance_place(x - argument1, y, argument0);
 } else if (dir == Direction.RIGHT && place_meeting(x + argument1, y, argument0)) {
-return instance_place(x + argument1, y, argument0);
+  return instance_place(x + argument1, y, argument0);
 }
 
 return -1;

@@ -2,13 +2,13 @@
 // Transition Variables
 
 enum Transition {
-    LEFT,
-    RIGHT,
-    UP,
-    DOWN,
-	RECTANGLE,
-	CIRCLE,
-	NONE,
+  LEFT,
+  RIGHT,
+  UP,
+  DOWN,
+  RECTANGLE,
+  CIRCLE,
+  NONE,
 }
 
 next_room = room;

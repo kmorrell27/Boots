@@ -20,8 +20,10 @@ var i = 0;
 
 //While we still need more zeros.
 while (i < zeros) {
-  tempstr += "0"; //Add them to the temporary string.
-  i += 1; //And increment the counter.
+  tempstr += "0";
+  //Add them to the temporary string.
+  i += 1;
+  //And increment the counter.
 }
 
 /*

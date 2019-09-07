@@ -22,7 +22,7 @@ if (
     If Link isn't flagged as isMoving, use his idle sprites.  Otherwise,
     use his walking sprites.
     */
-
+  
   if (!isMoving) {
     sprite_index = asset_get_index(
       "sprLink" + string(global.tunic) + "I" + dirString

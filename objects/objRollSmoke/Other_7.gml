@@ -1,1 +1,1 @@
-image_index = 2;  //Stay on the last frame of animation.
+image_index = 2; //Stay on the last frame of animation.

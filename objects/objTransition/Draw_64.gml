@@ -6,7 +6,7 @@ height = display_get_gui_height();
 //Push left
 
 if (room != next_room) {
-	room_goto(next_room);
+  room_goto(next_room);
 }
 switch (kind_) {
   case Transition.RIGHT:
@@ -34,11 +34,11 @@ switch (kind_) {
     y2 = (step_ / time_) * height;
     break;
   case Transition.RECTANGLE:
-	scr_tr_rectangle(surf_start, surf_end, width, height, step_ / time_);
-	return;
+    scr_tr_rectangle(surf_start, surf_end, width, height, step_ / time_);
+    return;
   case Transition.CIRCLE:
     scr_tr_circle(surf_start, surf_end, width, height, step_ / time_);
-	return;
+    return;
 }
 
 draw_surface_stretched(surf_end, x1, y1, width, height);

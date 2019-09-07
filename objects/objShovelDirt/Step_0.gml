@@ -13,7 +13,7 @@ if (zmax < 0) {
     it approaches the ground.
     */
   zspd = max(abs(round((zmax - z) / 3)), 1);
-
+  
   /*
     If the object hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.
@@ -32,10 +32,10 @@ if (zmax < 0) {
       z = 0;
       zpeak = true;
     }
-
+    
     //Slowly fade away, now that the object went all the way up.
     image_alpha -= 0.1;
-
+    
     //If it's completely faded, then delete itself.
     if (image_alpha <= 0) {
       instance_destroy();

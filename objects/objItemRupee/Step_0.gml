@@ -2,8 +2,10 @@ event_inherited(); //Call the parent event.
 
 //If the game is paused...
 if (scr_pause_chk()) {
-  image_speed = 0; //Don't animate.
-  exit; //Get out of this script.
+  image_speed = 0;
+  //Don't animate.
+  exit;
+  //Get out of this script.
 }
 
 /*
@@ -19,9 +21,12 @@ if (floor(image_index) == 0) {
 
 //If Link got the item, but hasn't used it yet, use it now.
 if (got && !used) {
-  audio_play_sound(sndRupee, 10, false); //Play the Rupee Sound Effect.
-  scr_get_rupee(amount); //Add the amount of Rupees.
-  used = true; //Flag this as used.
+  audio_play_sound(sndRupee, 10, false);
+  //Play the Rupee Sound Effect.
+  scr_get_rupee(amount);
+  //Add the amount of Rupees.
+  used = true;
+  //Flag this as used.
 }
 
 /* */

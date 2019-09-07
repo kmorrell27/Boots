@@ -22,7 +22,8 @@ if (cliff && !place_free(x, y)) {
     x += cliffspd;
   }
 } else {
-  cliffspd = 2; //Reset the cliff jumping speed.
+  cliffspd = 2;
+  //Reset the cliff jumping speed.
 }
 
 //Get the camera moving to where it needs to be.

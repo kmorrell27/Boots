@@ -20,7 +20,8 @@ if (argument0 == Item.SWORD && charge && !tap) {
       instance_destroy();
     }
   }
-  charge = 0; //Unflag Link as charging.
+  charge = 0;
+  //Unflag Link as charging.
   //Update Link's current sprites.
   scr_link_sprite_change();
 }

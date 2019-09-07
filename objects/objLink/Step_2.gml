@@ -19,13 +19,16 @@ if (y < 0) {
     objWeather.visible = false;
     //Flag any of Link's weapons as invisible as well.
     objLinkWeapon.visible = false;
-    scr_reset_weather(); //Reset the weather.
+    scr_reset_weather();
+    //Reset the weather.
     //If Link is jumping down a cliff, reset his animation.
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true); //Orient the screen just right.
-    room_goto(global.northroom); //Go to the northern room.
+    scr_align_view(true);
+    //Orient the screen just right.
+    room_goto(global.northroom);
+    //Go to the northern room.
     //Now place Link at the bottom of the room.
     y = room_height - sprite_height;
     //And get out of this code for this frame.
@@ -53,9 +56,12 @@ if (y + 16 > room_height) {
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true); //Orient the screen just right.
-    room_goto(global.southroom); //Go to the southern room.
-    y = 0; //Place Link at the top of the room now.
+    scr_align_view(true);
+    //Orient the screen just right.
+    room_goto(global.southroom);
+    //Go to the southern room.
+    y = 0;
+    //Place Link at the top of the room now.
     //And get out of this code for this frame.
     exit;
   } else {
@@ -78,13 +84,16 @@ if (x < 0) {
     objWeather.visible = false;
     //Flag any of Link's weapons as invisible as well.
     objLinkWeapon.visible = false;
-    scr_reset_weather(); //Reset the weather.
+    scr_reset_weather();
+    //Reset the weather.
     //If Link is jumping down a cliff, reset his animation.
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true); //Orient the screen just right.
-    room_goto(global.westroom); //Go to the western room.
+    scr_align_view(true);
+    //Orient the screen just right.
+    room_goto(global.westroom);
+    //Go to the western room.
     //Now place Link at the right of the room.
     x = room_width - sprite_width;
     //And get out of this code for this frame.
@@ -109,15 +118,19 @@ if (x + 16 > room_width) {
     objWeather.visible = false;
     //Flag any of Link's weapons as invisible as well.
     objLinkWeapon.visible = false;
-    scr_reset_weather(); //Reset the weather.
+    scr_reset_weather();
+    //Reset the weather.
     //If Link is jumping down a cliff, reset his animation.
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true); //Orient the screen just right.
-	scr_room_transition(global.eastroom, Transition.RIGHT, 45);
-    room_goto(global.eastroom); //Go to the eastern room.
-    x = 0; //Place Link at the left of the room now.
+    scr_align_view(true);
+    //Orient the screen just right.
+    scr_room_transition(global.eastroom, Transition.RIGHT, 45);
+    room_goto(global.eastroom);
+    //Go to the eastern room.
+    x = 0;
+    //Place Link at the left of the room now.
     //And get out of this code for this frame.
     exit;
   } else {

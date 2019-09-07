@@ -2,9 +2,12 @@ event_inherited(); //Call the Parent Event.
 
 //If the game is paused...
 if (scr_pause_chk()) {
-  gravity = 0; //No gravity.
-  image_speed = 0; //Don't animate.
-  exit; //Get out of this script.
+  gravity = 0;
+  //No gravity.
+  image_speed = 0;
+  //Don't animate.
+  exit;
+  //Get out of this script.
 }
 
 gravity = 0.5; //How fast this "falls."

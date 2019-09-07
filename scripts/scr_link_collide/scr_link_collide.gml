@@ -24,7 +24,8 @@ if (!place_free(x, y + vspeed)) {
     //If he somehow got in the wall, get out of it.
     move_outside_solid(90, 1);
   }
-  vspeed = 0; //Reset his actual vertical speed.
+  vspeed = 0;
+  //Reset his actual vertical speed.
 }
 
 //If there is a wall where Link is heading horizontally...
@@ -43,5 +44,6 @@ if (!place_free(x + hspeed, y)) {
     //If he somehow got in the wall, get out of it.
     move_outside_solid(180, 1);
   }
-  hspeed = 0; //Reset his actual horizontal speed.
+  hspeed = 0;
+  //Reset his actual horizontal speed.
 }
