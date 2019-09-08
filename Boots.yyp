@@ -351,14 +351,6 @@
             }
         },
         {
-            "Key": "0cd7868f-d4fc-4a11-9601-80889bf0e98f",
-            "Value": {
-                "id": "b7aade6d-f6bc-4938-955f-d095fa3570e4",
-                "resourcePath": "sprites\\sprRedTunic\\sprRedTunic.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "0d5cf942-f051-443a-bb98-eb8b20f97361",
             "Value": {
                 "id": "53285777-ee5f-4233-90ac-8a19762b3787",
@@ -420,14 +412,6 @@
                 "id": "756298ef-1ffc-4a68-8190-be30fddcca89",
                 "resourcePath": "views\\0f89101d-84b5-4740-b524-0270df745b4a.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "0f922e5a-f4aa-48bf-ab22-7a8492eeef7c",
-            "Value": {
-                "id": "6a2bd65e-a941-4cde-8971-ef8a91842c3a",
-                "resourcePath": "sprites\\sprSilverBomb\\sprSilverBomb.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -623,14 +607,6 @@
             }
         },
         {
-            "Key": "20a0aa03-bad4-445b-aad8-3c4d9a97f5b9",
-            "Value": {
-                "id": "2b948332-43a6-40b0-b766-e7ffcb42f88b",
-                "resourcePath": "sprites\\sprGoldenSword\\sprGoldenSword.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "21b27208-f6d9-4f84-91d7-6d5a1da8f653",
             "Value": {
                 "id": "0b558b81-576a-4b63-af02-7cf48f905382",
@@ -755,14 +731,6 @@
             "Value": {
                 "id": "7f0b62e2-865e-4e13-bdde-5236eaf0118a",
                 "resourcePath": "sprites\\sprLink0USWR\\sprLink0USWR.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "2609b069-778d-45f5-a2b1-b3948e6571ba",
-            "Value": {
-                "id": "9a097d71-ad40-48e2-99cf-a4606b86fe49",
-                "resourcePath": "sprites\\sprMirrorShield\\sprMirrorShield.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1695,22 +1663,6 @@
             }
         },
         {
-            "Key": "5dbd838d-9e3a-48ef-81ac-b10693aa22c7",
-            "Value": {
-                "id": "fb11f997-b3bc-4a0c-a74c-02789857e684",
-                "resourcePath": "sprites\\sprRocsFeather\\sprRocsFeather.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "5dc574ea-2bc3-412f-9d75-758d9f89ac50",
-            "Value": {
-                "id": "3fc6c490-7af3-428b-9d91-1216dfdc13df",
-                "resourcePath": "objects\\objMasterSword\\objMasterSword.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "5e9a1299-06aa-4b2c-ad62-d5ca881c0234",
             "Value": {
                 "id": "08923090-500d-4e49-b160-f40feb38f055",
@@ -1787,14 +1739,6 @@
             "Value": {
                 "id": "501c5c36-1e4a-4d50-a5f5-2d48fa436b95",
                 "resourcePath": "sprites\\sprLink0WR\\sprLink0WR.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "60f961d2-6f8a-4121-8d52-f450942456c7",
-            "Value": {
-                "id": "4439eaa7-d6ae-4f92-baf6-e4138c10e9e7",
-                "resourcePath": "sprites\\sprRocsCape\\sprRocsCape.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2092,14 +2036,6 @@
                 "id": "384a1ce4-9576-4eba-8307-37da1cd3aed4",
                 "resourcePath": "views\\72a49060-c95d-469c-b782-499faf2abfc5.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "72d86e3c-d600-48b4-adcf-cecaac29e510",
-            "Value": {
-                "id": "1459fa6f-bc17-401e-953b-ba6051233116",
-                "resourcePath": "objects\\objGoldenSword\\objGoldenSword.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -2455,14 +2391,6 @@
             }
         },
         {
-            "Key": "85da1d40-fcd4-49f2-9aa1-813f5efed002",
-            "Value": {
-                "id": "aaf66322-cd12-4f31-b268-7acd940cee1c",
-                "resourcePath": "objects\\objRedTunic\\objRedTunic.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "864c3572-92f5-4da2-a7c6-1374dd687974",
             "Value": {
                 "id": "b8300577-9394-408e-968f-b415e99d3b5f",
@@ -2599,14 +2527,6 @@
             }
         },
         {
-            "Key": "8cf18823-163e-4cf6-a481-d1c7223f1aef",
-            "Value": {
-                "id": "345fb760-2681-4a92-b515-32eb58056bc3",
-                "resourcePath": "objects\\objBlueTunic\\objBlueTunic.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "8d29d571-d3a4-490b-b1a4-d89dc138c79c",
             "Value": {
                 "id": "ff591c6e-f274-4399-a751-2a14be364e18",
@@ -2695,14 +2615,6 @@
             }
         },
         {
-            "Key": "940cbdc7-74a8-4bd9-960a-c5fe48a45718",
-            "Value": {
-                "id": "970d282d-e1a9-4a50-bb6e-170751a50b1f",
-                "resourcePath": "objects\\objRocsCape\\objRocsCape.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "94d0f05d-585c-4eca-a692-8963857d94d8",
             "Value": {
                 "id": "8dc27ec5-c90c-44f7-bfeb-1b8ae264c14e",
@@ -2724,14 +2636,6 @@
                 "id": "c0c8d969-5aa9-4209-b205-8fb344cb21a1",
                 "resourcePath": "sounds\\sndHeartContainer\\sndHeartContainer.yy",
                 "resourceType": "GMSound"
-            }
-        },
-        {
-            "Key": "96be7ee1-bd6c-4845-97c4-fdc5578a1898",
-            "Value": {
-                "id": "7f048838-b86e-46a5-972e-9d07ff703f30",
-                "resourcePath": "sprites\\sprGoldenBomb\\sprGoldenBomb.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -2828,14 +2732,6 @@
                 "id": "b3df437e-0b7c-4ab9-b1c3-4ba2df500f65",
                 "resourcePath": "sprites\\sprShield2UL\\sprShield2UL.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "9b651a67-4dce-4b4c-97cf-b10ac2076361",
-            "Value": {
-                "id": "ab07bf45-8284-4696-8673-94b534ca0c62",
-                "resourcePath": "objects\\objTemperedSword\\objTemperedSword.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -3239,14 +3135,6 @@
             }
         },
         {
-            "Key": "ae347368-66dc-4eff-9597-bafd1bae7c5d",
-            "Value": {
-                "id": "f0e68628-5645-490d-bcab-2f4bf89da674",
-                "resourcePath": "sprites\\sprGoldenShovel\\sprGoldenShovel.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "ae5d4d61-69f9-431b-b6ed-ebe74663adac",
             "Value": {
                 "id": "32e32bc8-6816-4a1d-b5a0-5466c2014d6e",
@@ -3284,14 +3172,6 @@
                 "id": "1a2c20b1-c3e5-4f7b-abee-15d41cb2b6eb",
                 "resourcePath": "views\\b0645b46-e5fa-460a-bdc2-cc86af917e49.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "b0db6c77-ee3c-458f-9cf5-5f9e0d205b45",
-            "Value": {
-                "id": "335bb9bc-382e-48a0-b56c-1070effcff05",
-                "resourcePath": "sprites\\sprTemperedSword\\sprTemperedSword.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3463,14 +3343,6 @@
             }
         },
         {
-            "Key": "bab7e607-eb5a-4d91-a05c-d37183c5e815",
-            "Value": {
-                "id": "7498fe00-6fa2-45cd-a9f9-1aeb88242398",
-                "resourcePath": "sprites\\sprRedShield\\sprRedShield.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "bb48ab56-5d8e-46f0-9b77-c3a9247f2f8e",
             "Value": {
                 "id": "8511502e-b9f4-4ba2-93a3-7b84702e5139",
@@ -3532,14 +3404,6 @@
                 "id": "5012c98e-a96a-4ff8-b394-b4c2bb4a9edd",
                 "resourcePath": "views\\c2d53f5e-90ea-4518-beae-cb0bcb4f9ef8.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "c382a1d3-a34e-4c5f-a313-a68164840998",
-            "Value": {
-                "id": "6d793f65-7aa5-42df-8c86-71ed40302eb7",
-                "resourcePath": "sprites\\sprShovel\\sprShovel.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -3675,14 +3539,6 @@
             "Value": {
                 "id": "c4820b04-4a19-479f-b5c3-db0f99bb2fce",
                 "resourcePath": "sprites\\sprLink0USIL\\sprLink0USIL.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "caf59267-7239-4a18-8f2d-2d68d6e55f3b",
-            "Value": {
-                "id": "bcc6b8d3-3632-4db0-827f-82d3b5eac884",
-                "resourcePath": "sprites\\sprBlueTunic\\sprBlueTunic.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3879,14 +3735,6 @@
             }
         },
         {
-            "Key": "d52c9f68-81bc-4681-ad68-dd0d37f67ff9",
-            "Value": {
-                "id": "97640bc2-f2a9-4b3b-ac36-7b0c1d306f0e",
-                "resourcePath": "sprites\\sprTitanGlove\\sprTitanGlove.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d53504fb-468d-413f-9b34-66c88ee23f3e",
             "Value": {
                 "id": "b8e4e1e5-5fea-4901-86ff-5d7fa4def4af",
@@ -3916,14 +3764,6 @@
                 "id": "8a30ff2b-625d-4fd7-9ef9-238f515a2325",
                 "resourcePath": "scripts\\scr_room_transition\\scr_room_transition.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "d64b7efb-fb0a-4879-95ed-0d8b2d2c1bde",
-            "Value": {
-                "id": "68c4aeb1-951d-4cc6-93fe-f10b363527ef",
-                "resourcePath": "sprites\\sprFighterShield\\sprFighterShield.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -4095,14 +3935,6 @@
             }
         },
         {
-            "Key": "de79a70c-057a-4cda-92c4-63362a02c648",
-            "Value": {
-                "id": "44c42e33-f998-45ee-aa9a-503b74ad4183",
-                "resourcePath": "sprites\\sprPowerBracelet\\sprPowerBracelet.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "de9e7353-7237-49e5-aae8-0d2483ff4d8e",
             "Value": {
                 "id": "69db3a88-33d5-4646-baf6-c2e2f7ac6059",
@@ -4236,14 +4068,6 @@
                 "id": "e9960200-174f-44a2-b4bd-737abcbf0ea9",
                 "resourcePath": "views\\e5497bdc-58a2-4920-bed7-ab4bff84deb6.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "e555245d-b539-4359-ae45-f5cc1afe71e3",
-            "Value": {
-                "id": "5d629231-62b7-4c3e-9930-660272f4dd43",
-                "resourcePath": "sprites\\sprMasterSword\\sprMasterSword.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -4668,14 +4492,6 @@
                 "id": "c4466b5b-20a9-4994-aa9a-94512d495763",
                 "resourcePath": "sounds\\sndSwordBeam\\sndSwordBeam.yy",
                 "resourceType": "GMSound"
-            }
-        },
-        {
-            "Key": "fb313361-80a6-471f-aadb-5efab54b5448",
-            "Value": {
-                "id": "879d17fd-dfc5-482f-b802-615ec412020f",
-                "resourcePath": "objects\\objRocsFeather\\objRocsFeather.yy",
-                "resourceType": "GMObject"
             }
         },
         {
