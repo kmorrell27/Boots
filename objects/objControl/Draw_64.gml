@@ -34,8 +34,8 @@ if (global.showarea > 0) {
     textxpos,
     72,
     global.areaname,
-    CL_WHITE,
-    CL_BLACK,
+    Color.WHITE,
+    Color.BLACK,
     textalpha
   );
   //Reset the drawing alignment to the left.

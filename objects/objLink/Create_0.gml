@@ -42,3 +42,5 @@ mygravity = 0.5; //How much gravity Link has.
 climbing = false; //Is Link climbing on a ladder?
 carrying = false; // Is Link holding something
 heldObject = noone;
+
+show_debug_message(Color.WHITE);

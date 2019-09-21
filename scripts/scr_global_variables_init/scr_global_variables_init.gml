@@ -30,7 +30,7 @@ Where is the HUD located (Y Position)?  Positive value for the top
 of the screen, negative value for the bottom.
 */
 global.hudanchor = 0;
-global.heartblend = CL_WHITE; //The color blend for the hearts.
+global.heartblend = Color.WHITE; //The color blend for the hearts.
 global.Y = noone; //What Item is selected on Z.
 global.X = noone; //What Item is selected on X.
 global.heal = 0; //How much healing (or damaging) Link is undergoing.

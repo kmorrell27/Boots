@@ -7,7 +7,7 @@ draw_sprite_ext(
   image_xscale,
   image_yscale,
   image_angle,
-  CL_BLACK,
+  Color.BLACK,
   image_alpha - 0.5
 );
 //Then draw the actual beam.

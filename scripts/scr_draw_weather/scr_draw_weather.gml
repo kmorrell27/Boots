@@ -14,10 +14,10 @@ if (global.rain && !global.inside) {
     0,
     display_get_gui_width(),
     display_get_gui_height(),
-    CL_BLACK,
-    CL_BLACK,
-    CL_BLACK,
-    CL_BLACK,
+    Color.BLACK,
+    Color.BLACK,
+    Color.BLACK,
+    Color.BLACK,
     false
   );
   //Reset the drawing transparency.
@@ -56,10 +56,10 @@ if (global.rain && !global.inside) {
       0,
       display_get_gui_width(),
       display_get_gui_height(),
-      CL_WHITE,
-      CL_WHITE,
-      CL_WHITE,
-      CL_WHITE,
+      Color.WHITE,
+      Color.WHITE,
+      Color.WHITE,
+      Color.WHITE,
       false
     );
     //Reset the drawing transparency.

@@ -13,6 +13,13 @@ enum Item {
   FEATHER,
 }
 
+enum Color {
+	WHITE = make_color_rgb(248, 248, 248),
+	GRAY = make_color_rgb(120,120,136),
+	YELLOW = make_color_rgb(248,208,56),
+	BLACK = make_color_rgb(8,8,8),
+}
+
 scr_item_variables_init(); //Initialize the item variables.
 scr_global_variables_init(); //Initialize all of the global variables.
 

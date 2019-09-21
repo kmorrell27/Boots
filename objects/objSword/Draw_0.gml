@@ -14,7 +14,7 @@ if (imgchk > 0 && imgchk < 3) {
     image_xscale,
     image_yscale,
     image_angle,
-    CL_BLACK,
+    Color.BLACK,
     image_alpha - 0.625
   );
 }

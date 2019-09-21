@@ -17,7 +17,7 @@ Otherwise, it'll start from the top.
 var yoff = 128;
 
 //Temporary variable for what color blend to use for a HUD elemnt.
-var blend = CL_WHITE;
+var blend = Color.WHITE;
 
 //Next, draw the Z button indicator.
 draw_sprite_ext(
@@ -103,18 +103,18 @@ draw_sprite_ext(
 );
 //If Link has no rupees, the digits should be gray.
 if (global.rupees == 0) {
-  blend = CL_GRAY;
+  blend = Color.GRAY;
 } else if (global.rupees == global.rupeemax[global.wallet]) {
   /*
     If Link has the max rupees he can carry, the digits should
     be yellow.
     */
-  blend = CL_YELLOW;
+  blend = Color.YELLOW;
 } else {
   /*
     Otherwise, just use plain white digits.
     */
-  blend = CL_WHITE;
+  blend = Color.WHITE;
 }
 //Now draw the counter for the rupees.
 scr_draw_counter(

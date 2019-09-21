@@ -32,7 +32,7 @@ if (argument0 == Item.SWORD) {
 
 //Bombs Check
 if (argument0 == Item.BOMB) {
-  var blend = CL_WHITE;
+  var blend = Color.WHITE;
   
   /*
     If Link has no ammunition, draw the digits with a gray color.
@@ -40,9 +40,9 @@ if (argument0 == Item.BOMB) {
     color.
     */
   if (global.bombs == 0) {
-    blend = CL_GRAY;
+    blend = Color.GRAY;
   } else if (global.bombs == global.bombmax[global.bombbag]) {
-    blend = CL_YELLOW;
+    blend = Color.YELLOW;
   }
   
   spr = sprHUDBomb;

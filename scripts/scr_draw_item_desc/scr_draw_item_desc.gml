@@ -69,8 +69,8 @@ scr_outline_text(
   argument1 + 8,
   argument2 + 4,
   text,
-  CL_WHITE,
-  CL_BLACK,
+  Color.WHITE,
+  Color.BLACK,
   argument4
 );
 draw_sprite_ext(

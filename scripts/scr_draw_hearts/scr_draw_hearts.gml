@@ -13,7 +13,7 @@ drawing.  Lastly, setup a variable for which blend to use.
 */
 var i = 0;
 var row = 0;
-var color = CL_WHITE;
+var color = Color.WHITE;
 
 //Next, figure out how many iterations of the loop we'll need.
 var imax = argument1 div 16;
@@ -43,7 +43,7 @@ for (i = 0; i < imax; i += 1) {
   if (argument0 > (i + 1) * 16) {
     spr = sprFullHeart;
     img = -1;
-    color = CL_WHITE;
+    color = Color.WHITE;
   } else if (argument0 <= i * 16) {
     /*
         Otherwise, if the counter is on some heart after the current
@@ -63,7 +63,7 @@ for (i = 0; i < imax; i += 1) {
         */
     spr = sprActiveHeart;
     img = 4 - round(((argument0 - 16 * i) / 16) * 4);
-    color = CL_WHITE;
+    color = Color.WHITE;
   }
   
   /*

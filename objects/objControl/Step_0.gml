@@ -282,7 +282,7 @@ if (global.hearts <= global.heartmax div 4) {
   //The blending is no longer reversed.
   heartblenddly = 0;
   //And the blending delay is removed.
-  global.heartblend = CL_WHITE;
+  global.heartblend = Color.WHITE;
 }
 
 /*
