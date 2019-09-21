@@ -77,7 +77,15 @@ if (argument0 == Item.FEATHER && !jumping) {
 
 if (argument0 == Item.BOW) {
   //Create an arrow!
-  var arrow = instance_create_layer(x + objSword.xoff, y + objSword.yoff, global.playerLayer, objArrow);
+  if (instance_exists(objArrow)) {
+	return;
+  }
+  var arrow = instance_create_layer(
+    x,
+    y,
+    global.playerLayer,
+    objArrow
+  );
   //Give the beam the same sprite as the sword.
   switch (dir) {
     case Direction.RIGHT:
@@ -95,6 +103,11 @@ if (argument0 == Item.BOW) {
   }
   arrow.dir = dir;
 }
+
+if (argument0 == Item.BOMB) {
+	// This is where it gets complicated
+}
+
 /*
 if (argument0 == Item.BRACELET) {
 	if (!carrying) {
