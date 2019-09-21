@@ -75,6 +75,26 @@ if (argument0 == Item.FEATHER && !jumping) {
   //Check for collision.
 }
 
+if (argument0 == Item.BOW) {
+	//Create an arrow!
+    var arrow = instance_create_layer(x + objSword.xoff, y + objSword.yoff, global.playerLayer, objArrow);
+    //Give the beam the same sprite as the sword.
+	switch (dir) {
+		case Direction.RIGHT:
+			arrow.sprite_index = sprArrowRight;
+			break;
+		case Direction.LEFT:
+			arrow.sprite_index = sprArrowLeft;
+			break;
+		case Direction.UP:
+			arrow.sprite_index = sprArrowUp;
+			break;
+		case Direction.DOWN:
+			arrow.sprite_index = sprArrowDown;
+			break;
+	}
+	arrow.dir = dir;
+}
 /*
 if (argument0 == Item.BRACELET) {
 	if (!carrying) {

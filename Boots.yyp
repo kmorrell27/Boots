@@ -2647,6 +2647,14 @@
             }
         },
         {
+            "Key": "92c0d612-171f-4b19-903d-b04fdb12c24b",
+            "Value": {
+                "id": "7d55b454-c5de-4143-a2fb-818bf2433bec",
+                "resourcePath": "objects\\objArrow\\objArrow.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "94d0f05d-585c-4eca-a692-8963857d94d8",
             "Value": {
                 "id": "8dc27ec5-c90c-44f7-bfeb-1b8ae264c14e",
