@@ -14,10 +14,10 @@ enum Item {
 }
 
 enum Color {
-	WHITE = $f7f7f7,
-	GRAY = $887878,
-	YELLOW = $38d0f8,
-	BLACK = $080808,
+  WHITE = $f7f7f7,
+  GRAY = $887878,
+  YELLOW = $38d0f8,
+  BLACK = $080808,
 }
 
 scr_item_variables_init(); //Initialize the item variables.
