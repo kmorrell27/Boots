@@ -78,7 +78,7 @@ if (argument0 == Item.FEATHER && !jumping) {
 if (argument0 == Item.BOW) {
   //Create an arrow!
   if (instance_exists(objArrow)) {
-	return;
+    return;
   }
   var arrow = instance_create_layer(
     x,
@@ -105,7 +105,10 @@ if (argument0 == Item.BOW) {
 }
 
 if (argument0 == Item.BOMB) {
-	// This is where it gets complicated
+  if (!instance_exists(objBomb)) {
+	 instance_create_layer(x + 8, y + 8, global.playerLayer, objBomb); 
+  }
+  // This is where it gets complicated
 }
 
 /*
