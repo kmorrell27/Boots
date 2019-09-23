@@ -106,9 +106,38 @@ if (argument0 == Item.BOW) {
 
 if (argument0 == Item.BOMB) {
   if (!instance_exists(objBomb)) {
-	 instance_create_layer(x + 8, y + 8, global.playerLayer, objBomb); 
+    instance_create_layer(x, y, global.playerLayer, objBomb);
+  } else if (!carrying) {
+	  	heldObject = scr_link_ahead_chk(objLiftable, 4);
+		if (heldObject == -1) {
+			exit;
+		}
+		carrying = true;
+		heldObject.lifted = true;
+  }	else {
+		heldObject.lifted = false;
+		heldObject.thrown = true;
+		heldObject.zmax = -24;
+		switch (dir) {
+			case Direction.UP:
+				heldObject.throwy = -48;
+				heldObject.throwspd = -3;
+				break;
+			case Direction.DOWN:
+				heldObject.throwy = 48;
+				heldObject.throwspd = 3;
+				break;
+			case Direction.LEFT:
+				heldObject.throwx = -48;
+				heldObject.throwspd = -3;
+				break;
+			case Direction.RIGHT:
+				heldObject.throwx = 48;
+				heldObject.throwspd = 3;
+		}
+		heldObject = -1;
+		carrying = false;
   }
-  // This is where it gets complicated
 }
 
 /*

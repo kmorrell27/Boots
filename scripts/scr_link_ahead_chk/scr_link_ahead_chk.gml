@@ -1,3 +1,6 @@
+///@arg obj
+///@arg distance
+
 /*
 This script checks to see if the object passed as a parameter is
 directly in front of Link, depending on which direction he's facing.

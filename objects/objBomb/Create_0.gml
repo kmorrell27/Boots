@@ -4,5 +4,5 @@ image_speed = 0; //No animation speed.
 spd = 8; //How far, in pixels, the arrow travels per frame.
 alarm[0] = 2 * global.onesecond;
 alarm[1] = 3 * global.onesecond;
-
 exploding = false;
+durable = true;

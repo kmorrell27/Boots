@@ -1,3 +1,3 @@
 if (exploding) {
-	instance_destroy();
+  instance_destroy();
 }
