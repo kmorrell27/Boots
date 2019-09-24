@@ -8,7 +8,7 @@ format:  scr_use_item(item);
 /*
 If Link isn't in a state to use an item, then get out of here.
 */
-if (!moveable || slashing || cliff || rolling) {
+if (!moveable || slashing || cliff || rolling || shooting) {
   exit;
 }
 
@@ -26,11 +26,7 @@ Sword Check
 */
 if (argument0 == Item.SWORD && !charge && !spin) {
   //Play the appropriate sound effect based on which sword Link has.
-  audio_play_sound(
-    asset_get_index("sndSlash" + string(global.sword)),
-    10,
-    false
-  );
+  audio_play_sound(sndSlash1, 10, false);
   slashing = true;
   //Flag as Link as slashing.
   pushing = false;
@@ -40,9 +36,20 @@ if (argument0 == Item.SWORD && !charge && !spin) {
   s = instance_create_layer(x, y, global.playerLayer, objSword);
   //Create the sword.
   //Now give it the proper sprite based on which sword Link has.
-  s.sprite_index = asset_get_index(
-    "sprSword" + string(global.tunic + 1) + "S" + scr_get_direction(dir)
-  );
+  switch (dir) {
+    case Direction.DOWN:
+      s.sprite_index = sprSword1SD;
+      break;
+    case Direction.LEFT:
+      s.sprite_index = sprSword1SL;
+      break;
+    case Direction.RIGHT:
+      s.sprite_index = sprSword1SR;
+      break;
+    case Direction.UP:
+      s.sprite_index = sprSword1SU;
+      break;
+  }
   //Now let's update Link's sprite.
   scr_link_sprite_change();
 }
@@ -77,16 +84,18 @@ if (argument0 == Item.FEATHER && !jumping) {
 
 if (argument0 == Item.BOW) {
   //Create an arrow!
+  // I wonder if this will break things
   if (instance_exists(objArrow)) {
     return;
   }
+  shooting = true;
   var arrow = instance_create_layer(
     x,
     y,
     global.playerLayer,
     objArrow
   );
-  //Give the beam the same sprite as the sword.
+  //Give the arrow the same sprite as the sword.
   switch (dir) {
     case Direction.RIGHT:
       arrow.sprite_index = sprArrowRight;
@@ -102,41 +111,42 @@ if (argument0 == Item.BOW) {
       break;
   }
   arrow.dir = dir;
+  //Now let's update Link's sprite.
+  image_index = 0;
+  scr_link_sprite_change();
 }
 
 if (argument0 == Item.BOMB) {
-  if (!instance_exists(objBomb)) {
-    instance_create_layer(x, y, global.playerLayer, objBomb);
-  } else if (!carrying) {
-	  	heldObject = scr_link_ahead_chk(objLiftable, 4);
-		if (heldObject == -1) {
-			exit;
-		}
-		carrying = true;
-		heldObject.lifted = true;
-  }	else {
-		heldObject.lifted = false;
-		heldObject.thrown = true;
-		heldObject.zmax = -24;
-		switch (dir) {
-			case Direction.UP:
-				heldObject.throwy = -48;
-				heldObject.throwspd = -3;
-				break;
-			case Direction.DOWN:
-				heldObject.throwy = 48;
-				heldObject.throwspd = 3;
-				break;
-			case Direction.LEFT:
-				heldObject.throwx = -48;
-				heldObject.throwspd = -3;
-				break;
-			case Direction.RIGHT:
-				heldObject.throwx = 48;
-				heldObject.throwspd = 3;
-		}
-		heldObject = -1;
-		carrying = false;
+  if (!carrying) {
+    heldObject = scr_link_ahead_chk(objLiftable, 4);
+    if (heldObject == -1 && !instance_exists(objBomb)) {
+      instance_create_layer(x, y, global.playerLayer, objBomb);
+    }
+    carrying = true;
+    heldObject.lifted = true;
+  } else {
+    heldObject.lifted = false;
+    heldObject.thrown = true;
+    heldObject.zmax = -24;
+    switch (dir) {
+      case Direction.UP:
+        heldObject.throwy = -48;
+        heldObject.throwspd = -3;
+        break;
+      case Direction.DOWN:
+        heldObject.throwy = 48;
+        heldObject.throwspd = 3;
+        break;
+      case Direction.LEFT:
+        heldObject.throwx = -48;
+        heldObject.throwspd = -3;
+        break;
+      case Direction.RIGHT:
+        heldObject.throwx = 48;
+        heldObject.throwspd = 3;
+    }
+    heldObject = -1;
+    carrying = false;
   }
 }
 

@@ -31,25 +31,6 @@ if (slashing) {
     }
   }
   
-  /*
-    If Link is at full health, has at least the Master Sword,
-    and there isn't a sword beam already on the screen...
-    */
-  if (
-    global.hearts == global.heartmax &&
-    //global.sword >= 2 &&
-    !instance_exists(objSwordBeam)
-  ) {
-    //Create a Sword Beam right on the sword.
-    var beam = instance_create_layer(x + objSword.xoff, y + objSword.yoff, global.playerLayer, objSwordBeam);
-    //Give the beam the same sprite as the sword.
-    beam.sprite_index = objSword.sprite_index;
-    //The beam should travel in the direction Link is facing.
-    beam.dir = dir;
-    //Play the sword beam sound effect.
-    audio_play_sound(sndSwordBeam, 10, false);
-  }
-  
   slashing = false;
   //Unflag him as slashing.
   
@@ -83,4 +64,8 @@ if (slashing) {
   //Reset his animation frame.
   scr_link_sprite_change();
   //Finally, have Link update his sprite.
+} else if (shooting) {
+  shooting = false;
+  image_index = 0;
+  scr_link_sprite_change();
 }

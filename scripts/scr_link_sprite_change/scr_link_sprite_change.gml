@@ -1,14 +1,8 @@
-/*******************************************************************
-This script changes Link's sprite depending on which actions he is
-currently performing.  The "global.tunic" variable is added to the
-execute_string() functions to give Link the correct sprite based on
-which tunic he is wearing.  Since Game Maker doesn't support palettes,
-this is the only way to accomplish this; making separate sprites for
-each costume you want Link to have.
-*******************************************************************/
-
-var dirString = scr_get_direction(dir);
-
+/* Goodness this whole script is garbage. At some point we need
+ * to figure out a better way of doing this for moving and jumping
+ * I guess. Store the current character as a global and then sixteen
+ * switch statements? D:
+ */
 //If Link isn't doing anything specific...
 if (
   pushtmr < global.onesecond / 4 &&
@@ -16,7 +10,8 @@ if (
   !rolling &&
   !slashing &&
   !charge &&
-  !jumping
+  !jumping &&
+  !shooting
 ) {
   /*
     If Link isn't flagged as isMoving, use his idle sprites.  Otherwise,
@@ -24,13 +19,35 @@ if (
     */
   
   if (!isMoving) {
-    sprite_index = asset_get_index(
-      "sprLink" + string(global.tunic) + "I" + dirString
-    );
+    switch (dir) {
+      case Direction.DOWN:
+        sprite_index = sprLink0ID;
+        break;
+      case Direction.UP:
+        sprite_index = sprLink0IU;
+        break;
+      case Direction.LEFT:
+        sprite_index = sprLink0IL;
+        break;
+      case Direction.RIGHT:
+        sprite_index = sprLink0IR;
+        break;
+    }
   } else {
-    sprite_index = asset_get_index(
-      "sprLink" + string(global.tunic) + "W" + dirString
-    );
+    switch (dir) {
+      case Direction.DOWN:
+        sprite_index = sprLink0WD;
+        break;
+      case Direction.UP:
+        sprite_index = sprLink0WU;
+        break;
+      case Direction.LEFT:
+        sprite_index = sprLink0WL;
+        break;
+      case Direction.RIGHT:
+        sprite_index = sprLink0WR;
+        break;
+    }
   }
 } else if (
   pushtmr >= global.onesecond / 4 &&
@@ -38,43 +55,93 @@ if (
   !holding &&
   !slashing &&
   !charge &&
-  !jumping
+  !jumping &&
+  !shooting
 ) {
   /*
     Otherwise, if Link is specifically pushing, use his pushing
     sprites.
     */
-  sprite_index = asset_get_index(
-    "sprLink" + string(global.tunic) + "P" + dirString
-  );
-} else if (slashing && !holding && !charge) {
+  switch (dir) {
+    case Direction.UP:
+      sprite_index = sprLink0PU;
+      break;
+    case Direction.DOWN:
+      sprite_index = sprLink0PD;
+      break;
+    case Direction.LEFT:
+      sprite_index = sprLink0PL;
+      break;
+    case Direction.RIGHT:
+      sprite_index = sprLink0PR;
+      break;
+  }
+} else if ((shooting || slashing) && !holding && !charge) {
   /*
     Otherwise if Link is specifically slashing his sword
     */
-  sprite_index = asset_get_index(
-    "sprLink" + string(global.tunic) + "S" + dirString
-  );
+  switch (dir) {
+    case Direction.LEFT:
+      sprite_index = sprLink0SL;
+      break;
+    case Direction.UP:
+      sprite_index = sprLink0SU;
+      break;
+    case Direction.RIGHT:
+      sprite_index = sprLink0SR;
+      break;
+    case Direction.DOWN:
+      sprite_index = sprLink0SD;
+      break;
+  }
 } else if (charge && !holding) {
   /*
     Otherwise if Link is specifically charging his sword
     */
-  sprite_index = asset_get_index(
-    "sprLink" + string(global.tunic) + "CH" + dirString
-  );
+  switch (dir) {
+    case Direction.DOWN:
+      sprite_index = sprLink0CHD;
+      break;
+    case Direction.RIGHT:
+      sprite_index = sprLink0CHR;
+      break;
+    case Direction.LEFT:
+      sprite_index = sprLink0CHL;
+      break;
+    case Direction.UP:
+      sprite_index = sprLink0CHU;
+      break;
+  }
 } else if ((jumping || rolling) && !holding) {
   /*
     Otherwise if Link is specifically jumping or rolling, use his
     jumping sprites.
     */
-  sprite_index = asset_get_index(
-    "sprLink" + string(global.tunic) + "J" + dirString
-  );
+  switch (dir) {
+    case Direction.DOWN:
+      sprite_index = sprLink0JD;
+      break;
+    case Direction.RIGHT:
+      sprite_index = sprLink0JR;
+      break;
+    case Direction.LEFT:
+      sprite_index = sprLink0JL;
+      break;
+    case Direction.UP:
+      sprite_index = sprLink0JU;
+      break;
+  }
 } else if (holding) {
   /*
     Otherwise if Link is specifically holding up an item, use his
     holding up sprite.
     */
-  sprite_index = asset_get_index(
-    "sprLink" + string(global.tunic) + "H" + string(holding)
-  );
+  switch (holding) {
+    case 1:
+      sprite_index = sprLink0H1;
+      break;
+    case 2:
+      sprite_index = sprLink0H2;
+      break;
+  }
 }

@@ -129,7 +129,8 @@ if (
   !jumping &&
   !tap &&
   !cliff &&
-  !spin
+  !spin &&
+  !shooting
 ) {
   /*
     This block of if statements just assigns Link velocity based on
@@ -291,7 +292,7 @@ MOVEMENT SECTION
 //If Link is in a proper state to move...
 if (
   moveable &&
-  (!slashing || jumping) &&
+  ((!slashing && !shooting) || jumping) &&
   !tap &&
   !rolling &&
   !cliff &&
@@ -1005,11 +1006,11 @@ stare into space infinitely.
 */
 
 //If Link is moving or using an item that requires animation...
-if (isMoving || slashing || jumping || rolling || tap) {
+if (isMoving || slashing || jumping || rolling || tap || shooting) {
   if (tap) {
     //2nd frame for tapping.
     image_index = 1;
-  } else if (slashing) {
+  } else if (slashing || shooting) {
     //Standard Slashing Animation Speed.
     image_speed = 0.25;
   } else if (jumping) {

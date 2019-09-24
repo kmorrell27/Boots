@@ -44,9 +44,9 @@ if (thrown && !global.sideview) {
       zmax = 0;
       thrown = false;
       audio_play_sound(sndLand, 10, false);
-	  if (!durable) {
-		instance_destroy();
-	  }
+      if (!durable) {
+        instance_destroy();
+      }
     }
   }
   if (throwx != 0) {
@@ -57,21 +57,20 @@ if (thrown && !global.sideview) {
     y += throwspd;
     throwy -= throwspd;
   }
-  
   if (place_meeting(x, y, objWall)) {
-	if (!durable) { 
-    if (throwx != 0) {
-      xoff = throwx > 0 ? 0 : -12;
+    if (!durable) {
+      if (throwx != 0) {
+        xoff = throwx > 0 ? 0 : -12;
+      }
+      if (throwy != 0) {
+        xoff = -4;
+        yoff = throwy > 0 ? 16 : 0;
+      }
+      instance_destroy();
+    } else { // bounce!
+      throwx *= -1;
+      throwy *= -1;
+      throwspd *= -1;
     }
-    if (throwy != 0) {
-      xoff = -4;
-      yoff = throwy > 0 ? 16 : 0;
-    }
-    instance_destroy();
-	} else { // bounce!
-		throwx *= -1;
-		throwy *= -1;
-		throwspd *= -1;
-	}
   }
 }
