@@ -89,12 +89,7 @@ if (argument0 == Item.BOW) {
     exit;
   }
   shooting = true;
-  var arrow = instance_create_layer(
-    x,
-    y,
-    global.playerLayer,
-    objArrow
-  );
+  var arrow = instance_create_layer(x, y, global.playerLayer, objArrow);
   //Give the arrow the same sprite as the sword.
   switch (dir) {
     case Direction.RIGHT:

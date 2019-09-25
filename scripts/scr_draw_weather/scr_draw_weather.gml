@@ -45,7 +45,7 @@ if (global.rain && !global.inside) {
     image_blend,
     image_alpha - 0.375
   );
-  
+
   //If it's thundering, go in here.
   if (thunder) {
     //Change the drawing transparency to what the lightning needs.

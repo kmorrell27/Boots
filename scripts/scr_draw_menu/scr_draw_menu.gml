@@ -31,9 +31,9 @@ var yshift = 0;
 //Now loop through and draw the inventory equipment.
 for (var inven = 0; inven < 30; inven += 1) {
   //Update the offset base on which slot the loop is on.
-  xshift = inven * 40 - (floor(inven / 6)) * 120;
-  yshift = (floor(inven / 6)) * 16;
-  
+  xshift = inven * 40 - floor(inven / 6) * 120;
+  yshift = floor(inven / 6) * 16;
+
   //Now draw the item and it's level/counter.
   scr_draw_equip(
     global.inventory[inven],

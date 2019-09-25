@@ -17,7 +17,7 @@ if (
     If Link isn't flagged as isMoving, use his idle sprites.  Otherwise,
     use his walking sprites.
     */
-  
+
   if (!isMoving) {
     switch (dir) {
       case Direction.DOWN:

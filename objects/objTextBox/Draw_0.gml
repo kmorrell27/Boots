@@ -10,7 +10,7 @@ for (var i = 1; i <= counter; i++) {
     xoff += 8;
   } else {
     xoff = x + 4;
-    yoff += 8
+    yoff += 8;
   }
 }
 

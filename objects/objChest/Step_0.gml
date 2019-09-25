@@ -17,7 +17,7 @@ if (interacted && !opened) {
 if (opened) {
   image_index = 1;
   //Use the opened stage of the sprite.
-  
+
   //If there is still showtime left...
   if (opentmr) {
     /*
@@ -28,7 +28,7 @@ if (opened) {
     if (drawy > -8) {
       drawy -= max(floor((-8 - drawy) / 2), 1);
     }
-    
+
     /*
         If there are more than 20 frames left on the show time, then
         make the item fade in.  Otherwise, make it fade out.
@@ -40,10 +40,10 @@ if (opened) {
     } else {
       itemalpha -= 0.1;
     }
-    
+
     opentmr -= 1;
     //Subtract a frame from the showtime.
-    
+
     //If the showtime is all gone...
     if (opentmr == 0) {
       //If this chest is to be stored, do so.
@@ -53,7 +53,12 @@ if (opened) {
       objLink.moveable = true;
       //Reflag Link as able to move.
       //And then give him the item the chest has.
-      instance_create_layer(objLink.x + 4, objLink.y + 4, global.playerLayer, itemobj);
+      instance_create_layer(
+        objLink.x + 4,
+        objLink.y + 4,
+        global.playerLayer,
+        itemobj
+      );
     }
   }
 }

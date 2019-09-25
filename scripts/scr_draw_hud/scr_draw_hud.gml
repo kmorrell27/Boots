@@ -33,13 +33,7 @@ draw_sprite_ext(
 );
 
 //Now draw what's equipped on Z.
-scr_draw_equip(
-  global.Y,
-  argument0 + 8,
-  argument1 + yoff,
-  image_blend,
-  1
-);
+scr_draw_equip(global.Y, argument0 + 8, argument1 + yoff, image_blend, 1);
 
 //Next, draw the delimeter.
 draw_sprite_ext(
@@ -55,13 +49,7 @@ draw_sprite_ext(
 );
 
 //Now draw what's equipped on X.
-scr_draw_equip(
-  global.X,
-  argument0 + 40,
-  argument1 + yoff,
-  image_blend,
-  1
-);
+scr_draw_equip(global.X, argument0 + 40, argument1 + yoff, image_blend, 1);
 
 //Next, draw the X button indicator.
 draw_sprite_ext(

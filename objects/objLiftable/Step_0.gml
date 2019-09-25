@@ -20,7 +20,7 @@ if (thrown && !global.sideview) {
     it approaches the ground.
     */
   zspd = max(abs(floor(round((zmax - z) / 3))), 1);
-  
+
   /*
     If it hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.
@@ -67,7 +67,8 @@ if (thrown && !global.sideview) {
         yoff = throwy > 0 ? 16 : 0;
       }
       instance_destroy();
-    } else { // bounce!
+    } else {
+      // bounce!
       throwx *= -1;
       throwy *= -1;
       throwspd *= -1;

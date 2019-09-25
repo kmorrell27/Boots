@@ -22,7 +22,7 @@ var text = "";
 if (argument0 == Item.SWORD) {
   spr = sprHUDSword;
   img = global.sword - 1;
-  
+
   if (global.sword == 1) {
     text = "Fighter's Sword";
   } else if (global.sword == 2) {
@@ -38,7 +38,7 @@ if (argument0 == Item.SWORD) {
 if (argument0 == Item.BOMB) {
   spr = sprHUDBomb;
   img = global.bombtype;
-  
+
   if (global.bombtype == 0) {
     text = "Bombs x" + string(global.bombs);
   } else if (global.bombtype == 1) {
@@ -52,7 +52,7 @@ if (argument0 == Item.BOMB) {
 if (argument0 == Item.FEATHER) {
   spr = sprHUDFeather;
   img = global.feather - 1;
-  
+
   if (global.feather == 1) {
     text = "Roc's Feather";
   } else if (global.feather == 2) {

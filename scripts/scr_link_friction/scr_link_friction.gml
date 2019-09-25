@@ -18,7 +18,7 @@ if (argument0 || (!argument0 && !left && !right)) {
     } else {
       hspeed -= myfriction - ((myfriction * 3) / 4) * jumping;
     }
-    
+
     if (hspeed >= -0.25 && hspeed <= 0.25) {
       hspeed = 0;
     }
@@ -29,7 +29,7 @@ if (argument0 || (!argument0 && !left && !right)) {
     } else {
       hvel -= myfriction - ((myfriction * 3) / 4) * jumping;
     }
-    
+
     if (hvel >= -0.25 && hvel <= 0.25) {
       hvel = 0;
     }
@@ -46,7 +46,7 @@ if ((argument0 || (!argument0 && !down && !up)) && !global.sideview) {
     } else {
       vspeed -= myfriction - ((myfriction * 3) / 4) * jumping;
     }
-    
+
     if (vspeed >= -0.25 && vspeed <= 0.25) {
       vspeed = 0;
     }
@@ -59,7 +59,7 @@ if (argument0 || (!argument0 && !down && !up)) {
     } else {
       vvel -= myfriction - ((myfriction * 3) / 4) * jumping;
     }
-    
+
     if (vvel >= -0.25 && vvel <= 0.25) {
       vvel = 0;
     }

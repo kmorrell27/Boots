@@ -47,7 +47,7 @@ if (got) {
   if (gottmr) {
     gottmr -= 1;
     //Subtract a frame from the time.
-    
+
     //Move up to Link's hand(s).
     if (drawy > -14) {
       drawy -= max(floor((14 + drawy) / 3), 1);
@@ -58,7 +58,7 @@ if (got) {
       drawy += max(floor((-8 - drawy) / 3), 1);
     }
     image_alpha -= 0.1;
-    
+
     //Once this fades completely out...
     if (image_alpha <= 0) {
       objLink.moveable = true;

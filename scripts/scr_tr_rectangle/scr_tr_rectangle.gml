@@ -85,7 +85,13 @@ last room.  Afterwards, we want to use the image of the next room.
 */
 
 if (argument4 <= 0.5) {
-  draw_surface_stretched(argument0, 0, 0, display_get_gui_width(), display_get_gui_height());
+  draw_surface_stretched(
+    argument0,
+    0,
+    0,
+    display_get_gui_width(),
+    display_get_gui_height()
+  );
   //Now draw Link's shadow and Link himself.
   if (instance_exists(objLink)) {
     draw_sprite_ext(
@@ -111,16 +117,28 @@ if (argument4 <= 0.5) {
       objLink.image_alpha
     );
   }
-  
+
   /*
     Then draw the HUD based on 0,0.  This isn't done based on the viewport
     because the viewport isn't used during transitions.
     */
   scr_draw_hud(0, 0);
   //Then draw the effect surface.
-  draw_surface_stretched(effectsurface, 0, 0, display_get_gui_width(), display_get_gui_height());
+  draw_surface_stretched(
+    effectsurface,
+    0,
+    0,
+    display_get_gui_width(),
+    display_get_gui_height()
+  );
 } else {
-  draw_surface_stretched(argument1, 0, 0, display_get_gui_width(), display_get_gui_height());
+  draw_surface_stretched(
+    argument1,
+    0,
+    0,
+    display_get_gui_width(),
+    display_get_gui_height()
+  );
   //Now draw Link's shadow and Link himself.
   if (instance_exists(objLink)) {
     draw_sprite_ext(
@@ -146,19 +164,25 @@ if (argument4 <= 0.5) {
       objLink.image_alpha
     );
   }
-  
+
   //Now draw any weather effects, based on 0,0.
   with (objWeather) {
     scr_draw_weather();
   }
-  
+
   /*
     Then draw the HUD based on 0,0.  This isn't done based on the viewport
     because the viewport isn't used during transitions.
     */
   scr_draw_hud(0, 0);
   //Then draw the effect surface.
-  draw_surface_stretched(effectsurface, 0, 0, display_get_gui_width(), display_get_gui_height());
+  draw_surface_stretched(
+    effectsurface,
+    0,
+    0,
+    display_get_gui_width(),
+    display_get_gui_height()
+  );
 }
 
 //Now free up the memory from that temporary surface.
