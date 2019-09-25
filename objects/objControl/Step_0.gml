@@ -181,12 +181,12 @@ if (global.pause) {
     }
     
     //Calculate the offset for the cursor.
-    needmenucurx = global.menupos * 40 - (global.menupos div 3) * 120;
-    needmenucury = (global.menupos div 3) * 16;
+    needmenucurx = global.menupos * 40 - (floor(global.menupos / 3)) * 120;
+    needmenucury = (floor(global.menupos / 3)) * 16;
     
     //Slowly move the X position of the cursor to it's needed spot.
     if (global.menucurx != needmenucurx) {
-      var curspd = max(abs((needmenucurx - global.menucurx) div 2), 1);
+      var curspd = max(abs(floor((needmenucurx - global.menucurx) / 2)), 1);
       
       if (needmenucurx > global.menucurx) {
         global.menucurx += curspd;
@@ -197,7 +197,7 @@ if (global.pause) {
     
     //Slowly move the Y position of the cursor to it's needed spot.
     if (global.menucury != needmenucury) {
-      var curspd = max(abs((needmenucury - global.menucury) div 2), 1);
+      var curspd = max(abs(floor((needmenucury - global.menucury) / 2)), 1);
       
       if (needmenucury > global.menucury) {
         global.menucury += curspd;
@@ -222,7 +222,7 @@ if (global.pause) {
 If Link has less than or equal to 1/4 of his max health, start
 playing the danger sound.
 */
-if (global.hearts <= global.heartmax div 4) {
+if (global.hearts <= floor(global.heartmax / 4)) {
   //If there is a delay on the sound, subtract one of the frames.
   if (dangersnddly) {
     dangersnddly -= 1;
@@ -335,7 +335,7 @@ the values.
 */
 if (global.rupoff != 0) {
   //Temporary variable for how much to affect the rupee counter.
-  var amt = max(abs(global.rupoff) div 20, 1);
+  var amt = max(floor(abs(global.rupoff) / 20), 1);
   
   /*
     If the value is positive, add rupees, otherwise, take them away.

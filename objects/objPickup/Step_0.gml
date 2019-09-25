@@ -71,7 +71,7 @@ if (!got) {
         closer it gets to its peak.  Otherwise it should be larger as
         it approaches the ground.
         */
-    zspd = max(abs(round((zmax - z) div 3)), 1);
+    zspd = max(abs(floor(round((zmax - z) / 3))), 1);
     
     /*
         If the object hasn't peaked in height yet, subtract the zspd
@@ -97,8 +97,8 @@ if (!got) {
                     If the object has a little bit of bounce left, then
                     allow for it.  Otherwise, keep it grounded.
                     */
-          if (zmax div 2 <= -2) {
-            zmax = zmax div 2;
+          if (floor(zmax / 2) <= -2) {
+            zmax = floor(zmax / 2);
           } else {
             zmax = 0;
           }

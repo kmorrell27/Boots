@@ -35,10 +35,10 @@ switch (kind_) {
     break;
   case Transition.RECTANGLE:
     scr_tr_rectangle(surf_start, surf_end, width, height, step_ / time_);
-    return;
+    exit;
   case Transition.CIRCLE:
     scr_tr_circle(surf_start, surf_end, width, height, step_ / time_);
-    return;
+    exit;
 }
 
 draw_surface_stretched(surf_end, x1, y1, width, height);

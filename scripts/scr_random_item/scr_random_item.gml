@@ -16,4 +16,9 @@ if (itemchose == 0) {
   itemtype = objItemBlueRupee;
 }
 
-return instance_create_layer(argument0, argument1, global.playerLayer, itemtype);
+return instance_create_layer(
+  argument0,
+  argument1,
+  global.playerLayer,
+  itemtype
+);

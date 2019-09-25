@@ -86,7 +86,7 @@ if (argument0 == Item.BOW) {
   //Create an arrow!
   // I wonder if this will break things
   if (instance_exists(objArrow)) {
-    return;
+    exit;
   }
   shooting = true;
   var arrow = instance_create_layer(

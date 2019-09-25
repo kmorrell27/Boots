@@ -26,7 +26,7 @@ if (opened) {
         closer it gets.
         */
     if (drawy > -8) {
-      drawy -= max((-8 - drawy) div 2, 1);
+      drawy -= max(floor((-8 - drawy) / 2), 1);
     }
     
     /*

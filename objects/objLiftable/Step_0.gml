@@ -1,11 +1,11 @@
 event_inherited();
 if (pushspd != 0) {
   // We're pushing so it can't be lifted
-  return;
+  exit;
 }
 if (!lifted && !thrown) {
   // We're all good.
-  return;
+  exit;
 } else if (lifted && !thrown) {
   //Just carrying
   x = objLink.x;
@@ -19,7 +19,7 @@ if (thrown && !global.sideview) {
     closer it gets to its peak.  Otherwise it should be larger as
     it approaches the ground.
     */
-  zspd = max(abs(round((zmax - z) div 3)), 1);
+  zspd = max(abs(floor(round((zmax - z) / 3))), 1);
   
   /*
     If it hasn't peaked in height yet, subtract the zspd

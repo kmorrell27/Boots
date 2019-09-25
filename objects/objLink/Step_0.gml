@@ -200,7 +200,7 @@ if (jumping && moveable && !global.sideview) {
     closer he gets to his peak.  Otherwise it should be larger as
     he approaches the ground.
     */
-  zspd = max(abs(round((zmax - z) div 3)), 1);
+  zspd = max(abs(round(floor((zmax - z) / 3))), 1);
   
   /*
     If Link hasn't peaked in height yet, subtract the zspd

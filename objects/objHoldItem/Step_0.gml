@@ -50,12 +50,12 @@ if (got) {
     
     //Move up to Link's hand(s).
     if (drawy > -14) {
-      drawy -= max((14 + drawy) div 3, 1);
+      drawy -= max(floor((14 + drawy) / 3), 1);
     }
   } else {
     //Otherwise, start moving down to Link and fade out.
     if (drawy < 0) {
-      drawy += max((-8 - drawy) div 3, 1);
+      drawy += max(floor((-8 - drawy) / 3), 1);
     }
     image_alpha -= 0.1;
     

@@ -1,25 +1,4 @@
-enum Direction {
-  UP,
-  DOWN,
-  LEFT,
-  RIGHT
-}
-
-enum Item {
-  SWORD,
-  BOMB,
-  BOW,
-  HAMMER,
-  FEATHER,
-}
-
-enum Color {
-  WHITE = $f7f7f7,
-  GRAY = $887878,
-  YELLOW = $38d0f8,
-  BLACK = $080808,
-}
-
+scr_init_enums(); // For Prettier, mostly
 scr_item_variables_init(); //Initialize the item variables.
 scr_global_variables_init(); //Initialize all of the global variables.
 

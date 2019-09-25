@@ -16,7 +16,7 @@ var row = 0;
 var color = Color.WHITE;
 
 //Next, figure out how many iterations of the loop we'll need.
-var imax = argument1 div 16;
+var imax = floor(argument1 / 16);
 
 /*
 Setup variables for which sprite to use, and which image to use.

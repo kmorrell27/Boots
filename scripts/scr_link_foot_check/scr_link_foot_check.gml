@@ -4,4 +4,4 @@ center of Link's feet.
 format:  scr_link_foot_check(object);
 ********************************************************************/
 
-return (collision_line(x + 6, y + 14, x + 8, y + 14, argument0, true, false));
+return collision_line(x + 6, y + 14, x + 8, y + 14, argument0, true, false);
