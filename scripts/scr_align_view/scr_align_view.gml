@@ -14,7 +14,7 @@ var viewyoff = round(camera_get_view_y(view_camera[0]) + 64 - y);
 if (!argument0) {
   if (abs(viewxoff) != 0) {
     var dis = max(floor(abs(viewxoff) / 4), 1);
-
+    
     if (viewxoff < 0) {
       camera_set_view_pos(
         view_camera[0],
@@ -29,10 +29,10 @@ if (!argument0) {
       );
     }
   }
-
+  
   if (abs(viewyoff) != 0) {
     var dis = max(floor(abs(viewyoff) / 4), 1);
-
+    
     if (viewyoff < 0) {
       camera_set_view_pos(
         view_camera[0],

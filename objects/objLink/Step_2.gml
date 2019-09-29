@@ -109,7 +109,7 @@ if (x + 16 > room_width) {
   //If there is a room east of this one...
   if (global.eastroom != -1) {
     //Set the next transition to the scrolling right transition.
-
+    
     //Flag Link as invisible, so he won't show up on the surface.
     visible = false;
     //Flag the Control as invisible as well for the same reason.

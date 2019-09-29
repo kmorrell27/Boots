@@ -15,7 +15,7 @@ if (scr_pause_chk()) {
 if (got && !used) {
   //Get the amount of rupees.
   scr_get_rupee(amt);
-
+  
   //Now flag this item as having been used.
   used = true;
 }

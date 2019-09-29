@@ -2,7 +2,7 @@ if (slashing) {
   /*
     If Link was slashing...
     */
-
+  
   //Temp. variable for bush checking.
   var bushchk = scr_link_ahead_chk(objBush, 8);
   /*
@@ -13,7 +13,7 @@ if (slashing) {
   if (bushchk != -1) {
     var hspeedgive = 0;
     var vspeedgive = 0;
-
+    
     if (dir == Direction.DOWN) {
       vspeedgive = 3;
     } else if (dir == Direction.UP) {
@@ -23,17 +23,17 @@ if (slashing) {
     } else {
       hspeedgive = 3;
     }
-
+    
     with (bushchk) {
       hspeed = hspeedgive;
       vspeed = vspeedgive;
       instance_destroy();
     }
   }
-
+  
   slashing = false;
   //Unflag him as slashing.
-
+  
   /*
     If the player is still holding the sword button, flag Link
     as charging.
@@ -66,6 +66,13 @@ if (slashing) {
   //Finally, have Link update his sprite.
 } else if (shooting) {
   shooting = false;
+  image_index = 0;
+  scr_link_sprite_change();
+} else if (hammering) {
+  if (instance_exists(objHammer)) {
+    instance_destroy(objHammer);
+  }
+  hammering = false;
   image_index = 0;
   scr_link_sprite_change();
 }

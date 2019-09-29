@@ -12,7 +12,7 @@ if (objLink.slashing) {
     lastyoff = yoff;
     lastimg = img;
   }
-
+  
   /*
     This if-else tree positions the sword based on Link's current
     frame in his animation.  It will always be in his hand, minus

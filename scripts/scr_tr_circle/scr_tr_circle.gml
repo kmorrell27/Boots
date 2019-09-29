@@ -142,12 +142,12 @@ if (argument4 <= 0.5) {
       objLink.image_alpha
     );
   }
-
+  
   //Now draw any weather effects, based on 0,0.
   with (objWeather) {
     scr_draw_weather(0, 0);
   }
-
+  
   /*
     Then draw the HUD based on 0,0.  This isn't done based on the viewport
     because the viewport isn't used during transitions.

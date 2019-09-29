@@ -130,7 +130,8 @@ if (
   !tap &&
   !cliff &&
   !spin &&
-  !shooting
+  !shooting &&
+  !hammering
 ) {
   /*
     This block of if statements just assigns Link velocity based on
@@ -145,14 +146,14 @@ if (
   } else if (dir == Direction.RIGHT) {
     hspeed = maxspd * 2.5;
   }
-
+  
   scr_link_collide();
   //Check for collision.
   doublekeytapdir = noone;
   //Reset the double key tap check direction.
   doublekeytapdly = 0;
   //Reset the interval for double key tapping.
-
+  
   isMoving = false;
   //Unflag him as moving.
   pushing = false;
@@ -201,7 +202,7 @@ if (jumping && moveable && !global.sideview) {
     he approaches the ground.
     */
   zspd = max(abs(round(floor((zmax - z) / 3))), 1);
-
+  
   /*
     If Link hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.
@@ -275,7 +276,7 @@ if (global.sideview) {
     jumping = false;
     //Unflag him as jumping.
   }
-
+  
   //Cap his vertical velocity at a max of 4 pixels per frame.
   if (vspeed > 2) {
     vspeed = 2;
@@ -292,7 +293,7 @@ MOVEMENT SECTION
 //If Link is in a proper state to move...
 if (
   moveable &&
-  ((!slashing && !shooting) || jumping) &&
+  ((!slashing && !shooting && !hammering) || jumping) &&
   !tap &&
   !rolling &&
   !cliff &&
@@ -302,7 +303,7 @@ if (
     Store the direction Link was just facing in a temporary variable.
     */
   var lastdir = dir;
-
+  
   //If any directional key held...
   if ((down && !global.sideview) || (up && !global.sideview) || left || right) {
     isMoving = true;
@@ -315,13 +316,13 @@ if (
     //Otherwise, unflag Link as moving and pushing.
     isMoving = false;
     pushing = false;
-
+    
     scr_link_friction(true);
     //Apply friction in all planes.
     scr_link_collide();
     //Check for collision with a wall.
   }
-
+  
   /*
     Change the direction Link is facing based on which directional
     keys are held down.  Link's facing is locked depending on which
@@ -336,37 +337,37 @@ if (
     if (
       down &&
       ((!left && !right) ||
-        (left && dir != Direction.LEFT) ||
-        (right && dir != Direction.RIGHT))
+      (left && dir != Direction.LEFT) ||
+      (right && dir != Direction.RIGHT))
     ) {
       dir = Direction.DOWN;
     }
     if (
       up &&
       ((!left && !right) ||
-        (left && dir != Direction.LEFT) ||
-        (right && dir != Direction.RIGHT))
+      (left && dir != Direction.LEFT) ||
+      (right && dir != Direction.RIGHT))
     ) {
       dir = Direction.UP;
     }
     if (
       left &&
       ((!down && !up) ||
-        (down && dir != Direction.DOWN) ||
-        (up && dir != Direction.UP))
+      (down && dir != Direction.DOWN) ||
+      (up && dir != Direction.UP))
     ) {
       dir = Direction.LEFT;
     }
     if (
       right &&
       ((!down && !up) ||
-        (down && dir != Direction.DOWN) ||
-        (up && dir != Direction.UP))
+      (down && dir != Direction.DOWN) ||
+      (up && dir != Direction.UP))
     ) {
       dir = Direction.RIGHT;
     }
   }
-
+  
   /*
     If Link changed directions, the pushing frame counter needs to
     be reset, since he is no longer pushing in the same direction.
@@ -374,7 +375,7 @@ if (
   if (dir != lastdir) {
     pushtmr = 0;
   }
-
+  
   /*
     Movement for DOWN.
     */
@@ -455,7 +456,7 @@ if (
       }
     }
   }
-
+  
   /*
     Movement for UP.
     */
@@ -544,7 +545,7 @@ if (
       }
     }
   }
-
+  
   /*
     Movement for LEFT.
     */
@@ -635,7 +636,7 @@ if (
       }
     }
   }
-
+  
   /*
     Movement for RIGHT.
     */
@@ -726,7 +727,7 @@ if (
       }
     }
   }
-
+  
   /*
     Pushing Segment
     */
@@ -737,7 +738,7 @@ if (
     if (pushtmr >= global.onesecond / 4) {
       //Temporary variable for a possible cliff ahead of Link.
       var cliffobj = scr_link_ahead_chk(objCliff, 1);
-
+      
       /*
             If there is a cliff, and Link is in a state to jump 
             down...
@@ -778,7 +779,7 @@ if (
         }
       }
     }
-
+    
     /*
         If Link hasn't been pushing for a half second, add this
         frame to the timer.  Otherwise, check for other things.
@@ -791,7 +792,7 @@ if (
             object is in front of Link.
             */
       var pushobjchk = scr_link_ahead_chk(objPushable, 1);
-
+      
       /*
             If there was a pushable object in front of Link, then we
             can do things with it.
@@ -855,7 +856,7 @@ if (
   }
 } else if (rolling) {
   //Otherwise if Link is rolling...
-
+  
   //If there is a delay on the next smoke object...
   if (smokedly) {
     smokedly -= 1;
@@ -875,7 +876,7 @@ if (
     smokedly = 8;
     //Set the delay to 8 frames away.
   }
-
+  
   doublekeytapdir = noone;
   //Reset the double key tap check direction.
   doublekeytapdly = 0;
@@ -918,7 +919,7 @@ if he is able to at all.
 if (keyboard_check_pressed(global.bombButton)) {
   //Temporary variable for a possible interaction in front of Link.
   var interactchk = scr_link_ahead_chk(objInteractable, 4);
-
+  
   //If there isn't an interaction in front of Link, use what's on Z.
   if (interactchk == -1 || jumping) {
     scr_use_item(Item.BOMB);
@@ -970,7 +971,7 @@ if (charge) {
   if (tapdly) {
     tapdly -= 1;
   }
-
+  
   //If the charge isn't fully done, add a frame to the counter.
   if (charge < global.onesecond && !tap) {
     charge += 1;
@@ -1000,17 +1001,15 @@ ANIMATION SPEED SECTION
 
 /*
 This section is for Link's animation speed.  He should animate at
-various speeds depending on what actions he is performing.  Otherwise
-he'll slowly animate for his idle pose, letting him blink, and not
-stare into space infinitely.
+various speeds depending on what actions he is performing.
 */
 
 //If Link is moving or using an item that requires animation...
-if (isMoving || slashing || jumping || rolling || tap || shooting) {
+if (isMoving || slashing || jumping || rolling || tap || shooting || hammering) {
   if (tap) {
     //2nd frame for tapping.
     image_index = 1;
-  } else if (slashing || shooting) {
+  } else if (slashing || shooting || hammering) {
     //Standard Slashing Animation Speed.
     image_speed = 0.25;
   } else if (jumping) {
@@ -1024,29 +1023,9 @@ if (isMoving || slashing || jumping || rolling || tap || shooting) {
     image_speed = 0.25;
   }
 } else {
-  //If Link isn't charging, go in here.
-  if (!charge) {
-    /*
-        Store the current image of animation to see if he's on the
-        blinking frames.  If he is, he should animate faster, to finish
-        blinking faster.  Otherwise, it should slow to a crawl, at a
-        purely random speed, so his intervals of not blinking aren't
-        consistent.
-        */
-    var img = floor(image_index);
-
-    if (img == 0) {
-      //Standard First Frame Blinking Animation Speed.
-      image_speed = 0.00625 + random(0.003125);
-    } else {
-      //Standard After-First Frame Blinking Animation Speed.
-      image_speed = 0.125;
-    }
-  } else {
-    //Otherwise, freeze his animation entirely.
-    image_speed = 0;
-    image_index = 0;
-  }
+  //Otherwise, freeze his animation entirely.
+  image_speed = 0;
+  image_index = 0;
 }
 
 /*********************************************************************
@@ -1059,7 +1038,7 @@ This is for offsetting Link's sprite when he is attacking.
 if (slashing) {
   //Store which image Link's animation is on.
   var img = floor(image_index);
-
+  
   //If he's facing Down or Up, the sprite offset is all vertical.
   if (dir == Direction.DOWN || dir == Direction.UP) {
     xoff = 0;
@@ -1080,10 +1059,10 @@ if (slashing) {
     This section is for things revolving around Link tapping
     the sword against a wall.
     */
-
+  
   charge = 1;
   //Reset the charging.
-
+  
   //Make his sprite move a pixel.
   if (dir == Direction.DOWN) {
     yoff += 2 - 4 * tapreverse;
@@ -1094,15 +1073,15 @@ if (slashing) {
   } else if (dir == Direction.RIGHT) {
     xoff += 2 - 4 * tapreverse;
   }
-
+  
   //If Link's sprite is forward by a quarter tile, do tapping stuff.
   if (!tapreverse && (yoff == 4 || yoff == -4 || xoff == -4 || xoff == 4)) {
     //Temp. variable for bush checking.
     var bushchk = scr_link_ahead_chk(objBush, 8);
-
+    
     tapreverse = true;
     //Flag the tapping for the second phase.
-
+    
     /*
         If there is a bush in front of Link, apply an appropriate
         force based on which direction Link is facing, and then get rid
@@ -1111,7 +1090,7 @@ if (slashing) {
     if (bushchk != -1) {
       var hspeedgive = 0;
       var vspeedgive = 0;
-
+      
       if (dir == Direction.DOWN) {
         vspeedgive = 3;
       } else if (dir == Direction.UP) {
@@ -1121,7 +1100,7 @@ if (slashing) {
       } else {
         hspeedgive = 3;
       }
-
+      
       with (bushchk) {
         hspeed = hspeedgive;
         vspeed = vspeedgive;
@@ -1132,7 +1111,7 @@ if (slashing) {
       audio_play_sound(sndClank, 10, false);
     }
   }
-
+  
   //If Link's sprite made it back after tapping, go in here.
   if (tapreverse && xoff == 0 && yoff == 0) {
     tap = false;
@@ -1141,7 +1120,7 @@ if (slashing) {
     //Unflag the finishing of the tapping.
     tapdly = global.onesecond / 5;
     //Make Link wait for a bit before the next tap.
-
+    
     //Get rid of the sword if the key is no longer held.
     if (!scr_held_button_chk(Item.SWORD)) {
       charge = 0;
@@ -1170,6 +1149,3 @@ if (place_meeting(x,y,objEnemy))
     speed=4;    
 }
 */
-
-/* */
-/*  */

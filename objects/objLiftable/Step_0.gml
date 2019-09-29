@@ -20,7 +20,7 @@ if (thrown && !global.sideview) {
     it approaches the ground.
     */
   zspd = max(abs(floor(round((zmax - z) / 3))), 1);
-
+  
   /*
     If it hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.

@@ -33,7 +33,7 @@ for (i = 0; i < imax; i += 1) {
   if ((i + 1) % (argument2 + 1) == 0) {
     row++;
   }
-
+  
   /*
     If the counter is on some heart before the current value is at,
     then the sprite should be a small full container, and the img -1
@@ -65,12 +65,12 @@ for (i = 0; i < imax; i += 1) {
     img = 4 - round(((argument0 - 16 * i) / 16) * 4);
     color = Color.WHITE;
   }
-
+  
   /*
     Now draw the heart sprite with at the given position with
     the given formatting.
     */
-
+  
   draw_sprite_ext(
     spr,
     img,

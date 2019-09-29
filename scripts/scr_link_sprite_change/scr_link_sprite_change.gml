@@ -11,13 +11,14 @@ if (
   !slashing &&
   !charge &&
   !jumping &&
-  !shooting
+  !shooting &&
+  !hammering
 ) {
   /*
     If Link isn't flagged as isMoving, use his idle sprites.  Otherwise,
     use his walking sprites.
     */
-
+  
   if (!isMoving) {
     switch (dir) {
       case Direction.DOWN:
@@ -56,7 +57,8 @@ if (
   !slashing &&
   !charge &&
   !jumping &&
-  !shooting
+  !shooting &&
+  !hammering
 ) {
   /*
     Otherwise, if Link is specifically pushing, use his pushing
@@ -76,7 +78,7 @@ if (
       sprite_index = sprLink0PR;
       break;
   }
-} else if ((shooting || slashing) && !holding && !charge) {
+} else if ((shooting || slashing || hammering) && !holding && !charge) {
   /*
     Otherwise if Link is specifically slashing his sword
     */

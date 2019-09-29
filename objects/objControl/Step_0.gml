@@ -51,9 +51,9 @@ anchor position and rupee counter addition/subtraction.
 //If Link is on the top third of the screen or a sideview area...
 if (
   objLink.y + 16 <=
-    (camera_get_view_y(view_camera[0]) +
-      camera_get_view_width(view_camera[0])) %
-      2 ||
+  (camera_get_view_y(view_camera[0]) +
+  camera_get_view_width(view_camera[0])) %
+  2 ||
   global.sideview
 ) {
   /*
@@ -94,7 +94,7 @@ if (global.pause) {
   } else if (global.hudanchor > 0 && global.menuanchor < 16) {
     global.menuanchor += 1;
   }
-
+  
   /*
     You should only be able to do any cursor activities once the
     menu has fully scrolled in.
@@ -113,7 +113,7 @@ if (global.pause) {
       }
       audio_play_sound(sndMenuCursor, 10, false);
     }
-
+    
     /*
         When the player presses Right, the cursor should move right a
         space, and wrap to the other side if it's already at the edge.
@@ -127,7 +127,7 @@ if (global.pause) {
       }
       audio_play_sound(sndMenuCursor, 10, false);
     }
-
+    
     /*
         When the player presses Up, the cursor should move up a
         space, and wrap to the other side if it's already at the edge.
@@ -141,7 +141,7 @@ if (global.pause) {
       }
       audio_play_sound(sndMenuCursor, 10, false);
     }
-
+    
     /*
         When the player presses Down, the cursor should move down a
         space, and wrap to the other side if it's already at the edge.
@@ -155,50 +155,50 @@ if (global.pause) {
       }
       audio_play_sound(sndMenuCursor, 10, false);
     }
-
+    
     /*
         When the player presses Z, the equipment needs to be
         swapped between Z and the chosen inventory slot.
         */
     if (keyboard_check_pressed(global.hammerButton)) {
       var temp = global.Y;
-
+      
       audio_play_sound(sndMenuChoice, 10, false);
       global.Y = global.inventory[global.menupos];
       global.inventory[global.menupos] = temp;
     }
-
+    
     /*
         When the player presses X, the equipment needs to be
         swapped between X and the chosen inventory slot.
         */
     if (keyboard_check_pressed(global.bombButton)) {
       var temp = global.X;
-
+      
       audio_play_sound(sndMenuChoice, 10, false);
       global.X = global.inventory[global.menupos];
       global.inventory[global.menupos] = temp;
     }
-
+    
     //Calculate the offset for the cursor.
     needmenucurx = global.menupos * 40 - floor(global.menupos / 3) * 120;
     needmenucury = floor(global.menupos / 3) * 16;
-
+    
     //Slowly move the X position of the cursor to it's needed spot.
     if (global.menucurx != needmenucurx) {
       var curspd = max(abs(floor((needmenucurx - global.menucurx) / 2)), 1);
-
+      
       if (needmenucurx > global.menucurx) {
         global.menucurx += curspd;
       } else {
         global.menucurx -= curspd;
       }
     }
-
+    
     //Slowly move the Y position of the cursor to it's needed spot.
     if (global.menucury != needmenucury) {
       var curspd = max(abs(floor((needmenucury - global.menucury) / 2)), 1);
-
+      
       if (needmenucury > global.menucury) {
         global.menucury += curspd;
       } else {
@@ -206,7 +206,7 @@ if (global.pause) {
       }
     }
   }
-
+  
   exit;
   //Break out of this script;
 } else {
@@ -234,7 +234,7 @@ if (global.hearts <= floor(global.heartmax / 4)) {
     audio_play_sound(sndDanger, 10, false);
     dangersnddly = global.onesecond / 2;
   }
-
+  
   //If there's a delay on the heart blending, subtract a frame.
   if (heartblenddly) {
     heartblenddly -= 1;
@@ -263,7 +263,7 @@ if (global.hearts <= floor(global.heartmax / 4)) {
         heartblenddly = 1;
       }
     }
-
+    
     /*
         Now set the blending color.
         */
@@ -297,15 +297,15 @@ if (global.heal != 0) {
   if (oldhearts == -1) {
     oldhearts = global.hearts;
   }
-
+  
   //Temporary variable for how much to add (or take away).
   var amt = 4;
-
+  
   //Take care of any overflow.
   if (amt > abs(global.heal)) {
     amt = abs(global.heal);
   }
-
+  
   /*
     If it's less than 0, than subtract HP.  Otherwise, add it.  Takes
     care of any overflow.
@@ -313,7 +313,7 @@ if (global.heal != 0) {
   if (global.heal > 0) {
     global.hearts += amt;
     global.heal -= amt;
-
+    
     /*
         If the hearts have made it to a full heart from the
         healing, then the heal sound should play.
@@ -336,7 +336,7 @@ the values.
 if (global.rupoff != 0) {
   //Temporary variable for how much to affect the rupee counter.
   var amt = max(floor(abs(global.rupoff) / 20), 1);
-
+  
   /*
     If the value is positive, add rupees, otherwise, take them away.
     */
@@ -347,7 +347,7 @@ if (global.rupoff != 0) {
     global.rupees -= amt;
     global.rupoff += amt;
   }
-
+  
   //Play the sound effect for when the rupee counter is changing.
   audio_play_sound(sndRupeeCounter, 10, false);
 }

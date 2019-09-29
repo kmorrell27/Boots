@@ -10,7 +10,7 @@
         "39950463-0eff-4e57-8134-f2a18cf4b932"
     ],
     "filterType": "GMSprite",
-    "folderName": "Slash",
+    "folderName": "Sword",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
