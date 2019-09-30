@@ -23,5 +23,5 @@ if (argument0 == Item.SWORD && charge && !tap) {
   charge = 0;
   //Unflag Link as charging.
   //Update Link's current sprites.
-  scr_link_sprite_change();
+  scr_player_sprite_change();
 }

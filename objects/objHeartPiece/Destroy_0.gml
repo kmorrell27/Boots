@@ -3,8 +3,8 @@ if (got) {
   //If Link has the requisite heart pieces, give him a container.
   if (global.heartpieces >= 4) {
     instance_create_layer(
-      objLink.x,
-      objLink.y,
+      objPlayer.x,
+      objPlayer.y,
       global.playerLayer,
       objHeartContainer
     );

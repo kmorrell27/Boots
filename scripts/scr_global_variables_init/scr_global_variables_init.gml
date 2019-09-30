@@ -115,3 +115,16 @@ global.bowButton = ord("S");
 global.bombButton = ord("X");
 global.jumpButton = ord("C");
 global.runButton = ord("D");
+
+/*
+ * We've got characters!
+ */
+global.player = Character.BRIAN;
+
+global.sprites = [
+  [sprBrianUp, sprBrianDown, sprBrianLeft, sprBrianRight],
+  [sprRosaUp, sprRosaDown, sprRosaLeft, sprRosaRight],
+  [sprHaroldUp, sprHaroldDown, sprHaroldLeft, sprHaroldRight],
+  [sprCaitlinUp, sprCaitlinDown, sprCaitlinLeft, sprCaitlinRight]
+  
+];

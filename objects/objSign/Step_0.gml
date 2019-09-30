@@ -6,7 +6,7 @@ if (scr_pause_chk()) {
 //If Link has interacted with the chest...
 if (interacted) {
   var ypos = 0;
-  if (objLink.y < 48) {
+  if (objPlayer.y < 48) {
     // We're gonna be covered by the text box
     ypos = 96;
   }

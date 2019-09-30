@@ -25,6 +25,7 @@ if (argument0 == noone) {
 Sword Check
 */
 if (argument0 == Item.SWORD && !charge && !spin) {
+  global.player = Character.ROSA;
   //Play the appropriate sound effect based on which sword Link has.
   audio_play_sound(sndSlash1, 10, false);
   slashing = true;
@@ -51,7 +52,8 @@ if (argument0 == Item.SWORD && !charge && !spin) {
       break;
   }
   //Now let's update Link's sprite.
-  scr_link_sprite_change();
+  alarm[0] = global.onesecond / 4;
+  scr_player_sprite_change();
 }
 
 /*
@@ -77,12 +79,13 @@ if (argument0 == Item.FEATHER && !jumping) {
   image_index = 0;
   //Reset his animation.
   //Now let's update Link's sprite.
-  scr_link_sprite_change();
+  scr_player_sprite_change();
   scr_link_collide();
   //Check for collision.
 }
 
 if (argument0 == Item.BOW) {
+  global.player = Character.BRIAN;
   //Create an arrow!
   if (instance_exists(objArrow)) {
     exit;
@@ -108,10 +111,12 @@ if (argument0 == Item.BOW) {
   arrow.dir = dir;
   //Now let's update Link's sprite.
   image_index = 0;
-  scr_link_sprite_change();
+  alarm[0] = global.onesecond / 4;
+  scr_player_sprite_change();
 }
 
 if (argument0 == Item.BOMB) {
+  global.player = Character.CAITLIN;
   if (!carrying) {
     heldObject = scr_link_ahead_chk(objLiftable, 8);
     if (heldObject == -1 && !instance_exists(objBomb)) {
@@ -147,6 +152,7 @@ if (argument0 == Item.BOMB) {
 }
 
 if (argument0 == Item.HAMMER) {
+  global.player = Character.HAROLD;
   // Hammer time
   audio_play_sound(sndSlash1, 10, false);
   hammering = true;
@@ -172,6 +178,6 @@ if (argument0 == Item.HAMMER) {
       s.sprite_index = sprHammerUp;
       break;
   }
-  //Now let's update Link's sprite.
-  scr_link_sprite_change();
+  alarm[0] = global.onesecond / 4;
+  scr_player_sprite_change();
 }

@@ -9,7 +9,7 @@ if (keyboard_check_pressed(vk_f2)) {
 /*
 If there is no Link, get out of this code.
 */
-if (!instance_exists(objLink)) {
+if (!instance_exists(objPlayer)) {
   exit;
 }
 
@@ -19,7 +19,7 @@ up the equipment menu.  Pressing it again will close it.  Can only
 pause if Link is able to move.
 */
 
-if (keyboard_check_pressed(vk_enter) && objLink.moveable) {
+if (keyboard_check_pressed(vk_enter) && objPlayer.moveable) {
   if (!global.pause) {
     audio_play_sound(sndMenuOpen, 10, false);
     global.pause = true;
@@ -50,7 +50,7 @@ anchor position and rupee counter addition/subtraction.
 
 //If Link is on the top third of the screen or a sideview area...
 if (
-  objLink.y + 16 <=
+  objPlayer.y + 16 <=
   (camera_get_view_y(view_camera[0]) +
   camera_get_view_width(view_camera[0])) %
   2 ||

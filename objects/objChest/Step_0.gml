@@ -9,7 +9,7 @@ if (interacted && !opened) {
   //Play the chest sound.
   opened = true;
   //Flg the chest as opened.
-  objLink.moveable = false;
+  objPlayer.moveable = false;
   //Disable Link's movement.
 }
 
@@ -50,12 +50,12 @@ if (opened) {
       if (chestnum > -1) {
         global.chest[chestnum] = true;
       }
-      objLink.moveable = true;
+      objPlayer.moveable = true;
       //Reflag Link as able to move.
       //And then give him the item the chest has.
       instance_create_layer(
-        objLink.x + 4,
-        objLink.y + 4,
+        objPlayer.x + 4,
+        objPlayer.y + 4,
         global.playerLayer,
         itemobj
       );

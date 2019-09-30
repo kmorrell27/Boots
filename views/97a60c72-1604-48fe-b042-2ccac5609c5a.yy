@@ -7,7 +7,7 @@
         "0bd9a9d9-f410-48fa-aab3-b1ee4d81a0fc"
     ],
     "filterType": "GMObject",
-    "folderName": "Link",
+    "folderName": "Player",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -23,8 +23,8 @@ relative to the previous and current view positions respectively.
 var lastlinkx = global.lastlinkx - global.lastviewx;
 var lastlinky = global.lastlinky - global.lastviewy;
 var ratio = display_get_gui_width() / camera_get_view_width(view_camera[0]);
-var linkx = objLink.x - camera_get_view_x(view_camera[0]) * ratio;
-var linky = objLink.y - camera_get_view_y(view_camera[0]) * ratio;
+var linkx = objPlayer.x - camera_get_view_x(view_camera[0]) * ratio;
+var linky = objPlayer.y - camera_get_view_y(view_camera[0]) * ratio;
 show_debug_message("---");
 show_debug_message(string(linkx));
 show_debug_message(string(linky));
@@ -93,28 +93,28 @@ if (argument4 <= 0.5) {
     display_get_gui_height()
   );
   //Now draw Link's shadow and Link himself.
-  if (instance_exists(objLink)) {
+  if (instance_exists(objPlayer)) {
     draw_sprite_ext(
       sprShadow,
       -1,
       round(lastlinkx),
       round(lastlinky) + 1,
-      objLink.image_xscale,
-      objLink.image_yscale,
-      objLink.image_angle,
-      objLink.image_blend,
-      objLink.image_alpha - 0.125
+      objPlayer.image_xscale,
+      objPlayer.image_yscale,
+      objPlayer.image_angle,
+      objPlayer.image_blend,
+      objPlayer.image_alpha - 0.125
     );
     draw_sprite_ext(
-      objLink.sprite_index,
-      objLink.image_index,
-      round(lastlinkx) + objLink.xoff,
-      round(lastlinky) + objLink.yoff + objLink.z,
-      objLink.image_xscale,
-      objLink.image_yscale,
-      objLink.image_angle,
-      objLink.image_blend,
-      objLink.image_alpha
+      objPlayer.sprite_index,
+      objPlayer.image_index,
+      round(lastlinkx) + objPlayer.xoff,
+      round(lastlinky) + objPlayer.yoff + objPlayer.z,
+      objPlayer.image_xscale,
+      objPlayer.image_yscale,
+      objPlayer.image_angle,
+      objPlayer.image_blend,
+      objPlayer.image_alpha
     );
   }
   
@@ -140,28 +140,28 @@ if (argument4 <= 0.5) {
     display_get_gui_height()
   );
   //Now draw Link's shadow and Link himself.
-  if (instance_exists(objLink)) {
+  if (instance_exists(objPlayer)) {
     draw_sprite_ext(
       sprShadow,
       -1,
       round(linkx),
       round(linky) + 1,
-      objLink.image_xscale,
-      objLink.image_yscale,
-      objLink.image_angle,
-      objLink.image_blend,
-      objLink.image_alpha - 0.125
+      objPlayer.image_xscale,
+      objPlayer.image_yscale,
+      objPlayer.image_angle,
+      objPlayer.image_blend,
+      objPlayer.image_alpha - 0.125
     );
     draw_sprite_ext(
-      objLink.sprite_index,
-      objLink.image_index,
-      round(linkx) + objLink.xoff,
-      round(linky) + objLink.yoff + objLink.z,
-      objLink.image_xscale,
-      objLink.image_yscale,
-      objLink.image_angle,
-      objLink.image_blend,
-      objLink.image_alpha
+      objPlayer.sprite_index,
+      objPlayer.image_index,
+      round(linkx) + objPlayer.xoff,
+      round(linky) + objPlayer.yoff + objPlayer.z,
+      objPlayer.image_xscale,
+      objPlayer.image_yscale,
+      objPlayer.image_angle,
+      objPlayer.image_blend,
+      objPlayer.image_alpha
     );
   }
   

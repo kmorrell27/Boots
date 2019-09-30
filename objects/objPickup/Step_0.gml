@@ -165,10 +165,10 @@ if (!got) {
     The item should appear under Link if he's further down the screen.
     Otherwise, it should appear above him.
     */
-  if (objLink.y + 8 < y) {
-    depth = objLink.depth - 1;
+  if (objPlayer.y + 8 < y) {
+    depth = objPlayer.depth - 1;
   } else {
-    depth = objLink.depth + 1;
+    depth = objPlayer.depth + 1;
   }
   
   /*
@@ -177,7 +177,7 @@ if (!got) {
     been gotten.
     */
   if (
-    (place_meeting(x, y, objLink) || place_meeting(x, y, objSword)) &&
+    (place_meeting(x, y, objPlayer) || place_meeting(x, y, objSword)) &&
     !getdly
   ) {
     got = true;
@@ -185,10 +185,10 @@ if (!got) {
   }
 } else {
   //Otherwise, make the item appear above Link.
-  depth = objLink.depth - 1;
-  x = objLink.x + 4;
+  depth = objPlayer.depth - 1;
+  x = objPlayer.x + 4;
   //Center this on Link X wise.
-  y = objLink.y + 4;
+  y = objPlayer.y + 4;
   //Center this on Link Y wise.
   hspeed = 0;
   //No horizontal speed.
