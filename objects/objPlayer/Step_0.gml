@@ -69,10 +69,17 @@ This block of code checks for the corresponding directional keys,
 while considering the opposite.  If both up and down are held
 together, for example, then they cancel out.
 */
-down = keyboard_check(vk_down) && !keyboard_check(vk_up);
-up = keyboard_check(vk_up) && !keyboard_check(vk_down);
-left = keyboard_check(vk_left) && !keyboard_check(vk_right);
-right = keyboard_check(vk_right) && !keyboard_check(vk_left);
+if (gamepad_is_connected(0)) {
+  up = gamepad_axis_value(0, gp_axislv) < 0;
+  down = gamepad_axis_value(0, gp_axislv) > 0;
+  left = gamepad_axis_value(0, gp_axislh) < 0;
+  right = gamepad_axis_value(0, gp_axislh) > 0;
+} else {
+  down = keyboard_check(vk_down) && !keyboard_check(vk_up);
+  up = keyboard_check(vk_up) && !keyboard_check(vk_down);
+  left = keyboard_check(vk_left) && !keyboard_check(vk_right);
+  right = keyboard_check(vk_right) && !keyboard_check(vk_left);
+}
 
 /*
 This section checks for double tapping a directional key.
@@ -130,7 +137,6 @@ if (
   !tap &&
   !cliff &&
   !spin &&
-  !shooting &&
   !hammering
 ) {
   /*
@@ -294,7 +300,7 @@ MOVEMENT SECTION
 //If Link is in a proper state to move...
 if (
   moveable &&
-  ((!slashing && !shooting && !hammering) || jumping) &&
+  ((!slashing && !hammering) || jumping) &&
   !tap &&
   !rolling &&
   !cliff &&
@@ -334,7 +340,7 @@ if (
     cannot moonwalk in this engine =P.  No directional change if
     Link is charging, using the spin attack or jumping.
     */
-  if (!charge && !spin && !jumping) {
+  if (!charge && !spin && !jumping && !shooting) {
     if (
       down &&
       ((!left && !right) ||
@@ -917,7 +923,7 @@ if he is able to at all.
 */
 
 //If the player presses Z...
-if (keyboard_check_pressed(global.bombButton)) {
+if (scr_bomb_button_pressed()) {
   //Temporary variable for a possible interaction in front of Link.
   var interactchk = scr_link_ahead_chk(objInteractable, 4);
   
@@ -935,32 +941,28 @@ if (keyboard_check_pressed(global.bombButton)) {
   }
 }
 
-if (keyboard_check_pressed(global.swordButton)) {
+if (scr_sword_button_pressed()) {
   scr_use_item(Item.SWORD);
 }
 
-if (keyboard_check_released(global.swordButton)) {
+if (scr_sword_button_released()) {
   scr_release_button(Item.SWORD);
 }
 
-if (keyboard_check_pressed(global.hammerButton)) {
+if (scr_hammer_button_pressed()) {
   scr_use_item(Item.HAMMER);
 }
 
-if (keyboard_check_pressed(global.jumpButton)) {
+if (scr_jump_button_pressed()) {
   scr_use_item(Item.FEATHER);
 }
 
-if (keyboard_check_pressed(global.runButton)) {
-  // Run
-}
-
 //If the player presses X, use what's on X.
-if (keyboard_check_pressed(global.bowButton)) {
+if (scr_arrow_button_pressed()) {
   scr_use_item(Item.BOW);
 }
 
-if (keyboard_check_released(global.bowButton)) {
+if (scr_arrow_button_released()) {
   scr_release_button(Item.BOW);
 }
 
@@ -1010,7 +1012,7 @@ if (isMoving || slashing || jumping || rolling || tap || shooting || hammering) 
   if (tap) {
     //2nd frame for tapping.
     image_index = 1;
-  } else if (slashing || shooting || hammering) {
+  } else if (slashing || hammering) {
     //Stop moving
     image_speed = 0;
   } else if (jumping) {
@@ -1123,7 +1125,7 @@ if (slashing) {
     //Make Link wait for a bit before the next tap.
     
     //Get rid of the sword if the key is no longer held.
-    if (!scr_held_button_chk(Item.SWORD)) {
+    if (!scr_sword_button_held()) {
       charge = 0;
       if (instance_exists(objSword)) {
         with (objSword) {

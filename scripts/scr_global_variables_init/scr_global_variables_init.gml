@@ -1,3 +1,5 @@
+// @gml_fmt ignore
+
 // 60 FPS baby
 global.onesecond = 60;
 
@@ -109,13 +111,6 @@ global.playerLayer = layer_get_id("Player");
 global.groundLayer = layer_get_id("GroundTile");
 display_set_gui_size(256, 144);
 
-global.hammerButton = ord("Z");
-global.swordButton = ord("A");
-global.bowButton = ord("S");
-global.bombButton = ord("X");
-global.jumpButton = ord("C");
-global.runButton = ord("D");
-
 /*
  * We've got characters!
  */
@@ -126,5 +121,4 @@ global.sprites = [
   [sprRosaUp, sprRosaDown, sprRosaLeft, sprRosaRight],
   [sprHaroldUp, sprHaroldDown, sprHaroldLeft, sprHaroldRight],
   [sprCaitlinUp, sprCaitlinDown, sprCaitlinLeft, sprCaitlinRight]
-  
 ];

@@ -3,7 +3,7 @@ if (!processedString) {
   processedString = true;
 }
 
-if (keyboard_check_pressed(global.hammerButton)) {
+if (scr_hammer_button_pressed()) {
   if (counter < string_length(str[page])) {
     counter = string_length(str[page]);
     alarm[0] = -1;

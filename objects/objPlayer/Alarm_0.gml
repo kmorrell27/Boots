@@ -38,7 +38,7 @@ if (slashing) {
     If the player is still holding the sword button, flag Link
     as charging.
     */
-  if (scr_held_button_chk(Item.SWORD)) {
+  if (scr_sword_button_held()) {
     charge = 1;
   } else {
     //Otherwise delete the sword.
@@ -64,10 +64,6 @@ if (slashing) {
   //Reset his animation frame.
   scr_player_sprite_change();
   //Finally, have Link update his sprite.
-} else if (shooting) {
-  shooting = false;
-  image_index = 0;
-  scr_player_sprite_change();
 } else if (hammering) {
   if (instance_exists(objHammer)) {
     instance_destroy(objHammer);

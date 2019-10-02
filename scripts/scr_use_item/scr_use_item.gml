@@ -86,32 +86,8 @@ if (argument0 == Item.FEATHER && !jumping) {
 
 if (argument0 == Item.BOW) {
   global.player = Character.BRIAN;
-  //Create an arrow!
-  if (instance_exists(objArrow)) {
-    exit;
-  }
   shooting = true;
   pushing = false;
-  var arrow = instance_create_layer(x, y, global.playerLayer, objArrow);
-  //Give the arrow the same sprite as the sword.
-  switch (dir) {
-    case Direction.RIGHT:
-      arrow.sprite_index = sprArrowRight;
-      break;
-    case Direction.LEFT:
-      arrow.sprite_index = sprArrowLeft;
-      break;
-    case Direction.UP:
-      arrow.sprite_index = sprArrowUp;
-      break;
-    case Direction.DOWN:
-      arrow.sprite_index = sprArrowDown;
-      break;
-  }
-  arrow.dir = dir;
-  //Now let's update Link's sprite.
-  image_index = 0;
-  alarm[0] = global.onesecond / 4;
   scr_player_sprite_change();
 }
 
