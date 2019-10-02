@@ -26,3 +26,14 @@ enum Character {
   HAROLD,
   CAITLIN
 }
+
+
+enum Transition {
+  LEFT,
+  RIGHT,
+  UP,
+  DOWN,
+  RECTANGLE,
+  CIRCLE,
+  NONE,
+}

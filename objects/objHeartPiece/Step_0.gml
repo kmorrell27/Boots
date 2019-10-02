@@ -4,7 +4,7 @@ event_inherited(); //Call the parent code.
 if (got && !used) {
   //Add 1 to the total Heart Pieces.
   global.heartpieces += 1;
-  
+
   //Flag this item as having been obtained, if possible.
   if (heartnum > -1) {
     global.permheart[heartnum] = true;

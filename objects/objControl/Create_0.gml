@@ -16,7 +16,5 @@ What was the value of Link's hearts before he started healing? -1
 for no consideration.
 */
 oldhearts = -1;
-needmenucurx = 0; //Where does the menu cursor X need to be?
-needmenucury = 0; //Where does the menu cursor Y need to be?
 
 instance_create_layer(0, 0, global.playerLayer, objWeather);

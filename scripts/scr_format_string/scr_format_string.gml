@@ -10,7 +10,7 @@ if (string_length(str) <= 31) {
 for (var i = 32; i < string_length(str); i += 32) {
   while (string_char_at(str, i) != " ") {
     i--;
-    
+
     if (i < 1) {
       // We fucked up. Bail
       return str;

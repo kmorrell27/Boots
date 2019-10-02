@@ -2,7 +2,10 @@ event_inherited(); //Call the parent event.
 
 //Temporary variable for Link's animation image.
 var quartersecond = global.onesecond / 4;
-var img = floor((quartersecond - objPlayer.alarm[0]) / (quartersecond / objHammer.image_number));
+var img = floor(
+  (quartersecond - objPlayer.alarm[0]) /
+    (quartersecond / objHammer.image_number)
+);
 
 //Hammering checking.
 if (objPlayer.hammering) {
@@ -13,7 +16,7 @@ if (objPlayer.hammering) {
     lastyoff = yoff;
     lastimg = img;
   }
-  
+
   /*
     This if-else tree positions the sword based on Link's current
     frame in his animation.  It will always be in his hand, minus

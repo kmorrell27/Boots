@@ -7,7 +7,7 @@ if (snddly) {
   snddly -= 1;
 } else {
   //Otherwise, do this stuff.
-  
+
   //If it is raining, go in here.
   if (global.rain) {
     /*
@@ -53,13 +53,13 @@ if (global.rain) {
     }
   } else {
     //Otherwise, do this stuff.
-    
+
     thunderpoint = false;
     //Reset the thunder fade position.
     thunderalpha = 0;
     //Reset the thunder alpha.
   }
-  
+
   /*
     If there is a delay on the thunder, subtract a frame.
     Otherwise, play the sound, turn the thunder on, and give
@@ -74,7 +74,7 @@ if (global.rain) {
   }
 } else {
   //Otherwise, do this stuff.
-  
+
   thunder = false;
   //Reset the thunder.
   thunderpoint = false;

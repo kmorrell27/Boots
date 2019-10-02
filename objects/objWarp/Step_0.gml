@@ -3,11 +3,13 @@ Warping can only happen when Link STANDS on a warp object.  Once he does
 let's do stuff.*/
 
 if (place_meeting(x, y, objPlayer) && !objPlayer.jumping) {
-  global.lastlinkx = objPlayer.x *
-  (display_get_gui_width() / camera_get_view_width(view_camera[0]));
+  global.lastlinkx =
+    objPlayer.x *
+    (display_get_gui_width() / camera_get_view_width(view_camera[0]));
   //Store Link's X coordinate.
-  global.lastlinky = objPlayer.y *
-  (display_get_gui_height() / camera_get_view_height(view_camera[0]));
+  global.lastlinky =
+    objPlayer.y *
+    (display_get_gui_height() / camera_get_view_height(view_camera[0]));
   //Store Link's Y coordinate.
   global.lastviewx = camera_get_view_x(view_camera[0]);
   //Store the view's X coordinate.

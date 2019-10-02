@@ -12,12 +12,12 @@ if (pushx != 0 || pushy != 0) {
     Move 1 pixel per frame.
     */
   pushspd = 1;
-  
+
   //If the push distances are negative, negate the pushspd.
   if (pushx < 0 || pushy < 0) {
     pushspd *= -1;
   }
-  
+
   //Horizontal Movement
   if (pushx != 0) {
     /*
@@ -27,7 +27,7 @@ if (pushx != 0 || pushy != 0) {
     x += pushspd;
     pushx -= pushspd;
   }
-  
+
   //Vertical Movement
   if (pushy != 0) {
     /*
@@ -37,7 +37,7 @@ if (pushx != 0 || pushy != 0) {
     y += pushspd;
     pushy -= pushspd;
   }
-  
+
   //Movement Completion
   if (pushx == 0 && pushy == 0) {
     pushdir = noone;

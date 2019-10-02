@@ -19,69 +19,11 @@ var yoff = 128;
 //Temporary variable for what color blend to use for a HUD elemnt.
 var blend = Color.WHITE;
 
-//Next, draw the Z button indicator.
-draw_sprite_ext(
-  sprHUDZButton,
-  -1,
-  argument0,
-  argument1 + yoff,
-  image_xscale,
-  image_yscale,
-  image_angle,
-  image_blend,
-  1
-);
-
-//Now draw what's equipped on Z.
-scr_draw_equip(global.Y, argument0 + 8, argument1 + yoff, image_blend, 1);
-
-//Next, draw the delimeter.
-draw_sprite_ext(
-  sprHUDDelimeter,
-  -1,
-  argument0 + 32,
-  argument1 + yoff,
-  image_xscale,
-  image_yscale,
-  image_angle,
-  image_blend,
-  1
-);
-
-//Now draw what's equipped on X.
-scr_draw_equip(global.X, argument0 + 40, argument1 + yoff, image_blend, 1);
-
-//Next, draw the X button indicator.
-draw_sprite_ext(
-  sprHUDXButton,
-  -1,
-  argument0 + 64,
-  argument1 + yoff,
-  image_xscale,
-  image_yscale,
-  image_angle,
-  image_blend,
-  1
-);
-
-//Next, draw the Magic Meter.
-draw_sprite_ext(
-  sprHUDMeter,
-  -1,
-  argument0 + 72,
-  argument1 + yoff,
-  image_xscale,
-  image_yscale,
-  image_angle,
-  image_blend,
-  1
-);
-
 //Next, draw the Rupee icon, based on which wallet Link has.
 draw_sprite_ext(
   sprRupeeIcon,
   global.wallet,
-  argument0 + 88,
+  argument0 + 8,
   argument1 + yoff,
   image_xscale,
   image_yscale,
@@ -105,14 +47,7 @@ if (global.rupees == 0) {
   blend = Color.WHITE;
 }
 //Now draw the counter for the rupees.
-scr_draw_counter(
-  global.rupees,
-  3,
-  argument0 + 80,
-  argument1 + yoff + 8,
-  blend,
-  1
-);
+scr_draw_counter(global.rupees, 3, argument0, argument1 + yoff + 8, blend, 1);
 
 blend = global.heartblend; //Set the blend to what the hearts need.
 //Now draw the hearts.
@@ -120,7 +55,7 @@ scr_draw_hearts(
   global.hearts,
   global.heartmax,
   7,
-  argument0 + 104,
+  argument0 + 24,
   argument1 + yoff,
   blend,
   1

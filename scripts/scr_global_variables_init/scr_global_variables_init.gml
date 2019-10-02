@@ -38,8 +38,6 @@ global.X = noone; //What Item is selected on X.
 global.heal = 0; //How much healing (or damaging) Link is undergoing.
 global.rupoff = 0; //How much money Link is gaining (or losing).
 global.pause = false; //Is the game paused?
-global.menucurx = 0; //The X position of the menu cursor.
-global.menucury = 0; //The Y position of the menu cursor.
 global.inside = true; //Is Link NOT on the overworld?
 global.areaname = ""; //The name of the area Link is currently in.
 /*
@@ -59,35 +57,6 @@ Are sideview physics used or not?  Sideview areas like on the GBC
 Zelda titles.
 */
 global.sideview = false;
-
-/*
-Where is the Menu located (Y Position)?  Positive value for the top
-of the screen, negative value for the bottom.
-*/
-global.menuanchor = 0;
-global.menupos = 0; //Cursor position in the menu.
-/*
-Array of what's stored in each slot in the inventory.
-*/
-global.inventory[30] = noone;
-/*
-Now initialize that array to blank strings.
-*/
-for (i = 0; i < 30; i += 1) {
-  global.inventory[i] = noone;
-}
-global.inventory[0] = Item.BOMB;
-
-/*
-Array of what chests have been opened.
-*/
-global.chest[50] = false;
-/*
-Now initialize that array to unopened chests.
-*/
-for (i = 0; i < 50; i += 1) {
-  global.chest[i] = false;
-}
 
 /*
 Make a sprite font so we can use Oracle game font, starting from the

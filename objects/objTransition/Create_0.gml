@@ -1,16 +1,6 @@
 /// @description  Initialize Variables
 // Transition Variables
 
-enum Transition {
-  LEFT,
-  RIGHT,
-  UP,
-  DOWN,
-  RECTANGLE,
-  CIRCLE,
-  NONE,
-}
-
 next_room = room;
 kind_ = Transition.LEFT;
 step_ = 0;
