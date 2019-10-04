@@ -114,25 +114,25 @@ if (doublekeytapdly) {
 tempcanroll = false;
 
 //If the player presses down...
-if (keyboard_check_pressed(vk_down) && !global.sideview) {
+if (scr_down_button_pressed() && !global.sideview) {
   scr_link_doubletap(Direction.DOWN);
   //Check for down double tapping.
 }
 
 //If the player presses up...
-if (keyboard_check_pressed(vk_up) && !global.sideview) {
+if (scr_up_button_pressed() && !global.sideview) {
   scr_link_doubletap(Direction.UP);
   //Check for up double tapping.
 }
 
 //If the player presses left...
-if (keyboard_check_pressed(vk_left)) {
+if (scr_left_button_pressed()) {
   scr_link_doubletap(Direction.LEFT);
   //Check for left double tapping.
 }
 
 //If the player presses right...
-if (keyboard_check_pressed(vk_right)) {
+if (scr_right_button_pressed()) {
   scr_link_doubletap(Direction.RIGHT);
   //Check for right double tapping.
 }
