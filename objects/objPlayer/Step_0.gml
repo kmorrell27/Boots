@@ -1027,7 +1027,6 @@ if (
   jumping ||
   rolling ||
   tap ||
-  shooting ||
   hammering
 ) {
   if (tap) {
