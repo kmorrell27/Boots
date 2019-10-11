@@ -1021,14 +1021,7 @@ various speeds depending on what actions he is performing.
 */
 
 //If Link is moving or using an item that requires animation...
-if (
-  isMoving ||
-  slashing ||
-  jumping ||
-  rolling ||
-  tap ||
-  hammering
-) {
+if (isMoving || slashing || jumping || rolling || tap || hammering) {
   if (tap) {
     //2nd frame for tapping.
     image_index = 1;
