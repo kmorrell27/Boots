@@ -44,5 +44,3 @@ carrying = false; // Is Link holding something
 heldObject = noone;
 shooting = false; // Are we firing a bow?
 hammering = false; // Maybe this could be consolidated idk
-
-show_debug_message(Color.WHITE);

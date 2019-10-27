@@ -1,9 +1,4 @@
 /*
-Temporary variable for Link's current frame of animation.
-*/
-var img = floor(image_index);
-
-/*
 Draw the shadow below Link's sprite, 1 pixel further down, if he's
 not in a sideview area.
 */

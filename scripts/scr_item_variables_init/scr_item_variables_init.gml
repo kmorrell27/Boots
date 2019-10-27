@@ -28,14 +28,6 @@ for (i = 0; i < 50; i += 1) {
 }
 
 /*
-Which tunic Link has.  0 = Green, 1 = Blue, 2 = Red.  Used for
-defense calculations, just like A Link to the Past.  The Blue Tunic
-cuts damage taken by 1/2, while the Red Tunic cuts the damage taken
-by 3/4ths.
-*/
-global.tunic = 0;
-
-/*
 How many Rupees Link has.  He starts off broke.
 */
 global.rupees = 0;
@@ -44,11 +36,6 @@ global.rupees = 0;
 How many Bombs Link has.
 */
 global.bombs = 0;
-
-/*
-How many Arrows Link has.
-*/
-global.arrows = 0;
 
 /*
 Which wallet does Link have?  Also used to draw a specific subimage
@@ -88,7 +75,6 @@ wouldn't be in the inventory if he didn't have it at all.
 ********************************************************************/
 global.sword = 1; //Sword Level.
 global.bombbag = 0; //Which Bomb Bag Link has.
-global.quiver = 0; //Which Quiver Link has.
 /*
 Type of Bombs Link has.  0 for Regular, 1 for Silver, and 2
 for Gold.
@@ -98,7 +84,4 @@ global.bombtype = 0;
 Type of Arrows Link has.  0 for Regular, 1 for Silver, and 2
 for Gold.
 */
-global.arrowtype = 0;
 global.feather = 0; //Roc's Equipment Level.
-global.bracelet = 0; //Power Bracelet Level.
-global.boomerang = 0; //Boomerang Level.
