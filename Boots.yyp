@@ -359,6 +359,14 @@
             }
         },
         {
+            "Key": "14f17585-b333-43de-8a31-0f09b8275dab",
+            "Value": {
+                "id": "e5cce53d-ff20-49aa-a221-7b5d07714a6c",
+                "resourcePath": "views\\14f17585-b333-43de-8a31-0f09b8275dab.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1504c0e7-ade1-4b4a-95c5-671f4ec68263",
             "Value": {
                 "id": "2f43d18a-4607-4e58-9ebe-ccac711c871c",
@@ -919,6 +927,14 @@
             }
         },
         {
+            "Key": "3f313c15-867f-4d62-b174-b8a2713e7646",
+            "Value": {
+                "id": "56a31419-6be3-4dbc-9b09-5ea32aedaf19",
+                "resourcePath": "sprites\\sprTorch\\sprTorch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3fe15879-da24-435d-8835-2c43b421fd15",
             "Value": {
                 "id": "6bafd7c5-24ca-45ba-a7d2-f0b059a9a713",
@@ -1307,14 +1323,6 @@
             "Value": {
                 "id": "a37c78a4-3ed3-42d0-a90e-de1f38aa210c",
                 "resourcePath": "views\\5d7df30a-99b1-49cb-8eeb-21d36af0e52b.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "5d8cbd4d-63b8-45e9-a4a2-9544aa2a12bb",
-            "Value": {
-                "id": "8b0c9fa3-2cf8-446d-ab0c-f4cf02ba7ff6",
-                "resourcePath": "views\\f5d3569f-c26f-45be-bdca-54b179325be6-room.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1775,6 +1783,14 @@
             }
         },
         {
+            "Key": "7dca936c-e4ff-435f-8a1a-64b62c9f7eaa",
+            "Value": {
+                "id": "2052acf8-6d44-4f1c-8464-3175811cbbe1",
+                "resourcePath": "tilesets\\tsDungeon_tileset\\tsDungeon_tileset.yy",
+                "resourceType": "GMTileSet"
+            }
+        },
+        {
             "Key": "7f066a9b-97b0-4b58-88d1-75fbb4503c55",
             "Value": {
                 "id": "c332d51e-219f-44ad-9426-ec5c1b9edd61",
@@ -2215,6 +2231,14 @@
             }
         },
         {
+            "Key": "a19cd342-eff3-478b-86ba-c6278fc33acc",
+            "Value": {
+                "id": "669a304b-49ba-4402-81ab-f42e542270fc",
+                "resourcePath": "sprites\\tsDungeon\\tsDungeon.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a28b7031-43e1-401f-a5c2-8e5e37be5fad",
             "Value": {
                 "id": "cfdef271-4bfd-4549-b2be-6c52f531a4c1",
@@ -2508,6 +2532,14 @@
                 "id": "1f95c321-0e15-4839-8a45-55cb886091e8",
                 "resourcePath": "scripts\\scr_draw_counter\\scr_draw_counter.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "b6d116c3-3300-4af9-974f-72f7a4bc6316",
+            "Value": {
+                "id": "f50cdbf1-3ede-4854-ba27-2a1c5a3a928a",
+                "resourcePath": "sprites\\sprFirePot\\sprFirePot.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
