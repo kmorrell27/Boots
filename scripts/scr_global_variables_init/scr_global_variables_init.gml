@@ -64,7 +64,8 @@ exclamation point.  Then set it as the default drawing
 font.
 */
 
-var stringOrder = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+var stringOrder =
+  "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 global.font = font_add_sprite_ext(sprFont, stringOrder, false, 0);
 draw_set_font(global.font);
 
