@@ -1,19 +1,10 @@
 {
-    "id": "e30f5a7e-1e98-4283-bd4e-db339124982f",
+    "id": "d11d8c36-6a26-441e-8a2e-ae15b2bdc6b0",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objWeapon",
+    "name": "objSolid",
     "eventList": [
-        {
-            "id": "543c9451-2fed-45c5-9815-2103666d39b9",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "e30f5a7e-1e98-4283-bd4e-db339124982f"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -28,10 +19,8 @@
     "physicsObject": false,
     "physicsRestitution": 0.1,
     "physicsSensor": false,
-    "physicsShape": 0,
-    "physicsShapePoints": [
-        
-    ],
+    "physicsShape": 1,
+    "physicsShapePoints": null,
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,

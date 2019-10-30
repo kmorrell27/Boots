@@ -1,4 +1,4 @@
-if (!hitstun) {
+if (!hitstun && other.thrown) {
   hitstun = true;
   direction = point_direction(objPlayer.x, objPlayer.y, x, y);
   speed = 3;
@@ -9,4 +9,5 @@ if (!hitstun) {
   } else {
     alarm[0] = global.onesecond / 5;
   }
+  instance_destroy(other);
 }

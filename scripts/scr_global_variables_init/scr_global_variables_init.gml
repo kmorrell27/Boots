@@ -63,7 +63,9 @@ Make a sprite font so we can use Oracle game font, starting from the
 exclamation point.  Then set it as the default drawing
 font.
 */
-global.font = font_add_sprite(sprFont, 33, false, 0);
+
+var stringOrder = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+global.font = font_add_sprite_ext(sprFont, stringOrder, false, 0);
 draw_set_font(global.font);
 
 /*
@@ -71,7 +73,7 @@ Make another sprite font so we can use Oracle game font, starting from
 the exclamation point.  It's also a condensed font, so the letters
 are put closer together (not mono-spaced).
 */
-global.tightfont = font_add_sprite(sprFont, 33, true, 2);
+global.tightfont = font_add_sprite_ext(sprFont, stringOrder, true, 2);
 
 /*
 Looking up layers by string is for chumps.

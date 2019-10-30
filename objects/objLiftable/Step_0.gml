@@ -57,7 +57,7 @@ if (thrown && !global.sideview) {
     y += throwspd;
     throwy -= throwspd;
   }
-  if (place_meeting(x, y, objWall)) {
+  if (place_meeting(x, y, objSolid)) {
     if (!durable) {
       if (throwx != 0) {
         xoff = throwx > 0 ? 0 : -12;

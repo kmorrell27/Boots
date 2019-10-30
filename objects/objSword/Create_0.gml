@@ -5,3 +5,4 @@ yoff = 0; //The Y offset from Link's position.
 lastxoff = 0; //Previous X offset.
 lastyoff = 0; //Previous Y offset.
 lastimg = -1; //Previous image frame.
+damage = 1;
