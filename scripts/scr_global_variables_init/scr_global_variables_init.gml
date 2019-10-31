@@ -86,7 +86,7 @@ display_set_gui_size(256, 144);
 /*
  * We've got characters!
  */
-global.player = Character.BRIAN;
+global.player = Character.CAITLIN;
 
 global.sprites = [
   [sprBrianUp, sprBrianDown, sprBrianLeft, sprBrianRight],

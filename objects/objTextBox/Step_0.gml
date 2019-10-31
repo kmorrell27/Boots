@@ -18,3 +18,14 @@ if (scr_hammer_button_pressed()) {
     }
   }
 }
+
+if (scr_bomb_button_pressed() && counter == string_length(str[page])) {
+  if (page < array_length_1d(str) - 1) {
+    counter = 0;
+    page++;
+    alarm[0] = textspd;
+    processedString = false;
+  } else {
+    instance_destroy();
+  }
+}

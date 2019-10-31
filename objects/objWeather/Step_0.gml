@@ -2,34 +2,6 @@ if (scr_pause_chk()) {
   exit;
 }
 
-//If there is a delay on the sound, subtract a frame.
-if (snddly) {
-  snddly -= 1;
-} else {
-  //Otherwise, do this stuff.
-
-  //If it is raining, go in here.
-  if (global.rain) {
-    /*
-        If Link is inside, play the inside rain sound, and set the
-        sound delay based on that sound.  Otherwise, play the
-        outside rain sound, and set the delay based on that.
-        */
-    if (!global.inside) {
-      snd = sndRainOutside;
-      audio_play_sound(sndRainOutside, 10, false);
-      snddly = global.onesecond * 5;
-    } else {
-      snd = sndRainInside;
-      audio_play_sound(sndRainInside, 10, false);
-      snddly = global.onesecond * 5;
-    }
-  } else {
-    //Otherwise, reset the sound delay.
-    snddly = 0;
-  }
-}
-
 //If it is raining, go in here.
 if (global.rain) {
   //If it's thundering, go in here.

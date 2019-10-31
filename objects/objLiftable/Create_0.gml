@@ -14,3 +14,4 @@ throwspd = 0; //How fast, in pixels, is this object moving?
 xoff = 0; // For drawing the destruction
 yoff = 0;
 durable = false; // Bounce of walls and don't crash on the ground
+doesdamage = true; // Hurts enemies

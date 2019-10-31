@@ -353,7 +353,7 @@ if (
     cannot moonwalk in this engine =P.  No directional change if
     Link is charging, using the spin attack or jumping.
     */
-  if (!charge && !spin && !jumping && !shooting) {
+  if (!charge && !spin && !jumping) {
     if (
       down &&
       ((!left && !right) ||

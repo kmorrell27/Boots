@@ -8,24 +8,15 @@ format:  scr_use_item(item);
 /*
 If Link isn't in a state to use an item, then get out of here.
 */
-if (!moveable || slashing || cliff || rolling || shooting || hammering) {
+if (!moveable || slashing || cliff || rolling || hammering) {
   exit;
-}
-
-/*
-If there isn't an item equipped on this button, play the error
-sound.
-*/
-if (argument0 == noone) {
-  audio_stop_sound(sndError);
-  audio_play_sound(sndError, 10, false);
 }
 
 /*
 Sword Check
 */
 if (argument0 == Item.SWORD && !charge && !spin) {
-  global.player = Character.ROSA;
+  global.player = Character.CAITLIN;
   //Play the appropriate sound effect based on which sword Link has.
   audio_play_sound(sndSlash1, 10, false);
   slashing = true;
@@ -85,18 +76,39 @@ if (argument0 == Item.FEATHER && !jumping) {
 }
 
 if (argument0 == Item.BOW) {
-  global.player = Character.BRIAN;
-  shooting = true;
+  global.player = Character.ROSA;
   pushing = false;
+  if (instance_exists(objArrow)) {
+    exit;
+  }
+  var arrow = instance_create_layer(x, y, global.playerLayer, objArrow);
+  //Give the arrow the same sprite as the sword.
+  switch (dir) {
+    case Direction.RIGHT:
+      arrow.sprite_index = sprArrowRight;
+      break;
+    case Direction.LEFT:
+      arrow.sprite_index = sprArrowLeft;
+      break;
+    case Direction.UP:
+      arrow.sprite_index = sprArrowUp;
+      break;
+    case Direction.DOWN:
+      arrow.sprite_index = sprArrowDown;
+      break;
+  }
+  arrow.dir = dir;
+  //Now let's update Link's sprite.
+  image_index = 0;
   scr_player_sprite_change();
 }
 
 if (argument0 == Item.BOMB) {
-  global.player = Character.CAITLIN;
+  global.player = Character.BRIAN;
   if (!carrying) {
     heldObject = scr_link_ahead_chk(objLiftable, 8);
     if (heldObject == -1 && !instance_exists(objBomb)) {
-      instance_create_layer(x, y, global.playerLayer, objBomb);
+      instance_create_depth(x, y, objPlayer.depth + 1, objBomb);
     } else if (heldObject != -1) {
       carrying = true;
       heldObject.lifted = true;

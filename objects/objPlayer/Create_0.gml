@@ -42,5 +42,6 @@ mygravity = 0.5; //How much gravity Link has.
 climbing = false; //Is Link climbing on a ladder?
 carrying = false; // Is Link holding something
 heldObject = noone;
-shooting = false; // Are we firing a bow?
+shooting = false; // I'm gonna reuse this for the hookshot
 hammering = false; // Maybe this could be consolidated idk
+bombing = false;

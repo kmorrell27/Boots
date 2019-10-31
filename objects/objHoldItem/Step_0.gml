@@ -20,9 +20,6 @@ if (
   objPlayer.rolling = false;
   //Unflag Link as rolling.
   objPlayer.slashing = false;
-  //Unflag Link as slashing.
-  objPlayer.shooting = false;
-  objPlayer.hammering = false;
   x = objPlayer.x + 5 - 5 * (hold == 2);
   //Position this based on the holdtype.
   y = objPlayer.y + objPlayer.z;

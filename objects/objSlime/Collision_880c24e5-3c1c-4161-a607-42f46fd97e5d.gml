@@ -1,4 +1,4 @@
-if (!hitstun && other.thrown) {
+if (!hitstun && other.thrown && other.doesdamage) {
   hitstun = true;
   direction = point_direction(objPlayer.x, objPlayer.y, x, y);
   speed = 3;

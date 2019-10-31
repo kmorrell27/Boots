@@ -1,9 +1,8 @@
 message = [
-  "Let's get down to business",
-  "to defeat",
-  "the Huns. Did they send me daughters when I asked for sons? You're the saddest bunch I've ever met.",
-  "And you can bet before we're through",
-  "somehow I'll",
-  "make a man",
-  "out of you."
+  "Hi!",
+  "Press B to make the text go faster.",
+  "Press X to shoot an arrow, Y for sword, B for hammer, and A to drop bombs and lift items",
+  "R is jump!",
+  "L should do something neat too but it doesn't yet.",
+  "You can also dash by double-tapping a direction. Kirby-style, yo."
 ];
