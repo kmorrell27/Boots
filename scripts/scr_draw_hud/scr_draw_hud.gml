@@ -22,7 +22,7 @@ var blend = Color.WHITE;
 //Next, draw the Rupee icon, based on which wallet Link has.
 draw_sprite_ext(
   sprRupeeIcon,
-  global.wallet,
+  0,
   argument0 + 8,
   argument1 + yoff,
   image_xscale,
@@ -34,7 +34,7 @@ draw_sprite_ext(
 //If Link has no rupees, the digits should be gray.
 if (global.rupees == 0) {
   blend = Color.GRAY;
-} else if (global.rupees == global.rupeemax[global.wallet]) {
+} else if (global.rupees == 999) {
   /*
     If Link has the max rupees he can carry, the digits should
     be yellow.

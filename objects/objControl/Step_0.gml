@@ -184,29 +184,6 @@ if (global.heal != 0) {
   oldhearts = -1;
 }
 
-/*
-If Link's wallet is being added to (or taken from), start changing
-the values.
-*/
-if (global.rupoff != 0) {
-  //Temporary variable for how much to affect the rupee counter.
-  var amt = max(floor(abs(global.rupoff) / 20), 1);
-
-  /*
-    If the value is positive, add rupees, otherwise, take them away.
-    */
-  if (global.rupoff > 0) {
-    global.rupees += amt;
-    global.rupoff -= amt;
-  } else {
-    global.rupees -= amt;
-    global.rupoff += amt;
-  }
-
-  //Play the sound effect for when the rupee counter is changing.
-  audio_play_sound(sndRupeeCounter, 10, false);
-}
-
 //If there are frames left for showing the area name, subtract 1.
 if (global.showarea > 0) {
   global.showarea -= 1;

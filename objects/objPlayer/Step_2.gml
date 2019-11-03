@@ -25,7 +25,7 @@ if (y < 0) {
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true);
+    scr_align_camera(true);
     //Orient the screen just right.
     room_goto(global.northroom);
     //Go to the northern room.
@@ -56,7 +56,7 @@ if (y + 16 > room_height) {
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true);
+    scr_align_camera(true);
     //Orient the screen just right.
     room_goto(global.southroom);
     //Go to the southern room.
@@ -90,7 +90,7 @@ if (x < 0) {
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true);
+    scr_align_camera(true);
     //Orient the screen just right.
     room_goto(global.westroom);
     //Go to the western room.
@@ -124,7 +124,7 @@ if (x + 16 > room_width) {
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
-    scr_align_view(true);
+    scr_align_camera(true);
     //Orient the screen just right.
     scr_room_transition(global.eastroom, Transition.RIGHT, 45);
     room_goto(global.eastroom);

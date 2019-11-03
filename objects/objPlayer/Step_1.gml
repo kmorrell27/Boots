@@ -1,5 +1,5 @@
 //If the game is paused, get out of here.
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   exit;
 }
 
@@ -27,4 +27,4 @@ if (cliff && !place_free(x, y)) {
 }
 
 //Get the camera moving to where it needs to be.
-scr_align_view(false);
+scr_align_camera(false);

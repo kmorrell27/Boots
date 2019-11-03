@@ -1,5 +1,5 @@
 {
-    "id": "1a6eb3d4-3bb4-446d-b5a8-a0bc19b7c0ae",
+    "id": "30300145-c7a8-4a96-9ebb-618e0d1d3f96",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_release_button",

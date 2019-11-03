@@ -1,5 +1,5 @@
 {
-    "id": "39ab95eb-0337-48a7-973b-eebe7ac5e888",
+    "id": "bdd36066-e6dc-47b2-ad6e-a882158d64af",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_draw_hearts",

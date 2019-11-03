@@ -1,5 +1,5 @@
 //If the game is paused, break out of this script.
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   exit;
 }
 

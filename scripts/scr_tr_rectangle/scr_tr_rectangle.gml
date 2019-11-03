@@ -25,9 +25,6 @@ var lastlinky = global.lastlinky - global.lastviewy;
 var ratio = display_get_gui_width() / camera_get_view_width(view_camera[0]);
 var linkx = objPlayer.x - camera_get_view_x(view_camera[0]) * ratio;
 var linky = objPlayer.y - camera_get_view_y(view_camera[0]) * ratio;
-show_debug_message("---");
-show_debug_message(string(linkx));
-show_debug_message(string(linky));
 
 //Modify the alpha based on where the fraction is.
 if (argument4 <= 0.25) {

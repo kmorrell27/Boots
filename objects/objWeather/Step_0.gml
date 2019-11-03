@@ -1,4 +1,4 @@
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   exit;
 }
 

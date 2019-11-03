@@ -1,5 +1,5 @@
 {
-    "id": "b5d3f693-4234-4e45-af62-8db5c39874ca",
+    "id": "2aeeb8a5-f664-4cb4-9cf9-54bfac4a4402",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_draw_counter",

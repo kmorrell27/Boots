@@ -1,5 +1,5 @@
 {
-    "id": "2e8c2893-6e4e-43ac-b9c9-a936acf24315",
+    "id": "0291c976-cac9-4814-a30e-9995541291a6",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_sword_button_held",

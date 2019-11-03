@@ -1,7 +1,7 @@
 /*********************************************************************
 GAME PAUSED SECTION
 *********************************************************************/
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   //Conserve vertical speed.
   if (vspeed != 0) {
     lvspeed = vspeed;
@@ -47,7 +47,7 @@ if (vvel != 0) {
   ) {
     vspeed = vvel;
     vvel = 0;
-    scr_link_collide();
+    scr_player_collide();
   }
 }
 if (hvel != 0) {
@@ -57,7 +57,7 @@ if (hvel != 0) {
   ) {
     hspeed = hvel;
     hvel = 0;
-    scr_link_collide();
+    scr_player_collide();
   }
 }
 /*******************************************************************
@@ -115,25 +115,25 @@ tempcanroll = false;
 
 //If the player presses down...
 if (scr_down_button_pressed() && !global.sideview) {
-  scr_link_doubletap(Direction.DOWN);
+  scr_doubletap(Direction.DOWN);
   //Check for down double tapping.
 }
 
 //If the player presses up...
 if (scr_up_button_pressed() && !global.sideview) {
-  scr_link_doubletap(Direction.UP);
+  scr_doubletap(Direction.UP);
   //Check for up double tapping.
 }
 
 //If the player presses left...
 if (scr_left_button_pressed()) {
-  scr_link_doubletap(Direction.LEFT);
+  scr_doubletap(Direction.LEFT);
   //Check for left double tapping.
 }
 
 //If the player presses right...
 if (scr_right_button_pressed()) {
-  scr_link_doubletap(Direction.RIGHT);
+  scr_doubletap(Direction.RIGHT);
   //Check for right double tapping.
 }
 
@@ -166,7 +166,7 @@ if (
     hspeed = maxspd * 2.5;
   }
 
-  scr_link_collide();
+  scr_player_collide();
   //Check for collision.
   doublekeytapdir = noone;
   //Reset the double key tap check direction.
@@ -195,7 +195,7 @@ MOVEMENT SPEED AND FRICTION ALTERATION SECTION
 *******************************************************************/
 
 //If Link is STANDING on a slow-walking tile...
-if (scr_link_foot_check(objSlowWalk) && !jumping) {
+if (scr_player_foot_check(objSlowWalk) && !jumping) {
   maxspd = 0.5;
   //Assign the slow walking speed.
 } else {
@@ -284,7 +284,7 @@ if (global.sideview) {
     //Flag him as jumping.
     rolling = false;
     //Unflag him as rolling.
-    scr_link_collide();
+    scr_player_collide();
     //Check for collision.
   } else {
     gravity = 0;
@@ -329,17 +329,17 @@ if (
     isMoving = true;
     //Flag Link as moving.
     //Apply friction to the plane he's not moving in.
-    scr_link_friction(false);
-    scr_link_collide();
+    scr_player_friction(false);
+    scr_player_collide();
     //Check for collision with a wall.
   } else {
     //Otherwise, unflag Link as moving and pushing.
     isMoving = false;
     pushing = false;
 
-    scr_link_friction(true);
+    scr_player_friction(true);
     //Apply friction in all planes.
-    scr_link_collide();
+    scr_player_collide();
     //Check for collision with a wall.
   }
 
@@ -408,11 +408,11 @@ if (
             his wall-hugging momentum.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(spd - (spd / 2) * jumping);
+        scr_add_vvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -429,11 +429,11 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(-spd + (spd / 2) * jumping);
+        scr_add_hvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -450,18 +450,18 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(spd - (spd / 2) * jumping);
+        scr_add_hvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       if (dir == Direction.DOWN && !jumping) {
         /*
@@ -497,11 +497,11 @@ if (
             his wall-hugging momentum.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(-spd + (spd / 2) * jumping);
+        scr_add_vvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -518,11 +518,11 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(-spd + (spd / 2) * jumping);
+        scr_add_hvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -539,18 +539,18 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(spd - (spd / 2) * jumping);
+        scr_add_hvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       if (dir == Direction.UP && !jumping) {
         /*
@@ -586,11 +586,11 @@ if (
             his wall-hugging momentum.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(-spd + (spd / 2) * jumping);
+        scr_add_hvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -608,11 +608,11 @@ if (
             cut around the corner of a wall.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(-spd + (spd / 2) * jumping);
+        scr_add_vvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -630,18 +630,18 @@ if (
             cut around the corner of a wall.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(spd - (spd / 2) * jumping);
+        scr_add_vvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       if (dir == Direction.LEFT && !jumping) {
         /*
@@ -677,11 +677,11 @@ if (
             his wall-hugging momentum.
             */
       if (hvel == 0) {
-        scr_link_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_hvel(spd - (spd / 2) * jumping);
+        scr_add_hvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -699,11 +699,11 @@ if (
             cut around the corner of a wall.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(-spd + (spd / 2) * jumping);
+        scr_add_vvel(-spd + (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
@@ -721,18 +721,18 @@ if (
             cut around the corner of a wall.
             */
       if (vvel == 0) {
-        scr_link_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping);
       } else {
-        scr_link_add_vvel(spd - (spd / 2) * jumping);
+        scr_add_vvel(spd - (spd / 2) * jumping);
       }
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       pushing = false;
       //Unflag Link as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
-      scr_link_collide();
+      scr_player_collide();
       //Check for collision.
       if (dir == Direction.RIGHT && !jumping) {
         /*
@@ -757,7 +757,7 @@ if (
         */
     if (pushtmr >= global.onesecond / 4) {
       //Temporary variable for a possible cliff ahead of Link.
-      var cliffobj = scr_link_ahead_chk(objCliff, 1);
+      var cliffobj = scr_ahead_check(objCliff, 1);
 
       /*
             If there is a cliff, and Link is in a state to jump 
@@ -811,7 +811,7 @@ if (
             Define a temporary variable for checking if a pushable
             object is in front of Link.
             */
-      var pushobjchk = scr_link_ahead_chk(objPushable, 1);
+      var pushobjchk = scr_ahead_check(objPushable, 1);
 
       /*
             If there was a pushable object in front of Link, then we
@@ -901,9 +901,9 @@ if (
   //Reset the double key tap check direction.
   doublekeytapdly = 0;
   //Reset the interval for double key tapping.
-  scr_link_friction(true);
+  scr_player_friction(true);
   //Apply friction in all planes.
-  scr_link_collide();
+  scr_player_collide();
   //Check for wall collission.
 } else {
   /*
@@ -938,7 +938,7 @@ if he is able to at all.
 //If the player presses Z...
 if (scr_bomb_button_pressed()) {
   //Temporary variable for a possible interaction in front of Link.
-  var interactchk = scr_link_ahead_chk(objInteractable, 4);
+  var interactchk = scr_ahead_check(objInteractable, 4);
 
   //If there isn't an interaction in front of Link, use what's on Z.
   if (interactchk == -1 || jumping) {
@@ -1093,7 +1093,7 @@ if (slashing) {
   //If Link's sprite is forward by a quarter tile, do tapping stuff.
   if (!tapreverse && (yoff == 4 || yoff == -4 || xoff == -4 || xoff == 4)) {
     //Temp. variable for bush checking.
-    var bushchk = scr_link_ahead_chk(objBush, 8);
+    var bushchk = scr_ahead_check(objBush, 8);
 
     tapreverse = true;
     //Flag the tapping for the second phase.

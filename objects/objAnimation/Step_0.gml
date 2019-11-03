@@ -1,5 +1,5 @@
 //If the game is paused...
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   //If there is any vertical motion, conserve it and stop it.
   if (vspeed != 0) {
     lvspeed = vspeed;

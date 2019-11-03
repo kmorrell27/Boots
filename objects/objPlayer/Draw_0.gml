@@ -15,7 +15,8 @@ if (!global.sideview) {
     image_alpha - 0.125
   );
 }
-
+shader_set(sh_saturation);
+shader_set_uniform_f(shader, active ? 0 : 0.7);
 //Draw Link's sprite.
 draw_sprite_ext(
   sprite_index,
@@ -28,3 +29,4 @@ draw_sprite_ext(
   image_blend,
   image_alpha
 );
+shader_reset();

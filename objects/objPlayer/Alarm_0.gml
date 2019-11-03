@@ -4,7 +4,7 @@ if (slashing) {
     */
 
   //Temp. variable for bush checking.
-  var bushchk = scr_link_ahead_chk(objBush, 8);
+  var bushchk = scr_ahead_check(objBush, 8);
   /*
     If there is a bush in front of Link, apply an appropriate
     force based on which direction Link is facing, and then get rid

@@ -1,5 +1,5 @@
 {
-    "id": "d73423c2-280e-4457-8c40-e53312cf14db",
+    "id": "94f803ab-51a4-4fd1-afe0-1e913dc8a99b",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_use_item",

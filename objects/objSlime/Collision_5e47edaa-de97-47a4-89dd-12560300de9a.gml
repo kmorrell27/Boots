@@ -1,7 +1,7 @@
 if (!hitstun) {
   hitstun = true;
   direction = point_direction(objPlayer.x, objPlayer.y, x, y);
-  speed = 3;
+  spd = 3;
 
   health = max(health - 1, 0);
   if (health == 0) {

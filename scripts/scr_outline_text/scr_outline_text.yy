@@ -1,5 +1,5 @@
 {
-    "id": "23a753bd-14c8-4ab5-af49-6655957d45e5",
+    "id": "e55498e8-d6ed-461b-be41-8d7a600da722",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_outline_text",

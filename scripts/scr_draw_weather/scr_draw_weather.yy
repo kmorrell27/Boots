@@ -1,5 +1,5 @@
 {
-    "id": "c75b77da-1c5b-4f41-99b1-d6195e42b29b",
+    "id": "871a0599-ad53-4224-be01-fb58cc6b705f",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_draw_weather",

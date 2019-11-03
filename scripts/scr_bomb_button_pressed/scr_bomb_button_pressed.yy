@@ -1,5 +1,5 @@
 {
-    "id": "2399c881-0292-4b4c-85d4-59f1ea8449d8",
+    "id": "66997c15-a185-4379-a4c4-7617b20349cb",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_bomb_button_pressed",

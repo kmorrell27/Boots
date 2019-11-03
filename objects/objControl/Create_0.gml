@@ -1,6 +1,5 @@
-scr_init_enums(); // For Prettier, mostly
-scr_item_variables_init(); //Initialize the item variables.
-scr_global_variables_init(); //Initialize all of the global variables.
+scr_enums_init(); // For Prettier, mostly
+scr_globals_init(); //Initialize all of the global variables.
 
 /*
 How long, in frames, must the game wait before playing the low

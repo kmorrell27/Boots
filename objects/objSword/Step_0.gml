@@ -5,7 +5,6 @@ var quartersecond = global.onesecond / 4;
 var img = floor(
   (quartersecond - objPlayer.alarm[0]) / (quartersecond / objSword.image_number)
 );
-show_debug_message("img: " + string(img));
 
 //Slashing checking.
 if (objPlayer.slashing) {

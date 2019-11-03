@@ -1,7 +1,7 @@
 event_inherited(); //Call the Parent Event.
 
 //If the game is paused...
-if (scr_pause_chk()) {
+if (scr_pause_check()) {
   gravity = 0;
   //No gravity.
   image_speed = 0;

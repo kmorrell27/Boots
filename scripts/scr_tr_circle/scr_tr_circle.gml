@@ -145,7 +145,7 @@ if (argument4 <= 0.5) {
 
   //Now draw any weather effects, based on 0,0.
   with (objWeather) {
-    scr_draw_weather(0, 0);
+    scr_draw_weather();
   }
 
   /*

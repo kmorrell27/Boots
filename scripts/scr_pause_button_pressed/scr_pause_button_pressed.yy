@@ -1,5 +1,5 @@
 {
-    "id": "ce22e842-b4c5-4df1-94a2-73ba7cc3bcd0",
+    "id": "2eb51cce-19f8-4e2e-8da9-3e28bdb31f40",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_pause_button_pressed",

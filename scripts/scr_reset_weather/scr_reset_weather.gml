@@ -5,7 +5,6 @@ This script resets the Weather object to a state of use.
 //Stop any weather sounds.
 audio_stop_sound(objWeather.snd);
 //Reset the weather sound delay.
-objWeather.snddly = 0;
 objWeather.thunder = false; //Reset the thunder.
 //Reset the thunder fade position.
 objWeather.thunderpoint = false;

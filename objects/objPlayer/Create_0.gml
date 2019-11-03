@@ -19,8 +19,6 @@ zspd = 0; //How fast is Link rising/falling, in pixels?
 pushing = false; //Is Link pushing?
 //How long, in frames, has Link been pushing?
 pushtmr = 0;
-//Is Link holding up an item?  0 for 1 hand, 1 for 2 hands.
-holding = 0;
 slashing = false; //Is Link slashing?
 charge = 0; //How long, in frames, has Link been charging.
 tap = false; //Is Link tapping his sword against something?
@@ -45,3 +43,6 @@ heldObject = noone;
 shooting = false; // I'm gonna reuse this for the hookshot
 hammering = false; // Maybe this could be consolidated idk
 bombing = false;
+
+shader = shader_get_uniform(sh_saturation, "Degree"); // control shader
+active = true;

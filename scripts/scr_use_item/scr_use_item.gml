@@ -30,16 +30,16 @@ if (argument0 == Item.SWORD && !charge && !spin) {
   //Now give it the proper sprite based on which sword Link has.
   switch (dir) {
     case Direction.DOWN:
-      s.sprite_index = sprSword1SD;
+      s.sprite_index = sprSwordDown;
       break;
     case Direction.LEFT:
-      s.sprite_index = sprSword1SL;
+      s.sprite_index = sprSwordLeft;
       break;
     case Direction.RIGHT:
-      s.sprite_index = sprSword1SR;
+      s.sprite_index = sprSwordRight;
       break;
     case Direction.UP:
-      s.sprite_index = sprSword1SU;
+      s.sprite_index = sprSwordUp;
       break;
   }
   //Now let's update Link's sprite.
@@ -71,7 +71,7 @@ if (argument0 == Item.FEATHER && !jumping) {
   //Reset his animation.
   //Now let's update Link's sprite.
   scr_player_sprite_change();
-  scr_link_collide();
+  scr_player_collide();
   //Check for collision.
 }
 
@@ -106,7 +106,7 @@ if (argument0 == Item.BOW) {
 if (argument0 == Item.BOMB) {
   global.player = Character.BRIAN;
   if (!carrying) {
-    heldObject = scr_link_ahead_chk(objLiftable, 8);
+    heldObject = scr_ahead_check(objLiftable, 8);
     if (heldObject == -1 && !instance_exists(objBomb)) {
       instance_create_depth(x, y, objPlayer.depth + 1, objBomb);
     } else if (heldObject != -1) {
