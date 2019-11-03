@@ -15,7 +15,7 @@ if (doublekeytapdir != argument0) {
 } else if (doublekeytapdly && dir == doublekeytapdir) {
   /*
     Otherwise, if it's pressed again within the checking interval,
-    and Link is facing in the right direction, prepare Link for
+    and the player is facing in the right direction, prepare the player for
     some rolling action.
     */
   tempcanroll = true;

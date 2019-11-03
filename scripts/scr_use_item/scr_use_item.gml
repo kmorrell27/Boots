@@ -1,12 +1,12 @@
 /*********************************************************************
-This script is called when a button item is pressed.  Link needs to
-use the item, if possible, and if he isn't already doing something.
+This script is called when a button item is pressed.  the player needs to
+use the item, if possible, and if  aren't already doing something.
 
 format:  scr_use_item(item);
 *********************************************************************/
 
 /*
-If Link isn't in a state to use an item, then get out of here.
+If the player isn't in a state to use an item, then get out of here.
 */
 if (!moveable || slashing || cliff || rolling || hammering) {
   exit;
@@ -17,17 +17,17 @@ Sword Check
 */
 if (argument0 == Item.SWORD && !charge && !spin) {
   global.player = Character.CAITLIN;
-  //Play the appropriate sound effect based on which sword Link has.
+  //Play the appropriate sound effect based on which sword the player has.
   audio_play_sound(sndSlash1, 10, false);
   slashing = true;
-  //Flag as Link as slashing.
+  //Flag as the player as slashing.
   pushing = false;
-  //Unflag Link as pushing.
+  //Unflag the player as pushing.
   image_index = 0;
-  //Reset his animation.
+  //Reset their animation.
   s = instance_create_layer(x, y, global.playerLayer, objSword);
   //Create the sword.
-  //Now give it the proper sprite based on which sword Link has.
+  //Now give it the proper sprite based on which sword the player has.
   switch (dir) {
     case Direction.DOWN:
       s.sprite_index = sprSwordDown;
@@ -42,7 +42,7 @@ if (argument0 == Item.SWORD && !charge && !spin) {
       s.sprite_index = sprSwordUp;
       break;
   }
-  //Now let's update Link's sprite.
+  //Now let's update the player's sprite.
   alarm[0] = global.onesecond / 4;
   scr_player_sprite_change();
 }
@@ -53,23 +53,23 @@ Feather Check
 if (argument0 == Item.FEATHER && !jumping) {
   audio_play_sound(sndJump, 10, false);
   //Play the Jumping sound.
-  //If Link isn't in a sideview area...
+  //If the player isn't in a sideview area...
   if (!global.sideview) {
     zmax = -16;
-    //Prepare Link to go a full tile off of the ground.
+    //Prepare the player to go a full tile off of the ground.
   } else {
-    //Otherwise, make him go off the ground.
+    //Otherwise, make them go off the ground.
     vspeed = -4.5;
   }
   jumping = true;
-  //Flag as Link as jumping.
+  //Flag as the player as jumping.
   pushing = false;
-  //Unflag Link as pushing.
+  //Unflag the player as pushing.
   climbing = false;
-  //Unflag Link as climbing.
+  //Unflag the player as climbing.
   image_index = 0;
-  //Reset his animation.
-  //Now let's update Link's sprite.
+  //Reset their animation.
+  //Now let's update the player's sprite.
   scr_player_sprite_change();
   scr_player_collide();
   //Check for collision.
@@ -98,7 +98,7 @@ if (argument0 == Item.BOW) {
       break;
   }
   arrow.dir = dir;
-  //Now let's update Link's sprite.
+  //Now let's update the player's sprite.
   image_index = 0;
   scr_player_sprite_change();
 }
@@ -144,14 +144,14 @@ if (argument0 == Item.HAMMER) {
   // Hammer time
   audio_play_sound(sndSlash1, 10, false);
   hammering = true;
-  //Flag as Link as slashing.
+  //Flag as the player as slashing.
   pushing = false;
-  //Unflag Link as pushing.
+  //Unflag the player as pushing.
   image_index = 0;
-  //Reset his animation.
+  //Reset their animation.
   s = instance_create_layer(x, y, global.playerLayer, objHammer);
   //Create the sword.
-  //Now give it the proper sprite based on which sword Link has.
+  //Now give it the proper sprite based on which sword the player has.
   switch (dir) {
     case Direction.DOWN:
       s.sprite_index = sprHammerDown;

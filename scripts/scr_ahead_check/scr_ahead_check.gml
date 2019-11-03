@@ -3,7 +3,7 @@
 
 /*
 This script checks to see if the object passed as a parameter is
-directly in front of the player, depending on which direction he's facing.
+directly in front of the player, depending on which direction they're facing.
 Returns the id of the object if so, -1 otherwise.
 format:  scr_ahead_check(object, distance);
 */

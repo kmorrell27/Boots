@@ -3,7 +3,7 @@ if (scr_pause_check()) {
   exit;
 }
 
-//If Link has interacted with the chest...
+//If the player has interacted with the chest...
 if (interacted) {
   var ypos = 0;
   if (objPlayer.y < 48) {

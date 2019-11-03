@@ -1,5 +1,5 @@
 /*
-Draw the shadow below Link's sprite, 1 pixel further down, if he's
+Draw the shadow below the player's sprite, 1 pixel further down, if they're
 not in a sideview area.
 */
 if (!global.sideview) {
@@ -17,7 +17,7 @@ if (!global.sideview) {
 }
 shader_set(sh_saturation);
 shader_set_uniform_f(shader, active ? 0 : 0.7);
-//Draw Link's sprite.
+//Draw the player's sprite.
 draw_sprite_ext(
   sprite_index,
   -1,

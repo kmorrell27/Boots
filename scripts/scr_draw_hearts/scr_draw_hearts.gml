@@ -58,7 +58,7 @@ for (i = 0; i < imax; i += 1) {
     /*
         Otherwise, the sprite should be the active heart sprite, and
         the image set to a specific subimage, based on how much
-        health Link has left.  The blend should be white, for no
+        health the player has left.  The blend should be white, for no
         blending.
         */
     spr = sprActiveHeart;

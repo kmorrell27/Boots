@@ -1,5 +1,5 @@
 /*******************************************************************
-This script makes Link do whatever when an item button is released.
+This script makes the player do whatever when an item button is released.
 
 format:  scr_release_button(item);
 *******************************************************************/
@@ -21,7 +21,7 @@ if (argument0 == Item.SWORD && charge && !tap) {
     }
   }
   charge = 0;
-  //Unflag Link as charging.
-  //Update Link's current sprites.
+  //Unflag the player as charging.
+  //Update the player's current sprites.
   scr_player_sprite_change();
 }

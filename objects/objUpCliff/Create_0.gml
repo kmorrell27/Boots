@@ -1,2 +1,2 @@
 event_inherited(); //Call the parent event.
-dir = Direction.UP; //Make Link jump Up.
+dir = Direction.UP; //Make the player jump Up.

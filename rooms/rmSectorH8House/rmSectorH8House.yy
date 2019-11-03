@@ -1,6 +1,6 @@
 
 {
-    "name": "rmSectorH8LinkHouse",
+    "name": "rmSectorH8House",
     "id": "d4e7460c-a460-4b27-859f-c68c6e1986f2",
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,

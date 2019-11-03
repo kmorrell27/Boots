@@ -11,7 +11,7 @@ heartblendreverse = false; //Is the color blending going the other way?
 //How long to wait, in frames, before the next change in blending.
 heartblenddly = 0;
 /*
-What was the value of Link's hearts before he started healing? -1
+What was the value of the player's hearts before they started healing? -1
 for no consideration.
 */
 oldhearts = -1;

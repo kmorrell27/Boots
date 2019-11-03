@@ -30,7 +30,7 @@ if (lhspeed != 0) {
   lhspeed = 0;
 }
 
-//Flag Link as visible.
+//Flag the player as visible.
 visible = true;
 
 //Keyboard Key variables.
@@ -110,7 +110,7 @@ if (doublekeytapdly) {
   }
 }
 
-//Temporary variable to see if Link is told to roll.
+//Temporary variable to see if the player is told to roll.
 tempcanroll = false;
 
 //If the player presses down...
@@ -138,7 +138,7 @@ if (scr_right_button_pressed()) {
 }
 
 /*
-If Link was told to roll, we will allow for it, if he's able to.
+If the player was told to roll, we will allow for it, if they're able to.
 */
 if (
   tempcanroll &&
@@ -153,8 +153,8 @@ if (
   !hammering
 ) {
   /*
-    This block of if statements just assigns Link velocity based on
-    which direction he's facing.
+    This block of if statements just assigns the player velocity based on
+    which direction they're facing.
     */
   if (dir == Direction.DOWN) {
     vspeed = maxspd * 2.5;
@@ -174,27 +174,27 @@ if (
   //Reset the interval for double key tapping.
 
   isMoving = false;
-  //Unflag him as moving.
+  //Unflag them as moving.
   pushing = false;
-  //And don't flag him as pushing either.
+  //And don't flag them as pushing either.
   pushtmr = 0;
   //And reset the pushing frame counter.
   image_index = 0;
-  //Reset his animation frame.
+  //Reset their animation frame.
   rolling = true;
   alarm[0] = global.onesecond / 3;
-  //Flag Link as rolling.
+  //Flag the player as rolling.
   audio_play_sound(sndRoll, 10, false);
   //Play the rolling sound effect.
   scr_player_sprite_change();
-  //Update Link's sprite.
+  //Update the player's sprite.
 }
 
 /*******************************************************************
 MOVEMENT SPEED AND FRICTION ALTERATION SECTION
 *******************************************************************/
 
-//If Link is STANDING on a slow-walking tile...
+//If the player is STANDING on a slow-walking tile...
 if (scr_player_foot_check(objSlowWalk) && !jumping) {
   maxspd = 0.5;
   //Assign the slow walking speed.
@@ -203,7 +203,7 @@ if (scr_player_foot_check(objSlowWalk) && !jumping) {
   //Assign standard walking speed.
 }
 
-//If Link is rolling...
+//If the player is rolling...
 if (rolling) {
   myfriction = 0.05;
   //Less friction during rolling.
@@ -217,14 +217,14 @@ JUMPING IN THE AIR SECTION
 *********************************************************************/
 if (jumping && moveable && !global.sideview) {
   /*
-    If the Link hasn't peaked yet, the zspd should be smaller the
-    closer he gets to his peak.  Otherwise it should be larger as
-    he approaches the ground.
+    If the the player hasn't peaked yet, the zspd should be smaller the
+    closer  get to their peak.  Otherwise it should be larger as
+     approach the ground.
     */
   zspd = max(abs(round(floor((zmax - z) / 3))), 1);
 
   /*
-    If Link hasn't peaked in height yet, subtract the zspd
+    If the player hasn't peaked in height yet, subtract the zspd
     from the z value.  Otherwise, add it.
     */
   if (!zpeak) {
@@ -236,8 +236,8 @@ if (jumping && moveable && !global.sideview) {
     }
   } else {
     /*
-        Link shouldn't come down if he's jumping off a cliff,
-        unless he's already made it down the cliff.
+        the player shouldn't come down if they're jumping off a cliff,
+        unless they're already made it down the cliff.
         */
     if (!cliff || (cliff && place_free(x, y))) {
       if (z + zspd <= 0) {
@@ -254,7 +254,7 @@ if (jumping && moveable && !global.sideview) {
   }
 } else {
   zpeak = false;
-  //Reset Link peaking at his jump.
+  //Reset the player peaking at their jump.
 }
 
 /********************************************************************
@@ -262,13 +262,13 @@ SIDEVIEW GRAVITY SECTION
 ********************************************************************/
 
 if (global.sideview) {
-  //If Link is in the air...
+  //If the player is in the air...
   if (place_free(x, y + 1)) {
-    //If Link is hugging the ceiling...
+    //If the player is hugging the ceiling...
     if (vvel < 0) {
       vvel += mygravity;
       //Add the gravity to it.
-      //Then make sure Link isn't considered hugging the floor.
+      //Then make sure the player isn't considered hugging the floor.
       if (vvel > 0) {
         vvel = 0;
       }
@@ -276,28 +276,28 @@ if (global.sideview) {
       gravity = mygravity;
       //Otherwise, apply gravity.
     }
-    //If he wasn't jumping or rolling, reset his frame of animation.
+    //If  weren't jumping or rolling, reset their frame of animation.
     if (!jumping && !rolling) {
       image_index = 0;
     }
     jumping = true;
-    //Flag him as jumping.
+    //Flag them as jumping.
     rolling = false;
-    //Unflag him as rolling.
+    //Unflag them as rolling.
     scr_player_collide();
     //Check for collision.
   } else {
     gravity = 0;
     //Otherwise, unapply gravity.
-    //If he was jumping, play the landing sound.
+    //If  were jumping, play the landing sound.
     if (jumping) {
       audio_play_sound(sndLand, 10, false);
     }
     jumping = false;
-    //Unflag him as jumping.
+    //Unflag them as jumping.
   }
 
-  //Cap his vertical velocity at a max of 4 pixels per frame.
+  //Cap their vertical velocity at a max of 4 pixels per frame.
   if (vspeed > 2) {
     vspeed = 2;
   }
@@ -310,7 +310,7 @@ if (global.sideview) {
 MOVEMENT SECTION
 *********************************************************************/
 
-//If Link is in a proper state to move...
+//If the player is in a proper state to move...
 if (
   moveable &&
   ((!slashing && !hammering) || jumping) &&
@@ -320,20 +320,20 @@ if (
   (!spin || spin > 1)
 ) {
   /*
-    Store the direction Link was just facing in a temporary variable.
+    Store the direction the player was just facing in a temporary variable.
     */
   var lastdir = dir;
 
   //If any directional key held...
   if ((down && !global.sideview) || (up && !global.sideview) || left || right) {
     isMoving = true;
-    //Flag Link as moving.
-    //Apply friction to the plane he's not moving in.
+    //Flag the player as moving.
+    //Apply friction to the plane they're not moving in.
     scr_player_friction(false);
     scr_player_collide();
     //Check for collision with a wall.
   } else {
-    //Otherwise, unflag Link as moving and pushing.
+    //Otherwise, unflag the player as moving and pushing.
     isMoving = false;
     pushing = false;
 
@@ -344,14 +344,14 @@ if (
   }
 
   /*
-    Change the direction Link is facing based on which directional
-    keys are held down.  Link's facing is locked depending on which
-    direction he was facing before moving diagonally.  So you won't
-    have that problem some engines have where Link will always face
-    down when holding down and left for example.  He'll stay facing
-    left if he was facing left to begin with, or down.  No, Link
+    Change the direction the player is facing based on which directional
+    keys are held down.  the player's facing is locked depending on which
+    direction  were facing before moving diagonally.  So you won't
+    have that problem some engines have where the player will always face
+    down when holding down and left for example.  'll stay facing
+    left if  were facing left to begin with, or down.  No, the player
     cannot moonwalk in this engine =P.  No directional change if
-    Link is charging, using the spin attack or jumping.
+    the player is charging, using the spin attack or jumping.
     */
   if (!charge && !spin && !jumping) {
     if (
@@ -389,8 +389,8 @@ if (
   }
 
   /*
-    If Link changed directions, the pushing frame counter needs to
-    be reset, since he is no longer pushing in the same direction.
+    If the player changed directions, the pushing frame counter needs to
+    be reset, since  are no longer pushing in the same direction.
     */
   if (dir != lastdir) {
     pushtmr = 0;
@@ -400,12 +400,12 @@ if (
     Movement for DOWN.
     */
   if (down && !global.sideview) {
-    //If there's no wall below link...
+    //If there's no wall below the player...
     if (place_free(x, y + spd)) {
       /*
-            If he's not hugging the wall vertically, then add the
-            momentem to his vertical motion.  Otherwise, add it to
-            his wall-hugging momentum.
+            If they're not hugging the wall vertically, then add the
+            momentem to their vertical motion.  Otherwise, add it to
+            their wall-hugging momentum.
             */
       if (vvel == 0) {
         scr_add_vspeed(spd - (spd / 2) * jumping);
@@ -415,7 +415,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -436,7 +436,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -457,7 +457,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
@@ -465,8 +465,8 @@ if (
       //Check for collision.
       if (dir == Direction.DOWN && !jumping) {
         /*
-                Flag Link as pushing if he isn't charging the sword,
-                otherwise, make him perform a sword tap.
+                Flag the player as pushing if  aren't charging the sword,
+                otherwise, make them perform a sword tap.
                 */
         if (!charge) {
           pushing = true;
@@ -482,19 +482,19 @@ if (
     */
   if (up && !global.sideview) {
     /*
-        If Link can go directly UP without running into a solid,
-        then make him move UP, and unflag him as pushing.  Otherwise,
-        check to see if he can slide around a corner, and isn't
+        If the player can go directly UP without running into a solid,
+        then make them move UP, and unflag them as pushing.  Otherwise,
+        check to see if  can slide around a corner, and isn't
         already holding that directional key.  If so, do that, unflag
-        him as pushing and reset the pushing frame counter. Otherwise,
+        them as pushing and reset the pushing frame counter. Otherwise,
         get as close to the wall as possible and go no further, and
-        flag him as pushing if he is facing in this direction.
+        flag them as pushing if  are facing in this direction.
         */
     if (place_free(x, y - spd)) {
       /*
-            If he's not hugging the wall vertically, then add the
-            momentem to his vertical motion.  Otherwise, add it to
-            his wall-hugging momentum.
+            If they're not hugging the wall vertically, then add the
+            momentem to their vertical motion.  Otherwise, add it to
+            their wall-hugging momentum.
             */
       if (vvel == 0) {
         scr_add_vspeed(-spd + (spd / 2) * jumping);
@@ -504,7 +504,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -525,7 +525,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -546,7 +546,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
@@ -554,8 +554,8 @@ if (
       //Check for collision.
       if (dir == Direction.UP && !jumping) {
         /*
-                Flag Link as pushing if he isn't charging the sword,
-                otherwise, make him perform a sword tap.
+                Flag the player as pushing if  aren't charging the sword,
+                otherwise, make them perform a sword tap.
                 */
         if (!charge) {
           pushing = true;
@@ -571,19 +571,19 @@ if (
     */
   if (left) {
     /*
-        If Link can go directly LEFT without running into a solid,
-        then make him move LEFT, and unflag him as pushing.  Otherwise,
-        check to see if he can slide around a corner, and isn't
+        If the player can go directly LEFT without running into a solid,
+        then make them move LEFT, and unflag them as pushing.  Otherwise,
+        check to see if  can slide around a corner, and isn't
         already holding that directional key.  If so, do that, unflag
-        him as pushing and reset the pushing frame counter. Otherwise,
+        them as pushing and reset the pushing frame counter. Otherwise,
         get as close to the wall as possible and go no further, and
-        flag him as pushing if he is facing in this direction.
+        flag them as pushing if  are facing in this direction.
         */
     if (place_free(x - spd, y)) {
       /*
-            If he's not hugging the wall horizontally, then add the
-            momentem to his horizontal motion.  Otherwise, add it to
-            his wall-hugging momentum.
+            If they're not hugging the wall horizontally, then add the
+            momentem to their horizontal motion.  Otherwise, add it to
+            their wall-hugging momentum.
             */
       if (hvel == 0) {
         scr_add_hspeed(-spd + (spd / 2) * jumping);
@@ -593,7 +593,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -615,7 +615,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -637,7 +637,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
@@ -645,8 +645,8 @@ if (
       //Check for collision.
       if (dir == Direction.LEFT && !jumping) {
         /*
-                Flag Link as pushing if he isn't charging the sword,
-                otherwise, make him perform a sword tap.
+                Flag the player as pushing if  aren't charging the sword,
+                otherwise, make them perform a sword tap.
                 */
         if (!charge) {
           pushing = true;
@@ -662,19 +662,19 @@ if (
     */
   if (right) {
     /*
-        If Link can go directly RIGHT without running into a solid,
-        then make him move RIGHT, and unflag him as pushing.  Otherwise,
-        check to see if he can slide around a corner, and isn't
+        If the player can go directly RIGHT without running into a solid,
+        then make them move RIGHT, and unflag them as pushing.  Otherwise,
+        check to see if  can slide around a corner, and isn't
         already holding that directional key.  If so, do that, unflag
-        him as pushing and reset the pushing frame counter. Otherwise,
+        them as pushing and reset the pushing frame counter. Otherwise,
         get as close to the wall as possible and go no further, and
-        flag him as pushing if he is facing in this direction.
+        flag them as pushing if  are facing in this direction.
         */
     if (place_free(x + spd, y)) {
       /*
-            If he's not hugging the wall horizontally, then add the
-            momentem to his horizontal motion.  Otherwise, add it to
-            his wall-hugging momentum.
+            If they're not hugging the wall horizontally, then add the
+            momentem to their horizontal motion.  Otherwise, add it to
+            their wall-hugging momentum.
             */
       if (hvel == 0) {
         scr_add_hspeed(spd - (spd / 2) * jumping);
@@ -684,7 +684,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -706,7 +706,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
@@ -728,7 +728,7 @@ if (
       scr_player_collide();
       //Check for collision.
       pushing = false;
-      //Unflag Link as pushing.
+      //Unflag the player as pushing.
       pushtmr = 0;
       //Reset the pushing timer.
     } else {
@@ -736,8 +736,8 @@ if (
       //Check for collision.
       if (dir == Direction.RIGHT && !jumping) {
         /*
-                Flag Link as pushing if he isn't charging the sword,
-                otherwise, make him perform a sword tap.
+                Flag the player as pushing if  aren't charging the sword,
+                otherwise, make them perform a sword tap.
                 */
         if (!charge) {
           pushing = true;
@@ -753,39 +753,39 @@ if (
     */
   if (pushing) {
     /*
-        If Link has been pushing for about 1/4 of a second...
+        If the player has been pushing for about 1/4 of a second...
         */
     if (pushtmr >= global.onesecond / 4) {
-      //Temporary variable for a possible cliff ahead of Link.
+      //Temporary variable for a possible cliff ahead of the player.
       var cliffobj = scr_ahead_check(objCliff, 1);
 
       /*
-            If there is a cliff, and Link is in a state to jump 
+            If there is a cliff, and the player is in a state to jump 
             down...
             */
       if (cliffobj != -1 && !cliff && !jumping && dir == cliffobj.dir) {
         hspeed = 0;
-        //Reset his horizontal speed.
+        //Reset their horizontal speed.
         vspeed = 0;
-        //Reset his vertical speed.
+        //Reset their vertical speed.
         pushing = false;
-        //Unflag Link as pushing.
+        //Unflag the player as pushing.
         zmax = -16;
-        //Have Link leave the ground a full tile.
+        //Have the player leave the ground a full tile.
         jumping = true;
-        //Flag Link as jumping.
+        //Flag the player as jumping.
         //Jump in the direction the cliff wants.
         cliffdir = cliffobj.dir;
         audio_play_sound(sndCliff, 10, false);
         //Play the cliff jumping sound.
         cliff = true;
-        //Flag Link as jumping off of a cliff.
+        //Flag the player as jumping off of a cliff.
         image_index = 0;
-        //Reset Link's animation frame.
+        //Reset the player's animation frame.
         scr_player_sprite_change();
-        //Update Link's sprite.
+        //Update the player's sprite.
         /*
-                Move Link forward a bit depending on which direction he's
+                Move the player forward a bit depending on which direction they're
                 jumping down.
                 */
         if (cliffdir == Direction.DOWN) {
@@ -801,7 +801,7 @@ if (
     }
 
     /*
-        If Link hasn't been pushing for a half second, add this
+        If the player hasn't been pushing for a half second, add this
         frame to the timer.  Otherwise, check for other things.
         */
     if (pushtmr < global.onesecond / 2) {
@@ -809,17 +809,17 @@ if (
     } else {
       /*
             Define a temporary variable for checking if a pushable
-            object is in front of Link.
+            object is in front of the player.
             */
       var pushobjchk = scr_ahead_check(objPushable, 1);
 
       /*
-            If there was a pushable object in front of Link, then we
+            If there was a pushable object in front of the player, then we
             can do things with it.
             */
       if (pushobjchk != -1) {
         /*
-                If the object can still be pushed, and Link is trying
+                If the object can still be pushed, and the player is trying
                 to push the object in the right direction, if
                 applicable...
                 */
@@ -871,11 +871,11 @@ if (
       }
     }
   } else {
-    //Reset the pushing frame counter if he's not pushing.
+    //Reset the pushing frame counter if they're not pushing.
     pushtmr = 0;
   }
 } else if (rolling) {
-  //Otherwise if Link is rolling...
+  //Otherwise if the player is rolling...
 
   //If there is a delay on the next smoke object...
   if (smokedly) {
@@ -885,8 +885,8 @@ if (
     //Otherwise, make a new smoke object here.
     s = instance_create_layer(x, y, "Player", objRollSmoke);
     /*
-        If Link is facing down, the smoke should appear behind
-        him.  Otherwise, it should be above him.
+        If the player is facing down, the smoke should appear behind
+        them.  Otherwise, it should be above them.
         */
     if (dir == Direction.DOWN) {
       s.depth = depth + 2;
@@ -907,8 +907,8 @@ if (
   //Check for wall collission.
 } else {
   /*
-    If Link isn't able to move at all or is using an item that locks
-    his movement, don't flag him as moving.
+    If the player isn't able to move at all or is using an item that locks
+    their movement, don't flag them as moving.
     */
   isMoving = false;
   doublekeytapdir = noone;
@@ -916,13 +916,13 @@ if (
   doublekeytapdly = 0;
   //Reset the interval for double key tapping.
   pushing = false;
-  //And don't flag him as pushing either.
+  //And don't flag them as pushing either.
   pushtmr = 0;
   //And reset the pushing frame counter.
   hspeed = 0;
-  //Reset his horizontal speed.
+  //Reset their horizontal speed.
   vspeed = 0;
-  //Reset his vertical speed.
+  //Reset their vertical speed.
 }
 
 /*********************************************************************
@@ -931,21 +931,21 @@ ACTION/ITEM KEY PRESS SECTION
 
 /*
 This section of code is for the item button checks.  When these buttons
-are pressed, Link needs to use the items that are equipped.  That is,
-if he is able to at all.
+are pressed, the player needs to use the items that are equipped.  That is,
+if  are able to at all.
 */
 
 //If the player presses Z...
 if (scr_bomb_button_pressed()) {
-  //Temporary variable for a possible interaction in front of Link.
+  //Temporary variable for a possible interaction in front of the player.
   var interactchk = scr_ahead_check(objInteractable, 4);
 
-  //If there isn't an interaction in front of Link, use what's on Z.
+  //If there isn't an interaction in front of the player, use what's on Z.
   if (interactchk == -1 || jumping) {
     scr_use_item(Item.BOMB);
   } else if (!rolling) {
     /*
-        Otherwise, if Link is facing in the right direction,
+        Otherwise, if the player is facing in the right direction,
         flag the object as interacted.
         */
     if (dir == interactchk.interactdir || interactchk.interactdir == noone) {
@@ -1004,9 +1004,9 @@ if (charge) {
 }
 
 /*
-Call Link's sprite changing script.  This will change his sprite
-depending on the current actions he is performing.  It should be
-called after the keychecks and movement, so his sprite can change
+Call the player's sprite changing script.  This will change their sprite
+depending on the current actions  are performing.  It should be
+called after the keychecks and movement, so their sprite can change
 immediately after the flags for such actions are set.
 */
 scr_player_sprite_change();
@@ -1016,11 +1016,11 @@ ANIMATION SPEED SECTION
 *********************************************************************/
 
 /*
-This section is for Link's animation speed.  He should animate at
-various speeds depending on what actions he is performing.
+This section is for the player's animation speed.   should animate at
+various speeds depending on what actions  are performing.
 */
 
-//If Link is moving or using an item that requires animation...
+//If the player is moving or using an item that requires animation...
 if (isMoving || slashing || jumping || rolling || tap || hammering) {
   if (tap) {
     //2nd frame for tapping.
@@ -1039,7 +1039,7 @@ if (isMoving || slashing || jumping || rolling || tap || hammering) {
     image_speed = 1;
   }
 } else {
-  //Otherwise, freeze his animation entirely.
+  //Otherwise, freeze their animation entirely.
   image_speed = 0;
   image_index = 0;
 }
@@ -1049,13 +1049,13 @@ SLASHING AND SWORD TAPPING SECTION
 *********************************************************************/
 
 /*
-This is for offsetting Link's sprite when he is attacking.
+This is for offsetting the player's sprite when  are attacking.
 */
 if (slashing) {
-  //Store which image Link's animation is on.
+  //Store which image the player's animation is on.
   var img = floor(image_index);
 
-  //If he's facing Down or Up, the sprite offset is all vertical.
+  //If they're facing Down or Up, the sprite offset is all vertical.
   if (dir == Direction.DOWN || dir == Direction.UP) {
     xoff = 0;
     yoff = img * 2 - 4 * (img == 3);
@@ -1072,14 +1072,14 @@ if (slashing) {
   }
 } else if (tap) {
   /*
-    This section is for things revolving around Link tapping
+    This section is for things revolving around the player tapping
     the sword against a wall.
     */
 
   charge = 1;
   //Reset the charging.
 
-  //Make his sprite move a pixel.
+  //Make their sprite move a pixel.
   if (dir == Direction.DOWN) {
     yoff += 2 - 4 * tapreverse;
   } else if (dir == Direction.UP) {
@@ -1090,7 +1090,7 @@ if (slashing) {
     xoff += 2 - 4 * tapreverse;
   }
 
-  //If Link's sprite is forward by a quarter tile, do tapping stuff.
+  //If the player's sprite is forward by a quarter tile, do tapping stuff.
   if (!tapreverse && (yoff == 4 || yoff == -4 || xoff == -4 || xoff == 4)) {
     //Temp. variable for bush checking.
     var bushchk = scr_ahead_check(objBush, 8);
@@ -1099,8 +1099,8 @@ if (slashing) {
     //Flag the tapping for the second phase.
 
     /*
-        If there is a bush in front of Link, apply an appropriate
-        force based on which direction Link is facing, and then get rid
+        If there is a bush in front of the player, apply an appropriate
+        force based on which direction the player is facing, and then get rid
         of the bush.
         */
     if (bushchk != -1) {
@@ -1128,14 +1128,14 @@ if (slashing) {
     }
   }
 
-  //If Link's sprite made it back after tapping, go in here.
+  //If the player's sprite made it back after tapping, go in here.
   if (tapreverse && xoff == 0 && yoff == 0) {
     tap = false;
     //Unflag the tapping.
     tapreverse = false;
     //Unflag the finishing of the tapping.
     tapdly = global.onesecond / 5;
-    //Make Link wait for a bit before the next tap.
+    //Make the player wait for a bit before the next tap.
 
     //Get rid of the sword if the key is no longer held.
     if (!scr_sword_button_held()) {
@@ -1147,7 +1147,7 @@ if (slashing) {
       }
     }
     scr_player_sprite_change();
-    //Finally, have Link update his sprite.
+    //Finally, have the player update their sprite.
   }
 } else {
   //Reset the sprite offset.

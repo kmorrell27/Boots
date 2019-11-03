@@ -3,14 +3,14 @@ if (scr_pause_check()) {
   exit;
 }
 
-//If Link has interacted with the chest...
+//If the player has interacted with the chest...
 if (interacted && !opened) {
   audio_play_sound(sndChest, 10, false);
   //Play the chest sound.
   opened = true;
   //Flg the chest as opened.
   objPlayer.moveable = false;
-  //Disable Link's movement.
+  //Disable the player's movement.
 }
 
 //If the chest has been opened, do what's in here.
@@ -51,8 +51,8 @@ if (opened) {
         global.chest[chestnum] = true;
       }
       objPlayer.moveable = true;
-      //Reflag Link as able to move.
-      //And then give him the item the chest has.
+      //Reflag the player as able to move.
+      //And then give them the item the chest has.
       instance_create_layer(
         objPlayer.x + 4,
         objPlayer.y + 4,

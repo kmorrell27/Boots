@@ -19,7 +19,7 @@ var yoff = 128;
 //Temporary variable for what color blend to use for a HUD elemnt.
 var blend = Color.WHITE;
 
-//Next, draw the Rupee icon, based on which wallet Link has.
+//Next, draw the Rupee icon, based on which wallet the player has.
 draw_sprite_ext(
   sprRupeeIcon,
   0,
@@ -31,12 +31,12 @@ draw_sprite_ext(
   image_blend,
   1
 );
-//If Link has no rupees, the digits should be gray.
+//If the player has no rupees, the digits should be gray.
 if (global.rupees == 0) {
   blend = Color.GRAY;
 } else if (global.rupees == 999) {
   /*
-    If Link has the max rupees he can carry, the digits should
+    If the player has the max rupees  can carry, the digits should
     be yellow.
     */
   blend = Color.YELLOW;

@@ -2,8 +2,8 @@
 /*
 if (keyboard_check_pressed(ord('Z')))
 {
-    room_goto(rmSectorH8LinkHouse);
+    room_goto(rmSectorH8the playerHouse);
 }
 */
 //
-room_goto(rmSectorH8LinkHouse);
+room_goto(rmSectorH8House);

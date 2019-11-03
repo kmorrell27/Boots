@@ -1,6 +1,6 @@
 event_inherited(); //Call the parent event.
 
-//Temporary variable for Link's animation image.
+//Temporary variable for the player's animation image.
 var quartersecond = global.onesecond / 4;
 var img = floor(
   (quartersecond - objPlayer.alarm[0]) / (quartersecond / objSword.image_number)
@@ -17,8 +17,8 @@ if (objPlayer.slashing) {
   }
 
   /*
-    This if-else tree positions the sword based on Link's current
-    frame in his animation.  It will always be in his hand, minus
+    This if-else tree positions the sword based on the player's current
+    frame in their animation.  It will always be in their hand, minus
     the mid-slash frame.
     */
   if (img == 0) {
@@ -112,17 +112,17 @@ if (img == 1) {
   mask_index = sprite_index;
 }
 
-//If Link isn't charging.
+//If the player isn't charging.
 if (!objPlayer.charge) {
-  //Use the same animation frame as Link.
+  //Use the same animation frame as the player.
   image_index = img;
 } else {
   //Use the last image index.
   image_index = 3;
 }
 
-hspeed = objPlayer.hspeed; //Have the same horizontal velocity as Link.
-vspeed = objPlayer.vspeed; //Have the same vertical velocity as Link.
-x = objPlayer.x + objPlayer.xoff + xoff; //Go to Link's X spot with the needed offset.
-y = objPlayer.y + objPlayer.yoff + yoff; //Go to Link's Y spot with the needed offset.
-z = objPlayer.z; //Same distance off of the ground as Link.
+hspeed = objPlayer.hspeed; //Have the same horizontal velocity as the player.
+vspeed = objPlayer.vspeed; //Have the same vertical velocity as the player.
+x = objPlayer.x + objPlayer.xoff + xoff; //Go to the player's X spot with the needed offset.
+y = objPlayer.y + objPlayer.yoff + yoff; //Go to the player's Y spot with the needed offset.
+z = objPlayer.z; //Same distance off of the ground as the player.

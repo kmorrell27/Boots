@@ -1,6 +1,6 @@
 /*******************************************************************
 This script checks to see if the parameter is met at the
-center of Link's feet.
+center of the player's feet.
 format:  scr_player_foot_check(object);
 ********************************************************************/
 

@@ -5,7 +5,7 @@
 ///@arg fraction_of_transition
 /*********************************************************************
 This script is for the transition in which the screen closes a circle
-around Link, and opens it up again in the new room.
+around the player, and opens it up again in the new room.
 The game automatically calls these transition scripts with the required
 parameters as the transitions are called.  The fraction_of_transition
 parameter is always between 0 and 1, inclusive, so with a little
@@ -22,13 +22,13 @@ var effectsurface = surface_create(argument2, argument3);
 var darknessalpha = 1;
 
 /*
-Temporary variables for Link's previous and current position,
+Temporary variables for the player's previous and current position,
 relative to the previous and current view positions respectively.
 */
-var lastlinkx = global.lastlinkx - global.lastviewx;
-var lastlinky = global.lastlinky - global.lastviewy;
-var linkx = objPlayer.x - camera_get_view_x(view_camera[0]);
-var linky = objPlayer.y - camera_get_view_y(view_camera[0]);
+var lastplayerx = global.lastplayerx - global.lastviewx;
+var lastplayery = global.lastplayery - global.lastviewy;
+var playerx = objPlayer.x - camera_get_view_x(view_camera[0]);
+var playery = objPlayer.y - camera_get_view_y(view_camera[0]);
 
 //Modify the alpha based on where the fraction is.
 if (argument4 <= 0.25) {
@@ -46,13 +46,13 @@ gpu_set_blendmode(bm_subtract);
 
 /*
 If we're in the first half of the transition, draw the circle closing
-in on Link.  Otherwise, draw it opening out.  Drawing this circle
+in on the player.  Otherwise, draw it opening out.  Drawing this circle
 will be the hole cut into the surface.
 */
 if (argument4 <= 0.5) {
   draw_circle_color(
-    lastlinkx + 8,
-    lastlinky + 8,
+    lastplayerx + 8,
+    lastplayery + 8,
     ((0.5 - argument4) / 0.5) * 128,
     c_black,
     c_white,
@@ -60,8 +60,8 @@ if (argument4 <= 0.5) {
   );
 } else {
   draw_circle_color(
-    linkx + 8,
-    linky + 8,
+    playerx + 8,
+    playery + 8,
     ((argument4 - 0.5) / 0.5) * 128,
     c_black,
     c_white,
@@ -82,13 +82,13 @@ last room.  Afterwards, we want to use the image of the next room.
 if (argument4 <= 0.5) {
   draw_surface(argument0, 0, 0);
   //Draw the image of the last room.
-  //Now draw Link's shadow and Link himself.
+  //Now draw the player's shadow and the player himself.
   if (instance_exists(objPlayer)) {
     draw_sprite_ext(
       sprShadow,
       -1,
-      round(lastlinkx),
-      round(lastlinky) + 1,
+      round(lastplayerx),
+      round(lastplayery) + 1,
       objPlayer.image_xscale,
       objPlayer.image_yscale,
       objPlayer.image_angle,
@@ -98,8 +98,8 @@ if (argument4 <= 0.5) {
     draw_sprite_ext(
       objPlayer.sprite_index,
       objPlayer.image_index,
-      round(lastlinkx) + objPlayer.xoff,
-      round(lastlinky) + objPlayer.yoff + objPlayer.z,
+      round(lastplayerx) + objPlayer.xoff,
+      round(lastplayery) + objPlayer.yoff + objPlayer.z,
       objPlayer.image_xscale,
       objPlayer.image_yscale,
       objPlayer.image_angle,
@@ -117,13 +117,13 @@ if (argument4 <= 0.5) {
 } else {
   draw_surface(argument1, 0, 0);
   //Draw the image of the next room.
-  //Now draw Link's shadow and Link himself.
+  //Now draw the player's shadow and the player himself.
   if (instance_exists(objPlayer)) {
     draw_sprite_ext(
       sprShadow,
       -1,
-      round(linkx),
-      round(linky) + 1,
+      round(playerx),
+      round(playery) + 1,
       objPlayer.image_xscale,
       objPlayer.image_yscale,
       objPlayer.image_angle,
@@ -133,8 +133,8 @@ if (argument4 <= 0.5) {
     draw_sprite_ext(
       objPlayer.sprite_index,
       objPlayer.image_index,
-      round(linkx) + objPlayer.xoff,
-      round(linky) + objPlayer.yoff + objPlayer.z,
+      round(playerx) + objPlayer.xoff,
+      round(playery) + objPlayer.yoff + objPlayer.z,
       objPlayer.image_xscale,
       objPlayer.image_yscale,
       objPlayer.image_angle,

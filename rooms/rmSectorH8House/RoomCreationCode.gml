@@ -12,7 +12,7 @@ if (!global.rain) {
 scr_set_adjacent_rooms(-1, -1, -1, -1);
 
 //Set the name of the area.
-scr_set_area_name("~Totally Not Link's House~");
+scr_set_area_name("~Totally Not the player's House~");
 
 //Make sure sideview is altered for this room.
 scr_set_sideview(false);

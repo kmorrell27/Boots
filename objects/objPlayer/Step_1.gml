@@ -4,12 +4,12 @@ if (scr_pause_check()) {
 }
 
 /*
-If Link is jumping down a cliff and he's still not at a free space,
+If the player is jumping down a cliff and they're still not at a free space,
 do what's in here.
 */
 if (cliff && !place_free(x, y)) {
   /*
-    Move forward, depending on which way Link is jumping down a
+    Move forward, depending on which way the player is jumping down a
     cliff.
     */
   if (cliffdir == Direction.DOWN) {

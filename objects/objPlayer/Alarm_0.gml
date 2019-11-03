@@ -1,13 +1,13 @@
 if (slashing) {
   /*
-    If Link was slashing...
+    If the player was slashing...
     */
 
   //Temp. variable for bush checking.
   var bushchk = scr_ahead_check(objBush, 8);
   /*
-    If there is a bush in front of Link, apply an appropriate
-    force based on which direction Link is facing, and then get rid
+    If there is a bush in front of the player, apply an appropriate
+    force based on which direction the player is facing, and then get rid
     of the bush.
     */
   if (bushchk != -1) {
@@ -32,10 +32,10 @@ if (slashing) {
   }
 
   slashing = false;
-  //Unflag him as slashing.
+  //Unflag them as slashing.
 
   /*
-    If the player is still holding the sword button, flag Link
+    If the player is still holding the sword button, flag the player
     as charging.
     */
   if (scr_sword_button_held()) {
@@ -49,21 +49,21 @@ if (slashing) {
     }
   }
   image_index = 0;
-  //Reset his animation frame.
+  //Reset their animation frame.
   scr_player_sprite_change();
-  //Finally, have Link update his sprite.
+  //Finally, have the player update their sprite.
 } else if (jumping) {
-  //If Link was jumping...
+  //If the player was jumping...
   image_index = 7;
   //Stay on the final frame.
 } else if (rolling) {
-  //If Link was rolling...
+  //If the player was rolling...
   rolling = false;
-  //He's not now.
+  //they're not now.
   image_index = 0;
-  //Reset his animation frame.
+  //Reset their animation frame.
   scr_player_sprite_change();
-  //Finally, have Link update his sprite.
+  //Finally, have the player update their sprite.
 } else if (hammering) {
   if (instance_exists(objHammer)) {
     instance_destroy(objHammer);

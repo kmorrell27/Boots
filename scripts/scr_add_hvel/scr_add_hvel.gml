@@ -1,5 +1,5 @@
 /*********************************************************************
-This script adds to (or substracts from) Link's conserved horizontal
+This script adds to (or substracts from) the player's conserved horizontal
 force, with respect to 0.
 
 format:  scr_add_hvel(amount);

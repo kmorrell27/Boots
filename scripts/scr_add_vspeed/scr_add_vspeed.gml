@@ -1,6 +1,6 @@
 /*********************************************************************
-This script adds to (or substracts from) Link's vertical speed, with
-respect to his speed cap.
+This script adds to (or substracts from) the player's vertical speed, with
+respect to their speed cap.
 
 format:  scr_add_vspeed(amount);
 *********************************************************************/

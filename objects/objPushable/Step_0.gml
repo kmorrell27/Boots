@@ -4,7 +4,7 @@ if (scr_pause_check()) {
 }
 
 /*
-The movement section of the pushable object.  It is started one Link
+The movement section of the pushable object.  It is started one the player
 has given it a distance to be pushed.
 */
 if (pushx != 0 || pushy != 0) {
@@ -43,7 +43,7 @@ if (pushx != 0 || pushy != 0) {
     pushdir = noone;
     //It is now no longer pushed in a direction.
     /*
-        Take one away from the number of pushes Link can push
+        Take one away from the number of pushes the player can push
         this object now, if applicable, since it's been pushed
         once now.
         */

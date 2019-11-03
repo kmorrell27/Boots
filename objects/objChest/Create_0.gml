@@ -1,16 +1,16 @@
 event_inherited(); //Call the parent event.
-interactdir = Direction.UP; //Link has to face up to open this chest.
+interactdir = Direction.UP; //The player has to face up to open this chest.
 
 image_speed = 0; //No animation speed for you!
 //Which chest is this?  -1 for a respawning chest upon leaving.
 chestnum = -1;
 opened = false; //Has this chest been opened yet?
-itemobj = noone; //Which item to give Link.
+itemobj = noone; //Which item to give the player.
 itemspr = sprItemRupee; //What sprite to draw as the chest is being opened.
 itemalpha = 0; //How transparent the item sprite is drawn.
 /*
 How long this chest has, in frames, before the item is no longer drawn
-above it, and the item is given to Link.
+above it, and the item is given to the player.
 */
 opentmr = global.onesecond;
 drawy = 0; //Where is the item being drawn?

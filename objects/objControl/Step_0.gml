@@ -7,7 +7,7 @@ if (keyboard_check_pressed(vk_f2)) {
 }
 
 /*
-If there is no Link, get out of this code.
+If there is no player, get out of this code.
 */
 if (!instance_exists(objPlayer)) {
   exit;
@@ -16,7 +16,7 @@ if (!instance_exists(objPlayer)) {
 /*
 Pause Key Enter (Return).  Pressing it pauses the game.
 Pressing it again will close it.  Can only
-pause if Link is able to move.
+pause if the player is able to move.
 */
 
 if (scr_pause_button_pressed() && objPlayer.moveable) {
@@ -42,7 +42,7 @@ This section is control elements of the HUD, like for example, the
 anchor position and rupee counter addition/subtraction.
 *********************************************************************/
 
-//If Link is on the top third of the screen or a sideview area...
+//If the player is on the top third of the screen or a sideview area...
 if (
   objPlayer.y + 16 <=
     (camera_get_view_y(view_camera[0]) +
@@ -74,7 +74,7 @@ if (
 }
 
 /*
-If Link has less than or equal to 1/4 of his max health, start
+If the player has less than or equal to 1/4 of their max health, start
 playing the danger sound.
 */
 if (global.hearts <= floor(global.heartmax / 4)) {
@@ -141,12 +141,12 @@ if (global.hearts <= floor(global.heartmax / 4)) {
 }
 
 /*
-If Link is undergoing healing (or damaging), modify his HP.  Otherwise
-reset the stored value of his initial HP before healing to -1.
+If the player is undergoing healing (or damaging), modify their HP.  Otherwise
+reset the stored value of their initial HP before healing to -1.
 */
 if (global.heal != 0) {
   /*
-    Store the initial value of Link's hearts before the healing
+    Store the initial value of the player's hearts before the healing
     starts.
     */
   if (oldhearts == -1) {

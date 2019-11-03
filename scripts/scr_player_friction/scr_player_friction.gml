@@ -1,5 +1,5 @@
 /********************************************************************
-This script applies friction to Link, in that it slows his movement
+This script applies friction to the player, in that it slows their movement
 down until it reaches 0 in each plane.  If the parameter is false,
 then it'll only slow the movement in the plane that isn't used.
 So for example, if the player is heading straight down, friction
