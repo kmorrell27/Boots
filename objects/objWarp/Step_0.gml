@@ -6,34 +6,34 @@ if (instance_number(objPlayer) > 1) {
   return;
 }
 
-if (place_meeting(x, y, objPlayer) && !objPlayer.jumping) {
+if (place_meeting(x, y, objPlayer) && !global.playerid.jumping) {
   global.lastplayerx =
-    objPlayer.x *
+    global.playerid.x *
     (display_get_gui_width() / camera_get_view_width(view_camera[0]));
   //Store the player's X coordinate.
   global.lastplayery =
-    objPlayer.y *
+    global.playerid.y *
     (display_get_gui_height() / camera_get_view_height(view_camera[0]));
   //Store the player's Y coordinate.
   global.lastviewx = camera_get_view_x(view_camera[0]);
   //Store the view's X coordinate.
   global.lastviewy = camera_get_view_y(view_camera[0]);
   //Store the view's Y coordinate.
-  objPlayer.visible = false;
+  global.playerid.visible = false;
   //Unflag the player as visible.
   objControl.visible = false;
   //Unflag the Control as visible.
-  objPlayer.hspeed = 0;
+  global.playerid.hspeed = 0;
   //Reset the player's horizontal speed.
-  objPlayer.vspeed = 0;
+  global.playerid.vspeed = 0;
   //Reset the player's vertical speed.
-  objPlayer.hvel = 0;
+  global.playerid.hvel = 0;
   //Reset the player's conserved horizontal velocity.
-  objPlayer.vvel = 0;
+  global.playerid.vvel = 0;
   //Reset the player's conserved vertical velocity.
-  objPlayer.rolling = false;
+  global.playerid.rolling = false;
   //Unflag the player as rolling.
-  objPlayer.slashing = false;
+  global.playerid.slashing = false;
   //Unflag the player as slashing.
   //Update the player's sprite.
   with (objPlayer) {
@@ -43,9 +43,9 @@ if (place_meeting(x, y, objPlayer) && !objPlayer.jumping) {
   global.inside = inside;
   scr_reset_weather();
   //Reset the weather.
-  objPlayer.x = sendx;
+  global.playerid.x = sendx;
   //Place the player on the needed X coordinate.
-  objPlayer.y = sendy;
+  global.playerid.y = sendy;
   //Place the player on the needed Y coordinate.
   scr_room_transition(sendr, transition, 60);
   //If this has a sound effect to play, then play it.

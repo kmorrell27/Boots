@@ -17,14 +17,14 @@ if (!moveable || slashing || cliff || rolling || hammering) {
 Sword Check
 */
 if (argument0 == Item.SWORD && !charge && !spin) {
-  if (party & (Character.CAITLIN == 0)) {
+  if ((party & Character.CAITLIN) == 0) {
     // We need to find our Caitlin
     active = false;
     inactiveSprite = sprite_index;
     image_index = 0;
     for (var i = 0; i < instance_number(objPlayer); i++) {
       var tmp = instance_find(objPlayer, i);
-      if (tmp.party & (Character.CAITLIN > 0)) {
+      if ((tmp.party & Character.CAITLIN) > 0) {
         global.playerid = tmp.id;
         break;
       }
@@ -93,14 +93,14 @@ if (argument0 == Item.FEATHER && !jumping) {
 }
 
 if (argument0 == Item.BOW) {
-  if (party & (Character.ROSA == 0)) {
+  if ((party & Character.ROSA) == 0) {
     // ROSAAAA
     active = false;
     inactiveSprite = sprite_index;
     image_index = 0;
     for (var i = 0; i < instance_number(objPlayer); i++) {
       var tmp = instance_find(objPlayer, i);
-      if (tmp.party & (Character.ROSA > 0)) {
+      if ((tmp.party & Character.ROSA) > 0) {
         global.playerid = tmp.id;
         break;
       }
@@ -136,14 +136,14 @@ if (argument0 == Item.BOW) {
 }
 
 if (argument0 == Item.BOMB) {
-  if (party & (Character.BRIAN == 0)) {
+  if ((party & Character.BRIAN) == 0) {
     // Brian, The Life Of
     active = false;
     inactiveSprite = sprite_index;
     image_index = 0;
     for (var i = 0; i < instance_number(objPlayer); i++) {
       var tmp = instance_find(objPlayer, i);
-      if (tmp.party & (Character.BRIAN > 0)) {
+      if ((tmp.party & Character.BRIAN) > 0) {
         global.playerid = tmp.id;
         break;
       }
@@ -188,14 +188,14 @@ if (argument0 == Item.BOMB) {
 }
 
 if (argument0 == Item.HAMMER) {
-  if (party & (Character.HAROLD == 0)) {
+  if ((party & Character.HAROLD) == 0) {
     // I have no pun here
     active = false;
     inactiveSprite = sprite_index;
     image_index = 0;
     for (var i = 0; i < instance_number(objPlayer); i++) {
       var tmp = instance_find(objPlayer, i);
-      if (tmp.party & (Character.HAROLD > 0)) {
+      if ((tmp.party & Character.HAROLD) > 0) {
         global.playerid = tmp.id;
         break;
       }

@@ -27,8 +27,8 @@ relative to the previous and current view positions respectively.
 */
 var lastplayerx = global.lastplayerx - global.lastviewx;
 var lastplayery = global.lastplayery - global.lastviewy;
-var playerx = objPlayer.x - camera_get_view_x(view_camera[0]);
-var playery = objPlayer.y - camera_get_view_y(view_camera[0]);
+var playerx = global.playerid.x - camera_get_view_x(view_camera[0]);
+var playery = global.playerid.y - camera_get_view_y(view_camera[0]);
 
 //Modify the alpha based on where the fraction is.
 if (argument4 <= 0.25) {
@@ -89,22 +89,22 @@ if (argument4 <= 0.5) {
       -1,
       round(lastplayerx),
       round(lastplayery) + 1,
-      objPlayer.image_xscale,
-      objPlayer.image_yscale,
-      objPlayer.image_angle,
-      objPlayer.image_blend,
-      objPlayer.image_alpha - 0.125
+      global.playerid.image_xscale,
+      global.playerid.image_yscale,
+      global.playerid.image_angle,
+      global.playerid.image_blend,
+      global.playerid.image_alpha - 0.125
     );
     draw_sprite_ext(
-      objPlayer.sprite_index,
-      objPlayer.image_index,
-      round(lastplayerx) + objPlayer.xoff,
-      round(lastplayery) + objPlayer.yoff + objPlayer.z,
-      objPlayer.image_xscale,
-      objPlayer.image_yscale,
-      objPlayer.image_angle,
-      objPlayer.image_blend,
-      objPlayer.image_alpha
+      global.playerid.sprite_index,
+      global.playerid.image_index,
+      round(lastplayerx) + global.playerid.xoff,
+      round(lastplayery) + global.playerid.yoff + global.playerid.z,
+      global.playerid.image_xscale,
+      global.playerid.image_yscale,
+      global.playerid.image_angle,
+      global.playerid.image_blend,
+      global.playerid.image_alpha
     );
   }
   /*
@@ -124,22 +124,22 @@ if (argument4 <= 0.5) {
       -1,
       round(playerx),
       round(playery) + 1,
-      objPlayer.image_xscale,
-      objPlayer.image_yscale,
-      objPlayer.image_angle,
-      objPlayer.image_blend,
-      objPlayer.image_alpha - 0.125
+      global.playerid.image_xscale,
+      global.playerid.image_yscale,
+      global.playerid.image_angle,
+      global.playerid.image_blend,
+      global.playerid.image_alpha - 0.125
     );
     draw_sprite_ext(
-      objPlayer.sprite_index,
-      objPlayer.image_index,
-      round(playerx) + objPlayer.xoff,
-      round(playery) + objPlayer.yoff + objPlayer.z,
-      objPlayer.image_xscale,
-      objPlayer.image_yscale,
-      objPlayer.image_angle,
-      objPlayer.image_blend,
-      objPlayer.image_alpha
+      global.playerid.sprite_index,
+      global.playerid.image_index,
+      round(playerx) + global.playerid.xoff,
+      round(playery) + global.playerid.yoff + global.playerid.z,
+      global.playerid.image_xscale,
+      global.playerid.image_yscale,
+      global.playerid.image_angle,
+      global.playerid.image_blend,
+      global.playerid.image_alpha
     );
   }
 

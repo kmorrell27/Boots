@@ -3,13 +3,8 @@ if (partySize == 1) {
   return;
 }
 
-// party: 15
-// newParty: 7
-// partySize: 1
-// newPartySize = 3
-// party: 8
-
 var newPlayer = instance_create_depth(x, y, depth - 1, objPlayer);
+newPlayer.persistent = false;
 
 active = false;
 
@@ -18,6 +13,7 @@ newPlayer.party = party - global.player;
 newPlayer.partySize = partySize - 1;
 
 party = global.player;
+
 partySize = 1;
 
 if (newPlayer.party == 1) {

@@ -43,6 +43,8 @@ heldObject = noone;
 shooting = false; // I'm gonna reuse this for the hookshot
 hammering = false; // Maybe this could be consolidated idk
 bombing = false;
+canMerge = false;
+alarm[1] = global.onesecond;
 
 shader = shader_get_uniform(sh_saturation, "Degree"); // control shader
 active = true;
