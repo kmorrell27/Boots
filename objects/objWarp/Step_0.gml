@@ -2,6 +2,10 @@
 Warping can only happen when the player STANDS on a warp object.  Once  do
 let's do stuff.*/
 
+if (instance_number(objPlayer) > 1) {
+  return;
+}
+
 if (place_meeting(x, y, objPlayer) && !objPlayer.jumping) {
   global.lastplayerx =
     objPlayer.x *

@@ -1,5 +1,3 @@
-// @gml_fmt ignore
-
 // 60 FPS baby
 global.onesecond = 60;
 
@@ -83,6 +81,7 @@ display_set_gui_size(256, 144);
  * We've got characters!
  */
 global.player = Character.CAITLIN;
+global.playerid = noone;
 
 global.sprites = [
   [sprBrianUp, sprBrianDown, sprBrianLeft, sprBrianRight],

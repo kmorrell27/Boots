@@ -21,10 +21,10 @@ enum Color {
 }
 
 enum Character {
-  BRIAN,
-  ROSA,
-  HAROLD,
-  CAITLIN
+  BRIAN = 1,
+  ROSA = 2,
+  HAROLD = 4,
+  CAITLIN = 8
 }
 
 

@@ -1,7 +1,11 @@
 /*********************************************************************
 GAME PAUSED SECTION
 *********************************************************************/
-if (scr_pause_check()) {
+if (!active) {
+  sprite_index = inactiveSprite;
+}
+
+if (scr_pause_check() || !active) {
   //Conserve vertical speed.
   if (vspeed != 0) {
     lvspeed = vspeed;
@@ -968,6 +972,10 @@ if (scr_hammer_button_pressed()) {
 
 if (scr_jump_button_pressed()) {
   scr_use_item(Item.FEATHER);
+}
+
+if (scr_split_button_pressed()) {
+  scr_split_up();
 }
 
 //If the player presses X, use what's on X.

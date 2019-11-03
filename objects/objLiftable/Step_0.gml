@@ -8,8 +8,8 @@ if (!lifted && !thrown) {
   exit;
 } else if (lifted && !thrown) {
   //Just carrying
-  x = objPlayer.x;
-  y = objPlayer.y;
+  x = global.playerid.x;
+  y = global.playerid.y;
   z = -16;
   solid = false;
 }

@@ -6,7 +6,7 @@ if (scr_pause_check()) {
 //If the player has interacted with the chest...
 if (interacted) {
   var ypos = 0;
-  if (objPlayer.y < 48) {
+  if (global.playerid.y < 48) {
     // We're gonna be covered by the text box
     ypos = 96;
   }

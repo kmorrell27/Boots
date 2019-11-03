@@ -9,8 +9,8 @@ if (imgchk > 0 && imgchk < 3) {
   draw_sprite_ext(
     sprite_index,
     imgchk - 1,
-    round(objPlayer.x) + objPlayer.xoff + lastxoff,
-    round(objPlayer.y) + objPlayer.yoff + lastyoff + z,
+    round(global.playerid.x) + global.playerid.xoff + lastxoff,
+    round(global.playerid.y) + global.playerid.yoff + lastyoff + z,
     image_xscale,
     image_yscale,
     image_angle,

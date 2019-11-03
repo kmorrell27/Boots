@@ -591,6 +591,14 @@
             }
         },
         {
+            "Key": "443eef83-788c-4c0d-86e1-9abf25387eb9",
+            "Value": {
+                "id": "47e9889a-2ec5-4a65-92d5-2f47e34f9432",
+                "resourcePath": "scripts\\scr_split_up\\scr_split_up.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4647bd86-6a53-40e8-8152-a4dabc0a8eab",
             "Value": {
                 "id": "c114e99f-3ed4-49e3-9a8f-d7f6264b96a1",
@@ -844,6 +852,14 @@
                 "id": "6176a449-a460-44b4-92b2-86bd2a0643eb",
                 "resourcePath": "scripts\\scr_add_hspeed\\scr_add_hspeed.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "69a31021-7667-461c-9961-f7a5b15c706b",
+            "Value": {
+                "id": "09194d4c-bd27-4acd-9b18-44fc891c76e5",
+                "resourcePath": "sounds\\sndError\\sndError.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -1703,6 +1719,14 @@
             }
         },
         {
+            "Key": "ddbe079d-711c-434c-8d9d-a15a8bdf8a2e",
+            "Value": {
+                "id": "fdcebe33-1b91-4016-8145-2006055ca069",
+                "resourcePath": "scripts\\scr_split_button_pressed\\scr_split_button_pressed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "de1ab635-1cd0-4ae9-abb7-df1ff6055584",
             "Value": {
                 "id": "8960037f-d148-418b-8563-a60d4b94b9e1",
@@ -2034,6 +2058,7 @@
         "d5f0f22a-bdfa-46cf-b99d-fff076c67a83",
         "7a2e697c-e31f-4376-adb0-0d5a4a325e64",
         "2eb51cce-19f8-4e2e-8da9-3e28bdb31f40",
+        "ddbe079d-711c-434c-8d9d-a15a8bdf8a2e",
         "e1404222-9d24-4f0a-ac49-dc6f243fbd59",
         "2af4d16b-6434-44dc-9fcd-6ee75801f2bb",
         "4647bd86-6a53-40e8-8152-a4dabc0a8eab",
@@ -2046,6 +2071,7 @@
         "695bb1dc-cf6c-4ba2-8505-195b1bf50e5e",
         "d30dd91c-a439-43ff-b666-5125ca279e92",
         "30300145-c7a8-4a96-9ebb-618e0d1d3f96",
+        "443eef83-788c-4c0d-86e1-9abf25387eb9",
         "d8c2b938-8f63-4f07-9017-92e3912cfe22",
         "5b9df193-c188-488e-970f-43d4c2544384",
         "6df7cd31-131d-4e23-bf51-9db8ec263017",

@@ -3,12 +3,12 @@ event_inherited(); //Call the parent event.
 //Temporary variable for the player's animation image.
 var quartersecond = global.onesecond / 4;
 var img = floor(
-  (quartersecond - objPlayer.alarm[0]) /
+  (quartersecond - global.playerid.alarm[0]) /
     (quartersecond / objHammer.image_number)
 );
 
 //Hammering checking.
-if (objPlayer.hammering) {
+if (global.playerid.hammering) {
   //If the subimage has changed...
   if (lastimg < img) {
     //Store the previous X and Y offsets, and image.
@@ -24,60 +24,60 @@ if (objPlayer.hammering) {
     */
   if (img == 0) {
     //First Frame.
-    if (objPlayer.dir == Direction.DOWN) {
+    if (global.playerid.dir == Direction.DOWN) {
       xoff = 3;
       yoff = 3;
-      depth = objPlayer.depth - 1;
-    } else if (objPlayer.dir == Direction.UP) {
+      depth = global.playerid.depth - 1;
+    } else if (global.playerid.dir == Direction.UP) {
       xoff = -4;
       yoff = -1;
-      depth = objPlayer.depth + 1;
-    } else if (objPlayer.dir == Direction.LEFT) {
+      depth = global.playerid.depth + 1;
+    } else if (global.playerid.dir == Direction.LEFT) {
       xoff = -3;
       yoff = -4;
-      depth = objPlayer.depth + 1;
+      depth = global.playerid.depth + 1;
     } else {
       xoff = 3;
       yoff = 0;
-      depth = objPlayer.depth - 1;
+      depth = global.playerid.depth - 1;
     }
   } else if (img == 1) {
     //Second Frame
-    if (objPlayer.dir == Direction.DOWN) {
+    if (global.playerid.dir == Direction.DOWN) {
       xoff = 3;
       yoff = 10;
-      depth = objPlayer.depth - 1;
-    } else if (objPlayer.dir == Direction.UP) {
+      depth = global.playerid.depth - 1;
+    } else if (global.playerid.dir == Direction.UP) {
       xoff = -4;
       yoff = -10;
-      depth = objPlayer.depth + 1;
-    } else if (objPlayer.dir == Direction.LEFT) {
+      depth = global.playerid.depth + 1;
+    } else if (global.playerid.dir == Direction.LEFT) {
       xoff = -10;
       yoff = -4;
-      depth = objPlayer.depth + 1;
+      depth = global.playerid.depth + 1;
     } else {
       xoff = 10;
       yoff = 0;
-      depth = objPlayer.depth - 1;
+      depth = global.playerid.depth - 1;
     }
   } else {
     //Last Frames
-    if (objPlayer.dir == Direction.DOWN) {
+    if (global.playerid.dir == Direction.DOWN) {
       xoff = 3;
       yoff = 14;
-      depth = objPlayer.depth - 1;
-    } else if (objPlayer.dir == Direction.UP) {
+      depth = global.playerid.depth - 1;
+    } else if (global.playerid.dir == Direction.UP) {
       xoff = -4;
       yoff = -13;
-      depth = objPlayer.depth + 1;
-    } else if (objPlayer.dir == Direction.LEFT) {
+      depth = global.playerid.depth + 1;
+    } else if (global.playerid.dir == Direction.LEFT) {
       xoff = -14;
       yoff = -4;
-      depth = objPlayer.depth + 1;
+      depth = global.playerid.depth + 1;
     } else {
       xoff = 14;
       yoff = 0;
-      depth = objPlayer.depth - 1;
+      depth = global.playerid.depth - 1;
     }
   }
 }
@@ -94,8 +94,8 @@ if (img >= 2) {
   mask_index = -1;
 }
 
-hspeed = objPlayer.hspeed; //Have the same horizontal velocity as the player.
-vspeed = objPlayer.vspeed; //Have the same vertical velocity as the player.
-x = objPlayer.x + objPlayer.xoff + xoff; //Go to the player's X spot with the needed offset.
-y = objPlayer.y + objPlayer.yoff + yoff; //Go to the player's Y spot with the needed offset.
-z = objPlayer.z; //Same distance off of the ground as the player.
+hspeed = global.playerid.hspeed; //Have the same horizontal velocity as the player.
+vspeed = global.playerid.vspeed; //Have the same vertical velocity as the player.
+x = global.playerid.x + global.playerid.xoff + xoff; //Go to the player's X spot with the needed offset.
+y = global.playerid.y + global.playerid.yoff + yoff; //Go to the player's Y spot with the needed offset.
+z = global.playerid.z; //Same distance off of the ground as the player.

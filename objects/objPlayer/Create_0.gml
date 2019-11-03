@@ -46,3 +46,9 @@ bombing = false;
 
 shader = shader_get_uniform(sh_saturation, "Degree"); // control shader
 active = true;
+
+party = 15;
+partySize = 4;
+inactiveSprite = -1;
+
+global.playerid = id;

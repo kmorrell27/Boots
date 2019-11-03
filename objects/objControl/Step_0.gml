@@ -19,7 +19,7 @@ Pressing it again will close it.  Can only
 pause if the player is able to move.
 */
 
-if (scr_pause_button_pressed() && objPlayer.moveable) {
+if (scr_pause_button_pressed() && global.playerid.moveable) {
   if (!global.pause) {
     audio_play_sound(sndMenuOpen, 10, false);
   } else {
@@ -44,7 +44,7 @@ anchor position and rupee counter addition/subtraction.
 
 //If the player is on the top third of the screen or a sideview area...
 if (
-  objPlayer.y + 16 <=
+  global.playerid.y + 16 <=
     (camera_get_view_y(view_camera[0]) +
       camera_get_view_width(view_camera[0])) %
       2 ||

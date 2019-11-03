@@ -9,7 +9,7 @@ if (interacted && !opened) {
   //Play the chest sound.
   opened = true;
   //Flg the chest as opened.
-  objPlayer.moveable = false;
+  global.playerid.moveable = false;
   //Disable the player's movement.
 }
 
@@ -50,12 +50,12 @@ if (opened) {
       if (chestnum > -1) {
         global.chest[chestnum] = true;
       }
-      objPlayer.moveable = true;
+      global.playerid.moveable = true;
       //Reflag the player as able to move.
       //And then give them the item the chest has.
       instance_create_layer(
-        objPlayer.x + 4,
-        objPlayer.y + 4,
+        global.playerid.x + 4,
+        global.playerid.y + 4,
         global.playerLayer,
         itemobj
       );

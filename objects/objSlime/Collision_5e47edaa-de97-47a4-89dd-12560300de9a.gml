@@ -1,6 +1,6 @@
 if (!hitstun) {
   hitstun = true;
-  direction = point_direction(objPlayer.x, objPlayer.y, x, y);
+  direction = point_direction(global.playerid.x, global.playerid.y, x, y);
   spd = 3;
 
   health = max(health - 1, 0);
