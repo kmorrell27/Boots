@@ -719,11 +719,27 @@
             }
         },
         {
+            "Key": "58f796f2-4b84-4a61-bfb0-c206d58123cc",
+            "Value": {
+                "id": "4194ae15-f60d-4307-9bc4-c5090235d0c6",
+                "resourcePath": "views\\58f796f2-4b84-4a61-bfb0-c206d58123cc.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "5913c4c2-4492-4cda-a388-57e75292daa6",
             "Value": {
                 "id": "a8a012c4-4331-4942-933a-8cc4b6db99e8",
                 "resourcePath": "views\\5913c4c2-4492-4cda-a388-57e75292daa6.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "592bfc02-d5eb-4e03-b7bc-4e98c7ea742c",
+            "Value": {
+                "id": "d45c5736-2a0c-4abc-bfd7-3d28e46263b9",
+                "resourcePath": "scripts\\scr_change_music\\scr_change_music.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2084,7 +2100,8 @@
         "871a0599-ad53-4224-be01-fb58cc6b705f",
         "de1ab635-1cd0-4ae9-abb7-df1ff6055584",
         "2aeeb8a5-f664-4cb4-9cf9-54bfac4a4402",
-        "bdd36066-e6dc-47b2-ad6e-a882158d64af"
+        "bdd36066-e6dc-47b2-ad6e-a882158d64af",
+        "592bfc02-d5eb-4e03-b7bc-4e98c7ea742c"
     ],
     "tutorial": ""
 }
