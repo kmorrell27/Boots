@@ -8,8 +8,8 @@ The parameter is whether or not this should be done instantly.
 format:  scr_align_camera(instant);
 *********************************************************************/
 
-var viewxoff = round(camera_get_view_x(view_camera[0]) + 72 - x);
-var viewyoff = round(camera_get_view_y(view_camera[0]) + 64 - y);
+var viewxoff = round(camera_get_view_x(view_camera[0]) + 128 - x);
+var viewyoff = round(camera_get_view_y(view_camera[0]) + 72 - y);
 
 if (!argument0) {
   if (abs(viewxoff) != 0) {
@@ -18,13 +18,13 @@ if (!argument0) {
     if (viewxoff < 0) {
       camera_set_view_pos(
         view_camera[0],
-        camera_get_view_x(view_camera[0] + dis),
+        camera_get_view_x(view_camera[0]) + dis,
         camera_get_view_y(view_camera[0])
       );
     } else {
       camera_set_view_pos(
         view_camera[0],
-        camera_get_view_x(view_camera[0] - dis),
+        camera_get_view_x(view_camera[0]) - dis,
         camera_get_view_y(view_camera[0])
       );
     }

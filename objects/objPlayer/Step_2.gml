@@ -18,7 +18,9 @@ if (y < 0) {
     //Flag the Weather as invisible as well for the same reason.
     objWeather.visible = false;
     //Flag any of the player's weapons as invisible as well.
-    objWeapon.visible = false;
+    if (instance_exists(objWeapon)) {
+      objWeapon.visible = false;
+    }
     scr_reset_weather();
     //Reset the weather.
     //If the player is jumping down a cliff, reset their animation.
@@ -52,7 +54,9 @@ if (y + 16 > room_height) {
     //Flag the Weather as invisible as well for the same reason.
     objWeather.visible = false;
     //Flag any of the player's weapons as invisible as well.
-    objWeapon.visible = false;
+    if (instance_exists(objWeapon)) {
+      objWeapon.visible = false;
+    }
     if (cliff && image_index >= 3) {
       image_index = 0;
     }
@@ -83,7 +87,9 @@ if (x < 0) {
     //Flag the Weather as invisible as well for the same reason.
     objWeather.visible = false;
     //Flag any of the player's weapons as invisible as well.
-    objWeapon.visible = false;
+    if (instance_exists(objWeapon)) {
+      objWeapon.visible = false;
+    }
     scr_reset_weather();
     //Reset the weather.
     //If the player is jumping down a cliff, reset their animation.
@@ -117,7 +123,9 @@ if (x + 16 > room_width) {
     //Flag the Weather as invisible as well for the same reason.
     objWeather.visible = false;
     //Flag any of the player's weapons as invisible as well.
-    objWeapon.visible = false;
+    if (instance_exists(objWeapon)) {
+      objWeapon.visible = false;
+    }
     scr_reset_weather();
     //Reset the weather.
     //If the player is jumping down a cliff, reset their animation.

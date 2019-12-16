@@ -16,4 +16,3 @@ scr_set_area_name("~Oh No! More Slimes~");
 
 //Make sure sideview is altered for this room.
 scr_set_sideview(false);
-audio_sound_gain();

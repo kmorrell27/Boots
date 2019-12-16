@@ -18,9 +18,9 @@ if (global.playerid.hammering) {
   }
 
   /*
-    This if-else tree positions the sword based on the player's current
+    This if-else tree positions the hammer based on the player's current
     frame in their animation.  It will always be in their hand, minus
-    the mid-slash frame.
+    the mid-slam frame.
     */
   if (img == 0) {
     //First Frame.
@@ -83,7 +83,7 @@ if (global.playerid.hammering) {
 }
 
 /*
-If the animation frame is on the slash frame, the mask should be
+If the animation frame is on the down frame, the mask should be
 considered as a whole tile.  This is so the slash doesn't have
 to be pixel perfect.  Otherwise, it should be the same as the sword
 sprite itself.

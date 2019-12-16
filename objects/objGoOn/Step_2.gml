@@ -6,4 +6,4 @@ if (keyboard_check_pressed(ord('Z')))
 }
 */
 //
-room_goto(rmSectorH8House);
+room_goto(rmIntro1);

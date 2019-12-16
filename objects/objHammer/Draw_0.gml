@@ -19,7 +19,7 @@ if (imgchk > 0 && imgchk < 3) {
   );
 }
 
-//Now draw the sword itself.
+//Now draw the hammer itself.
 draw_sprite_ext(
   sprite_index,
   -1,

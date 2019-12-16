@@ -2,7 +2,7 @@
 {
     "name": "rmSectorH8",
     "id": "701603f6-774b-4d54-9e92-f25f257d6780",
-    "creationCodeFile": "",
+    "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
     "inheritCreationOrder": false,
     "inheritLayers": false,

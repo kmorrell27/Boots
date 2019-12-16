@@ -15,8 +15,10 @@ if (!global.sideview) {
     image_alpha - 0.125
   );
 }
+
 shader_set(sh_saturation);
-shader_set_uniform_f(shader, active ? 0 : 0.7);
+shader_set_uniform_f(shader, active ? 0 : 0.5);
+
 //Draw the player's sprite.
 draw_sprite_ext(
   sprite_index,
