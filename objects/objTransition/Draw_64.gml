@@ -3,7 +3,9 @@
 var width, height, x1, y1, x2, y2;
 width = display_get_gui_width();
 height = display_get_gui_height();
-//Push left
+show_debug_message("---");
+show_debug_message(width);
+show_debug_message(height);
 
 if (room != next_room) {
   room_goto(next_room);

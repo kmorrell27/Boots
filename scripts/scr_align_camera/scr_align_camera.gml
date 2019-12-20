@@ -48,7 +48,7 @@ if (!argument0) {
     }
   }
 } else {
-  camera_set_view_pos(view_camera[0], x - 72, y - 64);
+  camera_set_view_pos(view_camera[0], x - 128, y - 72);
 }
 
 if (camera_get_view_x(view_camera[0]) < 0) {
