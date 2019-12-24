@@ -55,3 +55,5 @@ if (pushx != 0 || pushy != 0) {
   pushspd = 0;
   //It doesn't have a movement speed if it's not pushed.
 }
+
+depth = -y;

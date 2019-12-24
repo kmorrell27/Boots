@@ -405,7 +405,7 @@ if (
     */
   if (down && !global.sideview) {
     //If there's no wall below the player...
-    if (place_free(x, y + spd)) {
+    if (place_free(x, y + 1)) {
       /*
             If they're not hugging the wall vertically, then add the
             momentem to their vertical motion.  Otherwise, add it to
@@ -423,7 +423,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x - 6, y + spd) &&
+      place_free(x - 6, y + 1) &&
       !left &&
       !right &&
       dir == Direction.DOWN
@@ -444,7 +444,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x + 6, y + spd) &&
+      place_free(x + 6, y + 1) &&
       !left &&
       !right &&
       dir == Direction.DOWN
@@ -494,7 +494,7 @@ if (
         get as close to the wall as possible and go no further, and
         flag them as pushing if  are facing in this direction.
         */
-    if (place_free(x, y - spd)) {
+    if (place_free(x, y - 1)) {
       /*
             If they're not hugging the wall vertically, then add the
             momentem to their vertical motion.  Otherwise, add it to
@@ -512,7 +512,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x - 6, y - spd) &&
+      place_free(x - 6, y - 1) &&
       !left &&
       !right &&
       dir == Direction.UP
@@ -533,7 +533,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x + 6, y - spd) &&
+      place_free(x + 6, y - 1) &&
       !left &&
       !right &&
       dir == Direction.UP
@@ -583,7 +583,7 @@ if (
         get as close to the wall as possible and go no further, and
         flag them as pushing if  are facing in this direction.
         */
-    if (place_free(x - spd, y)) {
+    if (place_free(x - 1, y)) {
       /*
             If they're not hugging the wall horizontally, then add the
             momentem to their horizontal motion.  Otherwise, add it to
@@ -601,7 +601,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x - spd, y - 6) &&
+      place_free(x - 1, y - 6) &&
       !global.sideview &&
       !down &&
       !up &&
@@ -623,7 +623,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x - spd, y + 6) &&
+      place_free(x - 1, y + 6) &&
       !global.sideview &&
       !down &&
       !up &&
@@ -674,7 +674,7 @@ if (
         get as close to the wall as possible and go no further, and
         flag them as pushing if  are facing in this direction.
         */
-    if (place_free(x + spd, y)) {
+    if (place_free(x + 1, y)) {
       /*
             If they're not hugging the wall horizontally, then add the
             momentem to their horizontal motion.  Otherwise, add it to
@@ -692,7 +692,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x + spd, y - 6) &&
+      place_free(x + 1, y - 6) &&
       !global.sideview &&
       !down &&
       !up &&
@@ -714,7 +714,7 @@ if (
       pushtmr = 0;
       //Reset the pushing timer.
     } else if (
-      place_free(x + spd, y + 6) &&
+      place_free(x + 1, y + 6) &&
       !global.sideview &&
       !down &&
       !up &&
@@ -740,9 +740,9 @@ if (
       //Check for collision.
       if (dir == Direction.RIGHT && !jumping) {
         /*
-                Flag the player as pushing if  aren't charging the sword,
-                otherwise, make them perform a sword tap.
-                */
+        Flag the player as pushing if  aren't charging the sword,
+        otherwise, make them perform a sword tap.
+        */
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -831,8 +831,12 @@ if (
           pushobjchk.pushes != 0 &&
           pushobjchk.pushx == 0 &&
           pushobjchk.pushy == 0 &&
-          (pushobjchk.pushdir == noone || pushobjchk.pushdir == dir)
+          (pushobjchk.pushdir == noone ||
+            array_contains(pushobjchk.pushdir, dir))
         ) {
+          show_debug_message("===");
+          show_debug_message(dir);
+          show_debug_message("===");
           /*
                     Then set it's pushing distance to one tile ahead,
                     if the object can move forward and isn't at the edge
@@ -1162,6 +1166,8 @@ if (slashing) {
   xoff = 0;
   yoff = 0;
 }
+
+depth = -y;
 
 /*
 if (place_meeting(x,y,objEnemy))

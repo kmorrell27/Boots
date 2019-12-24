@@ -1,4 +1,4 @@
-//Which direction MUST this object be pushed in?  '' for no specifics.
+//Which direction MUST this object be pushed in?  noone for no specifics.
 pushdir = noone;
 //How many more times can the player push this?  -1 for infinite pushes.
 pushes = -1;

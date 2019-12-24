@@ -40,7 +40,7 @@ if (global.rain) {
   if (thunderdly) {
     thunderdly -= 1;
   } else {
-    audio_play_sound(sndThunder, 10, false);
+    //audio_play_sound(sndThunder, 10, false);
     thunder = true;
     thunderdly = irandom(global.onesecond * 5.5) + global.onesecond / 2;
   }
