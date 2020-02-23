@@ -14,7 +14,7 @@ if (instance_exists(obj_textevent)) {
   exit;
 }
 
-var textevent = instance_create_layer(0, 0, "Instances", obj_textevent);
+var textevent = instance_create_layer(0, 0, global.playerLayer, obj_textevent);
 
 with (textevent) {
   reset_dialogue_defaults();

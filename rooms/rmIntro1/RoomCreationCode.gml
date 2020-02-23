@@ -9,7 +9,7 @@ if (!global.rain) {
 }
 
 //Set adjacent rooms (north, south, west, east).
-scr_set_adjacent_rooms(-1, rmIntroFork, -1, -1);
+scr_set_adjacent_rooms(rmIntro2, -1, -1, -1);
 
 //Set the name of the area.
 scr_set_area_name("~Museum~");

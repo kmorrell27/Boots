@@ -16,7 +16,7 @@ if (
     }
   }
   //if I haven't already created my textbox, make one:
-  else if (scr_hammer_button_pressed()) {
+  else if (scr_bomb_button_pressed()) {
     if (instance_exists(obj_textbox)) {
       exit;
     } //exit if a textbox already exists

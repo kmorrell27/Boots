@@ -2,7 +2,7 @@
 
 // TYPE 0: NORMAL
 if (type[page] == 0) {
-  if (scr_hammer_button_pressed()) {
+  if (scr_bomb_button_pressed()) {
     //If we haven't "typed out" all the letters, immediately "type out" all letters (works as a "skip")
     if (charCount < str_len) {
       charCount = string_length(text_NE);
@@ -32,7 +32,7 @@ if (type[page] == 0) {
 // TYPE 1: DIALOGUE CHOICE
 else {
   if (chosen) exit;
-  if (scr_hammer_button_pressed()) {
+  if (scr_bomb_button_pressed()) {
     chosen = true;
     alarm[2] = 10;
     audio_play_sound(select_snd_effect, priority_snd_effect, false);

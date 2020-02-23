@@ -7,7 +7,7 @@ if (instance_number(obj_textevent) > 1 || instance_number(obj_textbox) > 1) {
 
 //-----------Customise (FOR USER)
 
-scale = 3;
+scale = 1;
 x_buffer = 10 * scale;
 y_buffer = 7 * scale;
 
@@ -25,7 +25,7 @@ choice_col = c_yellow;
 select_col = c_orange;
 name_col = c_orange;
 
-name_font = fnt_dialogue;
+name_font = global.font;
 
 priority_snd_effect = 5;
 open_mouth_frame = 1; //You only need to change this if you are using animated sprites
@@ -49,6 +49,7 @@ boxHeight = sprite_get_height(dialogue_box) * scale;
 boxWidth = sprite_get_width(dialogue_box) * scale;
 gui_width = display_get_gui_width();
 gui_height = display_get_gui_height();
+show_debug_message(string(gui_width) + " " + string(gui_height));
 gb_diff = gui_width - boxWidth;
 portraitWidth = sprite_get_width(portrait_frame) * scale;
 finishede_num = sprite_get_number(finished_effect);
@@ -98,4 +99,3 @@ stringHeight = 1;
 t = 0;
 amplitude = 4;
 freq = 2;
-ec = 0; //effect c

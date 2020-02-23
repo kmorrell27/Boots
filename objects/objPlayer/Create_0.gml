@@ -1,3 +1,5 @@
+event_inherited();
+
 moveable = true; //Is the player ABLE to move?
 isMoving = false; //Is the player moving?
 spd = 0.5; //How fast, in pixels, does the player increase their movement speed?
@@ -40,9 +42,7 @@ mygravity = 0.5; //How much gravity the player has.
 climbing = false; //Is the player climbing on a ladder?
 carrying = false; // Is the player holding something
 heldObject = noone;
-shooting = false; // I'm gonna reuse this for the hookshot
 hammering = false; // Maybe this could be consolidated idk
-bombing = false;
 canMerge = false;
 alarm[1] = global.onesecond;
 
@@ -53,4 +53,21 @@ party = 15;
 partySize = 4;
 inactiveSprite = -1;
 
+ground_dx = 0;
+ground_dy = 0;
+pit_timer = get_timer();
+
 global.playerid = id;
+
+event_inherited(); //so it will inherit from par_speaker
+
+//-------DIALOGUE STUFF
+
+myPortrait = spr_portrait_examplechar;
+myVoice = snd_voice1;
+myName = "Player";
+
+myPortraitTalk = spr_portrait_examplechar_mouth;
+myPortraitTalk_x = 26;
+myPortraitTalk_y = 44;
+myPortraitIdle = spr_portrait_examplechar_idle;

@@ -73,6 +73,7 @@ global.tightfont = font_add_sprite_ext(sprFont, stringOrder, true, 2);
 /*
 Looking up layers by string is for chumps.
 */
+global.textLayer = layer_get_id("Text");
 global.playerLayer = layer_get_id("Player");
 display_set_gui_size(256, 144);
 

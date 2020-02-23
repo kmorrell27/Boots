@@ -225,7 +225,7 @@ if (jumping && moveable && !global.sideview) {
     closer  get to their peak.  Otherwise it should be larger as
      approach the ground.
     */
-  zspd = max(abs(round(floor((zmax - z) / 3))), 1);
+  zspd = max(abs(floor((zmax - z) / 8)), 1);
 
   /*
     If the player hasn't peaked in height yet, subtract the zspd
@@ -834,9 +834,6 @@ if (
           (pushobjchk.pushdir == noone ||
             array_contains(pushobjchk.pushdir, dir))
         ) {
-          show_debug_message("===");
-          show_debug_message(dir);
-          show_debug_message("===");
           /*
                     Then set it's pushing distance to one tile ahead,
                     if the object can move forward and isn't at the edge
@@ -1167,15 +1164,56 @@ if (slashing) {
   yoff = 0;
 }
 
-depth = -y;
+// Are we falling in a pit?
+if (!jumping && scr_player_foot_check(objPit)) {
+  ground_dx = 0;
+  ground_dy = 0;
+  if (point_distance(x, y, last_solid_x, last_solid_y) > 8) {
+    x = last_solid_x;
+    y = last_solid_y;
+  }
+  if (x > last_solid_x) {
+    ground_dx = 1;
+  } else if (x < last_solid_x) {
+    ground_dx = -1;
+  }
 
-/*
-if (place_meeting(x,y,objEnemy))
-{
-    var; e=-1;
-    e=instance_place(x,y,objEnemy);
-
-    direction=point_direction(e.x,e.y,x,y);
-    speed=4;    
+  if (y > last_solid_y) {
+    ground_dy = 1;
+  } else if (y < last_solid_y) {
+    ground_dy = -1;
+  }
+  maxspd = 1 / 3;
+} else if (!place_meeting(x, y, objPit)) {
+  last_solid_x = x;
+  last_solid_y = y;
+  ground_dx = 0;
+  ground_dy = 0;
+  maxspd = 1;
 }
-*/
+
+// Apply additional movement if necessary
+if (get_timer() >= pit_timer && (ground_dx != 0 || ground_dy != 0)) {
+  pit_timer = get_timer() + 60000;
+  var _moved = false;
+  if (place_free(x + ground_dx, y + ground_dy)) {
+    x += ground_dx;
+    y += ground_dy;
+    _moved = true;
+  } else if (place_free(x, y + ground_dy)) {
+    y += ground_dy;
+    _moved = true;
+  } else if (place_free(x + ground_dx, y)) {
+    x += ground_dx;
+    _moved = true;
+  }
+
+  if (!_moved) {
+    // We can't get closer for some reason. Just fall
+    maxspd = 1;
+    x = last_solid_x;
+    y = last_solid_y;
+  }
+}
+
+depth = -y;

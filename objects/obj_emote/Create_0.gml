@@ -1,4 +1,3 @@
-e_alpha = 0;
 mode = 0;
 timer = 1;
 creator = noone;

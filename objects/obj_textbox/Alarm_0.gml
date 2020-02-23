@@ -26,7 +26,6 @@ if (portrait[page] == -1) {
 
 draw_set_font(font[page]);
 charSize = string_width("M"); //gets new charSize under current font
-charHeight = string_height("M"); //same for width
 
 // GET THE BREAKPOINTS AND TEXT EFFECTS
 //Again only need to do this if our CURRENT page is "normal". Separated from above for readability.
@@ -36,15 +35,12 @@ if (type[page] == 0) {
 
   //Get variables ready
   var by = 0,
-    ty = 0,
     breakpoint = 0;
   var next_space = 0,
     char,
-    txtwidth = boxWidth - 2 * x_buffer,
-    char_max = floor(txtwidth / charSize);
+    txtwidth = boxWidth - 2 * x_buffer;
 
   //Reset the text effects and breakpoints arrays
-  text_effects = -1;
   breakpoints = -1;
 
   //Loop through and save the effect positions and breakpoints
@@ -74,7 +70,7 @@ if (emotes != -1 && emotes[page] != -1) {
   var obj = instance_create_layer(
     sp.x,
     sp.y - sp.sprite_height - 2,
-    "Text",
+    global.textLayer,
     obj_emote
   );
   var spr = emote_sprite;

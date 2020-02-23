@@ -4,5 +4,5 @@ the game as being paused.
 */
 
 return (
-  global.pause || instance_exists(objTextBox) || instance_exists(objTransition)
+  global.pause || instance_exists(obj_textbox) || instance_exists(objTransition)
 );

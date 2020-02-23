@@ -7,7 +7,7 @@ if (instance_number(obj_textevent) > 1 || instance_number(obj_textbox) > 0) {
 myVoice = snd_voice2;
 myTextCol = c_white;
 myPortrait = -1;
-myFont = fnt_dialogue;
+myFont = global.font;
 myName = "None";
 
 //-----------Setup (LEAVE THIS STUFF)

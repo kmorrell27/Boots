@@ -15,7 +15,7 @@ if (instance_exists(obj_textbox)) {
 }
 
 //Create the Textbox
-var _textbox = instance_create_layer(x, y, "Text", obj_textbox);
+var _textbox = instance_create_layer(x, y, global.textLayer, obj_textbox);
 
 //Get arguments
 var _text = argument[0];

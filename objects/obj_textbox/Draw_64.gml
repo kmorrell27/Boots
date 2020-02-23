@@ -229,18 +229,14 @@ else {
     xx = pos_x + x_buffer,
     cx = 0,
     cy = 0,
-    lineswidth;
-  var ty = 0,
-    by = 0,
+  var by = 0,
     bp_len = -1,
     effect = 0,
     next_space,
-    breakpoint = 0,
     effects_c = 0,
     text_col_c = 0;
   var bp_array = breakpoints,
-    txtwidth = boxWidth - 2 * x_buffer,
-    char_max = floor(txtwidth / charSize);
+    txtwidth = boxWidth - 2 * x_buffer;
 
   //Check if there are breakpoints in this string, if there are save their lengths
   if (bp_array != -1) {

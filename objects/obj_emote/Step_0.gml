@@ -10,7 +10,7 @@ if (mode == 0) {
     y = creator.y - creator.sprite_height;
   }
 } else if (mode == 1) {
-  if (scr_hammer_button_pressed()) {
+  if (scr_bomb_button_pressed()) {
     fade = true;
   }
   if (fade) {
