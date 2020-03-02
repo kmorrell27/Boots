@@ -9,7 +9,7 @@ if (!global.rain) {
 }
 
 //Set adjacent rooms (north, south, west, east).
-scr_set_adjacent_rooms(-1, rmIntro1, -1, rmIntro3);
+scr_set_adjacent_rooms(-1, -1, rmIntro2, -1);
 
 //Make sure sideview is altered for this room.
 scr_set_sideview(false);

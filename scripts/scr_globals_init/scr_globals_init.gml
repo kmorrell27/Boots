@@ -84,10 +84,10 @@ global.player = Character.CAITLIN;
 global.playerid = noone;
 
 global.sprites = [
-  [sprBrianUp, sprBrianDown, sprBrianLeft, sprBrianRight],
-  [sprRosaUp, sprRosaDown, sprRosaLeft, sprRosaRight],
-  [sprHaroldUp, sprHaroldDown, sprHaroldLeft, sprHaroldRight],
-  [sprCaitlinUp, sprCaitlinDown, sprCaitlinLeft, sprCaitlinRight]
+  [sprBrianUp, sprBrianRight, sprBrianDown, sprBrianLeft],
+  [sprRosaUp, sprRosaRight, sprRosaDown, sprRosaLeft],
+  [sprHaroldUp, sprHaroldRight, sprHaroldDown, sprHaroldLeft],
+  [sprCaitlinUp, sprCaitlinRight, sprCaitlinDown, sprCaitlinLeft]
 ];
 
 global.heartmax = 48;

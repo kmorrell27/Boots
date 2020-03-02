@@ -1,8 +1,8 @@
 enum Direction {
   UP,
+  RIGHT,
   DOWN,
-  LEFT,
-  RIGHT
+  LEFT
 }
 
 enum Item {

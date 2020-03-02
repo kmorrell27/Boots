@@ -56,4 +56,11 @@ if (pushx != 0 || pushy != 0) {
   //It doesn't have a movement speed if it's not pushed.
 }
 
+if (
+  instance_position(x, y, objPit) &&
+  instance_position(x + 15, y + 15, objPit)
+) {
+  instance_destroy();
+}
+
 depth = -y;
