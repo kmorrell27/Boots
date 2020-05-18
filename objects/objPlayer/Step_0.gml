@@ -1220,7 +1220,6 @@ if (place_meeting(x, y, objLaser) && !rolling) {
   x = global.lastplayerx;
   y = global.lastplayery;
   speed = 0;
-  spd = 0;
 }
 
 depth = -y;

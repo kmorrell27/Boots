@@ -1,8 +1,12 @@
 {
-    "id": "d0cbf33f-2b88-430a-92bc-d8adabf7fd7e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "script_execute_alt",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "FC_DialogueSystem",
+    "path": "folders/Scripts/FC_DialogueSystem.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "script_execute_alt",
+  "tags": [],
+  "resourceType": "GMScript",
 }

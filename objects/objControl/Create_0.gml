@@ -1,6 +1,3 @@
-scr_enums_init(); // For Prettier, mostly
-scr_globals_init(); //Initialize all of the global variables.
-
 /*
 How long, in frames, must the game wait before playing the low
 health sound again?

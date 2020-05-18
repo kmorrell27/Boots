@@ -1,8 +1,12 @@
 {
-    "id": "8c296651-c031-4b1f-bd69-0a6b58852c62",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "create_textevent",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "FC_DialogueSystem",
+    "path": "folders/Scripts/FC_DialogueSystem.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "create_textevent",
+  "tags": [],
+  "resourceType": "GMScript",
 }

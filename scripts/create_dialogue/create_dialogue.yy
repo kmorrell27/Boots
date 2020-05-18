@@ -1,8 +1,12 @@
 {
-    "id": "3617c53b-fbad-41c1-b107-7ab92fa8aaca",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "create_dialogue",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "FC_DialogueSystem",
+    "path": "folders/Scripts/FC_DialogueSystem.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "create_dialogue",
+  "tags": [],
+  "resourceType": "GMScript",
 }

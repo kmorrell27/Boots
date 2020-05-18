@@ -1,8 +1,12 @@
 {
-    "id": "0291c976-cac9-4814-a30e-9995541291a6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "scr_sword_button_held",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Keychecks",
+    "path": "folders/Scripts/Keychecks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "scr_sword_button_held",
+  "tags": [],
+  "resourceType": "GMScript",
 }

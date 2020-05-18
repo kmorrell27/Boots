@@ -1,92 +1,83 @@
 {
-    "id": "6f27a470-b9b6-4a45-b488-a608a0485417",
-    "modelName": "GMSprite",
-    "mvc": "1.12",
-    "name": "spr_portrait_examplechar_mouth",
-    "For3D": false,
-    "HTile": false,
-    "VTile": false,
-    "bbox_bottom": 7,
-    "bbox_left": 0,
-    "bbox_right": 11,
-    "bbox_top": 0,
-    "bboxmode": 0,
-    "colkind": 1,
-    "coltolerance": 0,
-    "edgeFiltering": false,
-    "frames": [
-        {
-            "id": "b0b106f9-3701-4f82-9da1-22c9a3a15424",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "6f27a470-b9b6-4a45-b488-a608a0485417",
-            "compositeImage": {
-                "id": "075a1fce-bf74-4813-997e-b17ff9fc1f72",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "b0b106f9-3701-4f82-9da1-22c9a3a15424",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "b5cc49fb-d6c6-4ae5-9565-1414d29da35c",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "b0b106f9-3701-4f82-9da1-22c9a3a15424",
-                    "LayerId": "c26d1576-593b-49c6-8df5-a8e1f2010e20"
-                }
-            ]
-        },
-        {
-            "id": "86bcc651-e073-47af-b4c7-acbc0dee88fe",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "6f27a470-b9b6-4a45-b488-a608a0485417",
-            "compositeImage": {
-                "id": "ecc3ae24-8ead-46c9-9fc1-d3968c3378a7",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "86bcc651-e073-47af-b4c7-acbc0dee88fe",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "c5fb5024-aadb-4571-81c0-4e25e076b619",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "86bcc651-e073-47af-b4c7-acbc0dee88fe",
-                    "LayerId": "c26d1576-593b-49c6-8df5-a8e1f2010e20"
-                }
-            ]
-        }
-    ],
-    "gridX": 0,
-    "gridY": 0,
-    "height": 8,
-    "layers": [
-        {
-            "id": "c26d1576-593b-49c6-8df5-a8e1f2010e20",
-            "modelName": "GMImageLayer",
-            "mvc": "1.0",
-            "SpriteId": "6f27a470-b9b6-4a45-b488-a608a0485417",
-            "blendMode": 0,
-            "isLocked": false,
-            "name": "default",
-            "opacity": 100,
-            "visible": true
-        }
-    ],
-    "origin": 0,
-    "originLocked": false,
-    "playbackSpeed": 12,
+  "bboxMode": 0,
+  "collisionKind": 1,
+  "separateMasks": false,
+  "type": 0,
+  "origin": 0,
+  "preMultiplyAlpha": false,
+  "edgeFiltering": false,
+  "collisionTolerance": 0,
+  "swfPrecision": 2.525,
+  "bbox_left": 0,
+  "bbox_right": 11,
+  "bbox_top": 0,
+  "bbox_bottom": 7,
+  "HTile": false,
+  "VTile": false,
+  "For3D": false,
+  "width": 12,
+  "height": 8,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "swatchColours": null,
+  "gridX": 0,
+  "gridY": 0,
+  "frames": [
+    {"compositeImage":{"FrameId":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","tags":[],"resourceType":"GMSpriteFrame",},
+  ],
+  "sequence": {
+    "spriteId": {"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},
+    "timeUnits": 1,
+    "playback": 1,
+    "playbackSpeed": 12.0,
     "playbackSpeedType": 0,
-    "premultiplyAlpha": false,
-    "sepmasks": false,
-    "swatchColours": null,
-    "swfPrecision": 2.525,
-    "textureGroupId": "1225f6b0-ac20-43bd-a82e-be73fa0b6f4f",
-    "type": 0,
-    "width": 12,
-    "xorig": 0,
-    "yorig": 0
+    "autoRecord": true,
+    "volume": 1.0,
+    "length": 2.0,
+    "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
+    "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
+    "tracks": [
+      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+            {"id":"a8c319ef-97e3-4dd3-8d96-81373cb46152","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0dca330e-8aa7-46d3-9bf2-8adfd4f84fca","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+    ],
+    "visibleRange": {"x":0.0,"y":0.0,},
+    "lockOrigin": false,
+    "showBackdrop": true,
+    "showBackdropImage": false,
+    "backdropImagePath": "",
+    "backdropImageOpacity": 0.5,
+    "backdropWidth": 1920,
+    "backdropHeight": 1080,
+    "backdropXOffset": 0.0,
+    "backdropYOffset": 0.0,
+    "xorigin": 0,
+    "yorigin": 0,
+    "eventToFunction": {},
+    "eventStubScript": null,
+    "parent": {"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},
+    "resourceVersion": "1.3",
+    "name": "",
+    "tags": [],
+    "resourceType": "GMSequence",
+  },
+  "layers": [
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","tags":[],"resourceType":"GMImageLayer",},
+  ],
+  "parent": {
+    "name": "FC_DialogueSystem",
+    "path": "folders/Sprites/FC_DialogueSystem.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "spr_portrait_examplechar_mouth",
+  "tags": [],
+  "resourceType": "GMSprite",
 }
