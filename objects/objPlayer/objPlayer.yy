@@ -10,10 +10,7 @@
     "path": "sprites/sprPlayerMask/sprPlayerMask.yy",
   },
   "persistent": true,
-  "parentObjectId": {
-    "name": "par_speaker",
-    "path": "objects/par_speaker/par_speaker.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 0,
