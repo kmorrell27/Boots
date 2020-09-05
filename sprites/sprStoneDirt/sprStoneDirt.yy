@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"55909332-03a4-40fa-8937-d70297702a28","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"55909332-03a4-40fa-8937-d70297702a28","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"LayerId":{"name":"7e45929e-56da-4269-a003-1248a6770e0e","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"55909332-03a4-40fa-8937-d70297702a28","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"LayerId":{"name":"7e45929e-56da-4269-a003-1248a6770e0e","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprStoneDirt","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"resourceVersion":"1.0","name":"55909332-03a4-40fa-8937-d70297702a28","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0a97c7da-261b-4bd7-af0d-61ef872c0fb5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"55909332-03a4-40fa-8937-d70297702a28","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"134daecb-875e-4f6e-99ba-dd0a0c9472ac","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"55909332-03a4-40fa-8937-d70297702a28","path":"sprites/sprStoneDirt/sprStoneDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

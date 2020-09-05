@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"LayerId":{"name":"ec40ba1a-b097-44e3-99c3-c968eecc17cf","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"LayerId":{"name":"ec40ba1a-b097-44e3-99c3-c968eecc17cf","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprHeavyStoneDirt","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"resourceVersion":"1.0","name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"039eadd4-b780-4d03-abf0-a0b54076f8a6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b30a2d23-d9d6-4957-8443-bf2b5b5c06b5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"32e6855c-5f1e-48f5-8f8c-fbe40ddccbfa","path":"sprites/sprHeavyStoneDirt/sprHeavyStoneDirt.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 1,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","path":"sprites/tsOverworld/tsOverworld.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","path":"sprites/tsOverworld/tsOverworld.yy",},"LayerId":{"name":"52c006ca-c91c-4939-8a69-38bfe02b60f5","path":"sprites/tsOverworld/tsOverworld.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","path":"sprites/tsOverworld/tsOverworld.yy",},"LayerId":{"name":"52c006ca-c91c-4939-8a69-38bfe02b60f5","path":"sprites/tsOverworld/tsOverworld.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"tsOverworld","path":"sprites/tsOverworld/tsOverworld.yy",},"resourceVersion":"1.0","name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"0df4dc11-dda4-41ee-9c83-49f7d9b094c5","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","path":"sprites/tsOverworld/tsOverworld.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1a1db0d6-37a9-4cbe-bf7a-00b7775f6b1b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9d8c82ff-ec85-498d-a5ab-71f186793da3","path":"sprites/tsOverworld/tsOverworld.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

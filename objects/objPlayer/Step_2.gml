@@ -34,7 +34,6 @@ if (y < 0) {
     //Now place the player at the bottom of the room.
     y = room_height - sprite_height;
     //And get out of this code for this frame.
-	
     exit;
   } else {
     //Otherwise, place the player back at the south edge of the screen.

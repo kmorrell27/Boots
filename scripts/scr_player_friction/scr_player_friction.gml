@@ -12,7 +12,6 @@ function scr_player_friction(argument0) {
   /*******************************************************************
 	HORIZONTAL FRICTION SECTION
 	*******************************************************************/
-  var jumping = state.get_current() == "jumping";
   if (argument0 || (!argument0 && !left && !right)) {
     if (hspeed != 0) {
       if (hspeed < 0) {

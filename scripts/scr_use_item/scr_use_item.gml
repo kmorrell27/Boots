@@ -10,13 +10,7 @@ function scr_use_item(argument0) {
 	If the player isn't in a state to use an item, then get out of here.
 	*/
 
-  var _state = state.get_current();
-  if (
-    _state != "idle" &&
-    _state != "walking" &&
-    _state != "jumping" &&
-    _state != "pushing"
-  ) {
+  if (!moveable || slashing || cliff || rolling || hammering) {
     exit;
   }
 
@@ -73,7 +67,7 @@ function scr_use_item(argument0) {
   /*
 	Feather Check
 	*/
-  if (argument0 == Item.FEATHER && state.get_current() != "jumping") {
+  if (argument0 == Item.FEATHER && !jumping) {
     if (!active) {
       return;
     }
@@ -87,9 +81,16 @@ function scr_use_item(argument0) {
       //Otherwise, make them go off the ground.
       vspeed = -4.5;
     }
-    state_switch("jumping");
+    jumping = true;
+    //Flag as the player as jumping.
+    pushing = false;
+    //Unflag the player as pushing.
+    climbing = false;
+    //Unflag the player as climbing.
     image_index = 0;
+    //Reset their animation.
     scr_player_collide();
+    //Check for collision.
   }
 
   if (argument0 == Item.BOW) {
@@ -187,7 +188,7 @@ function scr_use_item(argument0) {
     }
   }
 
-  if (argument0 == Item.SHIELD) {
+  if (argument0 == Item.HAMMER) {
     if ((party & Character.HAROLD) == 0) {
       // I have no pun here
       active = false;
@@ -204,15 +205,15 @@ function scr_use_item(argument0) {
     with (global.playerid) {
       active = true;
       global.player = Character.HAROLD;
-      // Shield time!
+      // Hammer time
       audio_play_sound(sndSlash1, 10, false);
-      shielding = true;
+      hammering = true;
       //Flag as the player as slashing.
       pushing = false;
       //Unflag the player as pushing.
       image_index = 0;
       //Reset their animation.
-      s = instance_create_layer(x, y, global.playerLayer, objShield);
+      s = instance_create_layer(x, y, global.playerLayer, objHammer);
       //Create the sword.
       //Now give it the proper sprite based on which sword the player has.
       switch (dir) {

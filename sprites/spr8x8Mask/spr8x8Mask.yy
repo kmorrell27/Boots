@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"LayerId":{"name":"027baf1f-d36b-4771-befb-96576a0b2def","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"LayerId":{"name":"027baf1f-d36b-4771-befb-96576a0b2def","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr8x8Mask","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"resourceVersion":"1.0","name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"6eb3341d-871e-47a5-b9ce-67b9ef46ce0e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"168359ed-d232-42f0-a634-58edb4d5cd85","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0138fa43-9f0c-43c7-8e14-edfa90aa7431","path":"sprites/spr8x8Mask/spr8x8Mask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

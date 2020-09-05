@@ -64,4 +64,11 @@ if (slashing) {
   //Reset their animation frame.
   scr_player_sprite_change();
   //Finally, have the player update their sprite.
+} else if (hammering) {
+  if (instance_exists(objHammer)) {
+    instance_destroy(objHammer);
+  }
+  hammering = false;
+  image_index = 0;
+  scr_player_sprite_change();
 }

@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"775f4343-7b93-408f-bfb5-f5cf369840c6","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"775f4343-7b93-408f-bfb5-f5cf369840c6","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"LayerId":{"name":"81a694ea-ba88-446f-84d4-976d8a72338d","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"775f4343-7b93-408f-bfb5-f5cf369840c6","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"LayerId":{"name":"81a694ea-ba88-446f-84d4-976d8a72338d","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprHeavyStoneGrass","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"resourceVersion":"1.0","name":"775f4343-7b93-408f-bfb5-f5cf369840c6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"fbef4164-f5b5-4fb7-88b7-eb305358cd35","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"775f4343-7b93-408f-bfb5-f5cf369840c6","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"94bfc036-389c-41cf-96d7-29a9420d43c2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"775f4343-7b93-408f-bfb5-f5cf369840c6","path":"sprites/sprHeavyStoneGrass/sprHeavyStoneGrass.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

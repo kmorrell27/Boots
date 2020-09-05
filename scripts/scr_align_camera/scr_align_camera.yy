@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Camera",
-    "path": "folders/Scripts/Global/Camera.yy",
+    "path": "folders/Scripts/Camera.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_align_camera",

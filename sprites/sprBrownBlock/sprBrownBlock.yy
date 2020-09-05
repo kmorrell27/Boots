@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"LayerId":{"name":"30ec932b-ca15-4d3f-83e0-cbe382aec7aa","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"LayerId":{"name":"30ec932b-ca15-4d3f-83e0-cbe382aec7aa","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprBrownBlock","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"resourceVersion":"1.0","name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d669ee6f-081e-4626-a6a3-bdaed8828bf6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"01ae0c9c-e056-439c-a518-817a59a93350","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"00c01b21-5586-4e95-bf7a-4946c91e4c30","path":"sprites/sprBrownBlock/sprBrownBlock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

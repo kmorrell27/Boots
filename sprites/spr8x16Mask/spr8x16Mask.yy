@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"dacd4fc2-1323-4006-9306-6674894bcf43","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dacd4fc2-1323-4006-9306-6674894bcf43","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"LayerId":{"name":"88c84609-6280-4d01-b542-f1f296b1f71a","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"dacd4fc2-1323-4006-9306-6674894bcf43","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"LayerId":{"name":"88c84609-6280-4d01-b542-f1f296b1f71a","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr8x16Mask","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"resourceVersion":"1.0","name":"dacd4fc2-1323-4006-9306-6674894bcf43","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"94fc309c-b0b4-48ac-ad1a-dfc2bee93b3d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dacd4fc2-1323-4006-9306-6674894bcf43","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"0ac5a885-ed43-4073-9331-cb764f819b0f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dacd4fc2-1323-4006-9306-6674894bcf43","path":"sprites/spr8x16Mask/spr8x16Mask.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

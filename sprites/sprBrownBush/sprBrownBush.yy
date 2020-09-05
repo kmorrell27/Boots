@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 0,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","path":"sprites/sprBrownBush/sprBrownBush.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","path":"sprites/sprBrownBush/sprBrownBush.yy",},"LayerId":{"name":"c44fbc93-2d23-4028-93cc-8df95f325843","path":"sprites/sprBrownBush/sprBrownBush.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","path":"sprites/sprBrownBush/sprBrownBush.yy",},"LayerId":{"name":"c44fbc93-2d23-4028-93cc-8df95f325843","path":"sprites/sprBrownBush/sprBrownBush.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprBrownBush","path":"sprites/sprBrownBush/sprBrownBush.yy",},"resourceVersion":"1.0","name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"06f88f13-dcbc-436c-b883-e7b85dbb704b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","path":"sprites/sprBrownBush/sprBrownBush.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"efccdacb-c3f4-4f82-b767-2ee93e75c96b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f024092f-e79c-45b0-8b0f-e1cf0009887c","path":"sprites/sprBrownBush/sprBrownBush.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

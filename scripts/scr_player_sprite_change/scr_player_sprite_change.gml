@@ -9,19 +9,5 @@ function scr_player_sprite_change() {
   }
 
   var player = global.sprites[result];
-
-  switch (dir) {
-    case 1:
-      sprite_index = player[0];
-      break;
-    case 2:
-      sprite_index = player[1];
-      break;
-    case 4:
-      sprite_index = player[2];
-      break;
-    case 8:
-      sprite_index = player[3];
-      break;
-  }
+  sprite_index = player[dir];
 }

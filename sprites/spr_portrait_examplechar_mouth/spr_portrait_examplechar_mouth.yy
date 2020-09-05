@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 1,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,10 +25,10 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"LayerId":{"name":"c26d1576-593b-49c6-8df5-a8e1f2010e20","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_portrait_examplechar_mouth","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -45,8 +44,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a8c319ef-97e3-4dd3-8d96-81373cb46152","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"0dca330e-8aa7-46d3-9bf2-8adfd4f84fca","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"55e56f4d-9fff-4100-8924-85c84728b267","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b0b106f9-3701-4f82-9da1-22c9a3a15424","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"bd1262f3-44ae-4531-bba1-dc5a44e4040b","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"86bcc651-e073-47af-b4c7-acbc0dee88fe","path":"sprites/spr_portrait_examplechar_mouth/spr_portrait_examplechar_mouth.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},

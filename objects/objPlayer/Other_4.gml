@@ -4,5 +4,3 @@ doublekeytapdly = 0; //Reset the interval for double key tapping.
 
 global.playerLayer = layer_get_id("Player"); // I wonder how this ever worked
 global.textLayer = layer_get_id("Text");
-
-visible = true;

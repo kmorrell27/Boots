@@ -1,7 +1,6 @@
 {
   "bboxMode": 0,
   "collisionKind": 1,
-  "separateMasks": false,
   "type": 0,
   "origin": 0,
   "preMultiplyAlpha": false,
@@ -26,7 +25,7 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"17654059-9416-453a-8e62-2bb638284b34","path":"sprites/sprTempWall/sprTempWall.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"17654059-9416-453a-8e62-2bb638284b34","path":"sprites/sprTempWall/sprTempWall.yy",},"LayerId":{"name":"46245b98-056c-42dd-9a28-5184d42654c0","path":"sprites/sprTempWall/sprTempWall.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"17654059-9416-453a-8e62-2bb638284b34","path":"sprites/sprTempWall/sprTempWall.yy",},"LayerId":{"name":"46245b98-056c-42dd-9a28-5184d42654c0","path":"sprites/sprTempWall/sprTempWall.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprTempWall","path":"sprites/sprTempWall/sprTempWall.yy",},"resourceVersion":"1.0","name":"17654059-9416-453a-8e62-2bb638284b34","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -42,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"76fc753b-d138-458c-9ceb-77719aa7e1f9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"17654059-9416-453a-8e62-2bb638284b34","path":"sprites/sprTempWall/sprTempWall.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"cd759a01-a370-41e0-a324-2f4bf2ef19f6","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"17654059-9416-453a-8e62-2bb638284b34","path":"sprites/sprTempWall/sprTempWall.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
