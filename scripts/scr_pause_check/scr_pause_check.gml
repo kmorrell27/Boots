@@ -4,9 +4,5 @@ function scr_pause_check() {
 	the game as being paused.
 	*/
 
-  return (
-    global.pause ||
-    instance_exists(obj_textbox) ||
-    instance_exists(objTransition)
-  );
+  return global.pause || instance_exists(objTransition);
 }

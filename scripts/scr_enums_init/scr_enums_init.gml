@@ -10,7 +10,7 @@ function scr_enums_init() {
 	  SWORD,
 	  BOMB,
 	  BOW,
-	  HAMMER,
+	  SHIELD,
 	  FEATHER,
 	}
 

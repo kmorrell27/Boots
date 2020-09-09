@@ -154,7 +154,7 @@ if (
   !tap &&
   !cliff &&
   !spin &&
-  !hammering
+  !defend
 ) {
   /*
     This block of if statements just assigns the player velocity based on
@@ -183,6 +183,7 @@ if (
   //And don't flag them as pushing either.
   pushtmr = 0;
   //And reset the pushing frame counter.
+  defend = false;
   image_index = 0;
   //Reset their animation frame.
   rolling = true;
@@ -317,7 +318,7 @@ MOVEMENT SECTION
 //If the player is in a proper state to move...
 if (
   moveable &&
-  ((!slashing && !hammering) || jumping) &&
+  (!slashing || jumping) &&
   !tap &&
   !rolling &&
   !cliff &&
@@ -357,7 +358,7 @@ if (
     cannot moonwalk in this engine =P.  No directional change if
     the player is charging, using the spin attack or jumping.
     */
-  if (!charge && !spin && !jumping) {
+  if (!charge && !spin && !jumping && !defend) {
     if (
       down &&
       ((!left && !right) ||
@@ -467,11 +468,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.DOWN && !jumping) {
-        /*
-                Flag the player as pushing if  aren't charging the sword,
-                otherwise, make them perform a sword tap.
-                */
+      if (dir == Direction.DOWN && !jumping && !defend) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -481,25 +478,8 @@ if (
     }
   }
 
-  /*
-    Movement for UP.
-    */
   if (up && !global.sideview) {
-    /*
-        If the player can go directly UP without running into a solid,
-        then make them move UP, and unflag them as pushing.  Otherwise,
-        check to see if  can slide around a corner, and isn't
-        already holding that directional key.  If so, do that, unflag
-        them as pushing and reset the pushing frame counter. Otherwise,
-        get as close to the wall as possible and go no further, and
-        flag them as pushing if  are facing in this direction.
-        */
     if (place_free(x, y - 1)) {
-      /*
-            If they're not hugging the wall vertically, then add the
-            momentem to their vertical motion.  Otherwise, add it to
-            their wall-hugging momentum.
-            */
       if (vvel == 0) {
         scr_add_vspeed(-spd + (spd / 2) * jumping);
       } else {
@@ -556,11 +536,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.UP && !jumping) {
-        /*
-                Flag the player as pushing if  aren't charging the sword,
-                otherwise, make them perform a sword tap.
-                */
+      if (dir == Direction.UP && !defend && !jumping) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -570,25 +546,8 @@ if (
     }
   }
 
-  /*
-    Movement for LEFT.
-    */
   if (left) {
-    /*
-        If the player can go directly LEFT without running into a solid,
-        then make them move LEFT, and unflag them as pushing.  Otherwise,
-        check to see if  can slide around a corner, and isn't
-        already holding that directional key.  If so, do that, unflag
-        them as pushing and reset the pushing frame counter. Otherwise,
-        get as close to the wall as possible and go no further, and
-        flag them as pushing if  are facing in this direction.
-        */
     if (place_free(x - 1, y)) {
-      /*
-            If they're not hugging the wall horizontally, then add the
-            momentem to their horizontal motion.  Otherwise, add it to
-            their wall-hugging momentum.
-            */
       if (hvel == 0) {
         scr_add_hspeed(-spd + (spd / 2) * jumping);
       } else {
@@ -607,10 +566,6 @@ if (
       !up &&
       dir == Direction.LEFT
     ) {
-      /*
-            Otherwise, try to add momentum to the north, to try and
-            cut around the corner of a wall.
-            */
       if (vvel == 0) {
         scr_add_vspeed(-spd + (spd / 2) * jumping);
       } else {
@@ -629,10 +584,6 @@ if (
       !up &&
       dir == Direction.LEFT
     ) {
-      /*
-            Otherwise, try to add momentum to the south, to try and
-            cut around the corner of a wall.
-            */
       if (vvel == 0) {
         scr_add_vspeed(spd - (spd / 2) * jumping);
       } else {
@@ -647,11 +598,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.LEFT && !jumping) {
-        /*
-                Flag the player as pushing if  aren't charging the sword,
-                otherwise, make them perform a sword tap.
-                */
+      if (dir == Direction.LEFT && !defend && !jumping) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -665,15 +612,6 @@ if (
     Movement for RIGHT.
     */
   if (right) {
-    /*
-        If the player can go directly RIGHT without running into a solid,
-        then make them move RIGHT, and unflag them as pushing.  Otherwise,
-        check to see if  can slide around a corner, and isn't
-        already holding that directional key.  If so, do that, unflag
-        them as pushing and reset the pushing frame counter. Otherwise,
-        get as close to the wall as possible and go no further, and
-        flag them as pushing if  are facing in this direction.
-        */
     if (place_free(x + 1, y)) {
       /*
             If they're not hugging the wall horizontally, then add the
@@ -720,10 +658,6 @@ if (
       !up &&
       dir == Direction.RIGHT
     ) {
-      /*
-            Otherwise, try to add momentum to the south, to try and
-            cut around the corner of a wall.
-            */
       if (vvel == 0) {
         scr_add_vspeed(spd - (spd / 2) * jumping);
       } else {
@@ -738,7 +672,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.RIGHT && !jumping) {
+      if (dir == Direction.RIGHT && !defend && !jumping) {
         /*
         Flag the player as pushing if  aren't charging the sword,
         otherwise, make them perform a sword tap.
@@ -752,21 +686,11 @@ if (
     }
   }
 
-  /*
-    Pushing Segment
-    */
   if (pushing) {
-    /*
-        If the player has been pushing for about 1/4 of a second...
-        */
     if (pushtmr >= global.onesecond / 4) {
       //Temporary variable for a possible cliff ahead of the player.
       var cliffobj = scr_ahead_check(objCliff, 1);
 
-      /*
-            If there is a cliff, and the player is in a state to jump 
-            down...
-            */
       if (cliffobj != -1 && !cliff && !jumping && dir == cliffobj.dir) {
         hspeed = 0;
         //Reset their horizontal speed.
@@ -787,11 +711,6 @@ if (
         image_index = 0;
         //Reset the player's animation frame.
         scr_player_sprite_change();
-        //Update the player's sprite.
-        /*
-                Move the player forward a bit depending on which direction they're
-                jumping down.
-                */
         if (cliffdir == Direction.DOWN) {
           y += 2;
         } else if (cliffdir == Direction.UP) {
@@ -811,22 +730,8 @@ if (
     if (pushtmr < global.onesecond / 2) {
       pushtmr += 1;
     } else {
-      /*
-            Define a temporary variable for checking if a pushable
-            object is in front of the player.
-            */
       var pushobjchk = scr_ahead_check(objPushable, 1);
-
-      /*
-            If there was a pushable object in front of the player, then we
-            can do things with it.
-            */
       if (pushobjchk != -1) {
-        /*
-                If the object can still be pushed, and the player is trying
-                to push the object in the right direction, if
-                applicable...
-                */
         if (
           pushobjchk.pushes != 0 &&
           pushobjchk.pushx == 0 &&
@@ -834,11 +739,6 @@ if (
           (pushobjchk.pushdir == noone ||
             array_contains(pushobjchk.pushdir, dir))
         ) {
-          /*
-                    Then set it's pushing distance to one tile ahead,
-                    if the object can move forward and isn't at the edge
-                    of the room, and play the pushing sound effect.
-                    */
           if (dir == Direction.DOWN) {
             if (
               place_free(pushobjchk.x, pushobjchk.y + 16) &&
@@ -876,7 +776,6 @@ if (
       }
     }
   } else {
-    //Reset the pushing frame counter if they're not pushing.
     pushtmr = 0;
   }
 } else if (rolling) {
@@ -911,10 +810,6 @@ if (
   scr_player_collide();
   //Check for wall collission.
 } else {
-  /*
-    If the player isn't able to move at all or is using an item that locks
-    their movement, don't flag them as moving.
-    */
   isMoving = false;
   doublekeytapdir = noone;
   //Reset the double key tap check direction.
@@ -967,8 +862,12 @@ if (scr_sword_button_released()) {
   scr_release_button(Item.SWORD);
 }
 
-if (scr_hammer_button_pressed()) {
-  scr_use_item(Item.HAMMER);
+if (scr_shield_button_pressed()) {
+  scr_use_item(Item.SHIELD);
+}
+
+if (scr_shield_button_released()) {
+  scr_release_button(Item.SHIELD);
 }
 
 if (scr_jump_button_pressed()) {
@@ -1030,11 +929,11 @@ various speeds depending on what actions  are performing.
 */
 
 //If the player is moving or using an item that requires animation...
-if (isMoving || slashing || jumping || rolling || tap || hammering) {
+if (isMoving || slashing || jumping || rolling || tap) {
   if (tap) {
     //2nd frame for tapping.
     image_index = 1;
-  } else if (slashing || hammering) {
+  } else if (slashing) {
     //Stop moving
     image_speed = 0;
   } else if (jumping) {

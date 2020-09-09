@@ -10,7 +10,7 @@ function scr_use_item(argument0) {
 	If the player isn't in a state to use an item, then get out of here.
 	*/
 
-  if (!moveable || slashing || cliff || rolling || hammering) {
+  if (!moveable || slashing || cliff || rolling) {
     exit;
   }
 
@@ -37,6 +37,7 @@ function scr_use_item(argument0) {
       //Play the appropriate sound effect based on which sword the player has.
       audio_play_sound(sndSlash1, 10, false);
       slashing = true;
+      defend = false;
       //Flag as the player as slashing.
       pushing = false;
       //Unflag the player as pushing.
@@ -86,6 +87,7 @@ function scr_use_item(argument0) {
     pushing = false;
     //Unflag the player as pushing.
     climbing = false;
+    defend = false;
     //Unflag the player as climbing.
     image_index = 0;
     //Reset their animation.
@@ -111,6 +113,7 @@ function scr_use_item(argument0) {
       active = true;
       global.player = Character.ROSA;
       pushing = false;
+      defend = false;
       if (instance_exists(objArrow)) {
         exit;
       }
@@ -141,6 +144,7 @@ function scr_use_item(argument0) {
       // Brian, The Life Of
       active = false;
       inactiveSprite = sprite_index;
+      defend = false;
       image_index = 0;
       for (var i = 0; i < instance_number(objPlayer); i++) {
         var tmp = instance_find(objPlayer, i);
@@ -188,7 +192,7 @@ function scr_use_item(argument0) {
     }
   }
 
-  if (argument0 == Item.HAMMER) {
+  if (argument0 == Item.SHIELD) {
     if ((party & Character.HAROLD) == 0) {
       // I have no pun here
       active = false;
@@ -205,32 +209,9 @@ function scr_use_item(argument0) {
     with (global.playerid) {
       active = true;
       global.player = Character.HAROLD;
-      // Hammer time
-      audio_play_sound(sndSlash1, 10, false);
-      hammering = true;
-      //Flag as the player as slashing.
+      audio_play_sound(sndShield, 10, false);
+      defend = true;
       pushing = false;
-      //Unflag the player as pushing.
-      image_index = 0;
-      //Reset their animation.
-      s = instance_create_layer(x, y, global.playerLayer, objHammer);
-      //Create the sword.
-      //Now give it the proper sprite based on which sword the player has.
-      switch (dir) {
-        case Direction.DOWN:
-          s.sprite_index = sprHammerDown;
-          break;
-        case Direction.LEFT:
-          s.sprite_index = sprHammerLeft;
-          break;
-        case Direction.RIGHT:
-          s.sprite_index = sprHammerRight;
-          break;
-        case Direction.UP:
-          s.sprite_index = sprHammerUp;
-          break;
-      }
-      alarm[0] = global.onesecond / 4;
     }
   }
 }

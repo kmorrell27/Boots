@@ -11,6 +11,7 @@ Which direction has the player pressed?  This will be used for
 double tapping a directional key.
 */
 doublekeytapdir = noone;
+defend = false;
 doublekeytapdly = 0; //Frames left before double tapping interval ends.
 xoff = 0; //The x offset of which to draw the player's sprite.
 yoff = 0; //The y offset of which to draw the player's sprite.
@@ -42,9 +43,9 @@ mygravity = 0.5; //How much gravity the player has.
 climbing = false; //Is the player climbing on a ladder?
 carrying = false; // Is the player holding something
 heldObject = noone;
-hammering = false; // Maybe this could be consolidated idk
 canMerge = false;
 alarm[1] = global.onesecond;
+shieldSprite = noone;
 
 shader = shader_get_uniform(sh_saturation, "Degree"); // control shader
 active = true;
@@ -58,16 +59,3 @@ ground_dy = 0;
 pit_timer = get_timer();
 
 global.playerid = id;
-
-event_inherited(); //so it will inherit from par_speaker
-
-//-------DIALOGUE STUFF
-
-myPortrait = spr_portrait_examplechar;
-myVoice = snd_voice1;
-myName = "Player";
-
-myPortraitTalk = spr_portrait_examplechar_mouth;
-myPortraitTalk_x = 26;
-myPortraitTalk_y = 44;
-myPortraitIdle = spr_portrait_examplechar_idle;
