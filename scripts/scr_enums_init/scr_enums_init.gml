@@ -28,7 +28,6 @@ function scr_enums_init() {
 	  CAITLIN = 8
 	}
 
-
 	enum Transition {
 	  LEFT,
 	  RIGHT,
@@ -38,6 +37,4 @@ function scr_enums_init() {
 	  CIRCLE,
 	  NONE,
 	}
-
-
 }

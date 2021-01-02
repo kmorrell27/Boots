@@ -15,9 +15,6 @@ if (!global.sideview) {
   );
 }
 
-shader_set(sh_saturation);
-shader_set_uniform_f(shader, active ? 0 : 0.5);
-
 if (
   shieldSprite != noone &&
   ((!defend &&
@@ -70,4 +67,31 @@ if (!shieldDrawn && shieldSprite != noone) {
   );
 }
 
-shader_reset();
+// Draw my backup peeps
+var offset = (stepIndex + 80) % 96;
+for (var i = 0; i < 4; i++) {
+  if (power(2, i) == global.player) {
+    offset = (offset + 80) % 96;
+    continue;
+  }
+
+  if (x == xPos[offset] && y == yPos[offset] && zPos[offset] == z) {
+    offset = (offset + 80) % 96;
+    continue;
+  }
+
+  var spr = global.sprites[i][dirHistory[offset]];
+  draw_sprite_ext(
+    spr,
+    -1,
+    round(xPos[offset]),
+    round(yPos[offset]) + zPos[offset],
+    image_xscale,
+    image_yscale,
+    image_angle,
+    image_blend,
+    image_alpha
+  );
+
+  offset = (offset + 80) % 96;
+}

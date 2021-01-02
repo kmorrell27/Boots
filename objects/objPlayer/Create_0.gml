@@ -43,19 +43,20 @@ mygravity = 0.5; //How much gravity the player has.
 climbing = false; //Is the player climbing on a ladder?
 carrying = false; // Is the player holding something
 heldObject = noone;
-canMerge = false;
-alarm[1] = global.onesecond;
 shieldSprite = noone;
-
-shader = shader_get_uniform(sh_saturation, "Degree"); // control shader
-active = true;
-
-party = 15;
-partySize = 4;
-inactiveSprite = -1;
+jmpCtr = 0;
 
 ground_dx = 0;
 ground_dy = 0;
 pit_timer = get_timer();
 
 global.playerid = id;
+
+xPos = [];
+yPos = [];
+zPos = [];
+dirHistory = [];
+
+stepIndex = 0;
+
+scr_reset_caterpillar();

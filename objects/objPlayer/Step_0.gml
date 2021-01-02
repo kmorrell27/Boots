@@ -1,11 +1,7 @@
 /*********************************************************************
 GAME PAUSED SECTION
 *********************************************************************/
-if (!active) {
-  sprite_index = inactiveSprite;
-}
-
-if (scr_pause_check() || !active) {
+if (scr_pause_check()) {
   //Conserve vertical speed.
   if (vspeed != 0) {
     lvspeed = vspeed;
@@ -871,11 +867,8 @@ if (scr_shield_button_released()) {
 }
 
 if (scr_jump_button_pressed()) {
+  jmpCtr = 96;
   scr_use_item(Item.FEATHER);
-}
-
-if (scr_split_button_pressed()) {
-  scr_split_up();
 }
 
 //If the player presses X, use what's on X.
@@ -1112,6 +1105,7 @@ if (get_timer() >= pit_timer && (ground_dx != 0 || ground_dy != 0)) {
     maxspd = 1;
     x = last_solid_x;
     y = last_solid_y;
+    scr_reset_caterpillar();
   }
 }
 
@@ -1123,3 +1117,17 @@ if (place_meeting(x, y, objLaser) && !rolling) {
 }
 
 depth = -y;
+
+if (
+  x != xPos[stepIndex] ||
+  y != yPos[stepIndex] ||
+  z != zPos[stepIndex] ||
+  jmpCtr > 0
+) {
+  stepIndex = (stepIndex + 1) % 96;
+  xPos[stepIndex] = x;
+  yPos[stepIndex] = y;
+  zPos[stepIndex] = z;
+  dirHistory[stepIndex] = dir;
+  jmpCtr--;
+}
