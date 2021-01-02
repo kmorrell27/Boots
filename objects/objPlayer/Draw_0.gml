@@ -71,7 +71,6 @@ if (!shieldDrawn && shieldSprite != noone) {
 var offset = (stepIndex + 80) % 96;
 for (var i = 0; i < 4; i++) {
   if (power(2, i) == global.player) {
-    offset = (offset + 80) % 96;
     continue;
   }
 
