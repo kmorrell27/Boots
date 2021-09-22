@@ -95,6 +95,69 @@ if (gamepad_is_connected(0)) {
 }
 
 /*
+This section handles Pegasus Boots
+*/
+if (
+  running &&
+  moveable &&
+  !rolling &&
+  !charge &&
+  !slashing &&
+  !jumping &&
+  !tap &&
+  !cliff &&
+  !spin &&
+  !defend &&
+  !arrowing
+) {
+  if (runTimer > 0) {
+    runTimer--;
+	  if (smokedly) {
+    smokedly -= 1;
+    //Subtract a frame from the delay.
+  } else {
+    //Otherwise, make a new smoke object here.
+    s = instance_create_layer(x, y, "Player", objRollSmoke);
+    /*
+        If the player is facing down, the smoke should appear behind
+        them.  Otherwise, it should be above them.
+        */
+    if (dir == Direction.DOWN) {
+      s.depth = depth + 2;
+    } else {
+      s.depth = depth - 2;
+    }
+    smokedly = 8;
+    //Set the delay to 8 frames away.
+  }
+  } else {
+    /*
+    This block of if statements just assigns the player velocity based on
+    which direction they're facing.
+    */
+    if (dir == Direction.DOWN) {
+      vspeed = maxspd * 2;
+    } else if (dir == Direction.UP) {
+      vspeed = -maxspd * 2;
+    } else if (dir == Direction.LEFT) {
+      hspeed = -maxspd * 2;
+    } else if (dir == Direction.RIGHT) {
+      hspeed = maxspd * 2;
+    }
+
+    scr_player_collide();
+    //Check for collision.
+
+    isMoving = false;
+    //Unflag them as moving.
+    pushing = false;
+    //And don't flag them as pushing either.
+    pushtmr = 0;
+    //And reset the pushing frame counter.
+  }
+}
+
+/*
 This section checks for double tapping a directional key.
 */
 
@@ -150,7 +213,9 @@ if (
   !tap &&
   !cliff &&
   !spin &&
-  !defend
+  !defend &&
+  !arrowing &&
+  !running
 ) {
   /*
     This block of if statements just assigns the player velocity based on
@@ -354,7 +419,7 @@ if (
     cannot moonwalk in this engine =P.  No directional change if
     the player is charging, using the spin attack or jumping.
     */
-  if (!charge && !spin && !jumping && !defend) {
+  if (!charge && !spin && !jumping && !defend && !arrowing) {
     if (
       down &&
       ((!left && !right) ||
@@ -395,6 +460,8 @@ if (
     */
   if (dir != lastdir) {
     pushtmr = 0;
+    running = false;
+    runTimer = 0;
   }
 
   /*
@@ -409,7 +476,7 @@ if (
             their wall-hugging momentum.
             */
       if (vvel == 0) {
-        scr_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping, running && dir == Direction.DOWN);
       } else {
         scr_add_vvel(spd - (spd / 2) * jumping);
       }
@@ -430,7 +497,7 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping, false);
       } else {
         scr_add_hvel(-spd + (spd / 2) * jumping);
       }
@@ -451,7 +518,7 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping, false);
       } else {
         scr_add_hvel(spd - (spd / 2) * jumping);
       }
@@ -464,7 +531,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.DOWN && !jumping && !defend) {
+      if (dir == Direction.DOWN && !jumping && !defend && !arrowing) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -477,7 +544,7 @@ if (
   if (up && !global.sideview) {
     if (place_free(x, y - 1)) {
       if (vvel == 0) {
-        scr_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping, running && dir == Direction.UP);
       } else {
         scr_add_vvel(-spd + (spd / 2) * jumping);
       }
@@ -498,7 +565,7 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping, false);
       } else {
         scr_add_hvel(-spd + (spd / 2) * jumping);
       }
@@ -519,7 +586,7 @@ if (
             cut around the corner of a wall.
             */
       if (hvel == 0) {
-        scr_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping, false);
       } else {
         scr_add_hvel(spd - (spd / 2) * jumping);
       }
@@ -532,7 +599,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.UP && !defend && !jumping) {
+      if (dir == Direction.UP && !defend && !jumping && !arrowing) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -545,7 +612,7 @@ if (
   if (left) {
     if (place_free(x - 1, y)) {
       if (hvel == 0) {
-        scr_add_hspeed(-spd + (spd / 2) * jumping);
+        scr_add_hspeed(-spd + (spd / 2) * jumping, running && dir == Direction.LEFT);
       } else {
         scr_add_hvel(-spd + (spd / 2) * jumping);
       }
@@ -563,7 +630,7 @@ if (
       dir == Direction.LEFT
     ) {
       if (vvel == 0) {
-        scr_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping, false);
       } else {
         scr_add_vvel(-spd + (spd / 2) * jumping);
       }
@@ -581,7 +648,7 @@ if (
       dir == Direction.LEFT
     ) {
       if (vvel == 0) {
-        scr_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping, false);
       } else {
         scr_add_vvel(spd - (spd / 2) * jumping);
       }
@@ -594,7 +661,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.LEFT && !defend && !jumping) {
+      if (dir == Direction.LEFT && !defend && !jumping && !arrowing) {
         if (!charge) {
           pushing = true;
         } else if (!tapdly) {
@@ -615,7 +682,7 @@ if (
             their wall-hugging momentum.
             */
       if (hvel == 0) {
-        scr_add_hspeed(spd - (spd / 2) * jumping);
+        scr_add_hspeed(spd - (spd / 2) * jumping, running && dir == Direction.RIGHT);
       } else {
         scr_add_hvel(spd - (spd / 2) * jumping);
       }
@@ -637,7 +704,7 @@ if (
             cut around the corner of a wall.
             */
       if (vvel == 0) {
-        scr_add_vspeed(-spd + (spd / 2) * jumping);
+        scr_add_vspeed(-spd + (spd / 2) * jumping, false);
       } else {
         scr_add_vvel(-spd + (spd / 2) * jumping);
       }
@@ -655,7 +722,7 @@ if (
       dir == Direction.RIGHT
     ) {
       if (vvel == 0) {
-        scr_add_vspeed(spd - (spd / 2) * jumping);
+        scr_add_vspeed(spd - (spd / 2) * jumping, false);
       } else {
         scr_add_vvel(spd - (spd / 2) * jumping);
       }
@@ -668,7 +735,7 @@ if (
     } else {
       scr_player_collide();
       //Check for collision.
-      if (dir == Direction.RIGHT && !defend && !jumping) {
+      if (dir == Direction.RIGHT && !defend && !jumping && !arrowing) {
         /*
         Flag the player as pushing if  aren't charging the sword,
         otherwise, make them perform a sword tap.
@@ -878,6 +945,15 @@ if (scr_arrow_button_pressed()) {
 
 if (scr_arrow_button_released()) {
   scr_release_button(Item.BOW);
+}
+
+if (scr_run_button_pressed()) {
+  scr_use_item(Item.BOOTS);
+  runTimer = 30;
+}
+
+if (scr_run_button_released()) {
+  scr_release_button(Item.BOOTS);
 }
 
 /********************************************************************

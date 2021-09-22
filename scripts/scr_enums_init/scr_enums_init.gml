@@ -12,6 +12,7 @@ function scr_enums_init() {
 	  BOW,
 	  SHIELD,
 	  FEATHER,
+	  BOOTS, // Hey that's the name of the game
 	}
 
 	enum Color {

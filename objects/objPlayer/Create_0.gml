@@ -45,6 +45,9 @@ carrying = false; // Is the player holding something
 heldObject = noone;
 shieldSprite = noone;
 jmpCtr = 0;
+running = false;
+runTimer = 0;
+arrowing = false;
 
 ground_dx = 0;
 ground_dy = 0;

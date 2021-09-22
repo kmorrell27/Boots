@@ -45,14 +45,22 @@ function scr_use_item(argument0) {
         s.sprite_index = sprSwordUp;
         break;
     }
-    //Now let's update the player's sprite.
+    // Check for charging in 15 frames
     alarm[0] = global.onesecond / 4;
+
+    // Can't run and swing!
+    running = false;
+    runTimer = 0;
   }
 
   /*
 	Feather Check
 	*/
   if (argument0 == Item.FEATHER && !jumping) {
+    // This is tricky but cancel pegasus boots if we are still charging
+    if (running && runTimer > 0) {
+      running = false;
+    }
     audio_play_sound(sndJump, 10, false);
     //Play the Jumping sound.
     //If the player isn't in a sideview area...
@@ -68,7 +76,6 @@ function scr_use_item(argument0) {
     pushing = false;
     //Unflag the player as pushing.
     climbing = false;
-    defend = false;
     //Unflag the player as climbing.
     image_index = 0;
     //Reset their animation.
@@ -78,29 +85,10 @@ function scr_use_item(argument0) {
 
   if (argument0 == Item.BOW) {
     global.player = Character.ROSA;
+    running = false;
+    arrowing = true;
     pushing = false;
     defend = false;
-    if (instance_exists(objArrow)) {
-      exit;
-    }
-    var arrow = instance_create_layer(x, y, global.playerLayer, objArrow);
-    //Give the arrow the same sprite as the sword.
-    switch (dir) {
-      case Direction.RIGHT:
-        arrow.sprite_index = sprArrowRight;
-        break;
-      case Direction.LEFT:
-        arrow.sprite_index = sprArrowLeft;
-        break;
-      case Direction.UP:
-        arrow.sprite_index = sprArrowUp;
-        break;
-      case Direction.DOWN:
-        arrow.sprite_index = sprArrowDown;
-        break;
-    }
-    arrow.dir = dir;
-    //Now let's update the player's sprite.
     image_index = 0;
   }
 
@@ -111,6 +99,7 @@ function scr_use_item(argument0) {
       if (heldObject == -1 && !instance_exists(objBomb)) {
         instance_create_depth(x, y, depth + 1, objBomb);
       } else if (heldObject != -1) {
+        running = false;
         carrying = true;
         heldObject.lifted = true;
       }
@@ -144,6 +133,11 @@ function scr_use_item(argument0) {
     global.player = Character.HAROLD;
     audio_play_sound(sndShield, 10, false);
     defend = true;
+    pushing = false;
+  }
+
+  if (argument0 == Item.BOOTS) {
+    running = true;
     pushing = false;
   }
 }
