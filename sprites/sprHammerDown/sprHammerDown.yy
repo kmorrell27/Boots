@@ -83,6 +83,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"73ddf9fa-19d1-4019-a2ed-ad7b138b66cb","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Hammer",
     "path": "folders/Sprites/Weapons/Hammer.yy",

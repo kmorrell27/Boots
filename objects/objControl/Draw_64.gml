@@ -8,12 +8,12 @@ if (global.showarea > 0) {
   var textxpos =
     128 +
     round(
-      256 *
+      320 *
         ((global.showarea - global.onesecond * 3) / global.onesecond) *
         (global.showarea > global.onesecond * 3)
     ) -
     round(
-      256 *
+      320 *
         ((global.onesecond - global.showarea) / global.onesecond) *
         (global.showarea <= global.onesecond)
     );
@@ -34,7 +34,7 @@ if (global.showarea > 0) {
   //Now draw the area name based on the center of the screen.
   scr_outline_text(
     textxpos,
-    72,
+    180,
     global.areaname,
     Color.WHITE,
     Color.BLACK,

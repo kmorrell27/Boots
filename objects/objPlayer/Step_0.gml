@@ -1,6 +1,7 @@
 /*********************************************************************
 GAME PAUSED SECTION
 *********************************************************************/
+show_debug_message(room_get_name(room));
 if (scr_pause_check()) {
   //Conserve vertical speed.
   if (vspeed != 0) {
@@ -112,24 +113,24 @@ if (
 ) {
   if (runTimer > 0) {
     runTimer--;
-	  if (smokedly) {
-    smokedly -= 1;
-    //Subtract a frame from the delay.
-  } else {
-    //Otherwise, make a new smoke object here.
-    s = instance_create_layer(x, y, "Player", objRollSmoke);
-    /*
+    if (smokedly) {
+      smokedly -= 1;
+      //Subtract a frame from the delay.
+    } else {
+      //Otherwise, make a new smoke object here.
+      s = instance_create_layer(x, y, "Player", objRollSmoke);
+      /*
         If the player is facing down, the smoke should appear behind
         them.  Otherwise, it should be above them.
         */
-    if (dir == Direction.DOWN) {
-      s.depth = depth + 2;
-    } else {
-      s.depth = depth - 2;
+      if (dir == Direction.DOWN) {
+        s.depth = depth + 2;
+      } else {
+        s.depth = depth - 2;
+      }
+      smokedly = 8;
+      //Set the delay to 8 frames away.
     }
-    smokedly = 8;
-    //Set the delay to 8 frames away.
-  }
   } else {
     /*
     This block of if statements just assigns the player velocity based on
@@ -476,7 +477,10 @@ if (
             their wall-hugging momentum.
             */
       if (vvel == 0) {
-        scr_add_vspeed(spd - (spd / 2) * jumping, running && dir == Direction.DOWN);
+        scr_add_vspeed(
+          spd - (spd / 2) * jumping,
+          running && dir == Direction.DOWN
+        );
       } else {
         scr_add_vvel(spd - (spd / 2) * jumping);
       }
@@ -544,7 +548,10 @@ if (
   if (up && !global.sideview) {
     if (place_free(x, y - 1)) {
       if (vvel == 0) {
-        scr_add_vspeed(-spd + (spd / 2) * jumping, running && dir == Direction.UP);
+        scr_add_vspeed(
+          -spd + (spd / 2) * jumping,
+          running && dir == Direction.UP
+        );
       } else {
         scr_add_vvel(-spd + (spd / 2) * jumping);
       }
@@ -612,7 +619,10 @@ if (
   if (left) {
     if (place_free(x - 1, y)) {
       if (hvel == 0) {
-        scr_add_hspeed(-spd + (spd / 2) * jumping, running && dir == Direction.LEFT);
+        scr_add_hspeed(
+          -spd + (spd / 2) * jumping,
+          running && dir == Direction.LEFT
+        );
       } else {
         scr_add_hvel(-spd + (spd / 2) * jumping);
       }
@@ -682,7 +692,10 @@ if (
             their wall-hugging momentum.
             */
       if (hvel == 0) {
-        scr_add_hspeed(spd - (spd / 2) * jumping, running && dir == Direction.RIGHT);
+        scr_add_hspeed(
+          spd - (spd / 2) * jumping,
+          running && dir == Direction.RIGHT
+        );
       } else {
         scr_add_hvel(spd - (spd / 2) * jumping);
       }

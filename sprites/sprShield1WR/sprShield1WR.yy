@@ -95,6 +95,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"195fb8b2-51e1-48d2-8186-d64dcd0af652","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Walk",
     "path": "folders/Sprites/Items/Shield/Walk.yy",

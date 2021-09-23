@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"aa89678a-65ec-48ab-9c58-e9dbdc835465","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Hold Shield",
     "path": "folders/Sprites/Items/Shield/Idle/Hold Shield.yy",

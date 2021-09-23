@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5eb59681-2248-46b0-9024-481034e89716","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Use Shield",
     "path": "folders/Sprites/Items/Shield/Idle/Use Shield.yy",

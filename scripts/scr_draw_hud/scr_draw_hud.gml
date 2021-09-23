@@ -15,7 +15,7 @@ function scr_draw_hud(argument0, argument1) {
 	on the anchor.  If it's negative, then it'll start from the bottom.
 	Otherwise, it'll start from the top.
 	*/
-  var yoff = 128;
+  var yoff = display_get_gui_height() - 16;
 
   //Temporary variable for what color blend to use for a HUD elemnt.
   var blend = Color.WHITE;

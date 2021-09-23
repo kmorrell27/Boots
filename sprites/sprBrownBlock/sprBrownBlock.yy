@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"30ec932b-ca15-4d3f-83e0-cbe382aec7aa","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Push Blocks",
     "path": "folders/Sprites/Objects/Push Blocks.yy",

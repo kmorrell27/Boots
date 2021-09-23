@@ -36,7 +36,7 @@ if (y < 0) {
     //And get out of this code for this frame.
     exit;
   } else {
-    //Otherwise, place the player back at the south edge of the screen.
+    //Otherwise, place the player back at the north edge of the screen.
     y = 0;
   }
 }

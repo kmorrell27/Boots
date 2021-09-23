@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"30c7ad8e-d161-4cca-b53c-8844fe9d95ce","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Use",
     "path": "folders/Sprites/Items/Shield/Use.yy",

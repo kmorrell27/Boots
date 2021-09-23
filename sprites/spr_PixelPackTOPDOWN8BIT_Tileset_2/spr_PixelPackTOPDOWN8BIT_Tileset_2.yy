@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3660e253-1555-413b-84f4-e0d405b75837","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Tileset_PixelPackTOPDOWN8BIT",
     "path": "folders/Sprites/Tileset_PixelPackTOPDOWN8BIT.yy",

@@ -79,6 +79,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ad02b51a-b0d0-4d3c-b7df-ed6a9ba4b2f9","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Caitlin",
     "path": "folders/Sprites/Player/Caitlin.yy",

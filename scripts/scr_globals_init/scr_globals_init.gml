@@ -76,7 +76,7 @@ function scr_globals_init() {
 	*/
   global.textLayer = layer_get_id("Text");
   global.playerLayer = layer_get_id("Player");
-  display_set_gui_size(256, 144);
+  display_set_gui_size(320, 180);
 
   /*
    * We've got characters!

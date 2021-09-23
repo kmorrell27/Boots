@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b740aa3e-8b1b-4ef3-bde6-3f81f9c4d99c","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Arrow",
     "path": "folders/Sprites/Weapons/Arrow.yy",

@@ -27,9 +27,9 @@ function scr_player_collide() {
     }
     vspeed = 0;
     //Reset their actual vertical speed.
-	
-	// And they can't run anymore
-	running = false;
+
+    // And they can't run anymore
+    running = false;
   }
 
   //If there is a wall where the player is heading horizontally...
@@ -50,7 +50,7 @@ function scr_player_collide() {
     }
     hspeed = 0;
     //Reset their actual horizontal speed.
-	
-	running = false;
+
+    running = false;
   }
 }
