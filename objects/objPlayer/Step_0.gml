@@ -104,7 +104,6 @@ if (
   !rolling &&
   !charge &&
   !slashing &&
-  !jumping &&
   !tap &&
   !cliff &&
   !spin &&
