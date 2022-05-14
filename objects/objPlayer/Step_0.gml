@@ -103,7 +103,6 @@ if (
   moveable &&
   !rolling &&
   !charge &&
-  !slashing &&
   !tap &&
   !cliff &&
   !spin &&
