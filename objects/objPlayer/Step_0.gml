@@ -95,6 +95,8 @@ if (gamepad_is_connected(0)) {
 }
 
 if (spintimer > 0) {
+  speed = 0;
+  image_index = 0;
   dir =
     (4 + storedspindir - ceil((spintimer * 4) / (global.onesecond / 2))) % 4;
   spintimer--;
@@ -104,8 +106,8 @@ if (spintimer > 0) {
 
 if (spintimer == 0) {
   dir = storedspindir;
-  instance_destroy(objSword);
-  spintimer = -1;
+  // Oh this is so hacky again but I really just want this sword to linger one more frame
+  alarm[1] = 1;
   scr_player_sprite_change();
 }
 
