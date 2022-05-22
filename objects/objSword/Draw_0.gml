@@ -5,7 +5,7 @@ var imgchk = floor(image_index);
 If the slashing animation hasn't just started and isn't at the end,
 then draw a ghost at the last X and Y offset.
 */
-if (imgchk > 0 && imgchk < 3) {
+if (imgchk > 0 && imgchk < 3 && global.playerid.spintimer < 0) {
   draw_sprite_ext(
     sprite_index,
     imgchk - 1,

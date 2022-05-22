@@ -12,6 +12,8 @@ double tapping a directional key.
 */
 doublekeytapdir = noone;
 defend = false;
+spintimer = -1;
+storedspindir = Direction.DOWN;
 doublekeytapdly = 0; //Frames left before double tapping interval ends.
 xoff = 0; //The x offset of which to draw the player's sprite.
 yoff = 0; //The y offset of which to draw the player's sprite.

@@ -8,9 +8,8 @@ function scr_release_button(argument0) {
     } else {
       audio_play_sound(sndSpin, 10, false);
       //Get rid of the sword.
-      with (objSword) {
-        instance_destroy();
-      }
+      storedspindir = dir;
+      spintimer = global.onesecond / 2;
     }
     charge = 0;
     //Unflag the player as charging.

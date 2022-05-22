@@ -29,22 +29,6 @@ function scr_use_item(argument0) {
     image_index = 0;
     //Reset their animation.
     s = instance_create_layer(x, y, global.playerLayer, objSword);
-    //Create the sword.
-    //Now give it the proper sprite based on which sword the player has.
-    switch (dir) {
-      case Direction.DOWN:
-        s.sprite_index = sprSwordDown;
-        break;
-      case Direction.LEFT:
-        s.sprite_index = sprSwordLeft;
-        break;
-      case Direction.RIGHT:
-        s.sprite_index = sprSwordRight;
-        break;
-      case Direction.UP:
-        s.sprite_index = sprSwordUp;
-        break;
-    }
     // Check for charging in 15 frames
     alarm[0] = global.onesecond / 4;
 

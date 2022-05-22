@@ -1,7 +1,6 @@
 /*********************************************************************
 GAME PAUSED SECTION
 *********************************************************************/
-show_debug_message(room_get_name(room));
 if (scr_pause_check()) {
   //Conserve vertical speed.
   if (vspeed != 0) {
@@ -93,6 +92,21 @@ if (gamepad_is_connected(0)) {
   up = keyboard_check(vk_up) && !keyboard_check(vk_down);
   left = keyboard_check(vk_left) && !keyboard_check(vk_right);
   right = keyboard_check(vk_right) && !keyboard_check(vk_left);
+}
+
+if (spintimer > 0) {
+  dir =
+    (4 + storedspindir - ceil((spintimer * 4) / (global.onesecond / 2))) % 4;
+  spintimer--;
+  scr_player_sprite_change();
+  return;
+}
+
+if (spintimer == 0) {
+  dir = storedspindir;
+  instance_destroy(objSword);
+  spintimer = -1;
+  scr_player_sprite_change();
 }
 
 /*
@@ -567,8 +581,8 @@ if (
     ) {
       /*
             Otherwise, try to add momentum to the left, to try and
-            cut around the corner of a wall.
-            */
+      cut around the corner of a wall.
+      */
       if (hvel == 0) {
         scr_add_hspeed(-spd + (spd / 2) * jumping, false);
       } else {
@@ -679,9 +693,6 @@ if (
     }
   }
 
-  /*
-    Movement for RIGHT.
-    */
   if (right) {
     if (place_free(x + 1, y)) {
       /*
@@ -909,7 +920,7 @@ are pressed, the player needs to use the items that are equipped.  That is,
 if  are able to at all.
 */
 
-//If the player presses Z...
+//If the player presses X...
 if (scr_bomb_button_pressed()) {
   //Temporary variable for a possible interaction in front of the player.
   var interactchk = scr_ahead_check(objInteractable, 4);
@@ -949,7 +960,6 @@ if (scr_jump_button_pressed()) {
   scr_use_item(Item.FEATHER);
 }
 
-//If the player presses X, use what's on X.
 if (scr_arrow_button_pressed()) {
   scr_use_item(Item.BOW);
 }

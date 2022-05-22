@@ -6,9 +6,29 @@ var img = floor(
   (quartersecond - global.playerid.alarm[0]) /
     (quartersecond / objSword.image_number)
 );
+var _frame =
+  ceil((global.playerid.spintimer * 8) / (global.onesecond / 2)) % 2 ? 1 : 3;
 
 //Slashing checking.
-if (global.playerid.slashing) {
+if (global.playerid.slashing || global.playerid.spintimer > -1) {
+  // This whole thing is so many hacks
+  switch (global.playerid.dir) {
+    case Direction.DOWN:
+      sprite_index = sprSwordDown;
+      break;
+    case Direction.LEFT:
+      sprite_index = sprSwordLeft;
+      break;
+    case Direction.RIGHT:
+      sprite_index = sprSwordRight;
+      break;
+    case Direction.UP:
+      sprite_index = sprSwordUp;
+      break;
+  }
+  if (global.playerid.spintimer > -1) {
+    img = _frame;
+  }
   //If the subimage has changed...
   if (lastimg < img) {
     //Store the previous X and Y offsets, and image.
@@ -114,12 +134,18 @@ if (img == 1) {
 }
 
 //If the player isn't charging.
-if (!global.playerid.charge) {
+if (!global.playerid.charge && global.playerid.spintimer < 0) {
   //Use the same animation frame as the player.
   image_index = img;
-} else {
+} else if (global.playerid.spintimer < 0) {
   //Use the last image index.
   image_index = 3;
+} else {
+  // Oh goodness this is gonna be complicated
+  // I basically want to split 30 frames into 8 chunks and if
+  // I'm in an even chunk, have one sprite index
+  // and odd another
+  image_index = _frame;
 }
 
 hspeed = global.playerid.hspeed; //Have the same horizontal velocity as the player.

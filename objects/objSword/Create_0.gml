@@ -6,3 +6,17 @@ lastxoff = 0; //Previous X offset.
 lastyoff = 0; //Previous Y offset.
 lastimg = -1; //Previous image frame.
 damage = 1;
+switch (global.playerid.dir) {
+  case Direction.DOWN:
+    sprite_index = sprSwordDown;
+    break;
+  case Direction.LEFT:
+    sprite_index = sprSwordLeft;
+    break;
+  case Direction.RIGHT:
+    sprite_index = sprSwordRight;
+    break;
+  case Direction.UP:
+    sprite_index = sprSwordUp;
+    break;
+}
