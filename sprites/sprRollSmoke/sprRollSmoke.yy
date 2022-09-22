@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sprRollSmoke",
   "bboxMode": 0,
   "collisionKind": 0,
   "type": 0,
@@ -24,18 +27,14 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"006c5b5b-1dd0-4ae6-9bd4-be33624d3d04","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"006c5b5b-1dd0-4ae6-9bd4-be33624d3d04","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":{"name":"5944ed48-979f-4969-a05e-1a9252401871","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprRollSmoke","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"006c5b5b-1dd0-4ae6-9bd4-be33624d3d04","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"e482b4fc-41d9-4468-9bd4-7a4c4a7d67e0","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e482b4fc-41d9-4468-9bd4-7a4c4a7d67e0","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":{"name":"5944ed48-979f-4969-a05e-1a9252401871","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprRollSmoke","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"e482b4fc-41d9-4468-9bd4-7a4c4a7d67e0","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"a2948715-3fc4-40cf-a2ee-522172c939d8","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":null,"resourceVersion":"1.0","name":"composite","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a2948715-3fc4-40cf-a2ee-522172c939d8","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"LayerId":{"name":"5944ed48-979f-4969-a05e-1a9252401871","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprRollSmoke","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","name":"a2948715-3fc4-40cf-a2ee-522172c939d8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"006c5b5b-1dd0-4ae6-9bd4-be33624d3d04",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e482b4fc-41d9-4468-9bd4-7a4c4a7d67e0",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a2948715-3fc4-40cf-a2ee-522172c939d8",},
   ],
   "sequence": {
-    "spriteId": {"name":"sprRollSmoke","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 1.0,
@@ -46,11 +45,11 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"e3277d1a-694a-4303-a236-5724931aad99","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"006c5b5b-1dd0-4ae6-9bd4-be33624d3d04","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"62969acf-728f-4d14-a749-5e4cbc6cdf46","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e482b4fc-41d9-4468-9bd4-7a4c4a7d67e0","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"20fbe43c-1fd5-46b2-848a-573a113307f0","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a2948715-3fc4-40cf-a2ee-522172c939d8","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": {"x":0.0,"y":0.0,},
     "lockOrigin": false,
@@ -66,22 +65,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sprRollSmoke","path":"sprites/sprRollSmoke/sprRollSmoke.yy",},
-    "resourceVersion": "1.4",
-    "name": "",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5944ed48-979f-4969-a05e-1a9252401871","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5944ed48-979f-4969-a05e-1a9252401871","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Animations",
     "path": "folders/Sprites/Animations.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sprRollSmoke",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

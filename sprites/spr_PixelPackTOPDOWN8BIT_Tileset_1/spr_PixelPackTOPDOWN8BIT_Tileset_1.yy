@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "spr_PixelPackTOPDOWN8BIT_Tileset_1",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9eb1e05a-043a-467b-beb4-04d05bccd27f","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"imported","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9eb1e05a-043a-467b-beb4-04d05bccd27f","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},"LayerId":{"name":"3660e253-1555-413b-84f4-e0d405b75837","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_PixelPackTOPDOWN8BIT_Tileset_1","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},"resourceVersion":"1.0","name":"9eb1e05a-043a-467b-beb4-04d05bccd27f","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9eb1e05a-043a-467b-beb4-04d05bccd27f",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_PixelPackTOPDOWN8BIT_Tileset_1","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "spr_PixelPackTOPDOWN8BIT_Tileset_1",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 15.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"1019b7a5-7377-4c5f-9eca-59588ef60c26","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9eb1e05a-043a-467b-beb4-04d05bccd27f","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,22 +61,13 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_PixelPackTOPDOWN8BIT_Tileset_1","path":"sprites/spr_PixelPackTOPDOWN8BIT_Tileset_1/spr_PixelPackTOPDOWN8BIT_Tileset_1.yy",},
-    "resourceVersion": "1.4",
-    "name": "spr_PixelPackTOPDOWN8BIT_Tileset_1",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3660e253-1555-413b-84f4-e0d405b75837","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3660e253-1555-413b-84f4-e0d405b75837","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
   "nineSlice": null,
   "parent": {
     "name": "Tileset_PixelPackTOPDOWN8BIT",
     "path": "folders/Sprites/Tileset_PixelPackTOPDOWN8BIT.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "spr_PixelPackTOPDOWN8BIT_Tileset_1",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

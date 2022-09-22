@@ -9,7 +9,7 @@ for the leaves isn't zero.
 */
 var usedzero = false;
 //Let's create a total of 8 leaves from this bush.
-for (i = 0; i < 8; i += 1) {
+for (var i = 0; i < 8; i += 1) {
   //
 
   //First, make the leaf object, and store it.

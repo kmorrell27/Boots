@@ -5,7 +5,7 @@ image_speed = 0; //No animation speed for you!
 //Which chest is this?  -1 for a respawning chest upon leaving.
 chestnum = -1;
 opened = false; //Has this chest been opened yet?
-itemobj = noone; //Which item to give the player.
+itemobj = objChest;
 itemspr = sprItemRupee; //What sprite to draw as the chest is being opened.
 itemalpha = 0; //How transparent the item sprite is drawn.
 /*

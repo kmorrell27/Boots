@@ -874,7 +874,7 @@ if (
     //Subtract a frame from the delay.
   } else {
     //Otherwise, make a new smoke object here.
-    s = instance_create_layer(x, y, "Player", objRollSmoke);
+    var s = instance_create_layer(x, y, "Player", objRollSmoke);
     /*
         If the player is facing down, the smoke should appear behind
         them.  Otherwise, it should be above them.

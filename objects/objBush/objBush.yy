@@ -1,10 +1,14 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "objBush",
   "spriteId": {
     "name": "sprBush",
     "path": "sprites/sprBush/sprBush.yy",
   },
   "solid": true,
   "visible": true,
+  "managed": true,
   "spriteMaskId": {
     "name": "spr16x16Mask",
     "path": "sprites/spr16x16Mask/spr16x16Mask.yy",
@@ -27,8 +31,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -36,8 +40,4 @@
     "name": "Liftables",
     "path": "folders/Objects/Liftables.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "objBush",
-  "tags": [],
-  "resourceType": "GMObject",
 }

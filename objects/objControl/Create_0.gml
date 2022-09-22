@@ -15,5 +15,6 @@ What was the value of the player's hearts before they started healing? -1
 for no consideration.
 */
 oldhearts = -1;
+global.playerLayer = noone;
 
 instance_create_layer(0, 0, global.playerLayer, objWeather);

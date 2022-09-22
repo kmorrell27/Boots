@@ -1,5 +1,3 @@
-event_inherited(); //Call the parent event.
-
 //If the game is paused, get out of this script.
 if (scr_pause_check()) {
   exit;
