@@ -13,7 +13,6 @@ public class RoomMove : MonoBehaviour
   public GameObject text;
   public TextMeshProUGUI placeText;
 
-
   // Start is called before the first frame update
   void Start()
   {
@@ -25,7 +24,7 @@ public class RoomMove : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.CompareTag("Player"))
+    if (other.CompareTag("Player") && !other.isTrigger)
     {
       cam.minPosition += cameraChange;
       cam.maxPosition += cameraChange;
@@ -34,13 +33,16 @@ public class RoomMove : MonoBehaviour
         playerChange.y,
         0
       );
-      if (needText) {
+      if (needText)
+      {
         StartCoroutine(placeNameCo());
       }
     }
   }
 
-  private IEnumerator placeNameCo() {
+  private IEnumerator placeNameCo()
+  {
+    Debug.Log("Happening");
     text.SetActive(true);
     placeText.text = placeName;
     yield return new WaitForSeconds(4f);
