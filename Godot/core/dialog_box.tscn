@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckrwsia15qv3g"]
+
+[ext_resource type="FontFile" uid="uid://q2nr0fwfq8md" path="res://data/fonts/Silver.ttf" id="1_elrvl"]
+
+[sub_resource type="Theme" id="Theme_k7xk1"]
+default_font = ExtResource("1_elrvl")
+default_font_size = 56
+
+[node name="DialogBox" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 325.0
+offset_right = 613.0
+offset_bottom = 551.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 592.0
+offset_bottom = 133.0
+theme = SubResource("Theme_k7xk1")
+bbcode_enabled = true
+text = "asdfasdf"

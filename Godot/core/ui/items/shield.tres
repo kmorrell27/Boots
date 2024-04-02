@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://duleox56pb2p3"]
+
+[ext_resource type="PackedScene" uid="uid://bvgures1cudo0" path="res://data/actors/items/shield.tscn" id="1_gjix2"]
+[ext_resource type="Script" path="res://core/item_resource.gd" id="1_js6r4"]
+
+[resource]
+script = ExtResource("1_js6r4")
+scene = ExtResource("1_gjix2")
+name = "Item"
+description = "A generic item."

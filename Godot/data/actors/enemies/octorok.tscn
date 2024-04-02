@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://0n5vrqnoj5y4"]
+
+[ext_resource type="Script" path="res://data/actors/enemies/octorok.gd" id="1_1xorg"]
+[ext_resource type="Texture2D" uid="uid://bpjsbq4wo1at7" path="res://data/actors/enemies/octorok.png" id="1_5qjiv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7ul3"]
+atlas = ExtResource("1_5qjiv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jycy"]
+atlas = ExtResource("1_5qjiv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbm51"]
+atlas = ExtResource("1_5qjiv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs6e3"]
+atlas = ExtResource("1_5qjiv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1nyaj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7ul3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jycy")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbm51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs6e3")
+}],
+"loop": true,
+"name": &"WalkSide",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7ul3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jycy")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs6cb"]
+size = Vector2(8, 8)
+
+[node name="Octorok" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_1xorg")
+speed = 40.0
+hearts = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1nyaj")
+animation = &"WalkDown"
+autoplay = "WalkDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_cs6cb")

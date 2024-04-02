@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2df4gcftwugt"]
+
+[ext_resource type="Script" path="res://data/actors/items/feather.gd" id="1_mvx7o"]
+
+[node name="Action" type="Area2D"]
+script = ExtResource("1_mvx7o")
+damage = 0.0
