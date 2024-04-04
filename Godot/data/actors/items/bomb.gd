@@ -16,8 +16,11 @@ var target_cell_position: Vector2i:
 				return user_cell + Vector2(0, -12)
 			"Down":
 				return user_cell + Vector2(0, 12)
-
 		return user_cell
+
+
+func _process(_delta):
+	pass
 
 
 func activate(u: Actor) -> void:
@@ -25,24 +28,24 @@ func activate(u: Actor) -> void:
 	actor_type = user.actor_type
 	u.on_hit.connect(queue_free)
 	position = target_cell_position
-	liftable.carry.connect(set_global_position)
+	liftable.carry_position.connect(set_position)
+	liftable.throw_position.connect(
+		func(foo): set_global_position(position + foo)
+	)
 
 	anim.play("Bomb")
-	Sound.play(preload("res://data/sfx/LA_Link_Bounce.wav"))
 
 
 func _on_explosion_started() -> void:
 	Sound.play(preload("res://data/sfx/LA_Bomb_Explode.wav"))
 	if user.has_method("_on_can_bomb_again"):
 		user._on_can_bomb_again.call()
+	if user.has_method("_clear_carrying_flag"):
+		user._clear_carrying_flag.call()
 
 
 func _on_explosion_finished() -> void:
 	queue_free()
-
-
-func _process(_delta):
-	pass
 
 
 func _on_body_entered(body) -> void:

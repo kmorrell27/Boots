@@ -66,10 +66,15 @@ func state_default() -> void:
 	# Handle item usage
 	if Input.is_action_just_pressed("a"):
 		## First check for liftable
-		if _can_lift():
-			pass
-		elif carrying:
+		if carrying:
+			if (is_instance_valid(carrying)):
+				# A bomb could explode in our hands
+				carrying._throw()
+			else:
+				print_debug("Deal with this %s", carrying)
 			carrying = null
+		elif _can_lift():
+			# This is side-effects :(
 			pass
 		elif items.get("A") && can_bomb_again:
 				_use_item(items["A"].scene)
@@ -209,6 +214,9 @@ func _on_scroll_completed() -> void:
 
 func _on_can_bomb_again() -> void:
 	can_bomb_again = true
+
+func _clear_carrying_flag() -> void:
+	carrying = null
 
 
 func _on_can_shoot_again() -> void:

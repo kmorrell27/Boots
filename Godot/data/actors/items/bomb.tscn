@@ -98,6 +98,7 @@ size = Vector2(32, 32)
 
 [node name="bomb" type="Area2D"]
 script = ExtResource("1_wt8vv")
+damage = null
 
 [node name="BombSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_vesk4")
@@ -119,11 +120,14 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_j8y2e")
 disabled = true
 
-[node name="Liftable" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite")]
+[node name="Liftable" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "collision")]
 script = ExtResource("4_hljb0")
+bouncy = true
 sprite = NodePath("../BombSprite")
+collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liftable"]
 shape = SubResource("RectangleShape2D_uogpc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Liftable" to="Liftable" method="_on_body_entered"]

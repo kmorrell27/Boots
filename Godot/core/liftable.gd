@@ -1,4 +1,4 @@
-class_name Liftable extends CharacterBody2D
+class_name Liftable extends Area2D
 
 static var SHADER = preload("res://data/vfx/actor.gdshader")
 static var DEATH_FX = preload("res://data/vfx/enemy_death.tres")
@@ -22,13 +22,14 @@ var sprite_direction := "Down"
 var move_direction := Vector2.DOWN
 var elevation := 0
 var rising := true
-var carrier: Node2D
+var carrier: Actor
 var carrier_sprite: AnimatedSprite2D
 
 var ray: RayCast2D
 
 signal on_hit
-signal carry(position: Vector2)
+signal carry_position(position: Vector2)
+signal throw_position(position: Vector2)
 
 
 func _ready() -> void:
@@ -75,14 +76,13 @@ func state_pick_up() -> void:
 		_change_state(state_carried)
 
 func state_carried() -> void:
-	carry.emit(carrier.global_position)
+	move_direction = carrier.move_direction
+	carry_position.emit(carrier.global_position)
 	sprite.position.y = -16 + carrier_sprite.position.y
 
 func state_thrown() -> void:
-	carrier = null
-	carrier_sprite = null
 	# move the object
-	position += move_direction * 2.5 
+	throw_position.emit(move_direction * 2.5)
 	# update the sprite
 	if rising:
 		if elevation < 24:
@@ -93,6 +93,7 @@ func state_thrown() -> void:
 		if elevation > 0:
 			elevation -= 2
 		else:
+			move_direction = Vector2.ZERO
 			if break_on_land:
 				queue_free()
 			
@@ -111,48 +112,20 @@ func _play_animation(animation: String) -> void:
 	sprite.play(animation + direction)
 	sprite.flip_h = sprite_direction == "Left"
 
+func _on_body_entered(body) -> void:
+	if current_state == state_thrown && body is TileMap:
+		if (bouncy):
+			move_direction = move_direction.rotated(PI)
 
-
-func _draw():
-	pass
 
 func _lift(_carrier: Node2D):
+	rising = true
 	carrier = _carrier
 	carrier_sprite = _carrier.get_node("AnimatedSprite2D")
 	_change_state(state_pick_up)
 
 
-func _check_collisions():
-	# Update raycast direction when moving
-	if velocity:
-		var direction = velocity.normalized()
-		ray.position = direction * -2
-		ray.target_position = direction * 12
-
-		if (
-			direction.x != 0
-			and collision.position.x != direction.x
-			and not test_move(transform, Vector2(direction.x, 0))
-		):
-			collision.position.x = direction.x
-		if (
-			direction.y != 0
-			and collision.position.y != direction.y
-			and not test_move(transform, Vector2(0, direction.y))
-		):
-			collision.position.y = direction.y
-
-	# Handle collisions
-	if ray.is_colliding():
-		var other = ray.get_collider()
-
-		if other is Map:
-			var on_step = other.on_step(self)
-			if has_method(on_step):
-				call(on_step)
-		elif other is Actor:
-			if bouncy == true:
-				# Check for bounciness
-				queue_free()
-			else:
-				velocity = velocity.rotated(PI)
+func _throw():
+	carrier = null
+	carrier_sprite = null
+	_change_state(state_thrown)
