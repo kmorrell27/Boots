@@ -5,16 +5,23 @@
   "program": "${workspaceFolder}/bin/godot.windows.editor.dev.x86_64.exe",
   // Change the arguments below for the project you want to test with.
   // To run the project instead of editing it, remove the "--editor" argument.
-  "args": [
-    "--editor",
-    "--path",
-    "${workspaceFolder}"
-  ],
+  "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
   "stopAtEntry": false,
   "cwd": "${workspaceFolder}",
   "environment": [],
   "console": "internalConsole",
   "visualizerFile": "${workspaceFolder}/platform/windows/godot.natvis",
   "preLaunchTask": "build",
-  "configurations": []
+  "configurations": [
+    {
+      "name": "GDScript: Launch Project",
+      "type": "godot",
+      "request": "launch",
+      "project": "",
+      "debug_collisions": false,
+      "debug_paths": false,
+      "debug_navigation": false,
+      "additional_options": ""
+    }
+  ]
 }

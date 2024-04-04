@@ -1,4 +1,4 @@
-extends Actor
+class_name Player extends Actor
 
 var items = {
 	"A": DEF.ITEM.Bomb,
@@ -19,9 +19,9 @@ var last_safe_position: Vector2
 var drown_instantiated := false
 var can_shoot_again := true
 var can_bomb_again := true
+var carrying: Liftable = null
 
 @onready var shadow: Sprite2D = $Shadow
-
 
 func _physics_process(delta) -> void:
 	_state_process(delta)
@@ -64,13 +64,16 @@ func state_default() -> void:
 		sprite.stop()
 
 	# Handle item usage
-	if Input.is_action_just_pressed("a") && items.get("A"):
+	if Input.is_action_just_pressed("a"):
 		## First check for liftable
 		if _can_lift():
 			pass
-		if can_bomb_again:
-			_use_item(items["A"].scene)
-			can_bomb_again = false
+		elif carrying:
+			carrying = null
+			pass
+		elif items.get("A") && can_bomb_again:
+				_use_item(items["A"].scene)
+				can_bomb_again = false
 	elif Input.is_action_just_pressed("b") && items.get("B"):
 		_use_item(items["B"].scene)
 	if Input.is_action_just_pressed("x") && items.get("X"):
@@ -214,7 +217,10 @@ func _on_can_shoot_again() -> void:
 func _can_lift() -> bool:
 	if ray.is_colliding():
 		var other = ray.get_collider()
+		print_debug(other)
 		if other is Liftable:
+			carrying = other
+			other._lift(self)
 			return true
 	return false
 

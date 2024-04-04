@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cap6gqjjmot2l"]
+
+[ext_resource type="Script" path="res://core/liftable.gd" id="1_y0cok"]
+
+[node name="Pot" type="Node2D"]
+
+[node name="Liftable" type="StaticBody2D" parent="."]
+script = ExtResource("1_y0cok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

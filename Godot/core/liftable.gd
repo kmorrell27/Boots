@@ -8,32 +8,30 @@ static var LAND_SFX = preload("res://data/sfx/LA_Link_Land.wav")
 static var KB_TIME = 0.2
 static var KB_AMT = 100
 
-@export_enum("Enemy", "Player") var actor_type: String
 @export var speed := 70.0
-@export var hearts := 1.0
-@export var damage := 0.5
-@export var hit_sfx = preload("res://data/sfx/LA_Enemy_Hit.wav")
-@onready var health = hearts
+@export var damage := 5
+@export var bouncy := false
+@export var break_on_land := false
+@export var sprite: Sprite2D
+@export var collision: CollisionShape2D
 
-var current_action_node = Node
 var current_state := state_default
 var last_state := state_default
 var elapsed_state_time := 0.0
 var sprite_direction := "Down"
 var move_direction := Vector2.DOWN
-var charging := false
+var elevation := 0
+var rising := true
+var carrier: Node2D
+var carrier_sprite: AnimatedSprite2D
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision: CollisionShape2D = $CollisionShape2D
 var ray: RayCast2D
 
 signal on_hit
+signal carry(position: Vector2)
 
 
 func _ready() -> void:
-	sprite.material = ShaderMaterial.new()
-	sprite.material.shader = SHADER
-
 	ray = RayCast2D.new()
 	ray.target_position = Vector2.ZERO
 	ray.hit_from_inside = true
@@ -43,7 +41,6 @@ func _ready() -> void:
 
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, true)
-	add_to_group("actor")
 	#set_physics_process(false)
 
 
@@ -62,9 +59,6 @@ func _state_process(delta: float) -> void:
 
 
 func _change_state(new_state) -> void:
-	if current_action_node is Action:
-		current_action_node.deactivate(self)
-		current_action_node = null
 	elapsed_state_time = 0
 	current_state = new_state
 
@@ -73,59 +67,40 @@ func state_default() -> void:
 	pass
 
 
-func state_hurt() -> void:
-	sprite.material.set_shader_parameter("is_hurt", true)
-	move_and_slide()
+func state_pick_up() -> void:
+	if elevation < 16:
+		elevation += 2
+		sprite.position.y = -1 * elevation
+	else:
+		_change_state(state_carried)
 
-	if elapsed_state_time > KB_TIME:
-		if health <= 0:
-			_die()
+func state_carried() -> void:
+	carry.emit(carrier.global_position)
+	sprite.position.y = -16 + carrier_sprite.position.y
+
+func state_thrown() -> void:
+	carrier = null
+	carrier_sprite = null
+	# move the object
+	position += move_direction * 2.5 
+	# update the sprite
+	if rising:
+		if elevation < 24:
+			elevation += 2
 		else:
-			sprite.material.set_shader_parameter("is_hurt", false)
-			_change_state(state_default)
-
-
-func state_drown() -> void:
-	Sound.play(DROWN_SFX)
-	_oneshot_vfx(DROWN_VFX)
-	queue_free()
-
-
-# -------------------
-
-
-func _snap_position() -> void:
-	position = position.snapped(Vector2.ONE)
-
+			rising = false
+	else:
+		if elevation > 0:
+			elevation -= 2
+		else:
+			if break_on_land:
+				queue_free()
+			
+	sprite.position.y = -1 * elevation
 
 # Sets sprite direction to last orthogonal direction.
-func _update_sprite_direction(vector: Vector2) -> void:
-	# If the direction we're already going is still valid then don't do anything
-	match sprite_direction:
-		"Left":
-			if vector.x < 0:
-				return
-		"Right":
-			if vector.x > 0:
-				return
-		"Up":
-			if vector.y < 0:
-				return
-		"Down":
-			if vector.y > 0:
-				return
-	if vector.x < 0:
-		move_direction = Vector2.LEFT
-		sprite_direction = "Left"
-	elif vector.x > 0:
-		move_direction = Vector2.RIGHT
-		sprite_direction = "Right"
-	elif vector.y < 0:
-		move_direction = Vector2.UP
-		sprite_direction = "Up"
-	elif vector.y > 0:
-		move_direction = Vector2.DOWN
-		sprite_direction = "Down"
+func _set_direction(vector: Vector2) -> void:
+	move_direction = vector
 
 
 # Plays an animation from a directioned set.
@@ -137,28 +112,14 @@ func _play_animation(animation: String) -> void:
 	sprite.flip_h = sprite_direction == "Left"
 
 
-func _die() -> void:
-	Sound.play(preload("res://data/sfx/LA_Enemy_Die.wav"))
-	_oneshot_vfx(DEATH_FX)
-	queue_free()
-
 
 func _draw():
 	pass
 
-
-# Instances item and passes self as its user.
-func _use_item(item: PackedScene) -> Node:
-	var instance: Node = item.instantiate()
-	get_parent().add_child(instance)
-	instance.activate(self)
-	return instance
-
-
-# Returns a random orthogonal direction.
-func _get_random_direction() -> Vector2:
-	var directions = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
-	return directions[randi() % directions.size()]
+func _lift(_carrier: Node2D):
+	carrier = _carrier
+	carrier_sprite = _carrier.get_node("AnimatedSprite2D")
+	_change_state(state_pick_up)
 
 
 func _check_collisions():
@@ -189,28 +150,9 @@ func _check_collisions():
 			var on_step = other.on_step(self)
 			if has_method(on_step):
 				call(on_step)
-		elif other is Actor or other is Action:
-			if other.actor_type != actor_type and other.damage > 0:
-				_hit(other.damage, other.position)
-
-
-func _oneshot_vfx(frames: SpriteFrames) -> void:
-	var new_fx = AnimatedSprite2D.new()
-	new_fx.animation_finished.connect(new_fx.queue_free)
-	new_fx.position = position
-	new_fx.sprite_frames = frames
-	new_fx.play()
-	get_parent().add_child(new_fx)
-
-
-# Setup hit state and switch
-func _hit(amount, pos) -> void:
-	velocity = (position - pos).normalized() * KB_AMT
-	health -= amount
-	Sound.play(hit_sfx)
-	emit_signal("on_hit", health)
-	_change_state(state_hurt)
-
-
-func drown() -> void:
-	_change_state(state_drown)
+		elif other is Actor:
+			if bouncy == true:
+				# Check for bounciness
+				queue_free()
+			else:
+				velocity = velocity.rotated(PI)

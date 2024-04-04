@@ -1,6 +1,7 @@
 extends Action
 
 @onready var anim = $AnimationPlayer
+@onready var liftable = $Liftable
 
 var target_cell_position: Vector2i:
 	get:
@@ -19,11 +20,12 @@ var target_cell_position: Vector2i:
 		return user_cell
 
 
-func activate(u) -> void:
+func activate(u: Actor) -> void:
 	user = u
 	actor_type = user.actor_type
-	user.connect("on_hit", queue_free)
+	u.on_hit.connect(queue_free)
 	position = target_cell_position
+	liftable.carry.connect(set_global_position)
 
 	anim.play("Bomb")
 	Sound.play(preload("res://data/sfx/LA_Link_Bounce.wav"))

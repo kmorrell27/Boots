@@ -29,6 +29,8 @@ var charging := false
 var ray: RayCast2D
 
 signal on_hit
+signal vfx(fx: AnimatedSprite2D)
+signal use_item(item: Node, caller: Actor)
 
 
 func _ready() -> void:
@@ -151,8 +153,7 @@ func _draw():
 # Instances item and passes self as its user.
 func _use_item(item: PackedScene) -> Node:
 	var instance: Node = item.instantiate()
-	get_parent().add_child(instance)
-	instance.activate(self)
+	use_item.emit(instance, self)
 	return instance
 
 
@@ -196,12 +197,12 @@ func _check_collisions():
 
 
 func _oneshot_vfx(frames: SpriteFrames) -> void:
-	var new_fx = AnimatedSprite2D.new()
+	var new_fx := AnimatedSprite2D.new()
 	new_fx.animation_finished.connect(new_fx.queue_free)
 	new_fx.position = position
 	new_fx.sprite_frames = frames
 	new_fx.play()
-	get_parent().add_child(new_fx)
+	vfx.emit(new_fx)
 
 
 # Setup hit state and switch
