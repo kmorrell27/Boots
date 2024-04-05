@@ -9,7 +9,7 @@ var target_cell_position: Vector2i:
 
 		match user.sprite_direction:
 			"Left":
-				return user_cell + Vector2(-12, 0)
+				return user_cell + Vector2( - 12, 0)
 			"Right":
 				return user_cell + Vector2(12, 0)
 			"Up":
@@ -18,10 +18,8 @@ var target_cell_position: Vector2i:
 				return user_cell + Vector2(0, 12)
 		return user_cell
 
-
 func _process(_delta):
 	pass
-
 
 func activate(u: Actor) -> void:
 	user = u
@@ -35,18 +33,16 @@ func activate(u: Actor) -> void:
 
 	anim.play("Bomb")
 
-
 func _on_explosion_started() -> void:
-	Sound.play(preload("res://data/sfx/LA_Bomb_Explode.wav"))
+	$Liftable.queue_free()
+	Sound.play(preload ("res://data/sfx/LA_Bomb_Explode.wav"))
 	if user.has_method("_on_can_bomb_again"):
 		user._on_can_bomb_again.call()
 	if user.has_method("_clear_carrying_flag"):
 		user._clear_carrying_flag.call()
 
-
 func _on_explosion_finished() -> void:
 	queue_free()
-
 
 func _on_body_entered(body) -> void:
 	if body is Map:

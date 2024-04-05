@@ -5,10 +5,8 @@ const ITEM_A_POSITION = Vector2(48, 0)
 
 var items = {}
 
-
 func _init():
 	scale = Vector2(4, 4)
-
 
 func _draw():
 	if items.get("B"):

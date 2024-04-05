@@ -5,11 +5,8 @@ class_name Action extends Area2D
 var user: Actor
 var actor_type
 
-
 func activate(_u: Actor):
 	pass
 
-
 func deactivate(_u: Actor):
 	pass
-

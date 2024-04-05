@@ -1,12 +1,11 @@
 class_name Hearts extends Node2D
 
-const HEART_TEXTURE = preload("res://core/ui/hearts.png")
+const HEART_TEXTURE = preload ("res://core/ui/hearts.png")
 const HEART_SIZE = Vector2(8, 8)
 const ROW_COUNT = 7
 
 var hearts := 3
 var health := 3
-
 
 func _draw():
 	for heart in int(hearts):

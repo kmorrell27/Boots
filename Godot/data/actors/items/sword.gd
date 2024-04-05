@@ -3,10 +3,10 @@ extends Action
 @onready var anim = $AnimationPlayer
 
 const SOUNDS = [
-	preload("res://data/sfx/LA_Sword_Slash1.wav"),
-	preload("res://data/sfx/LA_Sword_Slash2.wav"),
-	preload("res://data/sfx/LA_Sword_Slash3.wav"),
-	preload("res://data/sfx/LA_Sword_Slash4.wav"),
+	preload ("res://data/sfx/LA_Sword_Slash1.wav"),
+	preload ("res://data/sfx/LA_Sword_Slash2.wav"),
+	preload ("res://data/sfx/LA_Sword_Slash3.wav"),
+	preload ("res://data/sfx/LA_Sword_Slash4.wav"),
 ]
 
 var target_cell_position: Vector2i:
@@ -15,16 +15,15 @@ var target_cell_position: Vector2i:
 
 		match user.sprite_direction:
 			"Left":
-				return user_cell + Vector2(-24, 0)
+				return user_cell + Vector2( - 24, 0)
 			"Right":
 				return user_cell + Vector2(16, 0)
 			"Up":
-				return user_cell + Vector2(-8, -16)
+				return user_cell + Vector2( - 8, -16)
 			"Down":
 				return user_cell + Vector2(0, 16)
 
 		return user_cell
-
 
 func activate(u) -> void:
 	user = u
@@ -37,15 +36,12 @@ func activate(u) -> void:
 	anim.play(str("Swing", user.sprite_direction))
 	Sound.play(SOUNDS[randi() % SOUNDS.size()])
 
-
 func _on_swing_finished() -> void:
 	user._change_state(user.state_default)
 	queue_free()
 
-
 func _process(_delta):
 	pass
-
 
 func _on_body_entered(body) -> void:
 	if body is Map:

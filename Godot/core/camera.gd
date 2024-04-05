@@ -1,6 +1,6 @@
 class_name GridCamera extends Camera2D
 
-const DEFAULT_LIMIT_RECT = Rect2(-10000000, -10000000, 10000000, 10000000)
+const DEFAULT_LIMIT_RECT = Rect2( - 10000000, -10000000, 10000000, 10000000)
 const CELL_SIZE = Vector2(256, 144)
 const VIEWPORT_SIZE = Vector2(256, 144)
 const SCROLL_DURATION = 0.5
@@ -18,24 +18,21 @@ var limit_rect = DEFAULT_LIMIT_RECT:
 signal scroll_started
 signal scroll_completed
 
-
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
 
 # Initialize the camera and set its initial limit_rect
 func _ready() -> void:
 	var origin = last_grid_position * CELL_SIZE
 	limit_rect = Rect2(origin, origin + CELL_SIZE)
 
-	await get_tree().physics_frame  # takes 2 frames for tilemap entities to initialize
-	await get_tree().physics_frame  # make a signal for tilemap ready to await here
+	await get_tree().physics_frame # takes 2 frames for tilemap entities to initialize
+	await get_tree().physics_frame # make a signal for tilemap ready to await here
 
 	if target.has_method("_on_scroll_completed"):
 		scroll_completed.connect(target._on_scroll_completed)
 
 	emit_signal("scroll_completed")
-
 
 # Update the camera's position and scroll if necessary
 func _physics_process(_delta) -> void:
@@ -45,7 +42,6 @@ func _physics_process(_delta) -> void:
 	if target_grid_position != last_grid_position:
 		scroll_screen()
 		last_grid_position = target_grid_position
-
 
 # Scroll the camera smoothly to the new position
 func scroll_screen() -> void:
@@ -76,7 +72,6 @@ func scroll_screen() -> void:
 	get_tree().paused = false
 	set_physics_process(true)
 
-
 func _set_limit_rect(rect: Rect2) -> Rect2:
 	limit_rect = rect
 
@@ -86,7 +81,6 @@ func _set_limit_rect(rect: Rect2) -> Rect2:
 	limit_bottom = limit_rect.size.y
 
 	return limit_rect
-
 
 func world_to_grid(pos: Vector2) -> Vector2:
 	return Vector2(floor(pos.x / CELL_SIZE.x), floor(pos.y / CELL_SIZE.y))

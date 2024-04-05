@@ -2,8 +2,7 @@
 @tool
 class_name Map extends TileMap
 
-enum Layer { STATIC, DYNAMIC }
-
+enum Layer {STATIC, DYNAMIC}
 
 class UniqueTile:
 	var source_id: int
@@ -15,7 +14,6 @@ class UniqueTile:
 		atlas_coords = ac
 		alternative_tile = at
 
-
 ###########
 ## Exits ##
 # Primarily managed by exit_editor.gd
@@ -26,16 +24,14 @@ class Exit:
 	var label: String
 
 	func _init(
-		p_cell: Vector2i, p_path := "", p_next := Vector2i(), p_label := ""
+		p_cell: Vector2i, p_path:="", p_next:=Vector2i(), p_label:=""
 	):
 		cell = p_cell
 		path = p_path
 		next = p_next
 		label = p_label
 
-
 @export var exits = {}
-
 
 func reload_exits() -> void:
 	var exit_cells = _get_exit_cells()
@@ -46,7 +42,6 @@ func reload_exits() -> void:
 	for cell in exit_cells:
 		if not cell in exits.keys():
 			exits[cell] = Exit.new(cell)
-
 
 func _get_exit_cells() -> Array:
 	var exit_cells = []
@@ -61,7 +56,6 @@ func _get_exit_cells() -> Array:
 			exit_cells.append(cell)
 
 	return exit_cells
-
 
 func _get_exit_tiles() -> Array:
 	var exit_tiles = []
@@ -86,7 +80,6 @@ func _get_exit_tiles() -> Array:
 
 	return exit_tiles
 
-
 ##############
 ## Gameplay ##
 #
@@ -98,13 +91,12 @@ func on_step(actor: Actor) -> String:
 
 	return ""
 
-
 #
 func slash(cell: Vector2i) -> void:
 	var data = get_cell_tile_data(Layer.DYNAMIC, cell)
 
 	if data and data.get_custom_data("is_cuttable"):
-		var cut_fx = preload("res://core/vfx/grass_cut.tscn").instantiate()
+		var cut_fx = preload ("res://core/vfx/grass_cut.tscn").instantiate()
 
 		cut_fx.position = map_to_local(cell)
 		add_child(cut_fx)

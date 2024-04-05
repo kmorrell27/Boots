@@ -1,6 +1,6 @@
 extends Action
 
-static var TINK_SFX = preload("res://data/sfx/LA_Sword_Tap.wav")
+static var TINK_SFX = preload ("res://data/sfx/LA_Sword_Tap.wav")
 @export var speed = 240
 @export var fall_speed = 20
 var velocity := Vector2.ZERO
@@ -9,10 +9,8 @@ var velocity := Vector2.ZERO
 
 signal on_hit
 
-
 func _physics_process(delta):
 	position += velocity * delta
-
 
 func activate(u) -> void:
 	user = u
@@ -30,7 +28,6 @@ func activate(u) -> void:
 			pass
 	velocity = user.move_direction * speed
 
-
 func _on_body_entered(body):
 	set_deferred("monitoring", false)
 	if user.has_method("_on_can_shoot_again"):
@@ -41,7 +38,6 @@ func _on_body_entered(body):
 	elif body is CollisionObject2D:
 		emit_signal("on_hit")
 		queue_free()
-
 
 func _hit_wall():
 	velocity = Vector2.DOWN * fall_speed

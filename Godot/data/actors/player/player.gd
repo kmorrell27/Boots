@@ -26,7 +26,6 @@ var carrying: Liftable = null
 func _physics_process(delta) -> void:
 	_state_process(delta)
 
-
 func state_default() -> void:
 	velocity = input_direction * speed
 	move_and_slide()
@@ -42,15 +41,15 @@ func state_default() -> void:
 					test_move(transform, Vector2.DOWN)
 					and sprite_direction == "Down"
 				)
-				|| (
+				||(
 					test_move(transform, Vector2.UP)
 					and sprite_direction == "Up"
 				)
-				|| (
+				||(
 					test_move(transform, Vector2.RIGHT)
 					and sprite_direction == "Right"
 				)
-				|| (
+				||(
 					test_move(transform, Vector2.LEFT)
 					and sprite_direction == "Left"
 				)
@@ -67,7 +66,7 @@ func state_default() -> void:
 	if Input.is_action_just_pressed("a"):
 		## First check for liftable
 		if carrying:
-			if (is_instance_valid(carrying)):
+			if is_instance_valid(carrying):
 				# A bomb could explode in our hands
 				carrying._throw()
 			else:
@@ -76,22 +75,17 @@ func state_default() -> void:
 		elif _can_lift():
 			# This is side-effects :(
 			pass
-		elif items.get("A") && can_bomb_again:
-				_use_item(items["A"].scene)
-				can_bomb_again = false
-	elif Input.is_action_just_pressed("b") && items.get("B"):
+		elif items.get("A")&&can_bomb_again:
+			_use_item(items["A"].scene)
+			can_bomb_again = false
+	elif Input.is_action_just_pressed("b")&&items.get("B"):
 		_use_item(items["B"].scene)
-	if Input.is_action_just_pressed("x") && items.get("X"):
+	if Input.is_action_just_pressed("x")&&items.get("X"):
 		if can_shoot_again:
 			_use_item(items["X"].scene)
 			can_shoot_again = false
-	if Input.is_action_just_pressed("y") && items.get("Y"):
+	if Input.is_action_just_pressed("y")&&items.get("Y"):
 		_use_item(items["Y"].scene)
-	elif Input.is_action_just_pressed("l") && items.get("L"):
-		current_action_node = _use_item(items["L"].scene)
-	elif Input.is_action_just_pressed("r") && items.get("R"):
-		_use_item(items["R"].scene)
-
 
 func state_run() -> void:
 	if !Input.is_action_pressed("l"):
@@ -126,16 +120,15 @@ func state_run() -> void:
 	_check_collisions()
 	if collided and elapsed_state_time > 1:
 		var run_collision = get_last_slide_collision()
-		if run_collision.get_normal() * -1 == move_direction:
+		if run_collision.get_normal() * - 1 == move_direction:
 			charging = false
 			_change_state(state_default)
 	# Finally we can jump here. Maybe shield too?
 	# I'm gonna abstract out the jump state logic so I don't have to leave
 	# the running state
 	# Wait maybe that's a bad idea
-	if Input.is_action_just_pressed("b") && items.get("B"):
+	if Input.is_action_just_pressed("b")&&items.get("B"):
 		_use_item(items["B"].scene)
-
 
 func state_jump() -> void:
 	_play_animation("Jump")
@@ -167,20 +160,17 @@ func state_jump() -> void:
 	var collided = move_and_slide()
 	if collided and charging:
 		var run_collision = get_last_slide_collision()
-		if run_collision.get_normal() * -1 == move_direction:
+		if run_collision.get_normal() * - 1 == move_direction:
 			charging = false
 	_update_sprite_direction(input_direction)
 
-
 func state_swing() -> void:
 	_play_animation("Swing")
-
 
 func state_arrow() -> void:
 	sprite.stop()
 	if elapsed_state_time >= 1:
 		_change_state(state_default)
-
 
 func state_drown() -> void:
 	# State init
@@ -192,14 +182,10 @@ func state_drown() -> void:
 	# Show drown effect. Instance frees itself
 	if elapsed_state_time > 0.25:
 		sprite.hide()
-		_oneshot_vfx(DROWN_VFX)
-		_change_state(state_respawning)
-
 
 func state_respawning() -> void:
 	if elapsed_state_time >= 1:
 		_respawn()
-
 
 func _respawn() -> void:
 	position = last_safe_position
@@ -207,17 +193,14 @@ func _respawn() -> void:
 	Sound.play(hit_sfx)
 	_change_state(state_default)
 
-
 func _on_scroll_completed() -> void:
 	last_safe_position = position
-
 
 func _on_can_bomb_again() -> void:
 	can_bomb_again = true
 
 func _clear_carrying_flag() -> void:
 	carrying = null
-
 
 func _on_can_shoot_again() -> void:
 	can_shoot_again = true
@@ -231,7 +214,6 @@ func _can_lift() -> bool:
 			other._lift(self)
 			return true
 	return false
-
 
 func _handle_charging_movement() -> void:
 	velocity = move_direction * speed * 3

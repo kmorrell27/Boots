@@ -4,7 +4,7 @@ const FILE_DIALOG_RECT = Rect2i(Vector2i(320, 192), Vector2i(1280, 720))
 
 var _exits: Dictionary
 var _selected_exit: Exit
-var _indices := {}  # option : exit
+var _indices := {} # option : exit
 
 # Inspector controls
 var _options_button := OptionButton.new()
@@ -13,10 +13,9 @@ var _label_edit := LineEdit.new()
 var _path_button := Button.new()
 var _next_dropdown := OptionButton.new()
 
-signal reload_exits  # connects to map.gd
+signal reload_exits # connects to map.gd
 
-const Exit = preload("res://core/map.gd").Exit
-
+const Exit = preload ("res://core/map.gd").Exit
 
 ##################
 ## Initializing ##
@@ -28,14 +27,12 @@ func _init(p_exits: Dictionary):
 	_reset_options_text()
 	add_child(_options_button)
 
-
 func _initialize_options() -> void:
 	_options_button.item_selected.connect(_initialize_properties.unbind(1))
 	_options_button.item_selected.connect(_option_selected)
 	_options_button.pressed.disconnect(_initialize_options)
 	_reload_options()
 	_reset_options_text()
-
 
 # Initialize properties
 func _initialize_properties() -> void:
@@ -56,7 +53,6 @@ func _initialize_properties() -> void:
 	set_bottom_editor(_editor_panel)
 	add_child(_editor_panel)
 
-
 # Creates a labeled control that emulates inspector properties
 func _create_property(p_name: String, p_control) -> HBoxContainer:
 	var property := HBoxContainer.new()
@@ -72,7 +68,6 @@ func _create_property(p_name: String, p_control) -> HBoxContainer:
 
 	return property
 
-
 ###############
 ## Reloading ##
 # Clear option menu, add custom controls, and sort exits by their validity
@@ -84,7 +79,7 @@ func _reload_options() -> void:
 
 	# Add custom controls
 	_options_button.get_popup().add_icon_item(
-		preload("res://editor/svg/ReloadSmall.svg"), "Reload"
+		preload ("res://editor/svg/ReloadSmall.svg"), "Reload"
 	)
 
 	# Validity check
@@ -104,28 +99,25 @@ func _reload_options() -> void:
 		_options_button.add_item(_format_label(exit))
 		_indices[_options_button.item_count - 1] = exit.cell
 
-
 # Set button text similar to Dictionary property editor
 func _reset_options_text() -> void:
 	_options_button.text = "Exit List (size " + str(_exits.size()) + ")"
 	_options_button.icon = null
-
 
 ###############
 ## Selecting ##
 # Custom control and exit selection logic
 func _option_selected(index: int) -> void:
 	match index:
-		0:  # Reload
+		0: # Reload
 			reload_exits.emit()
 			_reload_options()
 			_reset_options_text()
 			_editor_panel.hide()
-		_:  # Exit selected
+		_: # Exit selected
 			_selected_exit = _exits[_indices[index]]
 			_editor_panel.show()
 			_load_exit(_selected_exit)
-
 
 # Set option button text to exit cell and load exit properties into controls
 func _load_exit(exit: Exit) -> void:
@@ -136,7 +128,6 @@ func _load_exit(exit: Exit) -> void:
 		if not exit.next:
 			pass
 
-
 #############
 ## Editing ##
 # Update exit dictionary to text input and marks scene as unsaved
@@ -145,7 +136,6 @@ func _set_label(new_label: String) -> void:
 	_reload_options()
 	emit_changed("exits", _exits)
 	_options_button.text = str(_selected_exit.cell)
-
 
 func _request_map_path() -> void:
 	var dialog = FileDialog.new()
@@ -161,7 +151,6 @@ func _request_map_path() -> void:
 	add_child(dialog)
 	dialog.popup(FILE_DIALOG_RECT)
 
-
 func _set_map_path(path: String) -> void:
 	_path_button.text = path
 	_next_dropdown.clear()
@@ -176,10 +165,8 @@ func _set_map_path(path: String) -> void:
 		_next_dropdown.disabled = false
 		_next_dropdown.alignment = HORIZONTAL_ALIGNMENT_CENTER
 
-
 func _format_label(exit: Exit) -> String:
 	return str(exit.label) + " " + str(exit.cell)
-
 
 func _is_linked(exit: Exit) -> bool:
 	return true if exit.label != "" else false

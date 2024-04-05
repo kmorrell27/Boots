@@ -3,7 +3,6 @@ extends Node
 var playing := {}
 var index := 0
 
-
 func play(sound) -> int:
 	var audio := AudioStreamPlayer.new()
 	audio.stream = sound
@@ -15,13 +14,11 @@ func play(sound) -> int:
 	index += 1
 	return index - 1
 
-
 func stop(id: int) -> void:
 	var audio = playing[id]
 	audio.stop()
 	_on_finish(id)
 	pass
-
 
 func _on_finish(id: int) -> void:
 	var audio = playing[id]
