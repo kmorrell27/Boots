@@ -1,29 +1,27 @@
 class_name Player extends Actor
 
-var items = {
-	"A": DEF.ITEM.Bomb,
-	"B": DEF.ITEM.Feather,
-	"X": DEF.ITEM.Arrow,
-	"Y": DEF.ITEM.Sword,
-	"L": DEF.ITEM.Boots,
-	"R": DEF.ITEM.Shield,
-}
+var boots: PackedScene = preload ("res://data/actors/items/boots.tscn")
+var bomb: PackedScene = preload ("res://data/actors/items/bomb.tscn")
+var arrow: PackedScene = preload ("res://data/actors/items/arrow.tscn")
+var feather: PackedScene = preload ("res://data/actors/items/feather.tscn")
+var shield: PackedScene = preload ("res://data/actors/items/shield.tscn")
+var sword: PackedScene = preload ("res://data/actors/items/sword.tscn")
 
-var input_direction:
+var input_direction: Vector2 = Vector2.ZERO:
 	get:
 		return Input.get_vector("left", "right", "up", "down")
 
-var elevation := 0.0
-var jump_peaked := false
+var elevation: float = 0.0
+var jump_peaked: bool = false
 var last_safe_position: Vector2
-var drown_instantiated := false
-var can_shoot_again := true
-var can_bomb_again := true
+var drown_instantiated: bool = false
+var can_shoot_again: bool = true
+var can_bomb_again: bool = true
 var carrying: Liftable = null
 
 @onready var shadow: Sprite2D = $Shadow
 
-func _physics_process(delta) -> void:
+func _physics_process(delta: float) -> void:
 	_state_process(delta)
 
 func state_default() -> void:
@@ -70,22 +68,22 @@ func state_default() -> void:
 				# A bomb could explode in our hands
 				carrying._throw()
 			else:
-				print_debug("Deal with this %s", carrying)
+				print_debug("Dealwiththis %s", carrying)
 			carrying = null
 		elif _can_lift():
 			# This is side-effects :(
 			pass
-		elif items.get("A")&&can_bomb_again:
-			_use_item(items["A"].scene)
+		elif can_bomb_again:
+			_use_item(bomb)
 			can_bomb_again = false
-	elif Input.is_action_just_pressed("b")&&items.get("B"):
-		_use_item(items["B"].scene)
-	if Input.is_action_just_pressed("x")&&items.get("X"):
+	elif Input.is_action_just_pressed("b"):
+		_use_item(feather)
+	if Input.is_action_just_pressed("x"):
 		if can_shoot_again:
-			_use_item(items["X"].scene)
+			_use_item(arrow)
 			can_shoot_again = false
-	if Input.is_action_just_pressed("y")&&items.get("Y"):
-		_use_item(items["Y"].scene)
+	if Input.is_action_just_pressed("y"):
+		_use_item(sword)
 
 func state_run() -> void:
 	if !Input.is_action_pressed("l"):
@@ -95,7 +93,7 @@ func state_run() -> void:
 	# We've come back from jumping or something and want to play
 	# the sound again
 	if current_action_node == null:
-		current_action_node = _use_item(items["L"].scene)
+		current_action_node = _use_item(boots)
 	_play_animation("Walk")
 	velocity = input_direction * speed
 	if elapsed_state_time > 1 or charging:
@@ -119,7 +117,7 @@ func state_run() -> void:
 	var collided: bool = move_and_slide()
 	_check_collisions()
 	if collided and elapsed_state_time > 1:
-		var run_collision = get_last_slide_collision()
+		var run_collision: KinematicCollision2D = get_last_slide_collision()
 		if run_collision.get_normal() * - 1 == move_direction:
 			charging = false
 			_change_state(state_default)
@@ -127,13 +125,13 @@ func state_run() -> void:
 	# I'm gonna abstract out the jump state logic so I don't have to leave
 	# the running state
 	# Wait maybe that's a bad idea
-	if Input.is_action_just_pressed("b")&&items.get("B"):
-		_use_item(items["B"].scene)
+	if Input.is_action_just_pressed("b"):
+		_use_item(feather)
 
 func state_jump() -> void:
 	_play_animation("Jump")
 	shadow.visible = true
-	var jump_speed = 2 if elevation < 6 else 1
+	var jump_speed: int = 2 if elevation < 6 else 1
 
 	if not jump_peaked:
 		if elevation - jump_speed <= 16:
@@ -157,9 +155,9 @@ func state_jump() -> void:
 		_handle_charging_movement()
 	else:
 		velocity = input_direction * speed
-	var collided = move_and_slide()
+	var collided: bool = move_and_slide()
 	if collided and charging:
-		var run_collision = get_last_slide_collision()
+		var run_collision: KinematicCollision2D = get_last_slide_collision()
 		if run_collision.get_normal() * - 1 == move_direction:
 			charging = false
 	_update_sprite_direction(input_direction)
@@ -207,11 +205,10 @@ func _on_can_shoot_again() -> void:
 
 func _can_lift() -> bool:
 	if ray.is_colliding():
-		var other = ray.get_collider()
-		print_debug(other)
+		var other: Object = ray.get_collider()
 		if other is Liftable:
 			carrying = other
-			other._lift(self)
+			(other as Liftable)._lift(self)
 			return true
 	return false
 

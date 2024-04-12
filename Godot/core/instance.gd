@@ -4,7 +4,7 @@ var map: Map
 var player: Actor
 var camera: GridCamera
 
-func _init(map_path: String, p_player: Actor):
+func _init(map_path: String, p_player: Actor) -> void:
 	map = load(map_path).instantiate()
 	var spawn: Node2D = map.get_node("Spawn")
 	camera = GridCamera.new()
@@ -14,7 +14,7 @@ func _init(map_path: String, p_player: Actor):
 		Viewport.DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_NEAREST
 	)
 
-func _enter_tree():
+func _enter_tree() -> void:
 	add_child(map)
 	add_child(camera)
 	camera.target = player

@@ -2,6 +2,6 @@ extends Resource
 class_name ItemResource
 
 @export var scene: PackedScene
-@export var name := "Item"
+@export var name: String = "Item"
 @export var icon: Texture2D
-@export var description := "A generic item."
+@export var description: String = "A generic item."

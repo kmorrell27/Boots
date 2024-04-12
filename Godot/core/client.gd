@@ -1,12 +1,12 @@
 extends Control
 
 var overworld: Instance
-@onready var screen = $Screen
+@onready var screen: SubViewportContainer = $Screen
 
-func _ready():
-	var player := preload ("res://data/actors/player/player.tscn").instantiate()
-	var dialog = preload ("res://core/dialog_box.tscn").instantiate()
-	var ui = UI.new(player)
+func _ready() -> void:
+	var player: Player = preload ("res://data/actors/player/player.tscn").instantiate()
+	var dialog: Control = preload ("res://core/dialog_box.tscn").instantiate()
+	var ui: UI = UI.new(player)
 	overworld = Instance.new(
 		"res://data/maps/overworld_1.tscn", player
 	)
@@ -16,9 +16,9 @@ func _ready():
 	screen.add_child(ui)
 	screen.add_child(dialog)
 
-func _on_vfx(vfx: AnimatedSprite2D):
+func _on_vfx(vfx: AnimatedSprite2D) -> void:
 	overworld.add_child(vfx)
 
-func _on_use_item(instance: Node, caller: Actor):
+func _on_use_item(instance: Action, caller: Actor) -> void:
 	overworld.add_child(instance)
 	instance.activate(caller)
