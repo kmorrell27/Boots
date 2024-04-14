@@ -1,27 +1,17 @@
 class_name Liftable extends Area2D
 
-static var SHADER = preload ("res://data/vfx/actor.gdshader")
-static var DEATH_FX = preload ("res://data/vfx/enemy_death.tres")
-static var DROWN_SFX = preload ("res://data/sfx/LA_Link_Wade1.wav")
-static var DROWN_VFX = preload ("res://data/vfx/drown.tres")
-static var LAND_SFX = preload ("res://data/sfx/LA_Link_Land.wav")
-static var KB_TIME = 0.2
-static var KB_AMT = 100
-
-@export var speed := 70.0
-@export var damage := 5
-@export var bouncy := false
-@export var break_on_land := false
+@export var bouncy: bool = false
+@export var break_on_land: bool = false
 @export var sprite: Sprite2D
 @export var collision: CollisionShape2D
 
-var current_state := state_default
-var last_state := state_default
-var elapsed_state_time := 0.0
-var sprite_direction := "Down"
-var move_direction := Vector2.DOWN
-var elevation := 0
-var rising := true
+var current_state: Callable = state_default
+var last_state: Callable = state_default
+var elapsed_state_time: float = 0.0
+var sprite_direction: String = "Down"
+var move_direction: Vector2 = Vector2.DOWN
+var elevation: int = 0
+var rising: bool = true
 var carrier: Actor
 var carrier_sprite: AnimatedSprite2D
 
@@ -54,7 +44,7 @@ func _state_process(delta: float) -> void:
 	last_state = current_state
 	elapsed_state_time += delta
 
-func _change_state(new_state) -> void:
+func _change_state(new_state: Callable) -> void:
 	elapsed_state_time = 0
 	current_state = new_state
 
@@ -92,30 +82,18 @@ func state_thrown() -> void:
 			
 	sprite.position.y = -1 * elevation
 
-# Sets sprite direction to last orthogonal direction.
-func _set_direction(vector: Vector2) -> void:
-	move_direction = vector
-
-# Plays an animation from a directioned set.
-func _play_animation(animation: String) -> void:
-	var direction = (
-		"Side" if sprite_direction in ["Left", "Right"] else sprite_direction
-	)
-	sprite.play(animation + direction)
-	sprite.flip_h = sprite_direction == "Left"
-
-func _on_body_entered(body) -> void:
-	if current_state == state_thrown&&body is TileMap:
+func _on_body_entered(body: Object) -> void:
+	if current_state == state_thrown and body is TileMap:
 		if (bouncy):
 			move_direction = move_direction.rotated(PI)
 
-func _lift(_carrier: Node2D):
+func _lift(_carrier: Node2D) -> void:
 	rising = true
 	carrier = _carrier
 	carrier_sprite = _carrier.get_node("AnimatedSprite2D")
 	_change_state(state_pick_up)
 
-func _throw():
+func _throw() -> void:
 	carrier = null
 	carrier_sprite = null
 	_change_state(state_thrown)

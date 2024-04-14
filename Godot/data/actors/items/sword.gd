@@ -1,8 +1,8 @@
 extends Action
 
-@onready var anim = $AnimationPlayer
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
-const SOUNDS = [
+const SOUNDS: Array[AudioStreamWAV] = [
 	preload ("res://data/sfx/LA_Sword_Slash1.wav"),
 	preload ("res://data/sfx/LA_Sword_Slash2.wav"),
 	preload ("res://data/sfx/LA_Sword_Slash3.wav"),
@@ -11,7 +11,7 @@ const SOUNDS = [
 
 var target_cell_position: Vector2i:
 	get:
-		var user_cell = user.position.snapped(Vector2(8, 8))
+		var user_cell: Vector2 = user.position.snapped(Vector2(8, 8))
 
 		match user.sprite_direction:
 			"Left":
@@ -25,10 +25,12 @@ var target_cell_position: Vector2i:
 
 		return user_cell
 
-func activate(u) -> void:
+func activate(u: Actor) -> void:
 	user = u
 	actor_type = user.actor_type
-	user._change_state(user.state_swing)
+	var player: Player = user as Player
+	if player != null:
+		player._change_state(player.state_swing)
 	user.connect("on_hit", queue_free)
 	user.ray.add_exception(self)
 	position = user.position
@@ -40,10 +42,11 @@ func _on_swing_finished() -> void:
 	user._change_state(user.state_default)
 	queue_free()
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	pass
 
-func _on_body_entered(body) -> void:
-	if body is Map:
-		var cell = body.local_to_map(target_cell_position)
-		body.slash(cell)
+func _on_body_entered(body: Object) -> void:
+	var map: Map = body as Map
+	if map != null:
+		var cell: Vector2 = map.local_to_map(target_cell_position)
+		map.slash(cell)

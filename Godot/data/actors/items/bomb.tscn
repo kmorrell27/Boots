@@ -123,6 +123,7 @@ disabled = true
 [node name="Liftable" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "collision")]
 script = ExtResource("4_hljb0")
 bouncy = true
+break_on_land = null
 sprite = NodePath("../BombSprite")
 collision = NodePath("CollisionShape2D")
 

@@ -171,15 +171,17 @@ func _check_collisions() -> void:
 		var other: Object = ray.get_collider()
 
 		if other is Map:
-			var on_step = (other as Map).on_step(self)
+			var on_step: String = (other as Map).on_step(self)
 			if has_method(on_step):
 				call(on_step)
 		elif other is Actor or other is Action:
-			if other.actor_type != actor_type and other.damage > 0:
-				_hit(other.damage, other.position)
+			var actor: Actor = other as Actor
+			if actor:
+				if actor.actor_type != actor_type and actor.damage > 0:
+					_hit(actor.damage, actor.position)
 
 func _oneshot_vfx(frames: SpriteFrames) -> void:
-	var new_fx := AnimatedSprite2D.new()
+	var new_fx: AnimatedSprite2D = AnimatedSprite2D.new()
 	new_fx.animation_finished.connect(new_fx.queue_free)
 	new_fx.position = position
 	new_fx.sprite_frames = frames

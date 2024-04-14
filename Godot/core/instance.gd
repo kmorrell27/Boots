@@ -5,7 +5,7 @@ var player: Actor
 var camera: GridCamera
 
 func _init(map_path: String, p_player: Actor) -> void:
-	map = load(map_path).instantiate()
+	map = (load(map_path) as PackedScene).instantiate()
 	var spawn: Node2D = map.get_node("Spawn")
 	camera = GridCamera.new()
 	player = p_player

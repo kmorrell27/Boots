@@ -1,19 +1,18 @@
 class_name Hearts extends Node2D
 
-const HEART_TEXTURE = preload ("res://core/ui/hearts.png")
-const HEART_SIZE = Vector2(8, 8)
-const ROW_COUNT = 7
+const HEART_TEXTURE: CompressedTexture2D = preload ("res://core/ui/hearts.png")
+const HEART_SIZE: Vector2 = Vector2(8, 8)
+const ROW_COUNT: int = 7
 
-var hearts := 3
-var health := 3
+var hearts: float = 3
+var health: float = 3
 
-func _draw():
-	for heart in int(hearts):
-		var offset_x = (heart % ROW_COUNT) * HEART_SIZE.x
-		@warning_ignore("integer_division")
-		var offset_y = floor(heart / ROW_COUNT) * HEART_SIZE.y
-		var fraction = (health - floor(health)) * 4
-		var src_rect = Rect2(fraction * 8, 0, 8, 8)
+func _draw() -> void:
+	for heart: int in int(hearts):
+		var offset_x: int = (heart % ROW_COUNT) * HEART_SIZE.x
+		var offset_y: int = floor(heart / ROW_COUNT) * HEART_SIZE.y
+		var fraction: int = (health - floor(health)) * 4
+		var src_rect: Rect2 = Rect2(fraction * 8, 0, 8, 8)
 
 		if heart < floor(health):
 			src_rect = Rect2(32, 0, 8, 8)

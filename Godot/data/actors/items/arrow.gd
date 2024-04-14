@@ -1,18 +1,18 @@
 extends Action
 
-static var TINK_SFX = preload ("res://data/sfx/LA_Sword_Tap.wav")
-@export var speed = 240
-@export var fall_speed = 20
-var velocity := Vector2.ZERO
+static var TINK_SFX: AudioStreamWAV = preload ("res://data/sfx/LA_Sword_Tap.wav")
+@export var speed: int = 240
+@export var fall_speed: int = 20
+var velocity: Vector2 = Vector2.ZERO
 
-@onready var anim := $AnimationPlayer
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 signal on_hit
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	position += velocity * delta
 
-func activate(u) -> void:
+func activate(u: Actor) -> void:
 	user = u
 	actor_type = user.actor_type
 
@@ -28,10 +28,9 @@ func activate(u) -> void:
 			pass
 	velocity = user.move_direction * speed
 
-func _on_body_entered(body):
+func _on_body_entered(body: Object) -> void:
 	set_deferred("monitoring", false)
-	if user.has_method("_on_can_shoot_again"):
-		user._on_can_shoot_again.call()
+	(user as Player)._on_can_shoot_again.call()
 	emit_signal("on_hit")
 	if body is TileMap:
 		_hit_wall()
@@ -39,7 +38,7 @@ func _on_body_entered(body):
 		emit_signal("on_hit")
 		queue_free()
 
-func _hit_wall():
+func _hit_wall() -> void:
 	velocity = Vector2.DOWN * fall_speed
 	Sound.play(TINK_SFX)
 	anim.play("wall_hit")
