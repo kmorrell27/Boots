@@ -1,0 +1,65 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Boots/overworld.tmx",
+    "expandedProjectPaths": [
+        "Boots",
+        "."
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "Boots/Dungeon 1.tmx": {
+            "scale": 1.9653,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 913.3465628657202,
+                "y": 359.9959293746502
+            }
+        },
+        "Boots/NEW Overworld (Default)(v1).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2.127
+        },
+        "Boots/PixelPackTOPDOWN8BIT.tsx": {
+            "scaleInDock": 2.2639,
+            "scaleInEditor": 3
+        },
+        "Boots/overworld.tmx": {
+            "scale": 0.6036,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2046.88535453943,
+                "y": 1150.5964214711728
+            }
+        }
+    },
+    "frame.defaultDuration": 125,
+    "last.exportedFilePath": "C:/Users/kmorr/Documents/Boots/Godot/data/maps",
+    "last.imagePath": "C:/Users/kmorr/Documents/Boots/Godot/data/maps",
+    "map.height": 45,
+    "map.lastUsedExportFilter": "Godot 4 Scene files (*.tscn)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 96,
+    "openFiles": [
+        "Boots/overworld.tmx",
+        "Boots/PixelPackTOPDOWN8BIT.tsx",
+        "Boots/Dungeon 1.tmx"
+    ],
+    "project": "Boots.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "Boots/Dungeon 1.tmx",
+        "Boots/PixelPackTOPDOWN8BIT.tsx",
+        "Boots/overworld.tmx",
+        "Boots/NEW Overworld (Default)(v1).tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
