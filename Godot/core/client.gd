@@ -8,7 +8,7 @@ func _ready() -> void:
 	var dialog: Control = preload ("res://core/dialog_box.tscn").instantiate()
 	var ui: UI = UI.new(player)
 	overworld = Instance.new(
-		"res://data/maps/overworld_1.tscn", player
+		"res://data/maps/Dungeon 1.tscn", player
 	)
 	player.vfx.connect(_on_vfx)
 	player.use_item.connect(_on_use_item)

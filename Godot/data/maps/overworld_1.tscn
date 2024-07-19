@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dta318j2mo06g"]
+[gd_scene load_steps=6 format=3 uid="uid://dta318j2mo06g"]
 
 [ext_resource type="Texture2D" uid="uid://c1wx4yysldr80" path="res://data/maps/overworld.png" id="1_mhlyr"]
 [ext_resource type="Script" path="res://core/map.gd" id="2_0qegc"]
+[ext_resource type="PackedScene" uid="uid://cahkglhxjhhk5" path="res://core/spawn.tscn" id="3_vbdam"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecyxb"]
 resource_name = "Overworld"
@@ -1560,36 +1561,5 @@ layer_0/tile_data = PackedInt32Array(4522048, 196608, 5, 4784192, 65536, 3, 5177
 layer_1/name = "Dynamic"
 layer_1/tile_data = PackedInt32Array(5374035, 393216, 1, 5242968, 393216, 1, 5374040, 393216, 1, 5505112, 393216, 1, 5439578, 393216, 1, 5308506, 393216, 1, 5242972, 393216, 1, 5374044, 393216, 1, 5505116, 393216, 1, 5374050, 393216, 1, 5374053, 393216, 1, 5242984, 393216, 1, 5308522, 393216, 1, 5374056, 393216, 1, 5505128, 393216, 1, 5439594, 393216, 1, 4522101, 393216, 1, 4522099, 393216, 1, 4653171, 393216, 1, 4784243, 393216, 1, 4784245, 393216, 1, 4653173, 393216, 1, 4522108, 393216, 1, 4653180, 393216, 1, 4784252, 393216, 1)
 script = ExtResource("2_0qegc")
-exits = {
-Vector2i(11, 78): Object(RefCounted,"script":null)
-,
-Vector2i(68, 45): Object(RefCounted,"script":null)
-,
-Vector2i(71, 67): Object(RefCounted,"script":null)
-,
-Vector2i(76, 1): Object(RefCounted,"script":null)
-,
-Vector2i(82, 78): Object(RefCounted,"script":null)
-,
-Vector2i(90, 23): Object(RefCounted,"script":null)
-,
-Vector2i(103, 67): Object(RefCounted,"script":null)
-,
-Vector2i(116, 78): Object(RefCounted,"script":null)
-,
-Vector2i(162, 1): Object(RefCounted,"script":null)
-,
-Vector2i(171, 45): Object(RefCounted,"script":null)
-,
-Vector2i(200, 1): Object(RefCounted,"script":null)
-,
-Vector2i(229, 4): Object(RefCounted,"script":null)
-,
-Vector2i(231, 56): Object(RefCounted,"script":null)
-,
-Vector2i(243, 67): Object(RefCounted,"script":null)
 
-}
-
-[node name="Spawn" type="Node2D" parent="."]
-position = Vector2(1523, 1302)
+[node name="Spawn" parent="." instance=ExtResource("3_vbdam")]

@@ -137,6 +137,7 @@ func _draw() -> void:
 
 # Instances item and passes self as its user.
 func _use_item(item: PackedScene) -> Node:
+	print_debug(item)
 	var instance: Action = item.instantiate()
 	use_item.emit(instance, self)
 	return instance

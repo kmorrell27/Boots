@@ -84,6 +84,8 @@ func state_default() -> void:
 			can_shoot_again = false
 	if Input.is_action_just_pressed("y"):
 		_use_item(sword)
+	if Input.is_action_just_pressed("l"):
+		current_action_node = _use_item(boots)
 
 func state_run() -> void:
 	if !Input.is_action_pressed("l"):
