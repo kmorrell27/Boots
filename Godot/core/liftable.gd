@@ -61,7 +61,7 @@ func state_pick_up() -> void:
 func state_carried() -> void:
 	move_direction = carrier.move_direction
 	carry_position.emit(carrier.global_position)
-	sprite.position.y = -16 + carrier_sprite.position.y
+	sprite.position.y = -12 + carrier_sprite.position.y
 
 func state_thrown() -> void:
 	# move the object

@@ -14,8 +14,8 @@
             "scale": 1.9653,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 913.3465628657202,
-                "y": 359.9959293746502
+                "x": 895.7919910446242,
+                "y": 359.99592937465025
             }
         },
         "Boots/NEW Overworld (Default)(v1).tsx": {
@@ -27,17 +27,17 @@
             "scaleInEditor": 3
         },
         "Boots/overworld.tmx": {
-            "scale": 0.6036,
+            "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2046.88535453943,
-                "y": 1150.5964214711728
+                "x": 391,
+                "y": 867
             }
         }
     },
     "frame.defaultDuration": 125,
     "last.exportedFilePath": "C:/Users/kmorr/Documents/Boots/Godot/data/maps",
-    "last.imagePath": "C:/Users/kmorr/Documents/Boots/Godot/data/maps",
+    "last.imagePath": "C:/Users/kmorr/Boots/Godot/data/maps",
     "map.height": 45,
     "map.lastUsedExportFilter": "Godot 4 Scene files (*.tscn)",
     "map.lastUsedFormat": "tmx",

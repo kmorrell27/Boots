@@ -137,8 +137,9 @@ func _draw() -> void:
 
 # Instances item and passes self as its user.
 func _use_item(item: PackedScene) -> Node:
-	print_debug(item)
 	var instance: Action = item.instantiate()
+	print_debug(instance)
+	print_debug(instance.activate)
 	use_item.emit(instance, self)
 	return instance
 
@@ -152,7 +153,7 @@ func _check_collisions() -> void:
 	if velocity:
 		var direction: Vector2 = velocity.normalized()
 		ray.position = direction * - 2
-		ray.target_position = direction * 12
+		ray.target_position = direction * 4
 
 		if (
 			direction.x != 0

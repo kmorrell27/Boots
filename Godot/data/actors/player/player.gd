@@ -54,10 +54,12 @@ func state_default() -> void:
 			)
 		):
 			_play_animation("Push")
+		elif carrying:
+			_play_animation("Carry")
 		else:
 			_play_animation("Walk")
 	else:
-		_play_animation("Walk")
+		_play_animation("Carry" if carrying else "Stand")
 		sprite.stop()
 
 	# Handle item usage
@@ -102,8 +104,12 @@ func state_run() -> void:
 		if (
 			input_direction != Vector2.ZERO
 			and (
-				(input_direction.x == 0 and move_direction.x != 0)
-				or input_direction.y == 0 and move_direction.y != 0
+				(input_direction.x == 0 and move_direction.x != 0) or
+				(input_direction.y == 0 and move_direction.y != 0) or
+				(input_direction.y > 0 and move_direction.y < 0) or
+				(input_direction.y < 0 and move_direction.y > 0) or
+				(input_direction.x < 0 and move_direction.x > 0) or
+				(input_direction.x > 0 and move_direction.x < 0)
 			)
 		):
 			charging = false
@@ -209,6 +215,7 @@ func _can_lift() -> bool:
 	if ray.is_colliding():
 		var other: Object = ray.get_collider()
 		if other is Liftable:
+			_play_animation("Pull")
 			carrying = other
 			(other as Liftable)._lift(self)
 			return true

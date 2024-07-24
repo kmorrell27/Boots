@@ -3,6 +3,7 @@ extends Action
 var sound: int
 
 func activate(u: Actor) -> void:
+	print_debug("Activated")
 	user = u
 	actor_type = user.actor_type
 	user._change_state((user as Player).state_run)

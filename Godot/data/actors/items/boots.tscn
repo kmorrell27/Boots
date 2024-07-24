@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://75q5qaymmwfc"]
 
-[ext_resource type="Script" path="res://core/action.gd" id="1_d1bjm"]
+[ext_resource type="Script" path="res://data/actors/items/boots.gd" id="1_sta4k"]
 
-[node name="Boots" type="Area2D"]
-script = ExtResource("1_d1bjm")
+[node name="Action" type="Area2D"]
+script = ExtResource("1_sta4k")
+damage = 0.0
