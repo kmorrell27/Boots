@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x2ey4sxym22y"]
+
+[ext_resource type="Texture2D" uid="uid://cgp478ojc0ysp" path="res://enemies/stalfos.png" id="1"]
+
+[node name="enemy_tileset" type="Node"]
+
+[node name="stalfos" type="Sprite2D" parent="."]
+texture = ExtResource("1")

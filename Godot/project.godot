@@ -21,6 +21,7 @@ DEF="*res://core/definitions.gd"
 ScreenFX="*res://core/vfx/screen_fx.tscn"
 Sound="*res://core/sound.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Inventory="*res://core/inventory.gd"
 
 [debug]
 

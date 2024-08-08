@@ -88,6 +88,11 @@ func state_default() -> void:
 		_use_item(sword)
 	if Input.is_action_just_pressed("l"):
 		current_action_node = _use_item(boots)
+	if Input.is_action_just_pressed("r"):
+		_use_item(shield)
+
+func state_shield() -> void:
+	pass
 
 func state_run() -> void:
 	if !Input.is_action_pressed("l"):

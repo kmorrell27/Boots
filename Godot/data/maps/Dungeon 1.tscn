@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1dknki3m3l5g"]
+[gd_scene load_steps=7 format=3 uid="uid://cr4d3eaycjyj3"]
 
 [ext_resource type="Script" path="res://core/map.gd" id="2_r7yww"]
-[ext_resource type="PackedScene" uid="uid://cahkglhxjhhk5" path="res://core/spawn.tscn" id="3_n5dhm"]
+[ext_resource type="PackedScene" path="res://core/spawn.tscn" id="3_n5dhm"]
+[ext_resource type="PackedScene" uid="uid://d3ojmpl5xeth8" path="res://data/pickups/key.tscn" id="4_djatc"]
 [ext_resource type="Texture2D" uid="uid://b62codbhcvkca" path="res://data/maps/PixelPackTOPDOWN8BIT.png" id="PixelPackTOPDOWN8BIT"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -1485,3 +1486,6 @@ script = ExtResource("2_r7yww")
 
 [node name="Spawn" parent="." instance=ExtResource("3_n5dhm")]
 position = Vector2(641, 673)
+
+[node name="Key" parent="." instance=ExtResource("4_djatc")]
+position = Vector2(631, 646)
