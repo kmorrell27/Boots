@@ -1,11 +1,11 @@
 class_name Player extends Actor
 
-var boots: PackedScene = preload ("res://data/actors/items/boots.tscn")
-var bomb: PackedScene = preload ("res://data/actors/items/bomb.tscn")
-var arrow: PackedScene = preload ("res://data/actors/items/arrow.tscn")
-var feather: PackedScene = preload ("res://data/actors/items/feather.tscn")
-var shield: PackedScene = preload ("res://data/actors/items/shield.tscn")
-var sword: PackedScene = preload ("res://data/actors/items/sword.tscn")
+var boots: PackedScene = preload("res://data/actors/items/boots.tscn")
+var bomb: PackedScene = preload("res://data/actors/items/bomb.tscn")
+var arrow: PackedScene = preload("res://data/actors/items/arrow.tscn")
+var feather: PackedScene = preload("res://data/actors/items/feather.tscn")
+var shield: PackedScene = preload("res://data/actors/items/shield.tscn")
+var sword: PackedScene = preload("res://data/actors/items/sword.tscn")
 
 var input_direction: Vector2 = Vector2.ZERO:
 	get:
@@ -39,15 +39,15 @@ func state_default() -> void:
 					test_move(transform, Vector2.DOWN)
 					and sprite_direction == "Down"
 				)
-				||(
+				|| (
 					test_move(transform, Vector2.UP)
 					and sprite_direction == "Up"
 				)
-				||(
+				|| (
 					test_move(transform, Vector2.RIGHT)
 					and sprite_direction == "Right"
 				)
-				||(
+				|| (
 					test_move(transform, Vector2.LEFT)
 					and sprite_direction == "Left"
 				)
@@ -131,7 +131,7 @@ func state_run() -> void:
 	_check_collisions()
 	if collided and elapsed_state_time > 1:
 		var run_collision: KinematicCollision2D = get_last_slide_collision()
-		if run_collision.get_normal() * - 1 == move_direction:
+		if run_collision.get_normal() * -1 == move_direction:
 			charging = false
 			_change_state(state_default)
 	# Finally we can jump here. Maybe shield too?
@@ -171,7 +171,7 @@ func state_jump() -> void:
 	var collided: bool = move_and_slide()
 	if collided and charging:
 		var run_collision: KinematicCollision2D = get_last_slide_collision()
-		if run_collision.get_normal() * - 1 == move_direction:
+		if run_collision.get_normal() * -1 == move_direction:
 			charging = false
 	_update_sprite_direction(input_direction)
 

@@ -1,11 +1,11 @@
 @icon("res://editor/svg/Actor.svg")
 class_name Actor extends CharacterBody2D
 
-static var SHADER: Shader = preload ("res://data/vfx/actor.gdshader")
-static var DEATH_FX: SpriteFrames = preload ("res://data/vfx/enemy_death.tres")
-static var DROWN_SFX: AudioStreamWAV = preload ("res://data/sfx/LA_Link_Wade1.wav")
-static var DROWN_VFX: SpriteFrames = preload ("res://data/vfx/drown.tres")
-static var LAND_SFX: AudioStreamWAV = preload ("res://data/sfx/LA_Link_Land.wav")
+static var SHADER: Shader = preload("res://data/vfx/actor.gdshader")
+static var DEATH_FX: SpriteFrames = preload("res://data/vfx/enemy_death.tres")
+static var DROWN_SFX: AudioStreamWAV = preload("res://data/sfx/LA_Link_Wade1.wav")
+static var DROWN_VFX: SpriteFrames = preload("res://data/vfx/drown.tres")
+static var LAND_SFX: AudioStreamWAV = preload("res://data/sfx/LA_Link_Land.wav")
 static var KB_TIME: float = 0.2
 static var KB_AMT: int = 100
 
@@ -13,7 +13,7 @@ static var KB_AMT: int = 100
 @export var speed: float = 70.0
 @export var hearts: float = 1.0
 @export var damage: float = 0.5
-@export var hit_sfx: AudioStreamWAV = preload ("res://data/sfx/LA_Enemy_Hit.wav")
+@export var hit_sfx: AudioStreamWAV = preload("res://data/sfx/LA_Enemy_Hit.wav")
 @onready var health: float = hearts
 
 var current_action_node: Action = null
@@ -128,7 +128,7 @@ func _play_animation(animation: String) -> void:
 	sprite.flip_h = sprite_direction == "Left"
 
 func _die() -> void:
-	Sound.play(preload ("res://data/sfx/LA_Enemy_Die.wav"))
+	Sound.play(preload("res://data/sfx/LA_Enemy_Die.wav"))
 	_oneshot_vfx(DEATH_FX)
 	queue_free()
 
@@ -150,8 +150,8 @@ func _check_collisions() -> void:
 	# Update raycast direction when moving
 	if velocity:
 		var direction: Vector2 = velocity.normalized()
-		ray.position = direction * - 2
-		ray.target_position = direction * 4
+		ray.position = direction * -2
+		ray.target_position = direction * 12
 
 		if (
 			direction.x != 0
@@ -169,6 +169,7 @@ func _check_collisions() -> void:
 	# Handle collisions
 	if ray.is_colliding():
 		var other: Object = ray.get_collider()
+		print_debug(other)
 
 		if other is Map:
 			var on_step: String = (other as Map).on_step(self)
@@ -179,9 +180,7 @@ func _check_collisions() -> void:
 			if actor:
 				if actor.actor_type != actor_type and actor.damage > 0:
 					_hit(actor.damage, actor.position)
-	for i: int in get_slide_collision_count():
-		var other: Object = get_slide_collision(i).get_collider()
-		if (other is LockedDoor):
+		elif (other is LockedDoor):
 			(other as LockedDoor).maybe_unlock(self)
 
 func _oneshot_vfx(frames: SpriteFrames) -> void:

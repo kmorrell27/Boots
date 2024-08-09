@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkealprejyqn8"]
+[gd_scene load_steps=8 format=3 uid="uid://bkealprejyqn8"]
 
 [ext_resource type="Texture2D" uid="uid://davfi2lwo44wl" path="res://data/sprites/new_npcs.tres" id="1_88d6x"]
 [ext_resource type="Script" path="res://data/objects/locked_door.gd" id="1_x12bx"]
@@ -33,12 +33,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jhql"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_etcnh"]
-size = Vector2(16, 16)
+size = Vector2(16, 16.5)
 
 [node name="LockedDoor" type="StaticBody2D"]
+collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_x12bx")
 
@@ -47,10 +45,5 @@ sprite_frames = SubResource("SpriteFrames_vhnoi")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_5jhql")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_etcnh")
