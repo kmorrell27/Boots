@@ -179,6 +179,10 @@ func _check_collisions() -> void:
 			if actor:
 				if actor.actor_type != actor_type and actor.damage > 0:
 					_hit(actor.damage, actor.position)
+	for i: int in get_slide_collision_count():
+		var other: Object = get_slide_collision(i).get_collider()
+		if (other is LockedDoor):
+			(other as LockedDoor).maybe_unlock(self)
 
 func _oneshot_vfx(frames: SpriteFrames) -> void:
 	var new_fx: AnimatedSprite2D = AnimatedSprite2D.new()
