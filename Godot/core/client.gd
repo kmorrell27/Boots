@@ -21,5 +21,4 @@ func _on_vfx(vfx: AnimatedSprite2D) -> void:
 
 func _on_use_item(instance: Action, caller: Actor) -> void:
 	overworld.add_child(instance)
-	print_debug(instance)
 	instance.activate(caller)

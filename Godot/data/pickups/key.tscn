@@ -4,14 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://uaaq4e6j8flj" path="res://data/sprites/sprites.tres" id="2_fja7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgo3v"]
+size = Vector2(21, 20)
 
 [node name="Key" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_umif4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_fja7e")
 region_enabled = true
-region_rect = Rect2(96, 96, 16, 16)
+region_rect = Rect2(32, 384, 8, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_qgo3v")
