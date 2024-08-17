@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkealprejyqn8"]
+[gd_scene load_steps=12 format=3 uid="uid://bkealprejyqn8"]
 
 [ext_resource type="Texture2D" uid="uid://davfi2lwo44wl" path="res://data/sprites/new_npcs.tres" id="1_88d6x"]
 [ext_resource type="Script" path="res://data/objects/locked_door.gd" id="1_x12bx"]
@@ -33,10 +33,50 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jhql"]
-size = Vector2(16, 16.5)
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etcnh"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_w61fi"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_njpfe"]
+resource_name = "Unlock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_animation_finish"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mp1px"]
+_data = {
+"RESET": SubResource("Animation_w61fi"),
+"Unlock": SubResource("Animation_njpfe")
+}
 
 [node name="LockedDoor" type="StaticBody2D"]
-collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_x12bx")
 
@@ -45,5 +85,15 @@ sprite_frames = SubResource("SpriteFrames_vhnoi")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_5jhql")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_etcnh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mp1px")
+}
