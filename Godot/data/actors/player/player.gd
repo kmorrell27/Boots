@@ -18,18 +18,20 @@ var drown_instantiated: bool = false
 var can_shoot_again: bool = true
 var can_bomb_again: bool = true
 var carrying: Liftable = null
+var push_timer: float = 0.0
 
 @onready var shadow: Sprite2D = $Shadow
 
 func _physics_process(delta: float) -> void:
 	_state_process(delta)
 
-func state_default() -> void:
+func state_default(delta: float) -> void:
 	velocity = input_direction * speed
 	move_and_slide()
 	_update_sprite_direction(input_direction)
-	_check_collisions()
+	_check_collisions(push_timer)
 
+	var still_pushing: bool = false
 	# Handle animations
 	if velocity:
 		if (
@@ -54,6 +56,8 @@ func state_default() -> void:
 			)
 		):
 			_play_animation("Push")
+			push_timer += delta
+			still_pushing = true
 		elif carrying:
 			_play_animation("Carry")
 		else:
@@ -61,6 +65,9 @@ func state_default() -> void:
 	else:
 		_play_animation("Carry" if carrying else "Stand")
 		sprite.stop()
+
+	if (!still_pushing):
+		push_timer = 0
 
 	# Handle item usage
 	if Input.is_action_just_pressed("a"):
@@ -91,10 +98,10 @@ func state_default() -> void:
 	if Input.is_action_just_pressed("r"):
 		_use_item(shield)
 
-func state_shield() -> void:
+func state_shield(_delta: float) -> void:
 	pass
 
-func state_run() -> void:
+func state_run(_delta: float) -> void:
 	if !Input.is_action_pressed("l"):
 		charging = false
 		_change_state(state_default)
@@ -128,7 +135,7 @@ func state_run() -> void:
 	else:
 		_update_sprite_direction(input_direction)
 	var collided: bool = move_and_slide()
-	_check_collisions()
+	_check_collisions(push_timer)
 	if collided and elapsed_state_time > 1:
 		var run_collision: KinematicCollision2D = get_last_slide_collision()
 		if run_collision.get_normal() * -1 == move_direction:
@@ -141,7 +148,7 @@ func state_run() -> void:
 	if Input.is_action_just_pressed("b"):
 		_use_item(feather)
 
-func state_jump() -> void:
+func state_jump(_delta: float) -> void:
 	_play_animation("Jump")
 	shadow.visible = true
 	var jump_speed: int = 2 if elevation < 6 else 1
@@ -175,15 +182,15 @@ func state_jump() -> void:
 			charging = false
 	_update_sprite_direction(input_direction)
 
-func state_swing() -> void:
+func state_swing(_delta: float) -> void:
 	_play_animation("Swing")
 
-func state_arrow() -> void:
+func state_arrow(_delta: float) -> void:
 	sprite.stop()
 	if elapsed_state_time >= 1:
 		_change_state(state_default)
 
-func state_drown() -> void:
+func state_drown(_delta: float) -> void:
 	# State init
 	if sprite.animation != "SwimDown":
 		sprite.animation = "SwimDown"
@@ -194,7 +201,7 @@ func state_drown() -> void:
 	if elapsed_state_time > 0.25:
 		sprite.hide()
 
-func state_respawning() -> void:
+func state_respawning(_delta: float) -> void:
 	if elapsed_state_time >= 1:
 		_respawn()
 

@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 # State machine stuff
 
 func _state_process(delta: float) -> void:
-	current_state.call()
+	current_state.call(delta)
 	last_state = current_state
 	elapsed_state_time += delta
 
@@ -66,10 +66,10 @@ func _change_state(new_state: Callable) -> void:
 	elapsed_state_time = 0
 	current_state = new_state
 
-func state_default() -> void:
+func state_default(_delta: float) -> void:
 	pass
 
-func state_hurt() -> void:
+func state_hurt(_delta: float) -> void:
 	(sprite.material as ShaderMaterial).set_shader_parameter("is_hurt", true)
 	move_and_slide()
 
@@ -80,7 +80,7 @@ func state_hurt() -> void:
 			(sprite.material as ShaderMaterial).set_shader_parameter("is_hurt", false)
 			_change_state(state_default)
 
-func state_drown() -> void:
+func state_drown(_delta: float) -> void:
 	Sound.play(DROWN_SFX)
 	_oneshot_vfx(DROWN_VFX)
 	queue_free()
@@ -146,7 +146,7 @@ func _get_random_direction() -> Vector2:
 	var directions: Array = [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN]
 	return directions[randi() % directions.size()]
 
-func _check_collisions() -> void:
+func _check_collisions(push_timer: float = 0.0) -> void:
 	# Update raycast direction when moving
 	if velocity:
 		var direction: Vector2 = velocity.normalized()
@@ -169,7 +169,6 @@ func _check_collisions() -> void:
 	# Handle collisions
 	if ray.is_colliding():
 		var other: Object = ray.get_collider()
-		print_debug(other)
 
 		if other is Map:
 			var on_step: String = (other as Map).on_step(self)
@@ -182,6 +181,9 @@ func _check_collisions() -> void:
 					_hit(actor.damage, actor.position)
 		elif (other is LockedDoor):
 			(other as LockedDoor).maybe_unlock(self)
+		elif (other is Block):
+			if (push_timer >= 1):
+				(other as Block).maybe_push(self)
 
 func _oneshot_vfx(frames: SpriteFrames) -> void:
 	var new_fx: AnimatedSprite2D = AnimatedSprite2D.new()
