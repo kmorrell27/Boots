@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://7fh0lt8t44wv"]
 
 [ext_resource type="PackedScene" uid="uid://c2df4gcftwugt" path="res://data/actors/items/feather.tscn" id="1_l3bvj"]
-[ext_resource type="Script" path="res://core/item_resource.gd" id="1_ngscv"]
+[ext_resource type="Script" uid="uid://clgk2al3eeav4" path="res://core/item_resource.gd" id="1_ngscv"]
 
 [resource]
 script = ExtResource("1_ngscv")

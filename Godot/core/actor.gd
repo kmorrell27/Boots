@@ -29,8 +29,6 @@ var charging: bool = false
 var ray: RayCast2D
 
 signal on_hit
-signal vfx(fx: AnimatedSprite2D)
-signal use_item(item: Node, caller: Actor)
 
 func _ready() -> void:
 	sprite.material = ShaderMaterial.new()
@@ -138,7 +136,8 @@ func _draw() -> void:
 # Instances item and passes self as its user.
 func _use_item(item: PackedScene) -> Node:
 	var instance: Action = item.instantiate()
-	use_item.emit(instance, self)
+	get_parent().add_child(instance)
+	instance.activate(self)
 	return instance
 
 # Returns a random orthogonal direction.
@@ -191,7 +190,7 @@ func _oneshot_vfx(frames: SpriteFrames) -> void:
 	new_fx.position = position
 	new_fx.sprite_frames = frames
 	new_fx.play()
-	vfx.emit(new_fx)
+	get_parent().add_child(new_fx)
 
 # Setup hit state and switch
 func _hit(amount: int, pos: Vector2) -> void:

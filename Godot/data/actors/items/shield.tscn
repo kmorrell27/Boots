@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvgures1cudo0"]
 
-[ext_resource type="Script" path="res://data/actors/items/shield.gd" id="1_hrs6c"]
+[ext_resource type="Script" uid="uid://bxfhqj73wlp5m" path="res://data/actors/items/shield.gd" id="1_hrs6c"]
 
 [node name="shield" type="Area2D"]
 script = ExtResource("1_hrs6c")

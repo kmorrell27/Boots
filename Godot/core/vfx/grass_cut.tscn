@@ -218,8 +218,8 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_scf41"]
 _data = {
-"RESET": SubResource("Animation_g0s11"),
-"cut": SubResource("Animation_hf3kw")
+&"RESET": SubResource("Animation_g0s11"),
+&"cut": SubResource("Animation_hf3kw")
 }
 
 [node name="GrassCut" type="Node2D"]

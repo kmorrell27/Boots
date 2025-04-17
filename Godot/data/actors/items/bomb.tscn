@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://cnuwwn2lgyy0o"]
 
-[ext_resource type="Script" path="res://data/actors/items/bomb.gd" id="1_wt8vv"]
+[ext_resource type="Script" uid="uid://c1wm4w76bjav8" path="res://data/actors/items/bomb.gd" id="1_wt8vv"]
 [ext_resource type="Texture2D" uid="uid://k7lghfpchj0t" path="res://data/actors/items/bomb.png" id="2_vesk4"]
 [ext_resource type="Texture2D" uid="uid://c64xacvadde8n" path="res://data/actors/items/explosion.png" id="3_j240x"]
-[ext_resource type="Script" path="res://core/liftable.gd" id="4_hljb0"]
+[ext_resource type="Script" uid="uid://cbg6qfph1k7ux" path="res://core/liftable.gd" id="4_hljb0"]
 
 [sub_resource type="Animation" id="Animation_kgrds"]
 resource_name = "Bomb"
@@ -88,7 +88,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vel3g"]
 _data = {
-"Bomb": SubResource("Animation_kgrds")
+&"Bomb": SubResource("Animation_kgrds")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8y2e"]

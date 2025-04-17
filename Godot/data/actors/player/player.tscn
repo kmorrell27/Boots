@@ -1,6 +1,6 @@
 [gd_scene load_steps=51 format=3 uid="uid://dtrlj82v8h6ru"]
 
-[ext_resource type="Script" path="res://data/actors/player/player.gd" id="1_4v2fk"]
+[ext_resource type="Script" uid="uid://cxmrj8adkr2vy" path="res://data/actors/player/player.gd" id="1_4v2fk"]
 [ext_resource type="AudioStream" uid="uid://445ntodo4dfy" path="res://data/sfx/LA_Link_Hurt.wav" id="2_kislt"]
 [ext_resource type="Texture2D" uid="uid://cs2ggnsepywp6" path="res://data/actors/player/player.png" id="3_srqhk"]
 [ext_resource type="Texture2D" uid="uid://cry6nsh4r36w8" path="res://data/vfx/shadow.png" id="4_uldxd"]

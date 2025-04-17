@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5yq6xh412ilm"]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/History/settings_history.gd" id="1_hbhst"]
+[ext_resource type="Script" uid="uid://ditnpg61sxmnh" path="res://addons/dialogic/Modules/History/settings_history.gd" id="1_hbhst"]
 
 [node name="History" type="PanelContainer"]
 anchors_preset = 15

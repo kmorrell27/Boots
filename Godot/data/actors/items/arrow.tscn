@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://g0jwvaa8k8i2"]
 
-[ext_resource type="Script" path="res://data/actors/items/arrow.gd" id="1_pwcm7"]
+[ext_resource type="Script" uid="uid://scjusrkblx4d" path="res://data/actors/items/arrow.gd" id="1_pwcm7"]
 [ext_resource type="Texture2D" uid="uid://1576nfkvs8mn" path="res://data/actors/items/arrow.png" id="2_e1ev6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khwmf"]
@@ -37,7 +37,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mmgo2"]
 _data = {
-"wall_hit": SubResource("Animation_sblk3")
+&"wall_hit": SubResource("Animation_sblk3")
 }
 
 [node name="arrow" type="Area2D"]

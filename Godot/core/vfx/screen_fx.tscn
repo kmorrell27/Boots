@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ylhqnhjf2vwd"]
 
-[ext_resource type="Script" path="res://core/vfx/screen_fx.gd" id="1_t8l2f"]
+[ext_resource type="Script" uid="uid://obaqky36wk4h" path="res://core/vfx/screen_fx.gd" id="1_t8l2f"]
 
 [sub_resource type="Animation" id="Animation_ffeou"]
 resource_name = "FadeWhiteIn"
@@ -49,9 +49,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m37ma"]
 _data = {
-"FadeWhiteIn": SubResource("Animation_ffeou"),
-"FadeWhiteOut": SubResource("Animation_njr5c"),
-"RESET": SubResource("Animation_mbopy")
+&"FadeWhiteIn": SubResource("Animation_ffeou"),
+&"FadeWhiteOut": SubResource("Animation_njr5c"),
+&"RESET": SubResource("Animation_mbopy")
 }
 
 [node name="ScreenFX" type="CanvasLayer"]

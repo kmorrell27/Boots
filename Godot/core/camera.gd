@@ -1,6 +1,6 @@
 class_name GridCamera extends Camera2D
 
-const DEFAULT_LIMIT_RECT: Rect2 = Rect2( - 10000000, -10000000, 10000000, 10000000)
+const DEFAULT_LIMIT_RECT: Rect2 = Rect2(-10000000, -10000000, 10000000, 10000000)
 const CELL_SIZE: Vector2 = Vector2(256, 144)
 const VIEWPORT_SIZE: Vector2 = Vector2(256, 144)
 const SCROLL_DURATION: float = 0.5

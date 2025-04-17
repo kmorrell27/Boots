@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhsyuyst7ybd6"]
 
-[ext_resource type="Script" path="res://data/actors/items/sword.gd" id="1_4caul"]
+[ext_resource type="Script" uid="uid://djfo3mx3i4vuc" path="res://data/actors/items/sword.gd" id="1_4caul"]
 [ext_resource type="Texture2D" uid="uid://2h4pfik2ppyl" path="res://data/actors/items/sword.png" id="2_ik11y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkhor"]
@@ -383,11 +383,11 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_27f1i"]
 _data = {
-"RESET": SubResource("Animation_4nm86"),
-"SwingDown": SubResource("Animation_tjdcd"),
-"SwingLeft": SubResource("Animation_t6scp"),
-"SwingRight": SubResource("Animation_5f48r"),
-"SwingUp": SubResource("Animation_y2wg7")
+&"RESET": SubResource("Animation_4nm86"),
+&"SwingDown": SubResource("Animation_tjdcd"),
+&"SwingLeft": SubResource("Animation_t6scp"),
+&"SwingRight": SubResource("Animation_5f48r"),
+&"SwingUp": SubResource("Animation_y2wg7")
 }
 
 [node name="Sword" type="Area2D"]

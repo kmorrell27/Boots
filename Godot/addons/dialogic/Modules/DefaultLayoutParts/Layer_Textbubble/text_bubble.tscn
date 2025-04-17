@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://dlx7jcvm52tyw"]
 
-[ext_resource type="Script" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble.gd" id="1_jdhpk"]
-[ext_resource type="Shader" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/speech_bubble.gdshader" id="2_1mhvf"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_syv35"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_7bm4b"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_5gd03"]
-[ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="7_0tnh1"]
+[ext_resource type="Script" uid="uid://nmf4yhchub6e" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble.gd" id="1_jdhpk"]
+[ext_resource type="Shader" uid="uid://cljvplw3iy10j" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/speech_bubble.gdshader" id="2_1mhvf"]
+[ext_resource type="Script" uid="uid://kmd86jo4ebwb" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_syv35"]
+[ext_resource type="Script" uid="uid://b1k4bgn510hkr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="4_7bm4b"]
+[ext_resource type="Script" uid="uid://cbua54eb0rwb4" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="6_5gd03"]
+[ext_resource type="Script" uid="uid://b4tpx4hkmxsny" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="7_0tnh1"]
 
 [sub_resource type="Curve" id="Curve_0j8nu"]
 _data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
@@ -39,15 +39,15 @@ noise = SubResource("FastNoiseLite_ejxnv")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_60xbe"]
 shader = ExtResource("2_1mhvf")
+shader_parameter/deformation_sampler = SubResource("NoiseTexture2D_kr7hw")
+shader_parameter/spikes_sampler = SubResource("NoiseTexture2D_4la3x")
+shader_parameter/curve_sampler = SubResource("CurveTexture_q6qf6")
 shader_parameter/radius = 1.39
 shader_parameter/ratio = Vector2(2.251, 1)
 shader_parameter/crease = 0.12
 shader_parameter/speed = 2.53
 shader_parameter/texture_scale = 0.24
 shader_parameter/texture_offset = 172.5
-shader_parameter/deformation_sampler = SubResource("NoiseTexture2D_kr7hw")
-shader_parameter/spikes_sampler = SubResource("NoiseTexture2D_4la3x")
-shader_parameter/curve_sampler = SubResource("CurveTexture_q6qf6")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6ls0"]
 content_margin_left = 5.0
