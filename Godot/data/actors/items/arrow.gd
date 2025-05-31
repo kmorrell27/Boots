@@ -1,6 +1,6 @@
 extends Action
 
-static var TINK_SFX: AudioStreamWAV = preload ("res://data/sfx/LA_Sword_Tap.wav")
+static var TINK_SFX: AudioStreamWAV = preload("res://data/sfx/LA_Sword_Tap.wav")
 @export var speed: int = 240
 @export var fall_speed: int = 20
 var velocity: Vector2 = Vector2.ZERO
@@ -32,7 +32,7 @@ func _on_body_entered(body: Object) -> void:
 	set_deferred("monitoring", false)
 	(user as Player)._on_can_shoot_again.call()
 	emit_signal("on_hit")
-	if body is TileMap:
+	if body is TileMapLayer:
 		_hit_wall()
 	elif body is CollisionObject2D:
 		emit_signal("on_hit")
@@ -42,3 +42,8 @@ func _hit_wall() -> void:
 	velocity = Vector2.DOWN * fall_speed
 	Sound.play(TINK_SFX)
 	anim.play("wall_hit")
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	(user as Player)._on_can_shoot_again.call()
+	queue_free()

@@ -170,7 +170,7 @@ func state_jump(_delta: float) -> void:
 			_change_state(state_run if charging else state_default)
 			shadow.visible = false
 			Sound.play(LAND_SFX)
-	sprite.position.y = -elevation
+	sprite.position.y = - elevation
 	if charging:
 		_handle_charging_movement()
 	else:

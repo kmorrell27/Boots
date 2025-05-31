@@ -8,10 +8,15 @@ var state: State = State.STATIC
 var old_position: Vector2
 var new_position: Vector2
 var move_timer: float = 0.0
+var original_position: Vector2
 
 @onready var ray: RayCast2D = $RayCast2D
 
+func _enter_tree() -> void:
+	original_position = position
+
 func _ready() -> void:
+	add_to_group("resettable")
 	old_position = position
 
 func _process(delta: float) -> void:
@@ -21,7 +26,7 @@ func _process(delta: float) -> void:
 			move_timer = 1.0
 		position = old_position.lerp(new_position, move_timer)
 		if position == new_position:
-			reset()
+			finish()
 
 
 func maybe_push(body: Node2D) -> void:
@@ -38,7 +43,14 @@ func maybe_push(body: Node2D) -> void:
 		push_count -= 1
 
 
-func reset() -> void:
+func finish() -> void:
+	old_position = position
+	new_position = Vector2.ZERO
+	state = State.STATIC
+	move_timer = 0
+
+func _reset() -> void:
+	position = original_position
 	old_position = position
 	new_position = Vector2.ZERO
 	state = State.STATIC

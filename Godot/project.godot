@@ -20,7 +20,7 @@ config/icon="res://editor/icon.png"
 DEF="*res://core/definitions.gd"
 ScreenFX="*res://core/vfx/screen_fx.tscn"
 Sound="*res://core/sound.gd"
-Inventory="*res://core/inventory.gd"
+Global="*res://core/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [debug]

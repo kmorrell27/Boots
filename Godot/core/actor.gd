@@ -178,6 +178,13 @@ func _check_collisions(push_timer: float = 0.0) -> void:
 			if actor:
 				if actor.actor_type != actor_type and actor.damage > 0:
 					_hit(actor.damage, actor.position)
+					return
+			var action: Action = other as Action
+			if action:
+				if (action.actor_type != actor_type and action.damage > 0):
+					print("action_damage ", action.damage)
+					_hit(action.damage, action.position)
+					return
 		elif (other is LockedDoor):
 			(other as LockedDoor).maybe_unlock(self)
 		elif (other is Block):
@@ -193,9 +200,10 @@ func _oneshot_vfx(frames: SpriteFrames) -> void:
 	get_parent().add_child(new_fx)
 
 # Setup hit state and switch
-func _hit(amount: int, pos: Vector2) -> void:
+func _hit(amount: float, pos: Vector2) -> void:
 	velocity = (position - pos).normalized() * KB_AMT
 	health -= amount
+	print("health ", health, "amount ", amount)
 	Sound.play(hit_sfx)
 	emit_signal("on_hit", health)
 	_change_state(state_hurt)

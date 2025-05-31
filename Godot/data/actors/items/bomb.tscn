@@ -95,10 +95,10 @@ _data = {
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uogpc"]
+size = Vector2(8, 10)
 
 [node name="bomb" type="Area2D"]
 script = ExtResource("1_wt8vv")
-damage = null
 
 [node name="BombSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_vesk4")
@@ -112,7 +112,7 @@ frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vel3g")
+&"": SubResource("AnimationLibrary_vel3g")
 }
 
 [node name="ExplosionShape" type="CollisionShape2D" parent="."]
@@ -127,7 +127,11 @@ sprite = NodePath("../BombSprite")
 collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liftable"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_uogpc")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Liftable" to="Liftable" method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

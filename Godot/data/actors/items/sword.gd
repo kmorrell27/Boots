@@ -3,10 +3,10 @@ extends Action
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 const SOUNDS: Array[AudioStreamWAV] = [
-	preload ("res://data/sfx/LA_Sword_Slash1.wav"),
-	preload ("res://data/sfx/LA_Sword_Slash2.wav"),
-	preload ("res://data/sfx/LA_Sword_Slash3.wav"),
-	preload ("res://data/sfx/LA_Sword_Slash4.wav"),
+	preload("res://data/sfx/LA_Sword_Slash1.wav"),
+	preload("res://data/sfx/LA_Sword_Slash2.wav"),
+	preload("res://data/sfx/LA_Sword_Slash3.wav"),
+	preload("res://data/sfx/LA_Sword_Slash4.wav"),
 ]
 
 var target_cell_position: Vector2i:
@@ -15,11 +15,11 @@ var target_cell_position: Vector2i:
 
 		match user.sprite_direction:
 			"Left":
-				return user_cell + Vector2( - 24, 0)
+				return user_cell + Vector2(-24, 0)
 			"Right":
 				return user_cell + Vector2(16, 0)
 			"Up":
-				return user_cell + Vector2( - 8, -16)
+				return user_cell + Vector2(-8, -16)
 			"Down":
 				return user_cell + Vector2(0, 16)
 
@@ -28,6 +28,7 @@ var target_cell_position: Vector2i:
 func activate(u: Actor) -> void:
 	user = u
 	actor_type = user.actor_type
+	print(damage)
 	var player: Player = user as Player
 	if player != null:
 		player._change_state(player.state_swing)

@@ -9,7 +9,7 @@ var target_cell_position: Vector2i:
 
 		match user.sprite_direction:
 			"Left":
-				return user_cell + Vector2( - 12, 0)
+				return user_cell + Vector2(-12, 0)
 			"Right":
 				return user_cell + Vector2(12, 0)
 			"Up":
@@ -35,7 +35,7 @@ func activate(u: Actor) -> void:
 
 func _on_explosion_started() -> void:
 	$Liftable.queue_free()
-	Sound.play(preload ("res://data/sfx/LA_Bomb_Explode.wav"))
+	Sound.play(preload("res://data/sfx/LA_Bomb_Explode.wav"))
 	var player: Player = user as Player
 	if player != null:
 		player._on_can_bomb_again.call()
@@ -49,3 +49,9 @@ func _on_body_entered(body: Object) -> void:
 	if map != null:
 		var cell: Vector2i = map.local_to_map(target_cell_position)
 		map.slash(cell)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	var player: Player = user as Player
+	player._on_can_bomb_again.call()
+	queue_free()

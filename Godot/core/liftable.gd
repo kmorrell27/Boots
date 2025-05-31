@@ -81,11 +81,15 @@ func state_thrown() -> void:
 				queue_free()
 			
 	sprite.position.y = -1 * elevation
+	collision.position.y = -1 * elevation
 
 func _on_body_entered(body: Object) -> void:
-	if current_state == state_thrown and body is TileMap:
+	if current_state == state_thrown and body is TileMapLayer:
 		if (bouncy):
 			move_direction = move_direction.rotated(PI)
+			elevation = 8
+			rising = false
+			bouncy = false
 
 func _lift(_carrier: Node2D) -> void:
 	rising = true

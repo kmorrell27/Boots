@@ -61,6 +61,7 @@ size = Vector2(8, 8)
 [node name="Octorok" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_1xorg")
+actor_type = "Enemy"
 speed = 40.0
 hearts = 0.5
 
