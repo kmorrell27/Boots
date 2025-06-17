@@ -184,6 +184,7 @@ func _check_collisions(push_timer: float = 0.0) -> void:
 				if (action.actor_type != actor_type and action.damage > 0):
 					print("action_damage ", action.damage)
 					_hit(action.damage, action.position)
+					action.queue_free()
 					return
 		elif (other is LockedDoor):
 			(other as LockedDoor).maybe_unlock(self)

@@ -2,7 +2,7 @@ class_name UI extends CanvasLayer
 
 var target: Player
 var hud: Node2D
-var hearts: Node2D
+var hearts: Hearts
 
 func _init(p_target: Actor) -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -16,6 +16,7 @@ func _init(p_target: Actor) -> void:
 	hearts.position = Vector2(4, 4)
 	add_child(hud)
 	hud.add_child(hearts)
+	p_target.on_hit.connect(hearts._on_player_health_change)
 
 func _ready() -> void:
 	pass

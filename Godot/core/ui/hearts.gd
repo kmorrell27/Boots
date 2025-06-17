@@ -1,6 +1,6 @@
 class_name Hearts extends Node2D
 
-const HEART_TEXTURE: CompressedTexture2D = preload ("res://core/ui/hearts.png")
+const HEART_TEXTURE: CompressedTexture2D = preload("res://core/ui/hearts.png")
 const HEART_SIZE: Vector2 = Vector2(8, 8)
 const ROW_COUNT: int = 7
 
@@ -24,3 +24,7 @@ func _draw() -> void:
 			Rect2(Vector2(offset_x, offset_y), HEART_SIZE),
 			src_rect
 		)
+
+func _on_player_health_change(_health: float) -> void:
+	health = _health
+	queue_redraw()
