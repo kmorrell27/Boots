@@ -1,0 +1,14 @@
+{ "columns":4,
+ "image":"Props_tiles.png",
+ "imageheight":96,
+ "imagewidth":64,
+ "margin":0,
+ "name":"Props_tiles",
+ "spacing":0,
+ "tilecount":24,
+ "tiledversion":"1.10.0",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.10"
+}

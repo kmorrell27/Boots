@@ -1,0 +1,5 @@
+ :: :::::::::::: :: README :: :::::::::::: ::
+
+First of all, thank you so much for buying this pack. I hope you find some good use out of these assets and feel like it was worth the cash. Some background, this was originally for a game I had planned called "Legend of Whistling Bay." It was going to be a fairly short, Gameboy Zelda-styled action game with the primary mechanic of piecing together the verses of Whistling Bay to return home and change your sister back to normal, who is now a flying bug. 
+
+You can probably see how all the assets could come together to make this game, but unfortunately love has a nasty habit of disappearing overnight, and I just had too much going on to finish it, along with an ever-bloating scope that a one-man team just wasn't capable of achieving.  It'd be hella dope to see somebody actually finish this, but even if you just use it for some test projects of your own, all the power to you. Pace yourself and remember: a finished game is better than a demo!

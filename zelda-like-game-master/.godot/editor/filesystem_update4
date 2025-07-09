@@ -1,8 +1,0 @@
-res://default_env.tres
-res://areas/test.tscn
-res://tiles/enemy_tilemap.gd
-res://tiles/enemy_tilemap.tscn
-res://areas/enemy_block.gd
-res://tiles/enemy_scene.tscn
-res://pickups/key.gd
-res://pickups/pickup.gd
