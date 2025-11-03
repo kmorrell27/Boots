@@ -41,6 +41,7 @@ _data = {
 }
 
 [node name="arrow" type="Area2D"]
+collision_mask = 5
 script = ExtResource("1_pwcm7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

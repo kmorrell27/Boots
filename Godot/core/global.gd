@@ -2,20 +2,18 @@ extends Node
 
 enum Doors {
   FOO,
-  BAR
+  BAR,
 }
-
 enum Chests {
   FOO,
-  BAR
+  BAR,
 }
-
 enum Keys {
   FOO,
-  BAR
+  BAR,
 }
 
 var keys: int = 0
-var unlocked_doors: Dictionary = {}
-var bombed_walls: Dictionary = {}
-var opened_chests: Dictionary = {}
+var unlocked_doors: Dictionary = { }
+var bombed_walls: Dictionary = { }
+var opened_chests: Dictionary = { }
