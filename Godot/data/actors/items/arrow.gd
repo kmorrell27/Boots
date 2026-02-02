@@ -35,6 +35,7 @@ func activate(u: Actor) -> void:
 
 func cleanup() -> void:
   (user as Player)._on_can_shoot_again.call()
+  queue_free()
 
 
 func _on_body_entered(body: Object) -> void:

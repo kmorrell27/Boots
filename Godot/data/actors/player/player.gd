@@ -18,9 +18,10 @@ var can_shoot_again: bool = true
 var can_bomb_again: bool = true
 var carrying: Liftable = null
 var push_timer: float = 0.0
-var showShield: bool = false
+var show_shield: bool = false
 
 @onready var shadow: Sprite2D = $Shadow
+@onready var shield_collider: CollisionShape2D = $ShieldCollider
 
 
 func _physics_process(delta: float) -> void:
@@ -63,10 +64,10 @@ func state_default(delta: float) -> void:
     elif carrying:
       _play_animation("Carry")
     else:
-      _play_animation("WalkShield" if showShield else "Walk")
+      _play_animation("WalkShield" if show_shield else "Walk")
   else:
     _play_animation(
-      "Carry" if carrying else "StandShield" if showShield
+      "Carry" if carrying else "StandShield" if show_shield
       else "Stand",
     )
     sprite.stop()
@@ -76,6 +77,7 @@ func state_default(delta: float) -> void:
 
   # Handle item usage
   if Input.is_action_just_pressed("a"):
+    show_shield = false
     ## First check for liftable
     if carrying:
       if is_instance_valid(carrying):
@@ -91,19 +93,25 @@ func state_default(delta: float) -> void:
       _use_item(bomb)
       can_bomb_again = false
   elif Input.is_action_just_pressed("b"):
+    show_shield = false
     _use_item(feather)
   if Input.is_action_just_pressed("x"):
+    show_shield = false
     _change_state(state_arrow)
   if Input.is_action_just_pressed("y"):
+    show_shield = false
     _use_item(sword)
   if Input.is_action_just_pressed("l"):
+    show_shield = false
     current_action_node = _use_item(boots)
   if Input.is_action_just_pressed("r"):
     current_action_node = _use_item(shield)
 
 
 func state_shield(_delta: float) -> void:
-  showShield = true
+  is_defending = true
+  show_shield = true
+  _check_collisions(push_timer)
   if !Input.is_action_pressed("r"):
     _change_state(state_default)
     return
@@ -112,6 +120,19 @@ func state_shield(_delta: float) -> void:
     "StandShieldActive" if input_direction ==
     Vector2.ZERO else "WalkShieldActive",
   )
+  match sprite_direction:
+    "Left":
+      shield_collider.position = Vector2i(1, -9)
+      shield_collider.rotation_degrees = 90
+    "Right":
+      shield_collider.position = Vector2i(18, -9)
+      shield_collider.rotation_degrees = 90
+    "Up":
+      shield_collider.position = Vector2i(-9, -17)
+      shield_collider.rotation = 0
+    "Down":
+      shield_collider.position = Vector2i(-9, -3)
+      shield_collider.rotation = 0
   move_and_slide()
 
 
@@ -142,10 +163,9 @@ func state_run(_delta: float) -> void:
       # I shouldn't do this but I bet it works
       elapsed_state_time = 0
       return
-    else:
-      charging = true
-      # Always run
-      _handle_charging_movement()
+    charging = true
+    # Always run
+    _handle_charging_movement()
   else:
     _update_sprite_direction(input_direction)
   var collided: bool = move_and_slide()
@@ -199,6 +219,7 @@ func state_jump(_delta: float) -> void:
 
 
 func state_swing(_delta: float) -> void:
+  _check_collisions(push_timer)
   _play_animation("Swing")
 
 
@@ -269,20 +290,13 @@ func _can_lift() -> bool:
 # Plays an animation from a directioned set.
 # TBH This might not be necessary? And I can just use the one in actor?
 func _play_animation(animation: String) -> void:
-  # Oh man this is terrible code but it's maybe the easiest place to put this?
-  if (showShield and
-    animation not in [
-      "WalkShield",
-      "WalkShieldActive",
-      "StandShield",
-      "StandShieldActive",
-    ] ):
-    showShield = false
   var direction: String = (
     "Side" if sprite_direction in ["Left", "Right"] else sprite_direction
   )
-  if (animation == "WalkShield" and direction == "Right"):
+  if (animation == "WalkShield" and sprite_direction == "Right"):
     sprite.play("WalkSide")
+  elif (animation == "StandShield" and sprite_direction == "Right"):
+    sprite.play("StandSide")
   else:
     sprite.play(animation + direction)
   sprite.flip_h = sprite_direction == "Left"

@@ -33,7 +33,6 @@ func _process(_delta: float) -> void:
 func activate(u: Actor) -> void:
   user = u
   actor_type = user.actor_type
-  print(damage)
   var player: Player = user as Player
   if player != null:
     player._change_state(player.state_swing)
@@ -46,6 +45,7 @@ func activate(u: Actor) -> void:
 
 
 func _on_swing_finished() -> void:
+  print_debug("hmmm")
   user._change_state(user.state_default)
   queue_free()
 
