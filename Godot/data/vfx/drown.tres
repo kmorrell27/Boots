@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://kyrb8d0n8vwr"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://kyrb8d0n8vwr"]
 
 [ext_resource type="Texture2D" uid="uid://dpyua2nw7b0ba" path="res://data/vfx/drown.png" id="1_isa8a"]
 

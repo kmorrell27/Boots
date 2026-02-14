@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Zelda"
 run/main_scene="res://core/client.tscn"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://editor/icon.png"
 
 [autoload]
@@ -21,7 +25,7 @@ DEF="*res://core/definitions.gd"
 ScreenFX="*res://core/vfx/screen_fx.tscn"
 Sound="*res://core/sound.gd"
 Global="*res://core/global.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Dialogic="*uid://b3lyd28mis7w3"
 
 [debug]
 

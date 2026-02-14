@@ -100,14 +100,14 @@ func _on_body_entered(body: Object) -> void:
       bouncy = false
 
 
-func _lift(_carrier: Node2D) -> void:
+func lift(_carrier: Node2D) -> void:
   rising = true
   carrier = _carrier
   carrier_sprite = _carrier.get_node("AnimatedSprite2D")
   _change_state(state_pick_up)
 
 
-func _throw() -> void:
+func throw() -> void:
   carrier = null
   carrier_sprite = null
   _change_state(state_thrown)

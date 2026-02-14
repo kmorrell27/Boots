@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0n5vrqnoj5y4"]
+[gd_scene format=3 uid="uid://0n5vrqnoj5y4"]
 
 [ext_resource type="Script" uid="uid://dsyd6ba2sb0u8" path="res://data/actors/enemies/octorok.gd" id="1_1xorg"]
 [ext_resource type="Texture2D" uid="uid://bpjsbq4wo1at7" path="res://data/actors/enemies/octorok.png" id="1_5qjiv"]
@@ -58,7 +58,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs6cb"]
 size = Vector2(8, 8)
 
-[node name="Octorok" type="CharacterBody2D"]
+[node name="Octorok" type="CharacterBody2D" unique_id=512711916]
 collision_layer = 5
 collision_mask = 3
 motion_mode = 1
@@ -67,11 +67,11 @@ actor_type = "Enemy"
 speed = 40.0
 hearts = 0.5
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=550522657]
 sprite_frames = SubResource("SpriteFrames_1nyaj")
 animation = &"WalkDown"
 autoplay = "WalkDown"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1434272453]
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_cs6cb")

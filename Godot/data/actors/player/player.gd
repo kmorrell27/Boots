@@ -18,7 +18,10 @@ var can_shoot_again: bool = true
 var can_bomb_again: bool = true
 var carrying: Liftable = null
 var push_timer: float = 0.0
+var roll_timer: float = 0.0
 var show_shield: bool = false
+var is_rolling: bool = false
+var roll_dir: Vector2 = Vector2.ZERO
 
 @onready var shadow: Sprite2D = $Shadow
 @onready var shield_collider: CollisionShape2D = $ShieldCollider
@@ -26,6 +29,51 @@ var show_shield: bool = false
 
 func _physics_process(delta: float) -> void:
   _state_process(delta)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+  if (event.is_action_pressed("ui_left", false)):
+    if (sprite_direction == "Left"):
+      if (is_rolling):
+        roll_dir = Vector2.LEFT
+        _change_state(state_rolling)
+    is_rolling = true
+    get_tree().create_timer(0.2).timeout.connect(_stop_roll)
+  if (event.is_action_pressed("ui_right", false)):
+    if (sprite_direction == "Right"):
+      if (is_rolling):
+        roll_dir = Vector2.RIGHT
+        _change_state(state_rolling)
+    is_rolling = true
+    get_tree().create_timer(0.2).timeout.connect(_stop_roll)
+  if (event.is_action_pressed("ui_up", false)):
+    if (sprite_direction == "Up"):
+      if (is_rolling):
+        roll_dir = Vector2.UP
+        _change_state(state_rolling)
+    is_rolling = true
+    get_tree().create_timer(0.2).timeout.connect(_stop_roll)
+  if (event.is_action_pressed("ui_down", false)):
+    if (sprite_direction == "Down"):
+      if (is_rolling):
+        roll_dir = Vector2.DOWN
+        _change_state(state_rolling)
+    is_rolling = true
+    get_tree().create_timer(0.2).timeout.connect(_stop_roll)
+
+
+func state_rolling(delta: float) -> void:
+  sprite.speed_scale = 2
+  _play_animation("Jump")
+  velocity = roll_dir * speed * 2
+  move_and_slide()
+  _update_sprite_direction(input_direction)
+  _check_collisions()
+  roll_timer += delta
+  if (roll_timer >= 0.3):
+    _change_state(state_default)
+    sprite.speed_scale = 1
+    roll_timer = 0
 
 
 func state_default(delta: float) -> void:
@@ -82,7 +130,7 @@ func state_default(delta: float) -> void:
     if carrying:
       if is_instance_valid(carrying):
         # A bomb could explode in our hands
-        carrying._throw()
+        carrying.throw()
       else:
         print_debug("Dealwiththis %s", carrying)
       carrying = null
@@ -282,7 +330,7 @@ func _can_lift() -> bool:
     if other is Liftable:
       _play_animation("Pull")
       carrying = other
-      (other as Liftable)._lift(self)
+      (other as Liftable).lift(self)
       return true
   return false
 
@@ -308,3 +356,6 @@ func _handle_charging_movement() -> void:
     velocity += Vector2(0, input_direction.y * speed)
   elif move_direction.y != 0:
     velocity += Vector2(input_direction.x * speed, 0)
+
+func _stop_roll() -> void:
+  is_rolling = false

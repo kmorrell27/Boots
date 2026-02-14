@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvgures1cudo0"]
+[gd_scene format=3 uid="uid://bvgures1cudo0"]
 
 [ext_resource type="Script" uid="uid://bxfhqj73wlp5m" path="res://data/actors/items/shield.gd" id="1_hrs6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ujo"]
 
-[node name="shield" type="Area2D"]
+[node name="shield" type="Area2D" unique_id=2140165389]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_hrs6c")
 damage = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=959505521]
 scale = Vector2(1e-05, 1)
 shape = SubResource("RectangleShape2D_n7ujo")

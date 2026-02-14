@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dtrlj82v8h6ru"]
+[gd_scene format=3 uid="uid://dtrlj82v8h6ru"]
 
 [ext_resource type="Script" uid="uid://cxmrj8adkr2vy" path="res://data/actors/player/player.gd" id="1_4v2fk"]
 [ext_resource type="AudioStream" uid="uid://445ntodo4dfy" path="res://data/sfx/LA_Link_Hurt.wav" id="2_kislt"]
@@ -630,7 +630,7 @@ size = Vector2(8, 8)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mrf28"]
 a = Vector2(18, 10)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=787217192]
 motion_mode = 1
 script = ExtResource("1_4v2fk")
 actor_type = "Player"
@@ -639,20 +639,20 @@ hearts = 3.0
 damage = 0.0
 hit_sfx = ExtResource("2_kislt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654296273]
 sprite_frames = SubResource("SpriteFrames_ties8")
 animation = &"StandShieldActiveSide"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625126406]
 visible = false
 rotation = 0.785398
 shape = SubResource("RectangleShape2D_h3sv4")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=188675722]
 visible = false
 texture = ExtResource("4_uldxd")
 
-[node name="ShieldCollider" type="CollisionShape2D" parent="."]
+[node name="ShieldCollider" type="CollisionShape2D" parent="." unique_id=2104073125]
 position = Vector2(1, -9)
 rotation = 1.5707964
 shape = SubResource("SegmentShape2D_mrf28")

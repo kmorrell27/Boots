@@ -210,9 +210,9 @@ func _check_collisions(push_timer: float = 0.0) -> void:
         print(actor)
         if actor.actor_type != actor_type and actor.damage > 0:
           if (is_defending):
-            actor._hit(0, position)
+            actor.hit(0, position)
             return
-          _hit(actor.damage, actor.position)
+          hit(actor.damage, actor.position)
           return
       var action: Action = other as Action
       if action:
@@ -237,7 +237,7 @@ func _check_collisions(push_timer: float = 0.0) -> void:
                   _bounce_or_cleanup(action)
                   return
           print("action_damage ", action.damage)
-          _hit(action.damage, action.position)
+          hit(action.damage, action.position)
           # TODO - Make this a subclass I can check against
           if (action.has_method("cleanup")):
             action.call("cleanup")
@@ -259,7 +259,7 @@ func _oneshot_vfx(frames: SpriteFrames) -> void:
 
 
 # Setup hit state and switch
-func _hit(amount: float, pos: Vector2) -> void:
+func hit(amount: float, pos: Vector2) -> void:
   velocity = (position - pos).normalized() * KB_AMT
   health -= amount
   Sound.play(hit_sfx)
@@ -279,6 +279,7 @@ func _snap_to_cardinal_direction(vec: Vector2) -> String:
 
 
 func _bounce_or_cleanup(action: Action) -> void:
+  print("Here")
   if (action.has_method("bounce")):
     action.call("bounce")
     return
